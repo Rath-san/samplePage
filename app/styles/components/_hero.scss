@@ -68,6 +68,7 @@ main {
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: 5px;
+  margin-right: -5px;
   font-size: 50px;
   margin-top: -0.4em;
 }
@@ -87,11 +88,13 @@ main {
 
 .tagline--pre {
   letter-spacing: 20px;
+  margin-right: -20px;
   margin-bottom: 0;
 }
 
 .tagline--main {
   letter-spacing: 13px;
+  margin-right: -13px;
   font-size: 150px;
   margin-bottom: 1.5rem;
 }
@@ -126,6 +129,7 @@ main {
 }
 .scroller__text {
   letter-spacing: 3px;
+  // margin-right: -3px;
   font-size: 16px;
 }
 .scroller__indicator {
