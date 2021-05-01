@@ -56,7 +56,9 @@ export const slider = () => {
   })
 
   const sliderContainerBig = $('#sliderBig')
-  sliderContainerBig.slick({})
+  sliderContainerBig.slick({
+    dots: true
+  })
 
   sliderContainer.on('click', (e) => {
     const index = $(e.target).closest('.slick-slide').attr('data-slick-index')
