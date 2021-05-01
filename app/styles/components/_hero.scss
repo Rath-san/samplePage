@@ -1,0 +1,155 @@
+main {
+  padding-bottom: 5rem;
+}
+
+.header {
+  height: 100vh;
+  display: flex;
+}
+
+.section {
+  padding-top: 3rem;
+}
+
+.slider__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero {
+  margin: auto;
+}
+.hero__slider {
+  height: 97vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.header__scroller {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.header__scroller .scroller__wrapper {
+  height: 6vh;
+}
+
+.additions__link {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.additions__link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.carousel__wrapper {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.carousel__wrapper .info__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+.carousel__wrapper .info__wrapper.interactive {
+  z-index: 1;
+}
+.carousel__wrapper .info__text {
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 5px;
+  font-size: 50px;
+  margin-top: -0.4em;
+}
+.carousel__wrapper .info__text span {
+  font-size: 0.5em;
+}
+.carousel__wrapper .info__sub {
+  padding: 3rem 0 0 3rem;
+  max-width: 350px;
+  margin-bottom: 3rem;
+}
+.carousel__wrapper .info__video {
+  margin-left: 50px;
+  max-width: 300px;
+  transform: translateX(-50%);
+}
+
+.tagline--pre {
+  letter-spacing: 20px;
+  margin-bottom: 0;
+}
+
+.tagline--main {
+  letter-spacing: 13px;
+  font-size: 150px;
+  margin-bottom: 1.5rem;
+}
+
+.tagline--description {
+  margin-bottom: -6rem;
+}
+
+.scroller {
+  width: 1px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: auto;
+}
+.scroller__progress {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.scroller--animated .scroller__progress {
+  will-change: transform, opacity;
+  animation: shrink-fade 2s ease-in-out infinite;
+}
+.scroller--horizontal {
+  width: 100%;
+  height: 1px;
+}
+.scroller__text {
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+.scroller__indicator {
+  display: block;
+}
+.scroller__indicator.current {
+  text-align: left;
+}
+.scroller__indicator.total {
+  text-align: right;
+}
+
+@keyframes shrink-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}

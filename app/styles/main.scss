@@ -1,6 +1,6 @@
-@import 'fonts';
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: cornflowerblue;
-}
+@import 'abstract/variables';
+@import 'vendor/bootstrap';
+@import 'vendor/slick';
+@import 'components/fonts';
+@import 'components/scroller';
+@import 'pages/index.scss';
