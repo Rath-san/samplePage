@@ -6,9 +6,11 @@ export const slider = () => {
   const sliderContainer = $('.slider')
   sliderContainer.slick({
     // normal options...
+    // lazyLoad: 'progressive',
     infinite: false,
     slidesToShow: 2,
-    centerMode: true // the magic
+    centerMode: true
+    // the magic
     // responsive: [
     // {
     //   breakpoint: 1024,

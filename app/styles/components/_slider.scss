@@ -1,7 +1,6 @@
-$line-width: 80px;
-$arrow-padding: 5px;
-
 .slick {
+  $line-width: 80px;
+  $arrow-padding: 5px;
   &-slide {
     cursor: pointer;
     overflow: hidden;
@@ -20,6 +19,7 @@ $arrow-padding: 5px;
 
   // controls
   &-arrow {
+    z-index: 1;
     position: absolute;
     bottom: -4rem;
     color: #fff;
