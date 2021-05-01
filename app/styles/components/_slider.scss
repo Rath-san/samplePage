@@ -1,9 +1,142 @@
+$line-width: 80px;
+$arrow-padding: 5px;
+
 .slick {
-    &-slide {
-        cursor: pointer;
-        img {
-            width: 100%;
-            object-fit: cover;
-        }
+  &-slide {
+    cursor: pointer;
+    overflow: hidden;
+    img {
+      width: 100%;
+      object-fit: cover;
+      will-change: transform;
+      transition: transform 2s ease-in-out;
     }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  // controls
+  &-arrow {
+    position: absolute;
+    bottom: -4rem;
+    color: #fff;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: $arrow-padding $line-width + $arrow-padding * 3;
+    will-change: transform;
+    transition:
+      transform 0.25s ease-in-out,
+      color 0.25s ease-in-out;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 50%;
+      width: $line-width;
+      height: 1px;
+    }
+
+    // &:not(:hover),
+    &:not(.slick-disabled) {
+      &::after {
+        z-index: 2;
+        will-change: transform;
+        transition: transform 0.25s ease-in-out;
+      }
+    }
+
+    &::before {
+      background-color: #6c6c6c;
+    }
+
+    &::after {
+      background-color: #fff;
+    }
+  }
+
+  &-disabled {
+    cursor: default !important;
+    color: #6d6d6d;
+    &::before,
+    &::after {
+      background-color: #6d6d6d;
+    }
+  }
+
+  &-next,
+  &-prev {
+    &:hover:not(.slick-disabled) {
+      transform: translateX(0);
+    }
+  }
+
+  &-next {
+    right: 0;
+    padding-left: $arrow-padding;
+    transform: translateX($arrow-padding * 6);
+
+    &::after,
+    &::before {
+      right: 0;
+    }
+    &:not(:hover) {
+      &::after {
+        animation: shrink-fade-right 2s ease-in-out infinite;
+      }
+    }
+  }
+
+  &-prev {
+    left: 0;
+    padding-right: $arrow-padding;
+    transform: translateX(-$arrow-padding * 6);
+    &::after,
+    &::before {
+      left: 0;
+    }
+    &:not(:hover) {
+      &::after {
+        animation: shrink-fade-left 2s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes shrink-fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes shrink-fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }

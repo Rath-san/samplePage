@@ -62,6 +62,7 @@ main {
 }
 .carousel__wrapper .info__wrapper.interactive {
   z-index: 1;
+  opacity: 1;
 }
 .carousel__wrapper .info__text {
   text-transform: uppercase;
@@ -117,7 +118,7 @@ main {
 }
 .scroller--animated .scroller__progress {
   will-change: transform, opacity;
-  animation: shrink-fade 2s ease-in-out infinite;
+  animation: shrink-fade-bottom 2s ease-in-out infinite;
 }
 .scroller--horizontal {
   width: 100%;
@@ -137,7 +138,7 @@ main {
   text-align: right;
 }
 
-@keyframes shrink-fade {
+@keyframes shrink-fade-bottom {
   0% {
     opacity: 0;
     transform: translateY(0);

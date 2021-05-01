@@ -36,15 +36,9 @@ html(lang="en")
             .col-6.p-0
               ul.list-inline.m-0
                 li.list-inline-item.mr-5
-                  a.additions__link(href='')
-                    | watch
-                    br
-                    | tutorial
+                  a.additions__link(href='') watch tutorial
                 li.list-inline-item
-                  a.additions__link(href='')
-                    | watch
-                    br
-                    | trailer
+                  a.additions__link(href='') watch trailer
       section.section
         .carousel__wrapper
           .info__wrapper.interactive
@@ -61,5 +55,4 @@ html(lang="en")
                 img.info__video(src="images/video_thumbnail.jpg")
           .slider
             each val in ['1', '2', '3']
-              div
-                img(src=`images/slide/slide_${val}.jpg`)
+              img(src=`images/slide/slide_${val}.jpg`)
