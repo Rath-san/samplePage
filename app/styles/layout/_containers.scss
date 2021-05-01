@@ -1,0 +1,13 @@
+html {
+}
+
+body {
+  overflow: overlay;
+  @include scrollbars(2px, #fff, #6d6d6d);
+}
+
+main {
+}
+
+section.section {
+}
