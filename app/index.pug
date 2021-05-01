@@ -16,7 +16,7 @@ html(lang="en")
       header.header
         .hero
           .hero__slider
-            img(src="images/header/header_bg_1.jpg")
+            img.slider__image(src="images/header/header_bg_1.jpg")
           .hero__title.text-center
             p.tagline.tagline--pre.text-uppercase the
             h1.tagline.tagline--main skyline
@@ -58,6 +58,7 @@ html(lang="en")
                 | Masterly animated captions allure your viewer with modern motion
                 | design and introduce a true filmic atmosphere in your edits.
               .info__video__wrapper
+                img.info__video(src="images/video_thumbnail.jpg")
           .slider
             each val in ['1', '2', '3']
               div
