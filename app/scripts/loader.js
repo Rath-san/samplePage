@@ -2,7 +2,7 @@
 const perfData = window.performance.timing // The PerformanceTiming interface represents timing-related performance information for the given page.
 const EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart)
 const time = parseInt((EstimatedTime / 1000) % 60) * 100
-console.log(time)
+// console.log(time)
 // Loadbar Animation
 // $('.loadbar').animate(
 //   {
@@ -40,5 +40,5 @@ console.log(time)
 // animateValue(PercentageID, start, end, durataion)
 // Fading Out Loadbar on Finised
 setTimeout(function () {
-  console.log("load completed")
+  // console.log("load completed")
 }, time)
