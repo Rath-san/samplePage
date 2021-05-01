@@ -3,23 +3,109 @@
   overflow: hidden;
 }
 
+#slider .slick-slide {
+  cursor: pointer;
+  overflow: hidden;
+  img {
+    width: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform 2s ease-in-out;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+body.slider-visible {
+  overflow: hidden;
+}
+
+.sliderBig__wrapper {
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  position: fixed;
+  // animation: bigSliderFade 1s ease-in-out backwards;
+  // animation: bigSliderFade 1s ease-in-out forwards;
+  &.visible {
+    // z-index: 999;
+    // opacity: 1;
+    will-change: opacity;
+    animation: bigSliderFade 1s ease-in-out forwards;
+  }
+  &.hidden {
+    will-change: opacity;
+    animation: bigSliderFadeRev 1s ease-in-out forwards;
+  }
+}
+
+@keyframes bigSliderFadeRev {
+  0% {
+    opacity: 1;
+    z-index: 999; 
+  }
+  1% {
+    opacity: 1;
+    z-index: 999;
+  }
+  99% {
+    opacity: 0;
+    z-index: 999;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes bigSliderFade {
+  0% {
+    opacity: 0;
+    z-index: -1; 
+  }
+  1% {
+    opacity: 0;
+    z-index: 999;
+  }
+  99% {
+    opacity: 1;
+    z-index: 999;
+  }
+  100% {
+    opacity: 1;
+    z-index: 999;
+  }
+}
+
+#sliderBigClose {
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  top: 20px;
+  padding: 20px;
+}
+
+#sliderBig {
+  .slick {
+    &-arrow {
+      bottom: 5rem;
+    }
+    &-slide {
+      img {
+        height: 100vh;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
 .slick {
   $line-width: 80px;
   $arrow-padding: 5px;
   &-slide {
-    cursor: pointer;
-    overflow: hidden;
-    img {
-      width: 100%;
-      object-fit: cover;
-      will-change: transform;
-      transition: transform 2s ease-in-out;
-    }
-    &:hover {
-      img {
-        transform: scale(1.1);
-      }
-    }
   }
 
   // controls
@@ -34,9 +120,7 @@
     overflow: hidden;
     padding: $arrow-padding $line-width + $arrow-padding * 3;
     will-change: transform;
-    transition:
-      transform 0.25s ease-in-out,
-      color 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, color 0.25s ease-in-out;
 
     &::before,
     &::after {

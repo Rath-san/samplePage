@@ -2,14 +2,14 @@ import $ from 'jquery'
 import 'slick-slider'
 
 export const slider = () => {
-  // console.log(`this is slider!`)
-  const sliderContainer = $('.slider')
+  const sliderContainer = $('#slider')
   sliderContainer.slick({
     // normal options...
     // lazyLoad: 'progressive',
     infinite: false,
     slidesToShow: 2,
-    centerMode: true
+    centerMode: true,
+    draggable: false
     // the magic
     // responsive: [
     // {
@@ -32,6 +32,7 @@ export const slider = () => {
     // }
     // ]
   })
+
   const infoWrapperInteractiveClass = 'interactive'
   const infoWrapper = $('.info__wrapper')
   sliderContainer.on('dragstart', () => {
@@ -52,5 +53,26 @@ export const slider = () => {
     if (currentSlide < 1) {
       infoWrapper.addClass(infoWrapperInteractiveClass)
     }
+  })
+
+  const sliderContainerBig = $('#sliderBig')
+  sliderContainerBig.slick({})
+
+  sliderContainer.on('click', (e) => {
+    const index = $(e.target).closest('.slick-slide').attr('data-slick-index')
+    if (index) {
+      sliderContainerBig.slick('slickGoTo', index)
+      $('body').addClass('slider-visible')
+      $('.sliderBig__wrapper').eq(0)
+        .removeClass('hidden')
+        .addClass('visible')
+    }
+  })
+
+  $('#sliderBigClose').on('click', () => {
+    $('body').removeClass('slider-visible')
+    $('.sliderBig__wrapper').eq(0)
+      .removeClass('visible')
+      .addClass('hidden')
   })
 }

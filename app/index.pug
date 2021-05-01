@@ -13,6 +13,7 @@ html(lang="en")
       //- include includes/separator.pug
       //- include includes/slider-section.pug
     main
+      include includes/slider-big.pug
       header.header
         .hero
           .hero__slider
@@ -53,6 +54,6 @@ html(lang="en")
                 | design and introduce a true filmic atmosphere in your edits.
               .info__video__wrapper
                 img.info__video(src="images/video_thumbnail.jpg")
-          .slider
+          #slider.slider
             each val in ['1', '2', '3']
               img(src=`images/slide/slide_${val}.jpg`)
