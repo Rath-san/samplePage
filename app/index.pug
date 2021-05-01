@@ -8,7 +8,57 @@ html(lang="en")
     script 
       include scripts/loader.js
   body
+    //- main
+      //- include includes/header.pug
+      //- include includes/separator.pug
+      //- include includes/slider-section.pug
     main
-      include includes/header.pug
-      include includes/separator.pug
-      include includes/slider-section.pug
+      header.header
+        .hero
+          .hero__slider
+            img(src="images/header/header_bg_1.jpg")
+          .hero__title.text-center
+            p.tagline.tagline--pre.text-uppercase the
+            h1.tagline.tagline--main skyline
+            p.tagline--description
+              | Movie-inspired Cinematic Openers
+              br
+              |               Exclusively for Final Cut Pro
+        .header__scroller.text-center
+          p.scroller__text.text-uppercase scroll down
+          .scroller__wrapper
+            .scroller.scroller--animated
+              .scroller__progress
+      section.section
+        .additions.container
+          .row
+            .col-6.p-0
+            .col-6.p-0
+              ul.list-inline.m-0
+                li.list-inline-item.mr-5
+                  a.additions__link(href='')
+                    | watch
+                    br
+                    | tutorial
+                li.list-inline-item
+                  a.additions__link(href='')
+                    | watch
+                    br
+                    | trailer
+      section.section
+        .carousel__wrapper
+          .info__wrapper.interactive
+            .info
+              h2.info__text
+                span
+                  | movie-inspired
+                  br
+                | Typography
+              .info__sub
+                | Masterly animated captions allure your viewer with modern motion
+                | design and introduce a true filmic atmosphere in your edits.
+              .info__video__wrapper
+          .slider
+            each val in ['1', '2', '3']
+              div
+                img(src=`images/slide/slide_${val}.jpg`)
