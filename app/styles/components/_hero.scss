@@ -18,14 +18,17 @@ main {
 }
 
 .hero {
-  margin: auto;
+  &__title {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
 }
 .hero__slider {
   height: 97vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  width: 100vw;
 }
 
 .header__scroller {

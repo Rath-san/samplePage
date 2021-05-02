@@ -5,6 +5,8 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Document
+    link(rel="stylesheet", href="/app/scripts/rgbKineticSlider-master/css/base.css")
+    link(rel="stylesheet", href="/app/scripts/rgbKineticSlider-master/css/demo.css")
     script 
       include scripts/loader.js
   body
@@ -13,11 +15,12 @@ html(lang="en")
       //- include includes/separator.pug
       //- include includes/slider-section.pug
     main
+      
       include includes/slider-big.pug
       header.header
         .hero
           .hero__slider
-            img.slider__image(src="images/header/header_bg_1.jpg")
+            include includes/kinetic.pug
           .hero__title.text-center
             p.tagline.tagline--pre.text-uppercase the
             h1.tagline.tagline--main skyline

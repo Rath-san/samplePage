@@ -85,7 +85,7 @@ const commonConfig = merge([
     }
   },
   parts.loadPug(),
-  parts.lintJS({ include: paths.app, options: lintJSOptions }),
+  // parts.lintJS({ include: paths.app, options: lintJSOptions }),
   parts.loadFonts({
     include: paths.app,
     options: {

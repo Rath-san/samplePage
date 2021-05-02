@@ -29,11 +29,7 @@ body.slider-visible {
   opacity: 0;
   position: fixed;
   z-index: -1;
-  // animation: bigSliderFade 1s ease-in-out backwards;
-  // animation: bigSliderFade 1s ease-in-out forwards;
   &.visible {
-    // z-index: 999;
-    // opacity: 1;
     will-change: opacity;
     animation: bigSliderFade 1s ease-in-out forwards;
   }
