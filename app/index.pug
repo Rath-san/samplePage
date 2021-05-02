@@ -18,24 +18,27 @@ html(lang="en")
         z-index: 101;
         background-color: #000;
         will-change: clip-path;
-        transition: clip-path 1s ease-in-out;
+        transition: clip-path 1s ease-in-out .2s, transform .35s ease-in-out;
         clip-path: inset(0 0 100% 0);
+        transform: scale3D(1, 1, 1);
       }
-
       .loader__text .hero__title{
         margin-top: 24px;
+        backface-visibility: hidden;
+        transform: scalde3d(1,1,1)
       }
 
-      body.loader--active {
+      body.loading {
         overflow: hidden;
       }
-      body.loader--active .loader {
+      body.loading .loader {
+        transform: scale3D(1.1, 1.1, 1.1);
         clip-path: inset(0);
       }
     title Skyline
     script
       include scripts/loader.js
-  body.loader--active
+  body.loading
     .loader
       svg(width='0', height='0')
         defs

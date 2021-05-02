@@ -211,7 +211,15 @@ const productionConfig = merge([
 
 const developmentConfig = merge([
   {
-    mode: 'development'
+    mode: 'development',
+    externals: {
+      imagesLoaded: 'imagesLoaded',
+      PIXI: 'PIXI',
+      TweenLite: 'TweenLite',
+      TweenMax: 'TweenMax',
+      TweenPlugin: 'TweenPlugin',
+      TimelineMax: 'TimelineMax'
+    }
   },
   parts.devServer({
     host: process.env.HOST,

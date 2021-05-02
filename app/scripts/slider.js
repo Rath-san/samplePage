@@ -4,33 +4,11 @@ import 'slick-slider'
 export const slider = () => {
   const sliderContainer = $('#slider')
   sliderContainer.slick({
-    // normal options...
-    // lazyLoad: 'progressive',
+    speed: 750,
     infinite: false,
     slidesToShow: 2,
     centerMode: true,
     draggable: false
-    // the magic
-    // responsive: [
-    // {
-    //   breakpoint: 1024,
-    //   settings: {
-    //     slidesToShow: 2,
-    //     infinite: false
-    //   }
-    // }
-    // {
-    //   breakpoint: 600,
-    //   settings: {
-    //     slidesToShow: 2,
-    //     dots: true
-    //   }
-    // },
-    // {
-    //   breakpoint: 300,
-    //   settings: 'unslick' // destroys slick
-    // }
-    // ]
   })
 
   const infoWrapperInteractiveClass = 'interactive'

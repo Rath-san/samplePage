@@ -203,7 +203,6 @@ body.slider-visible {
       height: 1px;
     }
 
-    // &:not(:hover),
     &:not(.slick-disabled) {
       &::after {
         z-index: 2;
@@ -274,10 +273,7 @@ body.slider-visible {
     opacity: 0;
     transform: translateX(0);
   }
-  10% {
-    opacity: 1;
-  }
-  90% {
+  50% {
     opacity: 1;
   }
   100% {
@@ -291,10 +287,7 @@ body.slider-visible {
     opacity: 0;
     transform: translateX(0);
   }
-  10% {
-    opacity: 1;
-  }
-  90% {
+  50% {
     opacity: 1;
   }
   100% {
