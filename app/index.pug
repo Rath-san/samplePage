@@ -4,12 +4,56 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    style(type="text/css").
+      body {
+        background: #000;
+      }
+      .loader {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        z-index: 101;
+        background-color: #000;
+        will-change: clip-path;
+        transition: clip-path 1s ease-in-out;
+        clip-path: inset(0 0 100% 0);
+      }
+
+      .loader__text .hero__title{
+        margin-top: 24px;
+      }
+
+      body.loader--active {
+        overflow: hidden;
+      }
+      body.loader--active .loader {
+        clip-path: inset(0);
+      }
     title Skyline
     script
       include scripts/loader.js
-  body
+  body.loader--active
+    .loader
+      svg(width='0', height='0')
+        defs
+          clippath#myCurve(clippathunits='objectBoundingBox')
+            path(d='M 0,1\
+									L 0,0\
+									L 1,0\
+									L 1,.8\
+                  C .81 .7, .81 .9, .66 .9\
+                  C .48 .9, .48 1, .33 1\
+                  C .15 1, .15 .8, 0 .8\
+									Z')
+      .loader__text
+        .hero
+          .hero__title.text-center
+            p.tagline.tagline--pre.text-uppercase the
+            h1.tagline.tagline--main skyline
     main
-      
       include includes/slider-big.pug
       header.header
         .hero

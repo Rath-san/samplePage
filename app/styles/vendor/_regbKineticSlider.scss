@@ -1,7 +1,7 @@
 /* Page Loader */
 .js .loading::before,
 .js .loading::after {
-  content: '';
+  content: '1';
   position: fixed;
   z-index: 1000;
 }
