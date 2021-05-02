@@ -119,9 +119,20 @@ const productionConfig = merge([
       new ManifestPlugin(),
       new CleanPlugin(),
       new CopyWebpackPlugin([
+        // js
         {
           from: path.join(__dirname, 'app/scripts/rgbKineticSlider-master/js'),
           to: path.join(__dirname, 'build/app/scripts/rgbKineticSlider-master/js')
+        },
+        // images
+        {
+          from: path.join(__dirname, 'app/scripts/rgbKineticSlider-master/img'),
+          to: path.join(__dirname, 'build/app/scripts/rgbKineticSlider-master/img')
+        }
+        // headers
+        {
+          from: path.join(__dirname, 'app/images/header'),
+          to: path.join(__dirname, 'build/images/header')
         }
       ])
     ]
