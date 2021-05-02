@@ -132,7 +132,7 @@ const productionConfig = merge([
         // headers
         {
           from: path.join(__dirname, 'app/images/header'),
-          to: path.join(__dirname, 'build/images/header')
+          to: path.join(__dirname, 'build/app/images/header')
         }
       ])
     ]
