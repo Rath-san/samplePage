@@ -8,6 +8,7 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const CleanPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { StatsWriterPlugin } = require('webpack-stats-plugin')
 
 const parts = require('./webpack.parts')
@@ -69,7 +70,7 @@ const commonConfig = merge([
       publicPath: parts.publicPath
     },
     stats: {
-      warningsFilter: warning => warning.includes('entrypoint size limit'),
+      warningsFilter: (warning) => warning.includes('entrypoint size limit'),
       children: false,
       modules: false
     },
@@ -77,8 +78,8 @@ const commonConfig = merge([
       new HtmlPlugin({
         template: './index.pug'
       }),
-      new FriendlyErrorsPlugin(),
-      new StylelintPlugin(lintStylesOptions)
+      new FriendlyErrorsPlugin()
+      // new StylelintPlugin(lintStylesOptions)
     ],
     module: {
       noParse: /\.min\.js/
@@ -116,7 +117,13 @@ const productionConfig = merge([
       new StatsWriterPlugin({ fields: null, filename: '../stats.json' }),
       new webpack.HashedModuleIdsPlugin(),
       new ManifestPlugin(),
-      new CleanPlugin()
+      new CleanPlugin(),
+      new CopyWebpackPlugin([
+        {
+          from: path.join(__dirname, 'app/scripts/rgbKineticSlider-master/js'),
+          to: path.join(__dirname, 'build/app/scripts/rgbKineticSlider-master/js')
+        }
+      ])
     ]
   },
   parts.minifyJS({
@@ -204,7 +211,7 @@ const developmentConfig = merge([
   parts.loadJS({ include: paths.app })
 ])
 
-module.exports = env => {
+module.exports = (env) => {
   process.env.NODE_ENV = env
 
   return merge(
@@ -213,7 +220,7 @@ module.exports = env => {
   )
 }
 
-function getPaths ({
+function getPaths({
   sourceDir = 'app',
   buildDir = 'build',
   staticDir = '',
@@ -224,15 +231,18 @@ function getPaths ({
 } = {}) {
   const assets = { images, fonts, js, css }
 
-  return Object.keys(assets).reduce((obj, assetName) => {
-    const assetPath = assets[assetName]
+  return Object.keys(assets).reduce(
+    (obj, assetName) => {
+      const assetPath = assets[assetName]
 
-    obj[assetName] = !staticDir ? assetPath : `${staticDir}/${assetPath}`
+      obj[assetName] = !staticDir ? assetPath : `${staticDir}/${assetPath}`
 
-    return obj
-  }, {
-    app: path.join(__dirname, sourceDir),
-    build: path.join(__dirname, buildDir),
-    staticDir
-  })
+      return obj
+    },
+    {
+      app: path.join(__dirname, sourceDir),
+      build: path.join(__dirname, buildDir),
+      staticDir
+    }
+  )
 }
