@@ -1,7 +1,16 @@
-//- In 'includes' all paths to assets should be relative to the index.pug file,
-//- like so './images/image.jpg',
-//- and not '../images/image.jpg'
-
-header
-  //- h1 Hello world!
-  //- img(src='./images/js-logo.svg' alt='js logo' width='200')
+header.header
+  .hero
+    .hero__slider
+      include kinetic.pug
+    .hero__title.text-center
+      p.tagline.tagline--pre.text-uppercase the
+      h1.tagline.tagline--main skyline
+      p.tagline--description
+        | Movie-inspired Cinematic Openers
+        br
+        | Exclusively for Final Cut Pro
+  .header__scroller.text-center
+    p.scroller__text.text-uppercase scroll down
+    .scroller__wrapper
+      .scroller.scroller--animated
+        .scroller__progress

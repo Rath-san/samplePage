@@ -4,6 +4,10 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    script(src='/app/scripts/rgbKineticSlider-master/js/libs/imagesLoaded.pkgd.min.js')
+    script(src='/app/scripts/rgbKineticSlider-master/js/libs/pixi.min.js')
+    script(src='/app/scripts/rgbKineticSlider-master/js/libs/pixi-filters.min.js')
+    script(src='/app/scripts/rgbKineticSlider-master/js/libs/TweenMax.min.js')
     style(type="text/css").
       body {
         background: #000;
@@ -18,7 +22,7 @@ html(lang="en")
         z-index: 101;
         background-color: #000;
         will-change: clip-path;
-        transition: clip-path 1s ease-in-out .2s, transform .35s ease-in-out;
+        transition: clip-path 1s ease-in-out .75s, transform .5s ease-in-out;
         clip-path: inset(0 0 100% 0);
         transform: scale3D(1, 1, 1);
       }
@@ -39,41 +43,9 @@ html(lang="en")
     script
       include scripts/loader.js
   body.loading
-    .loader
-      svg(width='0', height='0')
-        defs
-          clippath#myCurve(clippathunits='objectBoundingBox')
-            path(d='M 0,1\
-									L 0,0\
-									L 1,0\
-									L 1,.8\
-                  C .81 .7, .81 .9, .66 .9\
-                  C .48 .9, .48 1, .33 1\
-                  C .15 1, .15 .8, 0 .8\
-									Z')
-      .loader__text
-        .hero
-          .hero__title.text-center
-            p.tagline.tagline--pre.text-uppercase the
-            h1.tagline.tagline--main skyline
+    include includes/page-loader.pug
     main
-      include includes/slider-big.pug
-      header.header
-        .hero
-          .hero__slider
-            include includes/kinetic.pug
-          .hero__title.text-center
-            p.tagline.tagline--pre.text-uppercase the
-            h1.tagline.tagline--main skyline
-            p.tagline--description
-              | Movie-inspired Cinematic Openers
-              br
-              |               Exclusively for Final Cut Pro
-        .header__scroller.text-center
-          p.scroller__text.text-uppercase scroll down
-          .scroller__wrapper
-            .scroller.scroller--animated
-              .scroller__progress
+      include includes/header.pug
       section.section
         .additions.container
           .row
@@ -84,28 +56,8 @@ html(lang="en")
                   a.additions__link(href='') watch tutorial
                 li.list-inline-item.animated(data-direction='top')
                   a.additions__link(href='') watch trailer
-      section.section
-        .carousel__wrapper
-          .info__wrapper.interactive.animated(data-direction='left')
-            .info
-              h2.info__text
-                span
-                  | movie-inspired
-                  br
-                | Typography
-              .info__sub
-                | Masterly animated captions allure your viewer with modern motion
-                | design and introduce a true filmic atmosphere in your edits.
-              .info__video__wrapper
-                img.info__video(src="images/video_thumbnail.jpg")
-          #slider.slider.animated(data-direction='bottom')
-            each val in ['1', '2', '3']
-              img(src=`images/slide/slide_${val}.jpg`)
-
-    script(src='/app/scripts/rgbKineticSlider-master/js/libs/imagesLoaded.pkgd.min.js')
-    script(src='/app/scripts/rgbKineticSlider-master/js/libs/pixi.min.js')
-    script(src='/app/scripts/rgbKineticSlider-master/js/libs/pixi-filters.min.js')
-    script(src='/app/scripts/rgbKineticSlider-master/js/libs/TweenMax.min.js')
+      include includes/slider-section.pug
+    include includes/slider-big.pug
     script(src='/app/scripts/rgbKineticSlider-master/js/rgbKineticSlider.js')
     script.
       //- // images setup
