@@ -60,21 +60,75 @@ export const slider = () => {
     dots: true
   })
 
+  const animatedElements = $('.animated')
+  const animationTime = 0.45
+  const totalAnumationTime = animatedElements.length * animationTime
+
   sliderContainer.on('click', (e) => {
     const index = $(e.target).closest('.slick-slide').attr('data-slick-index')
     if (index) {
       sliderContainerBig.slick('slickGoTo', index)
-      $('body').addClass('slider-visible')
-      $('.sliderBig__wrapper').eq(0)
-        .removeClass('hidden')
-        .addClass('visible')
+      setTimeout(() => {
+        $('body').addClass('slider-visible')
+        $('.sliderBig__wrapper').eq(0).removeClass('hidden').addClass('visible')
+      }, totalAnumationTime * 300)
+
+      $.each(
+        animatedElements,
+        addDefferedAnimation('out', animationTime * 1000)
+      )
     }
   })
 
   $('#sliderBigClose').on('click', () => {
     $('body').removeClass('slider-visible')
-    $('.sliderBig__wrapper').eq(0)
-      .removeClass('visible')
-      .addClass('hidden')
+    $('.sliderBig__wrapper').eq(0).removeClass('visible').addClass('hidden')
+
+    $.each(animatedElements, addDefferedAnimation('in', animationTime * 1000))
   })
+}
+
+const DIRECTIONS = {
+  TOP: 'top',
+  BOTTOM: 'bottom',
+  LEFT: 'left',
+  RIGHT: 'right'
+}
+
+const addDefferedAnimation = (inOrOut, durationMs = 1000) => (
+  index,
+  element
+) => {
+  const direction = $(element).attr('data-direction')
+  const isIn = inOrOut === 'in'
+  const isHorizontal =
+    direction === DIRECTIONS.LEFT || direction === DIRECTIONS.RIGHT
+
+  const offset = isIn ? '0px' : '10px'
+  const opacity = isIn ? 1 : 0
+
+  const transformation = `translate3d(
+    ${
+      isHorizontal
+        ? direction === DIRECTIONS.RIGHT
+          ? offset
+          : '-' + offset
+        : 0
+    },
+    ${
+      !isHorizontal
+        ? direction === DIRECTIONS.BOTTOM
+          ? offset
+          : '-' + offset
+        : 0
+    },
+    ${offset}
+  )`
+
+  setTimeout(() => {
+    element.style.transitionDuration = `${durationMs}ms`
+    element.style.transitionProperty = 'opacity transform'
+    element.style.opacity = opacity
+    element.style.transform = transformation
+  }, (durationMs * index) / 2)
 }

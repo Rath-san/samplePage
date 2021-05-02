@@ -34,12 +34,12 @@ body.slider-visible {
 
   &.visible {
     will-change: opacity;
-    animation: bigSliderFade 1s ease-in-out forwards;
+    animation: bigSliderFade 0.5s ease-in-out forwards;
   }
 
   &.hidden {
     will-change: opacity;
-    animation: bigSliderFadeRev 1s ease-in-out forwards;
+    animation: bigSliderFadeRev 0.5s ease-in-out forwards;
   }
 }
 

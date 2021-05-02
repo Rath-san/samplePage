@@ -8,10 +8,6 @@ html(lang="en")
     script
       include scripts/loader.js
   body
-    //- main
-      //- include includes/header.pug
-      //- include includes/separator.pug
-      //- include includes/slider-section.pug
     main
       
       include includes/slider-big.pug
@@ -37,13 +33,13 @@ html(lang="en")
             .col-6.p-0
             .col-6.p-0
               ul.list-inline.m-0
-                li.list-inline-item.mr-5
+                li.list-inline-item.mr-5.animated(data-direction='top')
                   a.additions__link(href='') watch tutorial
-                li.list-inline-item
+                li.list-inline-item.animated(data-direction='top')
                   a.additions__link(href='') watch trailer
       section.section
         .carousel__wrapper
-          .info__wrapper.interactive
+          .info__wrapper.interactive.animated(data-direction='left')
             .info
               h2.info__text
                 span
@@ -55,7 +51,7 @@ html(lang="en")
                 | design and introduce a true filmic atmosphere in your edits.
               .info__video__wrapper
                 img.info__video(src="images/video_thumbnail.jpg")
-          #slider.slider
+          #slider.slider.animated(data-direction='bottom')
             each val in ['1', '2', '3']
               img(src=`images/slide/slide_${val}.jpg`)
 
@@ -67,19 +63,10 @@ html(lang="en")
     script.
       //- // images setup
       const images = [
-      //- "app/scripts/rgbKineticSlider-master/img/nature-01.jpg",
-      //- "app/scripts/rgbKineticSlider-master/img/nature-02.jpg",
-      //- "app/scripts/rgbKineticSlider-master/img/nature-03.jpg",
       "app/images/header/header_bg_1.jpg",
       "app/images/header/header_bg_2.jpg"
       ];
-      //- // content setup
-      //- const texts = [
-      //- ["Earth", "Surface gravity‎: ‎9.807 m/s²"],
-      //- ["Mars", "Surface gravity‎: ‎3.711 m/s²"],
-      //- ["Venus", "Surface gravity‎: ‎8.87 m/s²"],
-      //- ]
-      rgbKineticSlider = new rgbKineticSlider({
+      const e = new rgbKineticSlider({
       slideImages: images, // array of images > must be 1920 x 1080
       //- itemsTitles: texts, // array of titles / subtitles
       backgroundDisplacementSprite: 'app/scripts/rgbKineticSlider-master/img/map-5.jpg', // slide displacement image
