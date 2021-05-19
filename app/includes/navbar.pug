@@ -1,0 +1,293 @@
+.core-site-styles
+  .navbar-collapse-background
+  nav.navbar.navbar-expand-lg.bg-white.fixed-top
+    .d-flex.order-0.main-logo
+      a.navbar-brand.mr-1.navbar-vfx(href='#/')
+        img(src='https://www.motionvfx.com/static/svg/logo.svg' alt='MotionVFX')
+        span motionVFX
+    #collapsingNavbar.navbar-collapse.order-2.collapsed-nav(style='max-height: 949px;')
+      .navbar-menu-left
+        ul.navbar-nav.text-nowrap
+          li.nav-item.d-lg-none
+            a.nav-link.cursor-pointer(data-auth-section-toggle='') Login
+          li.nav-item.dropdown
+            a.nav-link(href='#/store,plugins-final-cut-pro,2,8.html' role='button') Plugins
+          li.nav-item.dropdown
+            a#navbarDropdown.cursor-pointer.nav-link.dropdown-toggle.product-types-link(data-redirect-link='#/store,templates,1.html' role='button' data-toggle='dropdown') Templates
+            .dropdown-menu.fade(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#/store,templates-motion-final-cut-pro,1,4.html') Motion / Final Cut Pro
+              a.dropdown-item(href='#/store,templates-mo2,1,6.html') mO2
+              a.dropdown-item(href='#/store,templates-after-effects,1,5.html') After Effects
+          li.nav-item.dropdown
+            a.nav-link.text-captialize(href='#/store,compositing-elements,3.html' role='button') Compositing elements
+      .navbar-menu-right
+        ul.navbar-nav.text-nowrap
+          li.nav-item.dropdown
+            a.cursor-pointer.nav-link.dropdown-toggle.product-types-link(role='button' data-toggle='dropdown') Team
+            .dropdown-menu.fade(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#/page/about.html') About Us
+              a.dropdown-item(href='#/join-us.html') Join Us
+          li.nav-item.dropdown
+            a.cursor-pointer.nav-link.dropdown-toggle.product-types-link(role='button' data-toggle='dropdown') Help
+            .dropdown-menu.fade(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#/faq.html') FAQ
+              a.dropdown-item(href='#/page/minstaller.html') mInstaller
+              a.dropdown-item(href='https://www.motionvfx.com/page/affiliate.html' target='_top' rel='nofollow') Affiliate Program
+    .navbar-right.text-right.order-1.order-lg-last
+      button.menu-icon-svg.navbar-toggler
+        .icon
+      a#globalSearchToggle.search-icon-svg.cursor-pointer(data-global-search-toggle='')
+        .icon
+      a#authSectionBtn.cursor-pointer.head-icon-svg.d-none.d-md-inline(data-auth-section-toggle='' role='button')
+        .icon
+      a.bag-icon-svg.cursor-pointer.d-flex.float-right(role='button' data-minicart-toggle='')
+        .icon.d-inline-flex
+        small#cartProductCount.d-inline-flex 1
+  #authSection.collapse-login-popup
+    button.dismiss-btn(type='button')
+      img(src='https://www.motionvfx.com/static/svg/close.svg')
+    #authFormsContainer.card.card-body.ui-blocker(data-ui-blocker='')
+      #loginSection.container
+        .row.align-self-center.justify-content-center
+          .login-form
+            h2.text-center Please sign in
+            form#loginForm(method='POST' action='#/login' novalidate='' autocomplete='off')
+              input(type='hidden' name='csrfmiddlewaretoken' value='uZ1BMrYyUnKmNiY5YWnocp4rqCA7Kb1KEN4PkPchxb5VE2vGiQO0myDpw8ObXjkp')
+              .form-group
+                input#id_login_username.form-control(type='text' name='login_username' autocomplete='off' maxlength='254' placeholder='E-mail*' required='')
+              .form-group
+                input#id_login_password.form-control(type='password' name='login_password' autocomplete='off' placeholder='Password*' required='')
+              .form-group
+                small *Required Fields
+              .form-group.row.m-0
+                button.text-uppercase.btn.btn-clear.mt-0(type='button' data-switch-to='passwordRecovery') Forgot your password?
+                .ml-auto
+                  button#loginBtn.btn.btn-primary(type='submit') Sign in
+              .row.align-self-center.justify-content-center.mt-50
+                p
+                  button.btn.btn-clear.signup-link.blue(type='button' data-switch-to='signUp')
+                    | CREATE AN ACCOUNT
+                    i.arrow-icon
+      #signupSection.container.site-content.d-none
+        .row.justify-content-center.align-items-center
+          .col-md-7.col-lg-5
+            h2.text-center Sign Up
+            form#signUpForm(method='post' action='#/register' novalidate='')
+              input(type='hidden' name='csrfmiddlewaretoken' value='ftjvK2XgajNEbFIJuM2BOaRYPdO7qK4mphmJiqbZN78d2pfkOGtdYjqWVJ2bDSn1')
+              .form-group
+                input#id_signup_email.form-control(type='email' name='signup_email' placeholder='E-mail address*' required='')
+              .form-group
+                input#id_signup_password1.form-control(type='password' name='signup_password1' placeholder='Password*' required='')
+              .form-group
+                input#id_signup_password2.form-control(type='password' name='signup_password2' placeholder='Password confirmation*' required='')
+              .form-group
+                small *Required Fields
+              br
+              .row.nopadding
+                .form-check.col-12.col-sm-6.nopadding
+                  .form-group
+                    label.container-checkbox
+                      | I ACCEPT CONDITIONS
+                      input(type='checkbox' name='signup_term')
+                      span.checkmark
+                .col-12.col-sm-6.text-center.text-sm-right.nopadding
+                  button.btn.btn-primary(type='submit') Create account
+            .form-group.text-center
+              p
+                button.text-uppercase.btn.btn-clear.blue.mt-50(data-switch-to='login')
+                  | Back to log in 
+                  i.arrow-icon
+      #passwordRecoverySection.container.d-none
+        .row
+          .col-12.col-md-6
+            h2.text-center Password Recovery
+            form#passRecoveryForm(method='POST' action='#/forgot-password' novalidate='')
+              input(type='hidden' name='csrfmiddlewaretoken' value='uBnbJ7EY89yoQaRnZkczJx5uyqtdOTZkEpqphvSHLXTXHUoYjeDbTGEsEWHh11iZ')
+              .form-group
+                input#id_recovery_email.form-control(type='text' name='recovery_email' maxlength='254' placeholder='E-mail*' required='')
+              br
+              .form-group.text-center
+                button.btn.btn-primary(type='submit') Send
+                p
+                  button.text-uppercase.btn.btn-clear.blue.mt-50(type='button' data-switch-to='login')
+                    | Back to log in
+                    i.arrow-icon
+          .col-12.col-md-6
+            h2.text-center Instructions
+            ul.list-custom.list-decimal-style
+              li Type in your e-mail address in the field and click SEND.
+              li
+                | Once you receive the automated e-mail, click the blue 
+                strong RECOVER PASSWORD
+                |  button to start the recovery procedure.
+              li Type in and confirm your new password.
+              li Log in using the new credentials.
+      #activationEmailSentSection.text-center.d-none
+        h2 E-mail was sent
+        p
+          | E-mail address assigned to this account requires confirmation. Check your e-mail for further instructions.
+        p
+          button.text-uppercase.btn.btn-clear(type='button' data-switch-to='login') Back to log in
+      #recoveryEmailSentSection.text-center.d-none
+        h2 E-mail was sent
+        p Follow the link in the e-mail, to start password recovery procedure.
+        p
+          button.text-uppercase.btn.btn-clear.blue(type='button' data-switch-to='login')
+            | Back to log in 
+            i.arrow-icon
+      .ui-blocker-container
+        .ui-blocker-overlay
+        .ui-blocker-message-container
+          .spinner
+            .double-bounce1
+            .double-bounce2
+    .auth-background
+  .discount-info.hide-discount-info
+    button.dismiss-btn(type='button')
+      img(src='https://www.motionvfx.com/static/svg/close.svg?451')
+    h2.discount-title
+    p.discount-msg
+    a#productSetListBtn.btn.btn-primary.d-none(href='') PRODUCT LIST
+  script#discountInfoSettings(data-init-cart-state='{"items": [{"id": "3572", "type": "Plugins", "preview": "https://s3.motionvfx.com/mvfxpublic/templates/plugin_box_3A62Xmz.jpg", "vat_percent": "0", "title": "mRestyle", "total": "79", "unit_total": "79", "subtotal": "79", "vat": "0.00", "base_total": "79", "base_unit_total": "79", "base_subtotal": "79", "quantity": 1, "conflict": false, "required_product": "", "detail_url": "/store,mrestyle,p3572.html", "discount": {}, "owned": false, "bundle": null, "bundle_discount": 0.0, "bundle_discount_info": "Additional $0 discount for owning 0 products from this bundle.", "excluded_from_discounts": false}], "item_count": 1, "vat": {"0": "0.00"}, "subtotal": "79", "discount_subtotal": "0", "total": "79", "base_subtotal": "79", "suggestions": [{"id": 398339, "description": "10 year anniversary of Final Cut Pro", "percent": "25.00", "usage_limit": "None", "date_from": "2021-04-12 06:31:15+00:00", "date_to": "2021-04-20 10:00:49+00:00", "code": "FCP10", "type": "promo_code", "newsletter_sign_up": false, "suggestion_title": "Get 25% off", "suggestion_msg": "Use <b>FCP10</b> promo code at checkout*<br/> <small style=\"font-size:11px;color:#9a9a9a\">*offer not applicable to products excluded from discounts</small>"}], "discount_code": null, "discount_message": "", "discount_code_bundle_off": false, "base_total": "79"}' data-show-delay='30000').
+  script#userInfoSettings(data-is-authenticated='False').
+  a.plugin-nav-back-btn(href='#/store,plugins-final-cut-pro,2,8.html')
+    img(src='https://www.motionvfx.com/static/svg/close-white.svg?451')
+  #globalSearchWrapper.d-none.container.h-100.w-100.p-0
+    button#globalSearchDismissBtn.dismiss-btn.float-right(type='button')
+      img(src='https://www.motionvfx.com/static/svg/close.svg')
+    .d-flex.h-100.w-100.justify-content-center.align-items-center
+      .search-wrapper
+        .col-12
+          .h-100
+            .form-group
+              input.form-control.search-input(placeholder='Search...' type='text' name='global_search')
+              span#globalSearchInputClearBtn.form-clear.d-none.search-clear-btn
+                img(src='https://www.motionvfx.com/static/svg/close.svg?451')
+        #globalSearchResultsWrapper.col-12.search-loader.ui-blocker
+          #queryTooShortMsg.query-too-short-msg.d-none
+            ul
+              li
+                a Please enter 2 or more characters.
+          #globalSearchNoResultsMsg.no-results-msg.d-none
+            ul
+              li
+                a No results.
+          #globalSearchResults.search-results
+          .ui-blocker-container
+            .ui-blocker-message-container
+              .spinner
+                .double-bounce1
+                .double-bounce2
+  #globalSearchOverlay.d-none.w-100.h-100
+  #miniCart.minicart.hide-cart
+    .minicart-content.ui-blocker(data-ui-blocker='')
+      button.dismiss-btn(type='button' data-minicart-toggle='' aria-controls='miniCart')
+        img(src='https://www.motionvfx.com/static/svg/close.svg?451')
+      h2.text-center Cart preview
+      .minicart-container(style='position: relative;')
+        .text-center
+          table.table
+            tbody#minicartProducts
+        .resize-sensor(dir='ltr' style='pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;')
+          .resize-sensor-expand(style='pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;')
+            div(style='position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 490px; height: 95px;')
+          .resize-sensor-shrink(style='pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;')
+            div(style='position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%')
+      #minicartEmptyListMsg.d-none
+        .container.nothing-here
+          .text-center
+            p.title Nothing here yet
+            p.message Add some of our awesome products!
+            a.btn.btn-primary(href='#/store') go to store
+      #minicartSummary.cart-summary.text-center.d-none
+        .row
+          .col-6 TOTAL
+          #minicartTotal.col-6.price $0
+        a.btn.btn-primary(href='#/cart') Go to checkout
+      .ui-blocker-container
+        .ui-blocker-overlay
+        .ui-blocker-message-container
+          .spinner
+            .double-bounce1
+            .double-bounce2
+  //- ADD TO CART CONFIRMATION MODAL
+  #addedToCartConfirm.modal.fade(role='dialog' aria-labelledby='addedToCartConfirm' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content.text-center
+        button.dismiss-btn(type='button' data-dismiss='modal' aria-label='Close')
+          img(src='https://www.motionvfx.com/static/svg/close.svg')
+        .modal-header
+          h2#exampleModalLongTitle.modal-title Added to cart
+        .modal-body
+          | You added 
+          span#addedProductName
+          |  to your shopping cart.
+        .modal-footer
+          a.btn.btn-primary(href='#/cart') Go to cart
+          br
+          .text-center
+            a.signup-link.btn.btn-clear(data-dismiss='modal') Continue shopping &nbsp;&nbsp;&gt;
+  //- ADD TO CART CONFIRMATION MODAL
+  #twoProductsAddedToCartConfirm.modal.fade(role='dialog' aria-labelledby='twoProductsAddedToCartConfirm' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content.text-center
+        button.dismiss-btn(type='button' data-dismiss='modal' aria-label='Close')
+          img(src='https://www.motionvfx.com/static/svg/close.svg')
+        .modal-header
+          h2#exampleModalLongTitle.modal-title
+            | 2 products
+            br
+            |  added to cart
+        .modal-body
+          span#dependentProductName
+          |  requires 
+          b#dependencyProductName
+          |  to run. Both products were added to cart.
+        .modal-footer
+          a.btn.btn-primary(href='#/cart') Go to cart
+          br
+          .text-center
+            a.signup-link.btn.btn-clear(data-dismiss='modal') Continue shopping &nbsp;&nbsp;&gt;
+  //- ALREADY IN CART CONFIRMATION MODAL
+  #alreadyInCartMsg.modal.fade(role='dialog' aria-labelledby='alreadyInCartMsg' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content.text-center
+        button.dismiss-btn(type='button' data-dismiss='modal' aria-label='Close')
+          img(src='https://www.motionvfx.com/static/svg/close.svg')
+        .modal-header
+          h2#exampleModalLongTitle.modal-title Already in cart
+        .modal-body
+          span#alreadyAddedProductName
+          |  is already in your shopping cart.
+        .modal-footer
+          a.btn.btn-primary(href='#/cart') Go to cart
+          br
+          .text-center
+            a.signup-link.btn.btn-clear(data-dismiss='modal') Continue shopping &nbsp;&nbsp;&gt;
+  //- REMOVE FROM CART CONFIRMATION MODAL
+  #removeFromCartConfirm.modal.fade(role='dialog' aria-labelledby='removeFromCartConfirm' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content.text-center
+        button.dismiss-btn.product-remove-cancel(type='button' data-dismiss='modal' aria-label='Close')
+          img(src='https://www.motionvfx.com/static/svg/close.svg')
+        .modal-header
+          h2#exampleModalLongTitle.modal-title WARNING
+        .modal-body
+          | All products in cart (
+          span#dependentProductNumber
+          | ) that require 
+          b#removedProductName
+          |  to run will also be deleted.
+        .modal-footer
+          a#productRemoveConfirm.btn.btn-primary(href='!#' data-dismiss='modal') Confirm
+          br
+          .text-center
+            a.signup-link.btn.btn-clear.product-remove-cancel(data-dismiss='modal') Cancel
+  a#backToTopBtn.back-to-top.cursor-pointer(data-page-reload='')
+  section#silicon_bar.apple_silicon_info
+    .text-box-centered
+      .text-centered
+        img(src='https://www.motionvfx.com/static/images/apple_silicon_logo.png' alt='')
+        | Product 
+        span compatible
+        |  with Apple Silicon.

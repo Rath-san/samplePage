@@ -3,6 +3,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const path = require('path');
 
 const publicPath = '/'
 
@@ -13,6 +14,7 @@ exports.devServer = ({ host, port } = {}) => ({
     watchOptions: {
       ignored: /node_modules/
     },
+    contentBase: path.join(__dirname, '/app'),
     publicPath,
     // Enable history API fallback so HTML5 History API based
     // routing works. Good for complex setups.

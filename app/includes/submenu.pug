@@ -1,0 +1,25 @@
+#submenu-plugins.submenu-plugins
+  .submenu-plugins-left-arrow(onclick='clickOnMenuArrow()')
+    img(src='https://s3.motionvfx.com/mvfxpublic/products/templates/1227/media/arrow_submenu_left.svg')
+  .submenu-plugins-left
+    a#trailer-menu(onclick="clickOnMenuItem('trailer');")
+      | Watch trailer
+      img(src='https://s3.motionvfx.com/mvfxpublic/products/templates/1227/media/play_menu.svg')
+    a#tutorial-menu(onclick="clickOnMenuItem('tutorial');")
+      | Watch tutorial
+      img(src='https://s3.motionvfx.com/mvfxpublic/products/templates/1227/media/play_menu.svg')
+    a#tech-sec-menu(onclick="clickOnMenuItem('specs');")
+      | Technical Specification
+      img(src='https://s3.motionvfx.com/mvfxpublic/products/templates/1227/media/gear_menu.svg')
+  .submenu-plugins-right
+    .discount-label(style='display: {% if not product.is_promo %} "none" {% endif %}')
+      span.discount  INTRO
+    .div-buy-button
+      a.buy_now(href='#' title='{{ product.title }}' data-add-to-cart='{ "productId": "{{ product.id }}", "productTitle": "{{ product.title }}" }')
+        | BUY NOW
+        span.price-line-through(style='display: {% if not product.is_promo %} "none" {% endif %}')
+          | ${{ price(product.price) }}
+        span ${{ price(product.get_price(request.user)) }}
+    .discount-info(style='display: {% if not product.is_promo %} "none" {% endif %}')
+      span.hurry  Hurry up!
+      |  Valid till May 11, 2020

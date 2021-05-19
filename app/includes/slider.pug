@@ -1,0 +1,33 @@
+section.image-slider
+  .container-fluid
+    .arrow-left(onclick='changeBGImageArrow(-1);')
+      a
+        img(src='https://s3.motionvfx.com/mvfxpublic/products/templates/1290/media/arrow_left.png' alt='slider')
+    .arrow-right(onclick='changeBGImageArrow(1);')
+      a
+        img(src='https://s3.motionvfx.com/mvfxpublic/products/templates/1290/media/arrow_right.png' alt='slider')
+    .slider-navigation
+      div
+        #thumb1.item.thumbnail.thumbnail-s1
+          a(onclick='changeBGImage(1, true);') SNAPSHOT
+      div
+        #thumb2.item.thumbnail.thumbnail-s2
+          a(onclick='changeBGImage(2, true);') INTENSE
+      div
+        #thumb3.item.thumbnail.thumbnail-s3
+          a(onclick='changeBGImage(3, true);') DUSKY
+    #img1.slider-bg.s1
+      .text-box
+        h2 Highlight the narrative
+        p
+          | Boost the emotional load contained in the shot with cinematic
+          | grading.
+    #img2.slider-bg.s2
+      .text-box
+        h2 Crank up the atmosphere
+        p
+          | Make the colors more distinctive and create an exceptional mood.
+    #img3.slider-bg.s3
+      .text-box
+        h2 Enhance the visual potential
+        p Strike the viewer with film-like vibe.

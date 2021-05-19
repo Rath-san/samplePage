@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 65 44.6" style="enable-background:new 0 0 65 44.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:10;}
+	.st2{display:inline;fill:none;stroke:#E8E7E8;stroke-width:1.5;stroke-miterlimit:10;}
+	.st3{display:inline;fill:none;}
+	.st4{display:inline;}
+	.st5{font-family:'PlayfairDisplay-Bold';}
+	.st6{font-size:70.1437px;}
+	.st7{display:inline;fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:10;}
+	.st8{fill:none;}
+	.st9{font-family:'PlayfairDisplay-Regular';}
+	.st10{font-size:44.8693px;}
+</style>
+<g id="Warstwa_1_1_" class="st0">
+	<path class="st1" d="M162.5,84H7.5c-0.6,0-1.2-0.5-1.2-1.2V-9.6c0-0.6,0.5-1.2,1.2-1.2h155c0.6,0,1.2,0.5,1.2,1.2v92.5
+		C163.7,83.5,163.1,84,162.5,84z"/>
+	<path class="st2" d="M91.6-26.3H178c1.9,0,3.5,1.6,3.5,3.5v80.5"/>
+	<path class="st2" d="M105.4-40.2h86.4c1.9,0,3.5,1.6,3.5,3.5v80.6"/>
+</g>
+<g id="Warstwa_2_1_" class="st0">
+	<path class="st2" d="M162.3,84H7.2C6.6,84,6,83.5,6,82.8V-9.7c0-0.6,0.5-1.2,1.2-1.2h155.2c0.6,0,1.2,0.5,1.2,1.2v92.5
+		C163.5,83.5,163,84,162.3,84z"/>
+	<line class="st1" x1="33" y1="59.6" x2="81.6" y2="59.6"/>
+</g>
+<g id="Warstwa_3" class="st0">
+	<path class="st2" d="M163.1,85.3H7.2c-0.6,0-1.2-0.5-1.2-1.2v-93c0-0.6,0.5-1.2,1.2-1.2h155.9c0.6,0,1.2,0.5,1.2,1.2v93
+		C164.3,84.7,163.7,85.3,163.1,85.3z"/>
+	<rect x="28.2" y="10.9" class="st3" width="113.9" height="111.8"/>
+	<text transform="matrix(1 0 0 1 61.7231 65.7603)" class="st4 st5 st6">T</text>
+</g>
+<g id="Warstwa_4" class="st0">
+	<path class="st2" d="M162.4,83.8H7.4c-0.6,0-1.2-0.5-1.2-1.2V-9.7c0-0.6,0.5-1.2,1.2-1.2h155c0.6,0,1.2,0.5,1.2,1.2v92.4
+		C163.6,83.3,163,83.8,162.4,83.8z"/>
+	<polyline class="st7" points="69.5,46.6 54,56.8 54,16.1 85,36.5 	"/>
+	<polyline class="st7" points="84.9,36.5 115.8,56.8 115.8,16.1 100.4,26.3 	"/>
+</g>
+<g id="Warstwa_5">
+	<rect x="13.2" y="8.5" class="st8" width="39.8" height="39"/>
+	<text transform="matrix(1 0 0 1 20.3276 43.71)" class="st9 st10">F</text>
+</g>
+</svg>
