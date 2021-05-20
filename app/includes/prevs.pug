@@ -1,64 +1,11 @@
-
-
 section.section-prevs
   .container
     .row
       h2 mLUT Film 3 preview
       h5 (drag the handle to see the effect)
-    //- Wiersz 1
-    .row.text-center.section-prevs-row
-      .col
-        .row
-          #prContainer1.col-md-6
-            h3#prTitle1
-            .prBeforeAfter(onmouseover='hoverOnPrContainer(1, 1);' onmouseout='hoverOnPrContainer(1, 0);')
-              .ba-slider
-                img#prImg12(src='' alt='')
-                .resize
-                  img#prImg11(src='' alt='')
-                span.handle
-                  img#handleImg1(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/handle.png?1' alt='')
-            h4 LOG FILE
-            h4.right WITH LUT
-          #prContainer2.col-md-6
-            h3#prTitle2
-            .prBeforeAfter(onmouseover='hoverOnPrContainer(13, 1);' onmouseout='hoverOnPrContainer(13, 0);')
-              .ba-slider
-                img#prImg22(src='' alt='')
-                .resize
-                  img#prImg21(src='' alt='')
-                span.handle
-                  img#handleImg13(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/handle.png?1' alt='')
-            h4 LOG FILE
-            h4.right WITH LUT
-    //- Wiersz 2
-    .row.text-center.section-prevs-row
-      .col
-        .row
-          #prContainer3.col-md-6
-            h3#prTitle3
-            .prBeforeAfter(onmouseover='hoverOnPrContainer(11, 1);' onmouseout='hoverOnPrContainer(11, 0);')
-              .ba-slider
-                img#prImg32(src='' alt='')
-                .resize
-                  img#prImg31(src='' alt='')
-                span.handle
-                  img#handleImg11(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/handle.png?1' alt='')
-            h4 LOG FILE
-            h4.right WITH LUT
-          #prContainer4.col-md-6
-            h3#prTitle4
-            .prBeforeAfter(onmouseover='hoverOnPrContainer(12, 1);' onmouseout='hoverOnPrContainer(12, 0);')
-              .ba-slider
-                img#prImg42(src='' alt='')
-                .resize
-                  img#prImg41(src='' alt='')
-                span.handle
-                  img#handleImg12(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/handle.png?2' alt='')
-            h4 LOG FILE
-            h4.right WITH LUT
     .row.page-paginator-bottom
-      .text-center.page-paginator
-        img(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/left_arrow.jpg' alt='' onclick='setPreviewsSiteFromArrow(-1);')
-        h3#prevSiteInfo2 Page 1/7
-        img(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/right_arrow.jpg' alt='' onclick='setPreviewsSiteFromArrow(1);')
+      #pagination.text-center.page-paginator
+        img#prevPage(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/left_arrow.jpg' alt='')
+        h3#paginationPointer
+        img#nextPage(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/right_arrow.jpg' alt='')
+    #prContainer.row.section-prevs-row.text-center

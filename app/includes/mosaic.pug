@@ -1,0 +1,40 @@
+- var imagesRoot = "images"
+
+- var t11 = "What are 3D LUTs?"
+- var p11 = "A color look-up table is a matrix of data containing \ninformation used to change an input range of colors \ninto another one. It converts the hue of each pixel \ninto a counterpart from the source pattern."
+- var p12 = "LUTs are widely used in professional image processing \napplications, e.g. FCPX, Premiere Pro, DaVinci Resolve, \nAvid Media Composer, SpeedGrade, Motion, Nuke, \nPhotoshop, After Effects, Fusion and many more…"
+- var img11 = `${imagesRoot}/woman_and_dog.jpg`
+- var img12 = `${imagesRoot}/woman_and_dog.jpg`
+
+- var t21 = "Make your shots their own kind of beautiful"
+- var img21 = `${imagesRoot}/woman_and_dog.jpg`
+
+- var t31 = "An instant pro vibe \nfor any video!"
+- var p31 = "Make your edits unique with professional gradings and treat your viewers to professional-looking content that makes a true impact."
+- var img31 = `${imagesRoot}/waffles.jpg`
+
+section.mlut-mosaic
+  .container
+    .row
+      .col-6
+        .mosaic-item-wrapper.mosaic-item-wrapper--big
+          img.img-fluid.mosaic-item(src=img11, alt="")
+      .col-6
+        h3 #{t11}
+        p.mosaic-paragraph--offset-right #{p11}
+        p.mosaic-paragraph #{p12}
+        .mosaic-item-wrapper.mosaic-item-wrapper--small.mosaic-item-wrapper--floating.mosaic-item-wrapper--underlay
+          img.img-fluid.mosaic-item(src=img12, alt="")
+
+      .col-6
+        h3 #{t21}
+      .col-6
+        .mosaic-item-wrapper
+          img.img-fluid(src=img21, alt="")
+
+      .col-6
+        .mosaic-item-wrapper
+          img.img-fluid(src=img31, alt="")
+      .col-6
+        h3 #{t31}
+        p.mosaic-paragraph--offset-right #{p31}

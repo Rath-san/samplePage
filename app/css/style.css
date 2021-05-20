@@ -145,7 +145,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 3rem;
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Lora', serif;
   margin: 0 auto;
   text-align: center;
 }
@@ -235,9 +235,9 @@
 }
 
 @media all and (max-width: 1600px) {
-  .mLUT-film-three section.trailer {
+  /* .mLUT-film-three section.trailer {
     height: 1900px;
-  }
+  } */
   .mLUT-film-three section.trailer .container {
     max-width: 1700px;
   }
@@ -347,7 +347,7 @@
     font-size: 2.2rem;
     font-weight: 400;
     line-height: 3rem;
-    font-family: 'Oranienbaum', serif;
+    font-family: 'Lora', serif;
     margin: 0 auto;
     text-align: center;
   }
@@ -383,7 +383,7 @@
     font-size: 2.2rem;
     font-weight: 400;
     line-height: 3rem;
-    font-family: 'Oranienbaum', serif;
+    font-family: 'Lora', serif;
     margin: 0 auto;
     text-align: center;
   }
@@ -604,7 +604,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 3rem;
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Lora', serif;
   color: #fff;
   font-size: 2.9rem;
   font-weight: 400;
@@ -740,7 +740,7 @@
     font-size: 2.2rem;
     font-weight: 400;
     line-height: 3rem;
-    font-family: 'Oranienbaum', serif;
+    font-family: 'Lora', serif;
     color: #fff;
     font-size: 2.9rem;
     font-weight: 400;
@@ -857,7 +857,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 3rem;
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Lora', serif;
   margin: 5rem auto 0;
   display: block;
   text-align: center;
@@ -917,7 +917,7 @@
     font-size: 2.2rem;
     font-weight: 400;
     line-height: 3rem;
-    font-family: 'Oranienbaum', serif;
+    font-family: 'Lora', serif;
     margin: 0 auto;
     display: block;
     text-align: center;
@@ -1002,7 +1002,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 3rem;
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Lora', serif;
   color: #fff;
 }
 
@@ -1050,7 +1050,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 3rem;
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Lora', serif;
   color: #fff;
   bottom: 8rem;
   left: 50%;
@@ -1197,7 +1197,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 3rem;
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Lora', serif;
   margin: 0 auto;
   text-align: center;
 }
@@ -1282,7 +1282,7 @@
     font-size: 2.2rem;
     font-weight: 400;
     line-height: 3rem;
-    font-family: 'Oranienbaum', serif;
+    font-family: 'Lora', serif;
     margin: 0 auto;
     text-align: center;
   }
@@ -1311,7 +1311,7 @@
     font-size: 2.2rem;
     font-weight: 400;
     line-height: 3rem;
-    font-family: 'Oranienbaum', serif;
+    font-family: 'Lora', serif;
     margin: 0 auto;
     text-align: center;
   }
@@ -1340,7 +1340,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 3rem;
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Lora', serif;
   padding-bottom: 4rem;
 }
 
@@ -1480,7 +1480,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 3rem;
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Lora', serif;
 }
 
 @media (max-width: 1440px) {
@@ -1535,6 +1535,7 @@
 }
 
 .mLUT-film-three section.footer {
+  z-index: -1;
   width: 100%;
   height: 100vh;
   max-height: 1250px;
@@ -1562,7 +1563,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 3rem;
-  font-family: 'Oranienbaum', serif;
+  font-family: 'Lora', serif;
   color: #fff;
 }
 

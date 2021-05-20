@@ -1,13 +1,100 @@
-@import 'abstract/variables';
-@import 'mixins/scrollbar';
-@import 'vendor/bootstrap';
-@import 'vendor/slick';
-@import 'vendor/regbKineticSlider';
-@import 'components/fonts';
-@import 'components/links';
-@import 'components/scroller';
-@import 'components/hero';
-@import 'components/slider';
-@import 'layout/containers';
-@import 'pages/index';
-@import 'utils/animations';
+// @import 'abstract/variables';
+// @import 'mixins/scrollbar';
+// @import 'vendor/bootstrap';
+// @import 'vendor/slick';
+// @import 'vendor/regbKineticSlider';
+// @import 'components/fonts';
+// @import 'components/links';
+// @import 'components/scroller';
+// @import 'components/hero';
+// @import 'components/slider';
+// @import 'layout/containers';
+// @import 'pages/index';
+// @import 'utils/animations';
+
+$text-margin: 2rem;
+
+.mlut-mosaic {
+  overflow-x: hidden;
+  h3 {
+    font-weight: 400;
+    font-family: 'Lora', serif;
+    font-size: 46px;
+    margin-bottom: $text-margin;
+    white-space: pre;
+  }
+  p {
+    font-weight: 300;
+    margin-bottom: $text-margin;
+  }
+
+  $column-padding-horizontal: 2rem;
+
+  div[class^="col"] {
+    padding-top: $column-padding-horizontal;
+    padding-bottom: $column-padding-horizontal;
+  }
+}
+
+$underlay-offset: 100px;
+$underlay-color: #FBFBFB;
+
+.mosaic {
+  &-paragraph {
+    white-space: pre;
+    &--offset {
+      &-right {
+        padding-left: $text-margin * 3.5;
+      }
+    }
+  }
+  &-item {
+    &-wrapper {
+      padding-top: 1rem;
+      &--big {
+        .mosaic-item {
+          max-width: calc(100% + (100vw - 115% * 2) / 2);
+          width: 100vw;
+          margin-left: calc(((100vw - 100% * 2) / 2) * -1);
+        }
+      }
+      &--underlay {
+        &::before {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: $underlay-color;
+          z-index: -1;
+          bottom: -$underlay-offset;
+          left: -$underlay-offset;
+          content: '';
+        }
+      }
+      &--floating {
+        position: absolute;
+        top: 30%;
+        // right: -100%;
+        left: 120%;
+      }
+      &--small {
+        width: 35vw;
+        .mosaic-item {
+        }
+      }
+    }
+  }
+}
+
+.prBeforeAfter {
+  background-color: #222;
+  img {
+    transition: opacity .2s ease-in-out;
+  }
+  &:hover {
+    .handle {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}

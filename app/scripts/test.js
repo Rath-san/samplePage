@@ -1,133 +1,165 @@
-function replaceAll(string, strOld, strNew) {
-  if (strOld != strNew) {
-    while (string.indexOf(strOld) > -1) {
-      string = string.replace(strOld, strNew)
-    }
-  }
-  return string
+const names = [
+  'Ash',
+  'Bold',
+  'Brisk',
+  'Dawn',
+  'Dingy',
+  'Eclipse',
+  'Fresh',
+  'Heated',
+  'Juicy',
+  'Lucid',
+  'Luminous',
+  'Luscious',
+  'Oldie',
+  'Pinup',
+  'Radiant',
+  'Scorch',
+  'Shaded',
+  'Soot',
+  'Sour',
+  'Spry',
+  'Tarnished',
+  'Velvet',
+  'Vibrant',
+  'Vigorous',
+  'Washy'
+]
+
+const SUFFIXES = {
+  before: '_before',
+  after: '_after'
 }
 
-function firstCharToUppercase(str) {
-  return str.replace(/\w+/g, function (word) {
-    return word.charAt(0).toUpperCase() + word.slice(1)
+const FILE_EXTENSIONS = {
+  jpg: '.jpg',
+  png: '.png'
+}
+
+const IMAGEROOT = 'images/preview/'
+// 'https://s3.motionvfx.com/mvfxpublic/products/templates/1311/media/'
+
+const getImageUrl = (name, suffix, ext = FILE_EXTENSIONS.jpg) => {
+  return `${IMAGEROOT}${name}${suffix}${ext}`;
+}
+
+const itemsPerPage = 4
+const pagesTotal = Math.ceil(names.length / itemsPerPage)
+let currentPage = 1
+
+const mainContainer = document.getElementById('prContainer');
+
+const template = (name, index) => {
+return `
+  <div class="col-md-6" id="prBA${index}">
+      <h3 id="title${index}">${name}</h3>
+      <div class="prBeforeAfter">
+          <div class="ba-slider">
+            <img id="imgAfter${index}" loading="lazy" src="${getImageUrl(name, SUFFIXES.after)}" alt="" />
+            <div class="resize">
+              <img id="imgBefore${index}" loading="lazy" src="${getImageUrl(name, SUFFIXES.before)}" alt="" />
+            </div>
+            <span class="handle">
+              <img id="handleImg1" loading="lazy" src="https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/handle.png?1" alt="" />
+            </span>
+          </div>
+      </div>
+      <h4>LOG FILE</h4>
+      <h4 class="right">WITH LUT</h4>
+  </div>
+`
+}
+
+const paginationContainer = document.getElementById('pagination');
+
+const init =  () => {
+  for (let index = 0; index < itemsPerPage; index++) {
+    mainContainer.innerHTML += template(names[index], index)
+  }
+  
+  const paginationPrevControl = paginationContainer.querySelector('#prevPage');
+  const paginationNextControl = paginationContainer.querySelector('#nextPage');
+
+  paginationPrevControl.addEventListener('click', prevPage)
+  paginationNextControl.addEventListener('click', nextPage)
+
+  changePoniter()
+}
+
+const prevPage = () => {
+  const nextNumber = currentPage - 1
+  nextNumber < 1
+    ? currentPage = pagesTotal
+    : currentPage = nextNumber
+  changePoniter()
+  onChangePointer()
+}
+
+const nextPage = () => {
+  const nextNumber = currentPage + 1
+  nextNumber > pagesTotal
+    ? currentPage = 1
+    : currentPage = nextNumber
+  changePoniter()
+  onChangePointer()
+}
+
+const onChangePointer = () => {
+
+  const currentIndexInNames = (currentPage - 1) * itemsPerPage
+  const newPageNames = [...names].splice(currentIndexInNames, itemsPerPage)
+
+  if (newPageNames.length < itemsPerPage) {
+    newPageNames.push(...Array(itemsPerPage - newPageNames.length))
+  }
+
+  newPageNames.forEach((name, index) => {
+    repaint(index, name);
   })
 }
 
-var newNum = 0
-var array1 = ['Abby', 'Aftertime', 'Algor', 'Alisio']
-var array2 = ['Antithesis', 'Backdrop', 'Bridgewater', 'Brookside']
-var array3 = ['Brume', 'Cadet', 'Capital', 'Carob']
-var array4 = ['Cold_Snap', 'Droid', 'Ebb', 'Teal_Orange']
-var array5 = ['Eminence', 'Flaxen', 'Forsythia', 'Griffin']
-var array6 = ['Hailstone', 'Harvest', 'Hickory', 'Hunter']
-var array7 = ['Iguana', 'Kelly', 'Lambent', 'Meridies']
-var array8 = ['Morrow', 'Mulberry', 'Nepeta', 'Nuclear']
-var array9 = ['Nugget', 'Outback', 'Perseverance', 'Prussian']
-var array10 = ['Regiment', 'Russet', 'Salamander', 'Sangria']
-var array11 = ['Sentinel', 'Sherbert', 'Sorrel', 'Sterling']
-var array12 = ['Summit', 'Terra', 'Tourmaline', 'Uniform']
-var array13 = ['Unspoken', 'Woodland']
+const pageNumber = paginationContainer.querySelector('#paginationPointer');
 
-setPreviewsSiteFromArrow(1)
-
-function setPreviewsSiteFromArrow(num) {
-  newNum += num
-
-  if (newNum < 1) {
-    newNum = 13
-  } else if (newNum > 13) {
-    newNum = 1
-  }
-
-  var array
-
-  switch (newNum) {
-    case 1:
-      array = array1
-      break
-    case 2:
-      array = array2
-      break
-    case 3:
-      array = array3
-      break
-    case 4:
-      array = array4
-      break
-    case 5:
-      array = array5
-      break
-    case 6:
-      array = array6
-      break
-    case 7:
-      array = array7
-      break
-    case 8:
-      array = array8
-      break
-    case 9:
-      array = array9
-      break
-    case 10:
-      array = array10
-      break
-    case 11:
-      array = array11
-      break
-    case 12:
-      array = array12
-      break
-    case 13:
-      array = array13
-      break
-
-    default:
-  }
-
-  for (i = 0; i < 4; i++) {
-    var title = document.getElementById('prTitle' + (i + 1))
-    var img1 = document.getElementById('prImg' + (i + 1) + '1')
-    var img2 = document.getElementById('prImg' + (i + 1) + '2')
-
-    if (newNum == 13) {
-      if (i <= 1) {
-        title.innerHTML = firstCharToUppercase(replaceAll(array[i], '_', ' '))
-        img1.src =
-          'https://s3.motionvfx.com/mvfxpublic/products/templates/1311/media/' +
-          array[i] +
-          '_before.jpg'
-        img2.src =
-          'https://s3.motionvfx.com/mvfxpublic/products/templates/1311/media/' +
-          array[i] +
-          '_after.jpg'
-      } else {
-        title.style.display = 'none'
-        img1.style.display = 'none'
-        img2.style.display = 'none'
-      }
-    } else {
-      title.style.display = 'block'
-      img1.style.display = 'block'
-      img2.style.display = 'block'
-
-      title.innerHTML = firstCharToUppercase(replaceAll(array[i], '_', ' '))
-      img1.src =
-        'https://s3.motionvfx.com/mvfxpublic/products/templates/1311/media/' +
-        array[i] +
-        '_before.jpg'
-      img2.src =
-        'https://s3.motionvfx.com/mvfxpublic/products/templates/1311/media/' +
-        array[i] +
-        '_after.jpg'
-    }
-  }
-
-  // document.getElementById("prevSiteInfo1").innerHTML = "Page " + newNum + "/8";
-  document.getElementById('prevSiteInfo2').innerHTML = 'Page ' + newNum + '/13'
+const changePoniter = () => {
+  paginationPointer.innerHTML = `Page ${currentPage}/${pagesTotal}`
 }
 
-function hoverOnPrContainer(num, opacity) {
-  var elementId = document.getElementById('handleImg' + num)
-  elementId.style.opacity = opacity
+const repaint = (index, name) => {
+
+  const container = mainContainer.querySelector(`#prBA${index}`)
+  const imageBefore = container.querySelector(`#imgBefore${index}`)
+  const prWrapper = container.querySelector('.prBeforeAfter')
+
+  if (!name) {
+    prWrapper.style.height = `${imageBefore.height}px`
+    container.style.display = 'none'
+    return;
+  } else {
+    container.style.display = 'block'
+  }
+
+  const imageAfter = container.querySelector(`#imgAfter${index}`)
+  const title = container.querySelector(`#title${index}`)
+
+  title.innerHTML = name
+
+  imageBefore.style.opacity = 0
+  imageAfter.style.opacity = 0
+
+  imageBefore.addEventListener('load', function() {
+    const bindedOnLoad = onLoad.bind(this)
+    bindedOnLoad();
+    prWrapper.style.height = 'auto'
+  })
+
+  imageAfter.addEventListener('load', onLoad)
+
+  imageBefore.src = getImageUrl(name, SUFFIXES.before)
+  imageAfter.src =  getImageUrl(name, SUFFIXES.after)
 }
+
+function onLoad() {
+  this.style.opacity = 1
+}
+
+init();
