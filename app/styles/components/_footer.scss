@@ -1,0 +1,39 @@
+.footer {
+  color: #fff;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  max-height: 1250px;
+  background: #000 url('../../images/footer.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  $text-shadow: 0 0 20px#000;
+
+  &__title {
+    margin-bottom: 2rem;
+    text-shadow: $text-shadow;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+    max-width: 500px;
+    line-height: 1.7rem;
+    text-shadow: $text-shadow;
+    @media screen and (max-width: 600px) {
+      white-space: normal;
+    }
+  }
+}

@@ -1,25 +1,23 @@
-section.trailer
+section.trailer.animated
   a.nav(name="trailer")
   .container
-    h2 #{title}
-    h3 #{subtitle}
-    .yt.embed-responsive.embed-responsive-16by9(style="width: 90%; left: 5%")
-      iframe(
-        src=videoLink,
-        frameborder="0",
-        allow="autoplay; encrypted-media",
-        allowfullscreen=""
-      )
-  //- .container
-  //-   .text-box
-  //-   h2 What are 3D LUTs?
-  //-   p
-  //-     | A color look-up table is a matrix of data containing information
-  //-     | used to change an input range of colors into another one. It
-  //-     | converts the hue of each pixel into a counterpart from the source
-  //-     | pattern.
-  //-   p
-  //-     | LUTs are widely used in professional image processing
-  //-     | applications, e.g. FCPX, Premiere Pro, DaVinci Resolve, Avid Media
-  //-     | Composer, SpeedGrade, Motion, Nuke, Photoshop, After Effects,
-  //-     | Fusion and many more&mldr;
+    .row
+      .col
+        h2.trailer__title.animated.animated--fade--bottom #{title}
+        p.trailer__subtitle.animated.animated--fade--bottom #{subtitle}
+        .yt.embed-responsive.embed-responsive-16by9.animated.animated--fade--bottom(style="width: 90%; left: 5%")
+          //- iframe(
+          //-   allowfullscreen=''
+          //-   frameborder='0'
+          //-   height='538'
+          //-   mozallowfullscreen=''
+          //-   src='//player.vimeo.com/video/120034840?title=0&byline=0&portrait=0'
+          //-   webkitallowfullscreen=''
+          //-   width='958'
+          //- )
+          iframe(
+            src=videoLink,
+            frameborder="0",
+            allow="autoplay; encrypted-media",
+            allowfullscreen=""
+          )

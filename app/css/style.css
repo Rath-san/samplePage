@@ -1,5 +1,6 @@
 /*-----*/
 .mLUT-film-three {
+  overflow-x: hidden;
   font-family: 'Roboto Condensed', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -248,7 +249,7 @@
 
 @media all and (max-width: 1440px) {
   .mLUT-film-three section.trailer {
-    height: 1800px;
+    /* height: 1800px; */
   }
   .mLUT-film-three section.trailer .container h2 {
     padding-top: 4rem;
@@ -290,7 +291,7 @@
 
 @media all and (max-width: 1280px) {
   .mLUT-film-three section.trailer {
-    height: 1760px;
+    /* height: 1760px; */
   }
   .mLUT-film-three section.trailer .container {
     padding: 2rem;
@@ -329,14 +330,14 @@
 }
 
 @media all and (max-width: 1024px) {
-  .mLUT-film-three section.trailer {
+  /* .mLUT-film-three section.trailer {
     height: 1560px;
     padding-bottom: 2rem;
     background: #19161a url("https://s3.motionvfx.com/mvfxpublic/products/templates/1311/media/trailer_bg_mobile.jpg");
     background-position: center left;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+  } */
   .mLUT-film-three section.trailer .container {
     max-width: 1700px;
   }
@@ -471,8 +472,8 @@
 
 @media all and (max-width: 589px) {
   .mLUT-film-three section.trailer {
-    height: 1180px;
-    background: #19161a url("https://s3.motionvfx.com/mvfxpublic/products/templates/1311/media/trailer_bg_mobile_3.jpg");
+    /* height: 1180px; */
+    /* background: #19161a url("https://s3.motionvfx.com/mvfxpublic/products/templates/1311/media/trailer_bg_mobile_3.jpg"); */
     background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1075,7 +1076,7 @@
     width: 100%;
     height: 1080px;
   }
-  .mLUT-film-three section.long .paralax-bg {
+  /* .mLUT-film-three section.long .paralax-bg {
     width: 100%;
     height: 1800px;
     background: url("https://s3.motionvfx.com/mvfxpublic/products/templates/1305/media/_web_mLUT_paralax_bg.jpg");
@@ -1085,7 +1086,7 @@
     position: absolute;
     top: -22rem;
     z-index: -1;
-  }
+  } */
   .mLUT-film-three section.long .container {
     max-width: 1500px;
   }

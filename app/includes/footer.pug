@@ -1,12 +1,14 @@
+
+- var title = "Influencer colorizations"
+- var text = "If you want to stand out from the crowd, you need \na special look that makes your content dostinct from everyone else's. These stunning color \ngrades will give your shots the originality they deserve and create a one-of-a-kind \nexperience."
+
 section.footer
   .container
-    .text-box
-      h2 Put a finishing polish on your edit
-      p
-        | Add a purely aesthetic quality to your videos that will elevate
-        | them above average and give them a unique set of cinematic traits.
-        | mLUT Film 3 gradings will turn your shots into a Hollywood-level
-        | production.
-      .button-buy
-        | {% with discount_text=&apos;INTRO&apos;, version=2 %} {% include
-        | &apos;product/buy_button.jinja2&apos; %} {% endwith %}
+    .row
+      .col
+        .footer__content
+          h2.footer__title #{title}
+          p.footer__text #{text}
+          .button-buy
+            | {% with discount_text=&apos;INTRO&apos;, version=2 %} {% include
+            | &apos;product/buy_button.jinja2&apos; %} {% endwith %}

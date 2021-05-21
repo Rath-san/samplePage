@@ -1,11 +1,7 @@
-html {
-}
-
-body {
-  overflow: overlay;
-  @include scrollbars(2px, #fff, #6d6d6d);
-}
-
 main {
-  padding-bottom: 5rem;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 2rem 0;
 }

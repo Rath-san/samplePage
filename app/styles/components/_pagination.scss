@@ -1,0 +1,30 @@
+.page-paginator {
+  width: 100%;
+  &-top {
+    padding-top: 0.8rem;
+  }
+  &-bottom {
+    padding-top: 3.2rem;
+    padding-bottom: 1.6rem;
+  }
+  h3 {
+    display: inline-block;
+    padding-top: 0.4rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0 auto;
+    color: #303030;
+  }
+
+  img {
+    display: inline-block;
+    width: 12px;
+    margin-top: 0px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -6,7 +6,7 @@
 - var img11 = `${imagesRoot}/woman_and_dog.jpg`
 - var img12 = `${imagesRoot}/woman_and_dog.jpg`
 
-- var t21 = "Make your shots their own kind of beautiful"
+- var t21 = "Make your shots \ntheir own kind \nof beautiful"
 - var img21 = `${imagesRoot}/woman_and_dog.jpg`
 
 - var t31 = "An instant pro vibe \nfor any video!"
@@ -18,23 +18,23 @@ section.mlut-mosaic
     .row
       .col-6
         .mosaic-item-wrapper.mosaic-item-wrapper--big
-          img.img-fluid.mosaic-item(src=img11, alt="")
+          img.img-fluid.mosaic-item.animated.animated--fade--bottom(src=img11, alt="", loading="lazy")
       .col-6
-        h3 #{t11}
-        p.mosaic-paragraph--offset-right #{p11}
-        p.mosaic-paragraph #{p12}
+        h3.animated.animated--fade--bottom #{t11}
+        p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p11}
+        p.mosaic-paragraph.animated.animated--fade--bottom #{p12}
         .mosaic-item-wrapper.mosaic-item-wrapper--small.mosaic-item-wrapper--floating.mosaic-item-wrapper--underlay
-          img.img-fluid.mosaic-item(src=img12, alt="")
+          img.img-fluid.mosaic-item.animated.animated--fade--bottom(src=img12, alt="", loading="lazy")
 
       .col-6
-        h3 #{t21}
+        h3.animated.animated--fade--bottom #{t21}
       .col-6
         .mosaic-item-wrapper
-          img.img-fluid(src=img21, alt="")
+          img.img-fluid.animated.animated--fade--bottom(src=img21, alt="", loading="lazy")
 
       .col-6
         .mosaic-item-wrapper
-          img.img-fluid(src=img31, alt="")
+          img.img-fluid.animated.animated--fade--bottom(src=img31, alt="", loading="lazy")
       .col-6
-        h3 #{t31}
-        p.mosaic-paragraph--offset-right #{p31}
+        h3.animated.animated--fade--bottom #{t31}
+        p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p31}

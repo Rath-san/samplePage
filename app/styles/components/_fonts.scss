@@ -1,2 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap'); // titles
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap'); // base
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+}
+
+main {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}

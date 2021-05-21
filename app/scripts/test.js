@@ -163,3 +163,44 @@ function onLoad() {
 }
 
 init();
+
+
+// checking intersection observer
+// const callback = (entries, observer) => {
+//   console.log('callback');
+//   console.log(entries[0]);
+// }
+
+// let options = {
+//   root: null,
+//   threshold: 1.0,
+//   rootMargin: '0px',
+// }
+
+// let observer = new IntersectionObserver(callback, options);
+
+// observer.observe(document.querySelector('#pagination'))
+
+// Animating sections
+const animatedSections = document.querySelectorAll('.animated');
+
+console.log(animatedSections);
+
+const lazyAnimate = target => {
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        console.log('lazy anim');
+        entry.target.classList.add('animated-in')
+
+        observer.disconnect()
+      }
+    })
+  }, {
+    threshold: .01
+  });
+
+  io.observe(target);
+}
+
+animatedSections.forEach(lazyAnimate)

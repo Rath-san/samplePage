@@ -16,7 +16,7 @@ html(lang="en")
 
     link(href='css/custom_pages_wrap.css' rel="stylesheet" type="text/css")
     link(href='css/bootstrap-4.1.3.min.css' rel="stylesheet" type="text/css")
-    link(href='css/style.css' rel="stylesheet" type="text/css")
+    //- link(href='css/style.css' rel="stylesheet" type="text/css")
 
     link(href='css/menu.css' rel='stylesheet' type="text/css")
     link(href='css/prevs.css' rel='stylesheet' type="text/css")
@@ -32,20 +32,24 @@ html(lang="en")
     include includes/submenu.pug
     include includes/navbar.pug
     .top-bar
-    .mLUT-film-three
+    main.mLUT-insta-pack
       include includes/header.pug
       .gradient
       include includes/logos.pug
       - var title = "Watch mLUT Insta Pack trailer"
       - var subtitle = "One of our favorite and most used plug-ins just got a follow-up with outstandingly epic captions. Check out how you can easily add that Hollywood feel to your edits."
-      - var videoLink = "https://www.youtube.com/embed/-XKxYYjULio?rel=0"
+      - var videoLink = "//player.vimeo.com/video/120034840?title=0&byline=0&portrait=0"
       include includes/trailer.pug
       - var title = "How to use mLUT for FCP?"
       - var subtitle = "Take a peek at these videos and grab some tips and tricks to master your work. Endless possibilities await!"
       - var videoLink = "https://www.youtube.com/embed/9tF-MzNxz4c?rel=0"
       include includes/trailer.pug
       include includes/mosaic.pug
+      - var title = "Luts preview"
       include includes/prevs.pug
+      - var urlBefore = 'images/big_before.jpg'
+      - var urlAfter = 'images/big_after.jpg'
+      include includes/prevs-big.pug
       include includes/compatible-software.pug
       include includes/tech-spec.pug
       //- include includes/countdown.pug

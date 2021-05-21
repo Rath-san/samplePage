@@ -1,11 +1,12 @@
 section.section-prevs
   .container
     .row
-      h2 mLUT Film 3 preview
-      h5 (drag the handle to see the effect)
-    .row.page-paginator-bottom
-      #pagination.text-center.page-paginator
-        img#prevPage(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/left_arrow.jpg' alt='')
-        h3#paginationPointer
-        img#nextPage(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/right_arrow.jpg' alt='')
+      .col
+        h2.section-prevs__title #{title}
+    .row
+      .col
+        #pagination.text-center.page-paginator.page-paginator-top
+          img#prevPage(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/left_arrow.jpg' alt='')
+          h3#paginationPointer
+          img#nextPage(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/right_arrow.jpg' alt='')
     #prContainer.row.section-prevs-row.text-center

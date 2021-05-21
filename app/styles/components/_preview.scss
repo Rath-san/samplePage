@@ -1,0 +1,119 @@
+.prBeforeAfter {
+  .ba-slider {
+    position: relative;
+    overflow: hidden;
+    img {
+      width: 100%;
+      display: block;
+    }
+    &.big {
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(0%);
+      transform: translateX(-50.03%) translateY(0%);
+    }
+  }
+  .resize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+  }
+  background-color: #222;
+  img {
+    transition: opacity 0.2s ease-in-out;
+    &.bigPreviewImg {
+      object-position: center;
+      object-fit: contain;
+      display: block;
+      height: auto;
+    }
+  }
+
+  .handle {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    bottom: 0;
+    cursor: ew-resize;
+    left: 50%;
+    margin-left: -1px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    &:after {
+      margin: -32px 0 0 -5px;
+      transition: all 0.3s ease 0s;
+      height: 30px;
+      position: absolute;
+      top: 50%;
+      width: 30px;
+    }
+    img {
+      position: absolute;
+      height: 30px;
+      margin-left: -15px;
+      top: 50%;
+      margin-top: -15px;
+      opacity: 0;
+      width: 30px;
+      -webkit-transition: opacity 500ms ease-in-out;
+      -moz-transition: opacity 500ms ease-in-out;
+      -o-transition: opacity 500ms ease-in-out;
+      -ms-transition: opacity 500ms ease-in-out;
+      transition: opacity 500ms ease-in-out;
+      &.big {
+        height: 40px;
+        width: 40px;
+        margin-left: -20px;
+        opacity: 1;
+        margin-top: -20px;
+        top: 50%;
+        position: absolute;
+      }
+    }
+  }
+
+  &:hover {
+    .handle {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.section-prevs-row h4 {
+  width: 80px;
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 300;
+  left: 15px;
+  bottom: -10px;
+  padding: 0.3rem;
+  white-space: nowrap;
+  font-family: 'Roboto Condensed', sans-serif;
+  &.right {
+    left: unset;
+    right: 15px;
+  }
+}
+
+.section-prevs {
+  h3 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1.1rem;
+    color: #666666;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding-top: 1.6rem;
+    padding-bottom: 0.7rem;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
