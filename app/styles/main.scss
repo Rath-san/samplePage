@@ -1,13 +1,19 @@
-@import 'abstract/variables';
-@import 'mixins/scrollbar';
-@import 'vendor/bootstrap';
-@import 'vendor/slick';
-@import 'vendor/regbKineticSlider';
-@import 'components/fonts';
-@import 'components/links';
-@import 'components/scroller';
-@import 'components/hero';
-@import 'components/slider';
-@import 'layout/containers';
-@import 'pages/index';
-@import 'utils/animations';
+// @import 'abstract/variables';
+// @import 'mixins/scrollbar';
+// @import 'vendor/bootstrap';
+// @import 'vendor/slick';
+// @import 'vendor/regbKineticSlider';
+// @import 'components/fonts';
+// @import 'components/links';
+// @import 'components/scroller';
+// @import 'components/hero';
+// @import 'components/slider';
+// @import 'layout/containers';
+// @import 'pages/index';
+// @import 'utils/animations';
+
+img {
+  will-change: opacity;
+  opacity: 0;
+  transition: opacity 1s;
+}

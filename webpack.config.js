@@ -118,23 +118,23 @@ const productionConfig = merge([
       new webpack.HashedModuleIdsPlugin(),
       new ManifestPlugin(),
       new CleanPlugin(),
-      new CopyWebpackPlugin([
-        // js
-        {
-          from: path.join(__dirname, 'app/scripts/rgbKineticSlider-master/js'),
-          to: path.join(__dirname, 'build/app/scripts/rgbKineticSlider-master/js')
-        },
-        // images
-        {
-          from: path.join(__dirname, 'app/scripts/rgbKineticSlider-master/img'),
-          to: path.join(__dirname, 'build/app/scripts/rgbKineticSlider-master/img')
-        },
-        // headers
-        {
-          from: path.join(__dirname, 'app/images/header'),
-          to: path.join(__dirname, 'build/app/images/header')
-        }
-      ])
+      // new CopyWebpackPlugin([
+      //   // js
+      //   {
+      //     from: path.join(__dirname, 'app/scripts/rgbKineticSlider-master/js'),
+      //     to: path.join(__dirname, 'build/app/scripts/rgbKineticSlider-master/js')
+      //   },
+      //   // images
+      //   {
+      //     from: path.join(__dirname, 'app/scripts/rgbKineticSlider-master/img'),
+      //     to: path.join(__dirname, 'build/app/scripts/rgbKineticSlider-master/img')
+      //   },
+      //   // headers
+      //   {
+      //     from: path.join(__dirname, 'app/images/header'),
+      //     to: path.join(__dirname, 'build/app/images/header')
+      //   }
+      // ])
     ]
   },
   parts.minifyJS({
@@ -201,8 +201,12 @@ const productionConfig = merge([
   parts.loadImages({
     include: paths.app,
     options: {
-      limit: 15000,
-      name: `${paths.images}/[name].[hash:8].[ext]`
+      name: `${paths.images}/[name]-[width].[ext]`,
+    //   sizes: [320, 640, 960, 1200, 1800, 2400],
+    //   placeholder: true,
+    //   placeholderSize: 10,
+    //   // limit: 15000,
+    //   name: `${paths.images}/[name]-[width].[ext]`,
     }
   }),
   // should go after loading images

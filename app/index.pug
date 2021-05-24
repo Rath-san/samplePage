@@ -1,106 +1,37 @@
+- var getParsedImage = (name, type = "placeholder") => `\${require('./images/${name}.jpg').${type}}`
+
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    script(src='/app/scripts/rgbKineticSlider-master/js/libs/imagesLoaded.pkgd.min.js')
-    script(src='/app/scripts/rgbKineticSlider-master/js/libs/pixi.min.js')
-    script(src='/app/scripts/rgbKineticSlider-master/js/libs/pixi-filters.min.js')
-    script(src='/app/scripts/rgbKineticSlider-master/js/libs/TweenMax.min.js')
-    style(type="text/css").
-      body {
-        background: #000;
-      }
-      .loader {
-        position: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        z-index: 101;
-        background-color: #000;
-        will-change: clip-path;
-        transition: clip-path 1s ease-in-out .75s, transform .5s ease-in-out;
-        clip-path: inset(0 0 100% 0);
-        transform: scale3D(1, 1, 1);
-      }
-      .loader__text .hero__title{
-        margin-top: 24px;
-        backface-visibility: hidden;
-        transform: scalde3d(1,1,1)
-      }
-
-      body.loading {
-        overflow: hidden;
-      }
-      body.loading .loader {
-        transform: scale3D(1.1, 1.1, 1.1);
-        clip-path: inset(0);
-      }
-    title Skyline
-    script
+    title Responsive test
+    //- script
       include scripts/loader.js
   body.loading
-    include includes/page-loader.pug
-    main
-      include includes/header.pug
-      section.section
-        .additions.container
-          .row
-            .col-6.p-0
-            .col-6.p-0
-              ul.list-inline.m-0
-                li.list-inline-item.mr-5.animated(data-direction='top')
-                  a.additions__link(href='') watch tutorial
-                li.list-inline-item.animated(data-direction='top')
-                  a.additions__link(href='') watch trailer
-      include includes/slider-section.pug
-    include includes/slider-big.pug
-    script(src='/app/scripts/rgbKineticSlider-master/js/rgbKineticSlider.js')
-    script.
-      //- // images setup
-      const images = [
-      "app/images/header/header_bg_1.jpg",
-      "app/images/header/header_bg_2.jpg"
-      ];
-      const e = new rgbKineticSlider({
-      slideImages: images, // array of images > must be 1920 x 1080
-      //- itemsTitles: texts, // array of titles / subtitles
-      backgroundDisplacementSprite: 'app/scripts/rgbKineticSlider-master/img/map-5.jpg', // slide displacement image
-      cursorDisplacementSprite: 'app/scripts/rgbKineticSlider-master/img/displace-circle.png', // cursor displacement image
-      cursorImgEffect : false, // enable cursor effect
-      cursorTextEffect : false, // enable cursor text effect
-      cursorScaleIntensity : 0, // cursor effect intensity
-      cursorMomentum : 0.14, // lower is slower
-      swipe: false, // enable swipe
-      swipeDistance : window.innerWidth * 0.4, // swipe distance - ex : 580
-      swipeScaleIntensity: 2, // scale intensity during swipping
-      slideTransitionDuration : 0.5, // transition duration
-      transitionScaleIntensity : 50, // scale intensity during transition
-      transitionScaleAmplitude : 50, // scale amplitude during transition
-      nav: true, // enable navigation
-      navElement: '.main-nav', // set nav class
-      imagesRgbEffect : false, // enable img rgb effect
-      imagesRgbIntensity : 0.9, // set img rgb intensity
-      navImagesRgbIntensity : 80, // set img rgb intensity for regular nav
-      textsDisplay : false, // show title
-      textsSubTitleDisplay : false, // show subtitles
-      textsTiltEffect : false, // enable text tilt
-      //- googleFonts : ['Playfair Display:700', 'Roboto:400'], // select google font to use
-      buttonMode : true, // enable button mode for title
-      textsRgbEffect : false, // enable text rgb effect
-      textsRgbIntensity : 0.03, // set text rgb intensity
-      navTextsRgbIntensity : 15, // set text rgb intensity for regular nav
-      textTitleColor : 'white', // title color
-      textTitleSize : 125, // title size
-      mobileTextTitleSize : 125, // title size
-      textTitleLetterspacing : 3, // title letterspacing
-      textSubTitleColor : 'white', // subtitle color ex : 0x000000
-      textSubTitleSize : 21, // subtitle size
-      mobileTextSubTitleSize : 21, // mobile subtitle size
-      textSubTitleLetterspacing : 2, // subtitle letter spacing
-      textSubTitleOffsetTop : 90, // subtitle offset top
-      mobileTextSubTitleOffsetTop : 90, // mobile subtitle offset top
-      });
+    .img-lazy(style=`
+      position: relative;
+      width: 50%;
+    `)
+      .placeholder(style=`
+        padding-bottom: calc(${getParsedImage('video_thumbnail', 'height')} / ${getParsedImage('video_thumbnail', 'width')} * 100%);
+        background: url(${getParsedImage('video_thumbnail')}) center no-repeat;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+      `)
+      img(
+        alt="",
+        data-src=getParsedImage('video_thumbnail'),
+        data-srcset=getParsedImage('video_thumbnail', 'srcSet'),
+        sizes='(max-width: 1024px) 25vw, 50vw',
+        style=`
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        `
+      )
