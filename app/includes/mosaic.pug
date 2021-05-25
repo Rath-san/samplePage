@@ -1,4 +1,4 @@
-- var imagesRoot = "images"
+- var imagesRoot = "/images"
 
 - var t11 = "What are 3D LUTs?"
 - var p11 = "A color look-up table is a matrix of data containing \ninformation used to change an input range of colors \ninto another one. It converts the hue of each pixel \ninto a counterpart from the source pattern."
@@ -21,38 +21,44 @@ section.mlut-mosaic
   .container
     .row
       .col-md-6
-        .ba-slider
-          - var image = '/images/woman_and_dog_lut.jpg'
-          include components/image.pug
-          .resize
-            - var image = '/images/woman_and_dog.jpg'
+        .mosaic-item-wrapper.mosaic-item-wrapper--big.animated.animated--fade--bottom
+          .ba-slider
+            - var image = img11After
             include components/image.pug
-          span.handle
-            img(src="https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/handle.png?1")
+            .resize
+              - var image = img11
+              include components/image.pug
+      .col-md-6
+        h3.animated.animated--fade--bottom #{t11}
+        p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p11}
+        p.mosaic-paragraph.animated.animated--fade--bottom #{p12}
+        .mosaic-item-wrapper.mosaic-item-wrapper--small.mosaic-item-wrapper--underlay.animated.animated--fade--bottom
+          .ba-slider
+            - var image = img12After
+            include components/image.pug
+            .resize
+              - var image = img12
+              include components/image.pug
+      .col-md-6
+        h3.animated.animated.animated--fade--bottom #{t21}
+      .col-md-6
+        .mosaic-item-wrapper.mosaic-item-wrapper--underlay.mosaic-item-wrapper--medium.animated.animated--fade--bottom
+          .ba-slider
+            - var image = img21After
+            include components/image.pug
+            .resize
+              - var image = img21
+              include components/image.pug
 
-        //- .mosaic-item-wrapper.ba-comp
-          img.mosaic-item.animated.animated--fade--bottom.ba-comp-after(src=img11After, alt="", loading="lazy")
-          .ba-comp-before__wrapper
-            img.mosaic-item.animated.animated--fade--bottom.ba-comp-before(src=img11, alt="", loading="lazy")
-      //- .col-md-6
-      //-   h3.animated.animated--fade--bottom #{t11}
-      //-   p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p11}
-      //-   p.mosaic-paragraph.animated.animated--fade--bottom #{p12}
-      //-   .mosaic-item-wrapper.mosaic-item-wrapper--small.mosaic-item-wrapper--underlay
-      //-     img.img-fluid.mosaic-item.animated.animated--fade--bottom(src=img12, alt="", loading="lazy")
-      //-     img.img-fluid.mosaic-item.animated.animated--fade--bottom(src=img12After, alt="", loading="lazy")
-
-      //- .col-md-6
-      //-   h3.animated.animated--fade--bottom #{t21}
-      //- .col-md-6
-      //-   .mosaic-item-wrapper.mosaic-item-wrapper--underlay
-      //-     img.img-fluid.animated.animated--fade--bottom(src=img21, alt="", loading="lazy")
-      //-     img.img-fluid.animated.animated--fade--bottom(src=img21After, alt="", loading="lazy")
-
-      //- .col-md-6
-      //-   .mosaic-item-wrapper
-      //-     img.img-fluid.animated.animated--fade--bottom(src=img31, alt="", loading="lazy")
-      //-     img.img-fluid.animated.animated--fade--bottom(src=img31After, alt="", loading="lazy")
-      //- .col-md-6
-      //-   h3.animated.animated--fade--bottom #{t31}
-      //-   p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p31}
+      .col-md-6
+        .mosaic-item-wrapper.mosaic-item-wrapper--medium--2.animated.animated--fade--bottom
+          .ba-slider
+            - var image = img31After
+            include components/image.pug
+            .resize
+              - var image = img31
+              include components/image.pug
+      .col-md-6
+        .mosaic-item-wrapper--medium--2__title.animated.animated--fade--bottom
+          h3.animated.animated--fade--bottom #{t31}
+          p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p31}

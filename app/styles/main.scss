@@ -20,20 +20,17 @@ $text-margin: 2rem;
   h3 {
     font-weight: 400;
     font-family: 'Lora', serif;
-    font-size: 46px;
+    font-size: 36px;
     margin-bottom: $text-margin;
+    margin-top: $text-margin;
+    white-space: pre;
   }
   p {
+    font-style: 1rem;
     font-weight: 300;
     margin-bottom: $text-margin;
   }
 
-  $column-padding-horizontal: 2rem;
-
-  // div[class^="col"] {
-  //   padding-top: $column-padding-horizontal;
-  //   padding-bottom: $column-padding-horizontal;
-  // }
 }
 
 $underlay-offset: 100px;
@@ -41,6 +38,7 @@ $underlay-color: #fbfbfb;
 
 .mosaic {
   &-paragraph {
+    max-width: 25em;
     &--offset {
       &-right {
         padding-left: $text-margin * 3.5;
@@ -63,8 +61,33 @@ $underlay-color: #fbfbfb;
         }
       }
       &--small {
-        width: 35vw;
+        width: 25vw;
+        position: absolute;
+        left: 27em;
+        bottom: 1rem;
       }
+
+      &--medium {
+        position: relative;
+        width: calc(100% + ((100vw - 100% * 2) / 2));
+        margin-bottom: 7rem;
+        &--2 {
+          position: relative;
+          left: 20px;
+          margin-top: 3rem;
+          &__title {
+            margin-left: 3rem;
+          }
+        }
+      }
+
+      &--big {
+        position: relative;
+        width: calc(50vw - 100px);
+        left: calc((100vw - ((100% + 15px) * 2)) / -2);
+        margin-bottom: 4rem;
+      }
+
     }
   }
 }

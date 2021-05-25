@@ -5,6 +5,8 @@ const repaintBASlider = () => $('#prContainer .ba-slider').each(function() {
 })
 
 // images
+if (!mainContainer) {
+}
 const rawChildNodes = Array.from(mainContainer.childNodes);
 
 const nameImgPairData = rawChildNodes.map(dataPair => {
@@ -158,6 +160,9 @@ const callBASlider = function () {
     $(this).beforeAfter('.img-lazy')
   })
 }
+
+// constrol ba slider with scroll
+
 
 // Call & init
 $(document).ready(callBASlider)
