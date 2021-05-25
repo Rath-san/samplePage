@@ -67,7 +67,8 @@ const commonConfig = merge([
     entry: `${paths.app}/scripts`,
     output: {
       path: paths.build,
-      publicPath: parts.publicPath
+      publicPath: '/'
+        // parts.publicPath
     },
     stats: {
       warningsFilter: (warning) => warning.includes('entrypoint size limit'),
@@ -206,8 +207,9 @@ const productionConfig = merge([
   parts.loadImages({
     include: paths.app,
     options: {
-      limit: 15000,
-      name: `${paths.images}/[name].[hash:8].[ext]`
+      // limit: 15000,
+      name: `${paths.images}/[name]-[width].[ext]`
+      // name: `${paths.images}/[name].[hash:8].[ext]`
     }
   }),
   // should go after loading images

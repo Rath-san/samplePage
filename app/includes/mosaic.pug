@@ -4,37 +4,55 @@
 - var p11 = "A color look-up table is a matrix of data containing \ninformation used to change an input range of colors \ninto another one. It converts the hue of each pixel \ninto a counterpart from the source pattern."
 - var p12 = "LUTs are widely used in professional image processing \napplications, e.g. FCPX, Premiere Pro, DaVinci Resolve, \nAvid Media Composer, SpeedGrade, Motion, Nuke, \nPhotoshop, After Effects, Fusion and many more…"
 - var img11 = `${imagesRoot}/woman_and_dog.jpg`
-- var img12 = `${imagesRoot}/woman_and_dog.jpg`
+- var img11After = `${imagesRoot}/woman_and_dog_lut.jpg`
+- var img12 = `${imagesRoot}/sofa.jpg`
+- var img12After = `${imagesRoot}/sofa_lut.jpg`
 
 - var t21 = "Make your shots \ntheir own kind \nof beautiful"
-- var img21 = `${imagesRoot}/woman_and_dog.jpg`
+- var img21 = `${imagesRoot}/woman_in_afro.jpg`
+- var img21After = `${imagesRoot}/woman_in_afro_lut.jpg`
 
 - var t31 = "An instant pro vibe \nfor any video!"
 - var p31 = "Make your edits unique with professional gradings and treat your viewers to professional-looking content that makes a true impact."
 - var img31 = `${imagesRoot}/waffles.jpg`
+- var img31After = `${imagesRoot}/waffles_lut.jpg`
 
 section.mlut-mosaic
   .container
     .row
-      .col-6
-        .mosaic-item-wrapper.mosaic-item-wrapper--big
-          img.img-fluid.mosaic-item.animated.animated--fade--bottom(src=img11, alt="", loading="lazy")
-      .col-6
-        h3.animated.animated--fade--bottom #{t11}
-        p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p11}
-        p.mosaic-paragraph.animated.animated--fade--bottom #{p12}
-        .mosaic-item-wrapper.mosaic-item-wrapper--small.mosaic-item-wrapper--floating.mosaic-item-wrapper--underlay
-          img.img-fluid.mosaic-item.animated.animated--fade--bottom(src=img12, alt="", loading="lazy")
+      .col-md-6
+        .ba-slider
+          - var image = '/images/woman_and_dog_lut.jpg'
+          include components/image.pug
+          .resize
+            - var image = '/images/woman_and_dog.jpg'
+            include components/image.pug
+          span.handle
+            img(src="https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/handle.png?1")
 
-      .col-6
-        h3.animated.animated--fade--bottom #{t21}
-      .col-6
-        .mosaic-item-wrapper
-          img.img-fluid.animated.animated--fade--bottom(src=img21, alt="", loading="lazy")
+        //- .mosaic-item-wrapper.ba-comp
+          img.mosaic-item.animated.animated--fade--bottom.ba-comp-after(src=img11After, alt="", loading="lazy")
+          .ba-comp-before__wrapper
+            img.mosaic-item.animated.animated--fade--bottom.ba-comp-before(src=img11, alt="", loading="lazy")
+      //- .col-md-6
+      //-   h3.animated.animated--fade--bottom #{t11}
+      //-   p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p11}
+      //-   p.mosaic-paragraph.animated.animated--fade--bottom #{p12}
+      //-   .mosaic-item-wrapper.mosaic-item-wrapper--small.mosaic-item-wrapper--underlay
+      //-     img.img-fluid.mosaic-item.animated.animated--fade--bottom(src=img12, alt="", loading="lazy")
+      //-     img.img-fluid.mosaic-item.animated.animated--fade--bottom(src=img12After, alt="", loading="lazy")
 
-      .col-6
-        .mosaic-item-wrapper
-          img.img-fluid.animated.animated--fade--bottom(src=img31, alt="", loading="lazy")
-      .col-6
-        h3.animated.animated--fade--bottom #{t31}
-        p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p31}
+      //- .col-md-6
+      //-   h3.animated.animated--fade--bottom #{t21}
+      //- .col-md-6
+      //-   .mosaic-item-wrapper.mosaic-item-wrapper--underlay
+      //-     img.img-fluid.animated.animated--fade--bottom(src=img21, alt="", loading="lazy")
+      //-     img.img-fluid.animated.animated--fade--bottom(src=img21After, alt="", loading="lazy")
+
+      //- .col-md-6
+      //-   .mosaic-item-wrapper
+      //-     img.img-fluid.animated.animated--fade--bottom(src=img31, alt="", loading="lazy")
+      //-     img.img-fluid.animated.animated--fade--bottom(src=img31After, alt="", loading="lazy")
+      //- .col-md-6
+      //-   h3.animated.animated--fade--bottom #{t31}
+      //-   p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p31}

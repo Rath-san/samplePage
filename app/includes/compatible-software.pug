@@ -1,35 +1,34 @@
 section.compatible-software
   .container
     .row.text-center
-      h2 Compatible software
-    .row.text-center(style='max-width: 800px; margin: 0 auto')
-      .col-lg-4.col-md-12.text-center.compatible
-        ul
-          li Final Cut Pro X
-          li
-            span mLUT plugin included
-          li Apple Motion 5
-          li
-            span mLUT plugin included
-      .col-lg-4.col-md-12.text-center.compatible
-        ul
-          li Adobe Premiere CC
-          li Adobe After Effects CC
-          li Adobe Photoshop
-          li NUKE
-      .col-lg-4.col-md-12.text-center.compatible
-        ul
-          li AVID Media Composer
-          li DaVinci Resolve
-          li Fusion 7
-          li
-            span ...and many more.
+      h2.compatible-software__title Compatible software
+    .row
+      .col
+        .compatible-software__lists
+          ul.compatible-software__list
+            li Final Cut Pro X
+            li
+              span mLUT plugin included
+            li Apple Motion 5
+            li
+              span mLUT plugin included
+
+          ul.compatible-software__list
+            li Adobe Premiere CC
+            li Adobe After Effects CC
+            li Adobe Photoshop
+            li NUKE
+
+          ul.compatible-software__list
+            li AVID Media Composer
+            li DaVinci Resolve
+            li Fusion 7
+            li
+              span ...and many more.
   .container
     .row
-      include logos-images.pug
-      //- .logos-images.img-fluid
-        img.img-fluid.logos-desktop(src='https://s3.motionvfx.com/mvfxpublic/products/templates/1305/media/logos_desktop.png' alt='')
-        img.img-fluid.logos-mobile(src='https://s3.motionvfx.com/mvfxpublic/products/templates/1305/media/logos_mobile.png' alt='')
+      .col
+        include logos-images.pug
   .container
     .row.text-center.small-info
       | Compatible with LOG and Rec.709 - use mLUT Movie 2 Pack .CUBE files

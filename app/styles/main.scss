@@ -9,6 +9,9 @@
 @import 'components/footer';
 @import 'components/compatible-software';
 @import 'components/tech-spec';
+@import 'components/lazy-image';
+@import 'components/image-background';
+@import 'components/minstaller';
 @import 'animations/page';
 
 $text-margin: 2rem;
@@ -19,7 +22,6 @@ $text-margin: 2rem;
     font-family: 'Lora', serif;
     font-size: 46px;
     margin-bottom: $text-margin;
-    white-space: pre;
   }
   p {
     font-weight: 300;
@@ -28,18 +30,17 @@ $text-margin: 2rem;
 
   $column-padding-horizontal: 2rem;
 
-  div[class^="col"] {
-    padding-top: $column-padding-horizontal;
-    padding-bottom: $column-padding-horizontal;
-  }
+  // div[class^="col"] {
+  //   padding-top: $column-padding-horizontal;
+  //   padding-bottom: $column-padding-horizontal;
+  // }
 }
 
 $underlay-offset: 100px;
-$underlay-color: #FBFBFB;
+$underlay-color: #fbfbfb;
 
 .mosaic {
   &-paragraph {
-    white-space: pre;
     &--offset {
       &-right {
         padding-left: $text-margin * 3.5;
@@ -48,14 +49,7 @@ $underlay-color: #FBFBFB;
   }
   &-item {
     &-wrapper {
-      padding-top: 1rem;
-      &--big {
-        .mosaic-item {
-          max-width: calc(100% + (100vw - 115% * 2) / 2);
-          width: 100vw;
-          margin-left: calc(((100vw - 100% * 2) / 2) * -1);
-        }
-      }
+      position: relative;
       &--underlay {
         &::before {
           position: absolute;
@@ -67,11 +61,6 @@ $underlay-color: #FBFBFB;
           left: -$underlay-offset;
           content: '';
         }
-      }
-      &--floating {
-        position: absolute;
-        top: 30%;
-        left: 120%;
       }
       &--small {
         width: 35vw;

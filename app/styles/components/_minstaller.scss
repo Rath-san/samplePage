@@ -1,0 +1,18 @@
+.minstaller {
+  &__section {
+    margin-bottom: 4rem;
+  }
+  text-align: center;
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Proxima', sans-serif;
+  }
+
+  &__description {
+    font-weight: 400;
+    max-width: 50%;
+    margin: 0 auto;
+    max-width: 380px;
+  }
+}

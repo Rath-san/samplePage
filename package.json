@@ -60,6 +60,7 @@
     "pug-html-loader": "^1.1.5",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
+    "responsive-loader": "^2.3.0",
     "style-loader": "^0.23.1",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
@@ -84,6 +85,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "jimp": "^0.16.1",
     "jquery": "^3.6.0",
     "slick-slider": "^1.8.2"
   }

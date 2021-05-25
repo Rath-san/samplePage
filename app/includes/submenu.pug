@@ -17,9 +17,9 @@
     .div-buy-button
       a.buy_now(href='#' title='{{ product.title }}' data-add-to-cart='{ "productId": "{{ product.id }}", "productTitle": "{{ product.title }}" }')
         | BUY NOW
-        span.price-line-through(style='display: {% if not product.is_promo %} "none" {% endif %}')
+        //- span.price-line-through(style='display: {% if not product.is_promo %} "none" {% endif %}')
           | ${{ price(product.price) }}
-        span ${{ price(product.get_price(request.user)) }}
+        //- span ${{ price(product.get_price(request.user)) }}
     .discount-info(style='display: {% if not product.is_promo %} "none" {% endif %}')
       span.hurry  Hurry up!
       |  Valid till May 11, 2020

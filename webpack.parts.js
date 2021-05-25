@@ -48,7 +48,10 @@ exports.loadPug = (options) => ({
         test: /\.pug$/,
         use: [
           {
-            loader: 'html-loader'
+            loader: 'html-loader',
+            options: {
+              interpolate: true
+            }
           },
           {
             loader: 'pug-html-loader',
@@ -150,14 +153,21 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
   module: {
     rules: [
       {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.(png|jpg|webp)$/i,
 
         include,
         exclude,
 
         use: {
-          loader: 'url-loader',
-          options
+          // loader: 'url-loader',
+          loader: "responsive-loader",
+          options: {
+            ...options,
+            sizes: [320, 640, 960, 1200, 1800, 2400],
+            placeholder: true,
+            placeholderSize: 10,
+            // limit: 15000,
+          }
         }
       }
     ]

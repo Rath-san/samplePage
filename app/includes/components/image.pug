@@ -1,0 +1,19 @@
+- var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
+
+- var imageWidth = getParsedImage(image, 'width')
+- var imageHeight = getParsedImage(image, 'height')
+- var placeholder = getParsedImage(image)
+- var srcset = getParsedImage(image, 'srcSet')
+
+div(id=id).img-lazy
+  .placeholder(style=`
+      padding-bottom: calc(${imageHeight} / ${imageWidth} * 100%);
+      background: url(${placeholder}) center no-repeat;
+      background-size: cover;
+  `)
+  img(
+    alt=alt,
+    data-src=placeholder,
+    data-srcset=srcset,
+    sizes='(max-width: 1024px) 50vw, 100vw'
+  )

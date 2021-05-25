@@ -1,3 +1,7 @@
+- var names = ['Ash', 'Bold', 'Brisk', 'Dawn', 'Dingy', 'Eclipse', 'Fresh', 'Heated', 'Juicy', 'Lucid', 'Luminous', 'Luscious', 'Oldie', 'Pinup', 'Radiant', 'Scorch', 'Shaded', 'Soot', 'Sour', 'Spry', 'Tarnished', 'Velvet', 'Vibrant', 'Vigorous', 'Washy']
+
+- var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
+
 section.section-prevs
   .container
     .row
@@ -5,8 +9,20 @@ section.section-prevs
         h2.section-prevs__title #{title}
     .row
       .col
-        #pagination.text-center.page-paginator.page-paginator-top
-          img#prevPage(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/left_arrow.jpg' alt='')
-          h3#paginationPointer
-          img#nextPage(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/right_arrow.jpg' alt='')
+        .pagination__top
+          include components/paginator.pug
     #prContainer.row.section-prevs-row.text-center
+      each name in names
+        div(id=name)
+          - var imagePath = `/images/preview/${name}`
+          - var image = `${imagePath}_after.jpg`
+          - var alt = name
+          - var id = 'after'
+          include components/image.pug
+          - var image = `${imagePath}_before.jpg`
+          - var id = 'before'
+          include components/image.pug
+    //- .row
+      .col
+        .pagination__bottom
+          include components/paginator.pug
