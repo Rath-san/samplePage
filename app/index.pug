@@ -28,6 +28,7 @@ html(lang="en")
 
     - var mediaRootUrl = '/images'
     - var templateImagesUrl = '/images'
+    - var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
 
   body
     include includes/submenu.pug

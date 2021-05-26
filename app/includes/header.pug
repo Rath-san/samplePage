@@ -5,12 +5,30 @@ section.header
     - var alt = 'Happy couple'
     - var imageWidth = '2400'
     - var imageHeight = '1172'
-    include components/image-background.pug
+    //- include components/image-background.pug
+    - var placeholder = getParsedImage(image)
+    - var srcset = getParsedImage(image, 'srcSet')
+    .image__background
+      img(
+        alt=alt,
+        src=getParsedImage(image, 'src'),
+        srcset=srcset,
+        sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
+      )
   .container
     .header-logo
       - var image = `${mediaRootUrl}/mlut_insta_logo_@2x.png`
       - var alt = 'mLut Insta Pack logo'
       - var imageWidth = '1200'
       - var imageHeight = '737'
-      include components/image.pug
+      //- include components/image.pug
+      - var placeholder = getParsedImage(image)
+      - var srcset = getParsedImage(image, 'srcSet')
+      img(
+        alt=alt,
+        src=getParsedImage(image, 'src'),
+        srcset=srcset,
+        sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
+      )
+
     h1.header-title A Selection Of Insta Color Gradings for FCPX
