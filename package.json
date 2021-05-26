@@ -68,13 +68,14 @@
     "stylelint-webpack-plugin": "^0.10.5",
     "terser-webpack-plugin": "1.2.3",
     "url-loader": "^1.1.2",
-    "webpack": "^4.41.0",
+    "webpack": "^4.30.0",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "3.3.0",
     "webpack-dev-server": "^3.3.1",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.2.1",
-    "webpack-stats-plugin": "0.2.1"
+    "webpack-stats-plugin": "0.2.1",
+    "jimp": "^0.16.1"
   },
   "browserslist": [
     "> 1%",
@@ -85,7 +86,6 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "jimp": "^0.16.1",
     "jquery": "^3.6.0",
     "slick-slider": "^1.8.2"
   }
