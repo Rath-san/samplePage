@@ -1,4 +1,4 @@
-- var imagesRoot = "/images"
+- var imagesRoot = mediaRootUrl
 
 - var t11 = "What are 3D LUTs?"
 - var p11 = "A color look-up table is a matrix of data containing \ninformation used to change an input range of colors \ninto another one. It converts the hue of each pixel \ninto a counterpart from the source pattern."
@@ -20,7 +20,7 @@
 section.mlut-mosaic
   .container
     .row
-      .col-md-6
+      .col-md-6.order-2.order-md-1
         .mosaic-item-wrapper.mosaic-item-wrapper--big.animated.animated--fade--bottom
           .ba-slider
             - var image = img11After
@@ -28,10 +28,11 @@ section.mlut-mosaic
             .resize
               - var image = img11
               include components/image.pug
-      .col-md-6
-        h3.animated.animated--fade--bottom #{t11}
-        p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p11}
-        p.mosaic-paragraph.animated.animated--fade--bottom #{p12}
+      .col-md-6.order-1.order-md-2
+        .mosaic__text
+          h3.animated.animated--fade--bottom #{t11}
+          p.mosaic-paragraph.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p11}
+          p.mosaic-paragraph.animated.animated--fade--bottom #{p12}
         .mosaic-item-wrapper.mosaic-item-wrapper--small.mosaic-item-wrapper--underlay.animated.animated--fade--bottom
           .ba-slider
             - var image = img12After
@@ -39,9 +40,10 @@ section.mlut-mosaic
             .resize
               - var image = img12
               include components/image.pug
-      .col-md-6
-        h3.animated.animated.animated--fade--bottom #{t21}
-      .col-md-6
+      .col-md-6.order-3
+        .mosaic__text
+          h3.animated.animated.animated--fade--bottom #{t21}
+      .col-md-6.order-4
         .mosaic-item-wrapper.mosaic-item-wrapper--underlay.mosaic-item-wrapper--medium.animated.animated--fade--bottom
           .ba-slider
             - var image = img21After
@@ -50,7 +52,7 @@ section.mlut-mosaic
               - var image = img21
               include components/image.pug
 
-      .col-md-6
+      .col-md-6.order-12.order-md-11
         .mosaic-item-wrapper.mosaic-item-wrapper--medium--2.animated.animated--fade--bottom
           .ba-slider
             - var image = img31After
@@ -58,7 +60,7 @@ section.mlut-mosaic
             .resize
               - var image = img31
               include components/image.pug
-      .col-md-6
-        .mosaic-item-wrapper--medium--2__title.animated.animated--fade--bottom
+      .col-md-6.order-11.order-md-12
+        .mosaic__text
           h3.animated.animated--fade--bottom #{t31}
-          p.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p31}
+          p.mosaic-paragraph.mosaic-paragraph--offset-right.animated.animated--fade--bottom #{p31}

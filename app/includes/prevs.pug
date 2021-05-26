@@ -14,7 +14,7 @@ section.section-prevs
     #prContainer.row.section-prevs-row.text-center
       each name in names
         div(id=name)
-          - var imagePath = `/images/preview/${name}`
+          - var imagePath = `${mediaRootUrl}/preview/${name}`
           - var image = `${imagePath}_after.jpg`
           - var alt = name
           - var id = 'after'

@@ -25,6 +25,9 @@ html(lang="en")
 
     script(src='scripts/beforeafter.js')
 
+    - var mediaRootUrl = '/images'
+    - var templateImagesUrl = '/images'
+
   body
     include includes/submenu.pug
     include includes/navbar.pug
@@ -41,11 +44,11 @@ html(lang="en")
       - var subtitle = "Take a peek at these videos and grab some tips and tricks to master your work. Endless possibilities await!"
       - var videoLink = "https://www.youtube.com/embed/9tF-MzNxz4c?rel=0"
       include includes/trailer.pug
-      include includes/mosaic.pug
+      //- include includes/mosaic.pug
       - var title = "Luts preview"
       include includes/prevs.pug
-      - var urlBefore = '/images/big_before.jpg'
-      - var urlAfter = '/images/big_after.jpg'
+      - var urlBefore = `${mediaRootUrl}/big_before.jpg`
+      - var urlAfter = `${mediaRootUrl}/big_after.jpg`
       include includes/prevs-big.pug
       include includes/compatible-software.pug
       include includes/tech-spec.pug

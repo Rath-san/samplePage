@@ -23,10 +23,9 @@ $text-margin: 2rem;
     font-size: 36px;
     margin-bottom: $text-margin;
     margin-top: $text-margin;
-    white-space: pre;
+    // white-space: pre;
   }
   p {
-    font-style: 1rem;
     font-weight: 300;
     margin-bottom: $text-margin;
   }
@@ -37,14 +36,30 @@ $underlay-offset: 100px;
 $underlay-color: #fbfbfb;
 
 .mosaic {
+
+  $paragraph-basic-offset: .1rem;
+  
+
   &-paragraph {
     max-width: 25em;
+    padding-left: $paragraph-basic-offset;
     &--offset {
       &-right {
         padding-left: $text-margin * 3.5;
+        @media screen and (max-width: 1280px) {
+          padding-left: $paragraph-basic-offset;
+        }
       }
     }
   }
+
+  &__text {
+    padding: 0 10%;
+    @media screen and (max-width: 420px) {
+      padding: 0 5%;
+    }
+  }
+
   &-item {
     &-wrapper {
       position: relative;
@@ -64,17 +79,35 @@ $underlay-color: #fbfbfb;
         width: 25vw;
         position: absolute;
         left: 27em;
-        bottom: 1rem;
+        bottom: 15%;
+        z-index: -1;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
       }
 
       &--medium {
         position: relative;
         width: calc(100% + ((100vw - 100% * 2) / 2));
         margin-bottom: 7rem;
+        z-index: -1;
+        @media screen and (max-width: 768px) {
+          width: calc(100% + 30px);
+          margin-left: -15px;
+          margin-bottom: 0;
+        }
         &--2 {
           position: relative;
           left: 20px;
           margin-top: 3rem;
+          @media screen and (max-width: 768px) {
+            width: calc(100% + 30px);
+            margin-left: -15px;
+            margin-top: 0;
+            left: 0;
+            max-height: 50vh;
+            overflow: hidden;
+          }
           &__title {
             margin-left: 3rem;
           }
@@ -83,11 +116,18 @@ $underlay-color: #fbfbfb;
 
       &--big {
         position: relative;
-        width: calc(50vw - 100px);
-        left: calc((100vw - ((100% + 15px) * 2)) / -2);
-        margin-bottom: 4rem;
+        width: calc(100% + ((100vw - 100% * 2) / 2));
+        left: calc((100vw - ((100% + 15px) * 2)) / -2 - 5vw);
+        margin-bottom: 10rem;
+        @media screen and (max-width: 768px) {
+          max-height: 50vh;
+          overflow: hidden;
+          width: calc(100% + 30px);
+          left: 0;
+          margin-left: -15px;
+          margin-bottom: 0;
+        }
       }
-
     }
   }
 }

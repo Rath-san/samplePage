@@ -1,3 +1,33 @@
+-
+  var techSpecData = [
+    {
+      name: 'System',
+      value: 'Mac OS X 10.10.5 \n(or later)'
+    },
+    {
+      name: 'Includes',
+      value: '30 FCPX titles'
+    },
+    {
+      name: 'Size',
+      value: '139.9 MB'
+    },
+    {
+      name: 'Music used in trailer',
+      value: {
+        title: 'Premiumbeat.com - Serious Business',
+        link: 'https://google.com'
+      }
+    },
+    {
+      name: 'Music used in tutorial',
+      value: {
+        title: 'Premiumbeat.com - Full Potential',
+        link: 'https://google.com'
+      }
+    }
+  ]
+
 section.tech-spec
   a.nav(name='specs')
   .container
@@ -5,18 +35,12 @@ section.tech-spec
       .col-12
         .tech-spec-info
           h2.tech-spec__title Technical specification
-          .tech-spec__lists
-            ul.tech-spec__list.list-unstyled
-              li System
-              li Includes
-              li Size
-              li Music used in trailer
-              li Music used in tutorial
-            ul.tech-spec__list.list-unstyled
-              li Mac OS X 10.10.5(or later)
-              li 30 FCPX titles
-              li 139.9 MB
-              li
-                a(href="http://google.com", target="_blank", rel="noopener noreferrer") Premiumbeat.com - Serious Business
-              li
-                a(href="http://google.com", target="_blank", rel="noopener noreferrer") Premiumbeat.com - Full Potential
+          table.tech-spec__table
+            for val in techSpecData
+              tr
+                td.td-right= val.name
+                if val.value.title
+                  td.td-left
+                    a(href=val.value.link, target="_blank", rel="noopener noreferrer")= val.value.title
+                else
+                  td.td-left= val.value
