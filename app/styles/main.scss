@@ -99,14 +99,16 @@ $underlay-color: #fbfbfb;
   &-item {
     &-wrapper {
       position: relative;
-
       .resize {
         width: 100%;
         &.animated-in {
           will-change: width opacity;
           animation: resize-scale;
           animation-timing-function: ease-in-out;
-          animation-duration: 7s;
+          animation-duration: 10s;
+          @media screen and (min-width: 768px) {
+            animation-duration: 15s;
+          }
           animation-iteration-count: infinite;
           animation-direction: alternate;
         }
