@@ -7,7 +7,6 @@
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log(entry);
             const img = entry.target.querySelector('img')
             const placeholder = entry.target.querySelector('.placeholder')
       

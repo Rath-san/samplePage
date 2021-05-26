@@ -1,5 +1,5 @@
 section.header
-  .header__image
+  .header__image.image__background
     - var image = `${mediaRootUrl}/header_bg.jpg`
     - var sizes = '(max-width: 1024px) 1600px, 100vw'
     - var alt = 'Happy couple'
@@ -8,9 +8,10 @@ section.header
     //- include components/image-background.pug
     - var placeholder = getParsedImage(image)
     - var srcset = getParsedImage(image, 'srcSet')
-    .image__background
+    
       img(
         alt=alt,
+        height=height
         src=getParsedImage(image, 'src'),
         srcset=srcset,
         sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
