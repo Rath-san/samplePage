@@ -39,10 +39,19 @@ $text-margin: 2rem;
 $underlay-offset: 100px;
 $underlay-color: #fbfbfb;
 
+@keyframes resize-scale {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
 .mosaic {
 
   $paragraph-basic-offset: .1rem;
-  
 
   &-paragraph {
     max-width: 25em;
@@ -67,6 +76,25 @@ $underlay-color: #fbfbfb;
   &-item {
     &-wrapper {
       position: relative;
+
+      .resize {
+        width: 100%;
+        will-change: width opacity;
+        // transition: width 3s ease-in-out;
+        animation: resize-scale;
+        animation-timing-function: ease-in-out;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      &.animated-in {
+        // anim here
+        .resize {
+          width: 10%;
+        }
+      }
+
       @media screen and (max-width: 768px) {
         margin-bottom: 3rem !important;
       }
