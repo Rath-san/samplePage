@@ -12,6 +12,16 @@
     display: block;
     margin: 0 auto;
     text-align: center;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &-mobile {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
   }
 
   h2 {

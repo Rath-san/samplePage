@@ -1,4 +1,9 @@
 .logos-images
-  - var image = `${mediaRootUrl}/software_icons.png`
-  - var alt = 'Software logos'
-  include components/image.pug
+  .logos-desktop
+    - var image = `${mediaRootUrl}/software_icons.png`
+    - var alt = 'Software logos'
+    include components/image.pug
+  .logos-mobile
+    - var image = `${mediaRootUrl}/software_icons_mobile.png`
+    - var alt = 'Software logos'
+    include components/image.pug
