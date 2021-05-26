@@ -54,8 +54,8 @@ const template = (name, index, imgBefore, imgAfter) => {
               </span>
             </div>
         </div>
-        <h4>LOG FILE</h4>
-        <h4 class="right">WITH LUT</h4>
+        <h4 class="prev__label">LOG FILE</h4>
+        <h4 class="prev__label right">WITH LUT</h4>
     </div>
   `
 }
@@ -160,9 +160,6 @@ const callBASlider = function () {
     $(this).beforeAfter('.img-lazy')
   })
 }
-
-// constrol ba slider with scroll
-
 
 // Call & init
 $(document).ready(callBASlider)

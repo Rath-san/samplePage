@@ -5,7 +5,7 @@
     color: #000;
     font-weight: 400;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
     @media screen and(max-width: 860px) {
       margin-left: auto;
       margin-right: auto;
@@ -71,7 +71,6 @@
       color: #000;
       font-weight: 300;
       font-family: 'Roboto Condensed', sans-serif;
-      font-size: 0.84rem;
       max-width: 740px;
       margin: 0 auto;
       margin-bottom: 3rem;
@@ -81,52 +80,3 @@
     }
   }
 }
-// @media (max-width: 1440px) {
-//   section.compatible-software {
-//     .container {
-//       h2 {
-//         font-size: 2.2rem;
-//       }
-//       ul {
-//         font-size: 1.2rem;
-//       }
-//       .small-info {
-//         font-size: 1.2rem;
-//       }
-//     }
-//   }
-// }
-// @media (max-width: 768px) {
-//   section.compatible-software {
-//     .container {
-//       h2 {
-//         font-size: 1.6rem;
-//         line-height: 2rem;
-//       }
-//       ul {
-//         font-size: 1rem;
-//       }
-//       .small-info {
-//         font-size: 1rem;
-//         line-height: 1.4rem;
-//       }
-//     }
-//   }
-// }
-// @media all and (max-width: 589px) {
-//   section.compatible-software {
-//     .container {
-//       max-width: 1000px;
-//       .logos-desktop {
-//         display: none;
-//       }
-//       .logos-mobile {
-//         display: block;
-//         margin: 0 auto;
-//         text-align: center;
-//         width: 80%;
-//         margin-top: 4rem;
-//       }
-//     }
-//   }
-// }

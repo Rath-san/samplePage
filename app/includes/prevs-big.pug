@@ -1,14 +1,17 @@
 section.before-after.big__prev
-  .prBeforeAfter
-    .ba-slider.big.img-fluid
-      - var image = urlAfter
-      - var alt = 'Girl relaxing at grafiti wall after mLut modification'
-      - var imageWidth = "1800"
-      - var imageHeight = "879"
-      include components/image.pug
-      .resize
-        - var image = urlBefore
-        - var alt = 'Girl relaxing at grafiti wall before mLut modification'
+  .big__prev__content
+    .prBeforeAfter
+      .ba-slider.big.img-fluid
+        - var image = urlAfter
+        - var alt = 'Girl relaxing at grafiti wall after mLut modification'
+        - var imageWidth = "1800"
+        - var imageHeight = "879"
         include components/image.pug
-      span.handle
-        img.big(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/handleBig.png?1' alt='' style='display:block;')
+        .resize
+          - var image = urlBefore
+          - var alt = 'Girl relaxing at grafiti wall before mLut modification'
+          include components/image.pug
+        span.handle
+          img.big(src='https://s3.motionvfx.com/mvfxpublic/images/mlut/filmwedding/handleBig.png?1' alt='' style='display:block;')
+    h4.prev__label LOG FILE
+    h4.prev__label.right WITH LUT

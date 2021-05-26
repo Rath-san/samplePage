@@ -1,5 +1,18 @@
 .big__prev {
   padding-bottom: 4rem;
+  &__content {
+    position: relative;
+  }
+  .prev__label {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: unset;
+    left: 0;
+    &.right {
+      left: unset;
+      right: 0;
+    }
+  }
   @media screen and (max-width: 768px) {
     padding-bottom: 2rem;
   }

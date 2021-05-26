@@ -102,23 +102,6 @@ div[id^='prBA'] {
     padding-top: 1.6rem;
     padding-bottom: 0.7rem;
   }
-  h4 {
-    width: 80px;
-    position: absolute;
-    background-color: #000;
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 300;
-    left: 15px;
-    bottom: -10px;
-    padding: 0.3rem;
-    white-space: nowrap;
-    font-family: 'Roboto Condensed', sans-serif;
-    &.right {
-      left: unset;
-      right: 15px;
-    }
-  }
 }
 
 .section-prevs {
@@ -134,4 +117,21 @@ div[id^='prBA'] {
   color: #666;
   font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 1rem;
+}
+
+.prev__label {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 300;
+  left: 15px;
+  bottom: -10px;
+  padding: 0.3rem;
+  white-space: nowrap;
+  font-family: 'Roboto Condensed', sans-serif;
+  &.right {
+    left: unset;
+    right: 15px;
+  }
 }
