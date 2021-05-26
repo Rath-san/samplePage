@@ -24,6 +24,8 @@ section.mlut-mosaic
         .mosaic-item-wrapper.mosaic-item-wrapper--big.animated.animated--fade--bottom
           .ba-slider
             - var image = img11After
+            - var imageWidth = '1800'
+            - var imageHeight = '1800'
             include components/image.pug
             .resize
               - var image = img11
@@ -36,17 +38,21 @@ section.mlut-mosaic
         .mosaic-item-wrapper.mosaic-item-wrapper--small.mosaic-item-wrapper--underlay.animated.animated--fade--bottom
           .ba-slider
             - var image = img12After
+            - var imageWidth = '1360'
+            - var imageHeight = '1360'
             include components/image.pug
             .resize
               - var image = img12
               include components/image.pug
       .col-md-6.order-3
         .mosaic__text
-          h3.animated.animated.animated--fade--bottom #{t21}
+          h3.animated.animated.animated--fade--bottom.mosaic__text-med #{t21}
       .col-md-6.order-4
         .mosaic-item-wrapper.mosaic-item-wrapper--underlay.mosaic-item-wrapper--medium.animated.animated--fade--bottom
           .ba-slider
             - var image = img21After
+            - var imageWidth = '1800'
+            - var imageHeight = '956'
             include components/image.pug
             .resize
               - var image = img21
@@ -55,6 +61,8 @@ section.mlut-mosaic
       .col-md-6.order-12.order-md-11
         .mosaic-item-wrapper.mosaic-item-wrapper--medium--2.animated.animated--fade--bottom
           .ba-slider
+            - var imageWidth = '1360'
+            - var imageHeight = '1360'
             - var image = img31After
             include components/image.pug
             .resize

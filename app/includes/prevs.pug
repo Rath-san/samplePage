@@ -10,6 +10,8 @@ section.section-prevs
         .pagination__top
           include components/paginator.pug
     #prContainer.row.section-prevs-row.text-center
+      - var imageWidth = "830"
+      - var imageHeight = "500"
       each name in names
         div(id=name)
           - var imagePath = `${mediaRootUrl}/preview/${name}`

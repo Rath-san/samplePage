@@ -1,6 +1,9 @@
 .trailer {
   text-align: center;
   margin-top: 3rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 0rem;
+  }
   &__text {
     padding: 0 10%;
     @media screen and (max-width: 420px) {

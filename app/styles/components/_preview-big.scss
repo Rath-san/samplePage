@@ -1,3 +1,6 @@
 .big__prev {
-  // padding: 2rem 0;
+  padding-bottom: 4rem;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 2rem;
+  }
 }
