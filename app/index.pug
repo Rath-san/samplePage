@@ -28,9 +28,9 @@ html(lang="en")
 
     - var mediaRootUrl = '/images'
     - var templateImagesUrl = '/images'
-    - const getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
 
   body
+    - var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
     include includes/submenu.pug
     include includes/navbar.pug
     .top-bar
