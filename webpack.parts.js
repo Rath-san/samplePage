@@ -159,7 +159,7 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
         exclude,
 
         use: {
-          // loader: 'url-loader',
+          loader: 'url-loader',
           loader: "responsive-loader",
           options: {
             ...options,

@@ -8,12 +8,15 @@
 
   &__table {
     font-weight: 400;
-    color: #777;
+    color: #666;
     width: 100%;
     padding: 0 5%;
     td {
       padding-bottom: 2rem;
       vertical-align: top;
+      &:last-child {
+        padding-bottom: 0;
+      }
     }
     .td-right {
       text-align: right;
