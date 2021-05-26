@@ -1,5 +1,10 @@
 div[id^='prBA'] {
   margin-bottom: 2.5rem;
+  @media screen and (max-width: 768px) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .ba-slider {

@@ -12,18 +12,22 @@
 @import 'components/lazy-image';
 @import 'components/image-background';
 @import 'components/minstaller';
+@import 'components/scroll-to-btn';
 @import 'animations/page';
 
 $text-margin: 2rem;
 
 .mlut-mosaic {
+  padding-top: 4rem;
   h3 {
     font-weight: 400;
     font-family: 'Lora', serif;
     font-size: 36px;
     margin-bottom: $text-margin;
     margin-top: $text-margin;
-    // white-space: pre;
+    @media screen and (max-width: 768px) {
+      margin-top: 0;
+    }
   }
   p {
     font-weight: 300;
@@ -45,7 +49,7 @@ $underlay-color: #fbfbfb;
     padding-left: $paragraph-basic-offset;
     &--offset {
       &-right {
-        padding-left: $text-margin * 3.5;
+        padding-left: $text-margin * 2.5;
         @media screen and (max-width: 1280px) {
           padding-left: $paragraph-basic-offset;
         }
@@ -63,6 +67,9 @@ $underlay-color: #fbfbfb;
   &-item {
     &-wrapper {
       position: relative;
+      @media screen and (max-width: 768px) {
+        margin-bottom: 3rem !important;
+      }
       &--underlay {
         &::before {
           position: absolute;
@@ -94,7 +101,6 @@ $underlay-color: #fbfbfb;
         @media screen and (max-width: 768px) {
           width: calc(100% + 30px);
           margin-left: -15px;
-          margin-bottom: 0;
         }
         &--2 {
           position: relative;
@@ -125,7 +131,6 @@ $underlay-color: #fbfbfb;
           width: calc(100% + 30px);
           left: 0;
           margin-left: -15px;
-          margin-bottom: 0;
         }
       }
     }

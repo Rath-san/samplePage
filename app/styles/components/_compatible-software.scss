@@ -11,6 +11,7 @@
       margin-right: auto;
       margin-bottom: 0;
       text-align: center;
+      width: 280px;
     }
     &s {
       margin: 0 auto 3rem auto;
@@ -74,6 +75,9 @@
       max-width: 740px;
       margin: 0 auto;
       margin-bottom: 3rem;
+      @media screen and (max-width: 420px) {
+        padding: 0 5%;
+      }
     }
   }
 }

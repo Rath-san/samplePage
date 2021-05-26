@@ -1,16 +1,19 @@
 .trailer {
   text-align: center;
+  margin-top: 3rem;
+  &__text {
+    padding: 0 10%;
+    @media screen and (max-width: 420px) {
+      padding: 0 5%;
+    }
+  }
   &__title {
     margin-bottom: 2rem;
   }
 
   &__subtitle {
-    width: 70%;
     max-width: 700px;
     margin: auto;
     margin-bottom: 3rem;
-    @media screen and (max-width: 425px) {
-      max-width: 90%;
-    }
   }
 }

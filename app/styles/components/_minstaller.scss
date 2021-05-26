@@ -1,6 +1,9 @@
 .minstaller {
   &__section {
     margin-bottom: 3rem;
+    @media screen and (max-width: 420px) {
+      padding: 2rem 5%;
+    }
   }
   text-align: center;
   &__title {

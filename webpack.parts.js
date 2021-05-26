@@ -55,7 +55,13 @@ exports.loadPug = (options) => ({
           },
           {
             loader: 'pug-html-loader',
-            options
+            options: {
+              ...options,
+              data: {
+                require,
+                exports: false
+              }
+            }
           }
         ]
       }

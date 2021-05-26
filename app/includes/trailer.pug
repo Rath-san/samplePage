@@ -3,8 +3,9 @@ section.trailer.animated
   .container
     .row
       .col
-        h2.trailer__title.animated.animated--fade--bottom #{title}
-        p.trailer__subtitle.animated.animated--fade--bottom #{subtitle}
+        .trailer__text
+          h2.trailer__title.animated.animated--fade--bottom #{title}
+          p.trailer__subtitle.animated.animated--fade--bottom #{subtitle}
         .yt.embed-responsive.embed-responsive-16by9.animated.animated--fade--bottom
           iframe(
             src=videoLink,
