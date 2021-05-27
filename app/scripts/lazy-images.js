@@ -31,3 +31,27 @@
 
   images.forEach(lazyLoad)
 })()
+
+const headerComp = () => {
+
+  const header = document.querySelector('.header')
+  const headerImages = Array.from(header.querySelectorAll('img'));
+
+  const imagesresolved = Promise.all(headerImages.map(image => new Promise((res, rej) => {
+    image.onload = () => {
+      res();
+    }
+  })));
+
+  imagesresolved.then(() => {
+    header.classList.add('animated-in')
+  })
+
+  headerImages.forEach((img, index) => {
+    img.src = img.dataset.src
+    img.srcset = img.dataset.srcset
+  })
+
+}
+
+headerComp()

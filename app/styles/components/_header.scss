@@ -1,13 +1,38 @@
+%anim {
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+  transition: transform .5s ease-out, opacity .15s ease-out;
+}
+
+%anim-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 .header {
   color: #fff;
   width: 100%;
-  height: calc(100vh - 4rem - 8px);
   position: relative;
   padding-top: 4rem;
   text-align: center;
+
+  will-change: opacity;
+  transition: opacity .25s ease-in-out;
+
+  &.animated-in {
+    opacity: 1 !important;
+
+    .header-title,
+    .header-logo {
+      @extend %anim-in
+    }
+  }
+
   @media screen and (max-width: 768px) {
     height: calc(100vh - 2rem - 8px);
   }
+
 
   .image__background {
     img {
@@ -23,6 +48,7 @@
     padding-top: 30%;
     width: 70%;
     padding-bottom: 2rem;
+    @extend %anim;
     img {
       width: 100%;
     }
@@ -36,6 +62,8 @@
     font-size: 1rem;
     letter-spacing: 1px;
     text-shadow: 0 0 30px #333;
+    transition-delay: .15s;
+    @extend %anim;
     @media screen and (max-width: 425px) {
       width: 75%;
     }

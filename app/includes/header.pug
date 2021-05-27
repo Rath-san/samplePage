@@ -1,4 +1,4 @@
-section.header
+section.header(style='height: calc(100vh - 4rem - 8px); opacity: 0')
   .header__image.image__background
     - var image = `${mediaRootUrl}/header_bg.jpg`
     - var sizes = '(max-width: 1024px) 1600px, 100vw'
@@ -12,8 +12,8 @@ section.header
       img(
         alt=alt,
         height=height
-        src=getParsedImage(image, 'src'),
-        srcset=srcset,
+        data-src=getParsedImage(image, 'placeholder'),
+        data-srcset=srcset,
         sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
       )
   .container
@@ -27,8 +27,8 @@ section.header
       - var srcset = getParsedImage(image, 'srcSet')
       img(
         alt=alt,
-        src=getParsedImage(image, 'src'),
-        srcset=srcset,
+        data-src=getParsedImage(image, 'src'),
+        data-srcset=srcset,
         sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
       )
 
