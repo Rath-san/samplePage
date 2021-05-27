@@ -1,3 +1,5 @@
+import {is_cached} from './utils';
+
 ;(() => {
   // Lazy images
   const images = document.querySelectorAll('.img-lazy')
@@ -9,7 +11,11 @@
           if (entry.isIntersecting) {
             const img = entry.target.querySelector('img')
             const placeholder = entry.target.querySelector('.placeholder')
-      
+
+            if (is_cached(img.dataset.src)) {
+              entry.target.classList.add('img-cached')
+            }
+
             img.onload = () => {
               img.style.opacity = 1
               placeholder.style.opacity = 0;

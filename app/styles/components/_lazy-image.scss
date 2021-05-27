@@ -1,6 +1,15 @@
 .img-lazy {
   $time: .15s;
   position: relative;
+  &.img-cached {
+    .placeholder {
+      opacity: 0;
+    }
+    img {
+      transition: none;
+      opacity: 1;
+    }
+  }
   .placeholder {
     width: 100%;
     height: 100%;

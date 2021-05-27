@@ -74,6 +74,17 @@ $underlay-color: #fbfbfb;
 
 .mosaic {
 
+  &__col {
+    &--6 {
+      h3 {
+        max-width: 10em;
+        @media screen and (max-width: 768px) {
+          max-width: unset;
+        }
+      }
+    }
+  }
+
   $paragraph-basic-offset: .1rem;
 
   &-paragraph {

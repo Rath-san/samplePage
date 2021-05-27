@@ -1,3 +1,5 @@
+import {is_cached} from './utils';
+
 const mainContainer = document.getElementById('prContainer')
 
 const repaintBASlider = () => $('#prContainer .ba-slider').each(function() {
@@ -143,10 +145,15 @@ const repaint = (item, index) => {
     const img = image.querySelector('img')
     const placeholder = image.querySelector('.placeholder')
 
+    if (is_cached(img.dataset.src)) {
+      image.classList.add('img-cached')
+    }
+
     img.onload = () => {
       img.style.opacity = 1
       placeholder.style.opacity = 0;
     }
+
     img.src = img.dataset.src
     img.srcset = img.dataset.srcset
   })
