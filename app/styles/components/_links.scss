@@ -1,5 +1,5 @@
-.additions__link {
-    white-space: break-spaces;
-    display: inline-block;
-    width: 50px;
+a {
+  &:hover {
+    text-decoration: none;
+  }
 }

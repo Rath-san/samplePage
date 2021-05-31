@@ -27,9 +27,10 @@ section.header(style='height: calc(100vh - 4rem - 8px); opacity: 0')
       - var srcset = getParsedImage(image, 'srcSet')
       img(
         alt=alt,
+        height=height
         data-src=getParsedImage(image, 'src'),
         data-srcset=srcset,
         sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
       )
 
-    h1.header-title A Selection of Insta Color Gradings for FCPX
+    h1.header-title 25 Professional LUTs Inspired by Instant Photography

@@ -13,6 +13,7 @@
 @import 'components/image-background';
 @import 'components/minstaller';
 @import 'components/scroll-to-btn';
+@import 'components/links';
 @import 'animations/page';
 
 $text-margin: 2rem;
@@ -116,9 +117,9 @@ $underlay-color: #fbfbfb;
           will-change: width opacity;
           animation: resize-scale;
           animation-timing-function: ease-in-out;
-          animation-duration: 10s;
+          animation-duration: 7s;
           @media screen and (min-width: 768px) {
-            animation-duration: 15s;
+            animation-duration: 12s;
           }
           animation-iteration-count: infinite;
           animation-direction: alternate;
@@ -153,7 +154,7 @@ $underlay-color: #fbfbfb;
 
       &--medium {
         position: relative;
-        width: calc(100% + ((100vw - 100% * 2) / 2));
+        width: calc(100% - 23px + ((100vw - 100% * 2) / 2));
         margin-bottom: 7rem;
         z-index: -1;
         @media screen and (max-width: 768px) {
@@ -180,8 +181,8 @@ $underlay-color: #fbfbfb;
 
       &--big {
         position: relative;
-        width: calc(100% + ((100vw - 100% * 2) / 2));
-        left: calc((100vw - ((100% + 15px) * 2)) / -2 - 5vw);
+        width: calc(100% + ((100vw - (220% + 45px)) / 2));
+        left: calc(((100vw - (200% + 45px)) / -2));
         margin-bottom: 10rem;
         @media screen and (max-width: 768px) {
           max-height: 50vh;

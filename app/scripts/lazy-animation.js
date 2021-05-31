@@ -1,4 +1,4 @@
-;(() => {
+export const lazyAnim = () => {
   // Animating sections
   const animatedSections = document.querySelectorAll('.animated')
 
@@ -22,4 +22,4 @@
   }
 
   animatedSections.forEach(lazyAnimate)
-})()
+}

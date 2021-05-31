@@ -12,7 +12,7 @@ html(lang="en")
     link(rel='shortcut icon' href='css/static/images/favicon.png' type='image/png')
     //- FONTS
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700&display=swap" rel="stylesheet">
 
     link(href='css/custom_pages_wrap.css' rel="stylesheet" type="text/css")
     link(href='css/bootstrap-4.1.3.min.css' rel="stylesheet" type="text/css")
@@ -22,7 +22,6 @@ html(lang="en")
     script(src='scripts/bootstrap-4.1.3.bundle.min.js')
     script(src='https://s3.motionvfx.com/mvfxpublic/products/templates/source/media/scroll_to_anchor.js')
     script(src='scripts/custom_pages_wrap.js')
-    script(src='scripts/beforeafter.js')
     script(src='scripts/scroll_to_anchor.js')
     script(src='scripts/menu.js')
 
@@ -39,16 +38,20 @@ html(lang="en")
       .gradient
       a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
       a.nav(name="trailer")
+      - var bgc = '#f9f9f9'
       include includes/logos.pug
       - var title = "Watch mLUT Insta Pack trailer"
       - var subtitle = "See how these professional color gradings unleash \nthe potential contained in your shots."
       - var videoLink = "//player.vimeo.com/video/120034840?title=0&byline=0&portrait=0"
+      - var videoPlaceholder = "https://i.vimeocdn.com/video/507700985.jpg?mw=1300&mh=731"
       - var videoTitle = 'mLut Insta Pack trailer'
       include includes/trailer.pug
       - var title = "How to use mLUT for FCP?"
       - var subtitle = "Take a peek at these videos and grab some tips and tricks to master your work. \nEndless possibilities await!"
       - var videoLink = "https://www.youtube.com/embed/9tF-MzNxz4c?rel=0"
+      - var videoPlaceholder = "https://i.ytimg.com/vi/9tF-MzNxz4c/maxresdefault.jpg"
       - var videoTitle = 'mLut Insta Pack tutorial'
+      a.nav(name="tutorial")
       include includes/trailer.pug
       include includes/mosaic.pug
       - var title = "Luts preview"
@@ -57,6 +60,7 @@ html(lang="en")
       - var urlAfter = `${mediaRootUrl}/big_after.jpg`
       include includes/prevs-big.pug
       include includes/compatible-software.pug
+      a.nav(name='specs')
       include includes/tech-spec.pug
       include includes/minstaller.pug
       include includes/footer.pug

@@ -16,6 +16,10 @@
     font-weight: 400;
     max-width: 50%;
     margin: 0 auto;
-    max-width: 380px;
+    max-width: 450px;
+    white-space: pre-line;
+    @media screen and (max-width: 425px) {
+      white-space: unset;
+    }
   }
 }
