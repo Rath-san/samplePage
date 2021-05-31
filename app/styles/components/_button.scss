@@ -1,0 +1,36 @@
+.btn {
+  color: #fff;
+  padding: 14px 44px;
+  &:hover {
+    color: #fff;
+  }
+
+  .button__icon {
+    padding-right: .5em;
+  }
+
+  &__fill {
+    &--primary {
+      color: #fff;
+      background-color: $color-link;
+      &:hover {
+        
+        background-color: darken($color-link, 5%);
+      }
+    }
+  }
+
+  &__outline {
+    &--light {
+      border: 1px solid #fff;
+      box-shadow: 0 0 0 1px inset #fff;
+      // box-sizing: border-box;
+
+    }
+  }
+
+  &--windows {
+    padding: 14px 22px;
+  }
+
+}

@@ -1,95 +1,37 @@
-%anim {
-  will-change: transform, opacity;
-  opacity: 0;
-  transform: translate3d(0, 50px, 0);
-  transition: transform .5s ease-out, opacity .15s ease-out;
-}
-
-%anim-in {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
 .header {
-  color: #fff;
-  width: 100%;
-  position: relative;
-  padding-top: 4rem;
-  text-align: center;
-
-  will-change: opacity;
-  transition: opacity .25s ease-in-out;
-
-  &.animated-in {
-    opacity: 1 !important;
-
-    .header-title,
-    .header-logo {
-      @extend %anim-in
-    }
+  max-height: 85vh;
+  min-height: 1170px;
+  background: rgb(2,0,36);
+  background:
+    radial-gradient(circle at 17.71% 43.75%, #131918, transparent 26%),radial-gradient(circle at 13.85% 13.22%, #000000, transparent 100%),radial-gradient(circle at 67.24% 61.17%, #1c0e33, transparent 37%),radial-gradient(circle at 93.8% 90.37%, #000000, transparent 100%),radial-gradient(circle at 82.34% 23.67%, #235a75, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%);
+  &__logo {
+    margin-top: 15%;
   }
 
-  @media screen and (max-width: 768px) {
-    height: calc(100vh - 2rem - 8px);
+  &__buttons {
+    margin: 3rem 0;
   }
 
-
-  .image__background {
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-     object-position: 70% 0;
-   }
+  &__text {
+    margin: 0 auto 2rem auto;
+    max-width: 20em;
   }
 
-  &-logo {
-    max-width: 360px;
-    padding-top: 30%;
-    width: 70%;
-    padding-bottom: 2rem;
-    @extend %anim;
-    img {
-      width: 90%;
-    }
-    @media screen and (min-width: 425px) {
-      padding-top: 5%;
-      width: 75%;
-    }
+  &__link {
+    margin-bottom: 3rem;
   }
 
-  &-title {
-    font-size: 1rem;
-    letter-spacing: 1px;
-    text-shadow: 0 0 30px #333;
-    transition-delay: .15s;
-    @extend %anim;
-    @media screen and (max-width: 425px) {
-      width: 75%;
-    }
+  &__promo {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 20px 150px -50px #00000060;
   }
-
-  .container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-
 }
 
-.gradient {
-  position: relative;
-  width: 100%;
-  height: 8px;
-  background: linear-gradient(
-    to right,
-    #2f777a,
-    #60ad9d,
-    #97b82e,
-    #f2dc2d,
-    #e19e2f,
-    #d03535
-  );
+.shop__buttons {
+  display: flex;
+  justify-content: center;
+  .btn {
+    margin: 0 .5rem;
+  }
 }

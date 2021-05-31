@@ -1,17 +1,11 @@
-
-- var title = "Influencer colorizations"
-- var text = "If you want to stand out from the crowd, you need \na special look that makes your content dostinct from everyone else's. These stunning color \ngrades will give your shots the originality they deserve and create a one-of-a-kind \nexperience."
-
-section.footer
-  - var image = `${mediaRootUrl}/footer.jpg`
-  - var alt = 'Woman in cinematic alley'
-  include components/image-background.pug
+section.footer.bg--dark.text-center
   .container
     .row
-      .col
+      .col-12
         .footer__content
-          h2.footer__title #{title}
-          p.footer__text #{text}
-          .button-buy
-            | {% with discount_text=&apos;INTRO&apos;, version=2 %} {% include
-            | &apos;product/buy_button.jinja2&apos; %} {% endwith %}
+          h2.footer__title Safety first
+          p.footer__text Secured direct connection with your MotionVFX account. Browse our store, purchase and download our products and pay without worrying about your privacy and security. Let us take care of that.
+          .footer__buttons
+            include components/buttons.pug
+        .footer__promo
+          img(src="https://via.placeholder.com/1920x1080", alt="", srcset="")

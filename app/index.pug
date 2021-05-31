@@ -21,44 +21,52 @@ html(lang="en")
     script(src='scripts/jquery-3.4.1.min.js')
     script(src='scripts/bootstrap-4.1.3.bundle.min.js')
     script(src='https://s3.motionvfx.com/mvfxpublic/products/templates/source/media/scroll_to_anchor.js')
-    script(src='scripts/custom_pages_wrap.js')
-    script(src='scripts/beforeafter.js')
-    script(src='scripts/scroll_to_anchor.js')
-    script(src='scripts/menu.js')
+    //- script(src='scripts/custom_pages_wrap.js')
+    //- script(src='scripts/beforeafter.js')
+    //- script(src='scripts/scroll_to_anchor.js')
+    //- script(src='scripts/menu.js')
 
     - var mediaRootUrl = '/images'
     - var templateImagesUrl = '/images'
     - var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
 
   body
-    include includes/submenu.pug
-    include includes/navbar.pug
+    //- include includes/submenu.pug
+    //- include includes/navbar.pug
     .top-bar
-    main.mLUT-insta-pack
+    main.mInstaller
       include includes/header.pug
-      .gradient
-      a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
-      a.nav(name="trailer")
-      include includes/logos.pug
-      - var title = "Watch mLUT Insta Pack trailer"
-      - var subtitle = "See how these professional color gradings unleash \nthe potential contained in your shots."
-      - var videoLink = "//player.vimeo.com/video/120034840?title=0&byline=0&portrait=0"
-      - var videoTitle = 'mLut Insta Pack trailer'
-      include includes/trailer.pug
-      - var title = "How to use mLUT for FCP?"
-      - var subtitle = "Take a peek at these videos and grab some tips and tricks to master your work. \nEndless possibilities await!"
-      - var videoLink = "https://www.youtube.com/embed/9tF-MzNxz4c?rel=0"
-      - var videoTitle = 'mLut Insta Pack tutorial'
-      include includes/trailer.pug
-      include includes/mosaic.pug
-      - var title = "Luts preview"
-      include includes/prevs.pug
-      - var urlBefore = `${mediaRootUrl}/big_before.jpg`
-      - var urlAfter = `${mediaRootUrl}/big_after.jpg`
-      include includes/prevs-big.pug
-      include includes/compatible-software.pug
-      include includes/tech-spec.pug
-      include includes/minstaller.pug
+      include includes/installation.pug
+      include includes/purchases.pug
+      //- include includes/store.pug
+      include includes/content.pug
+      include includes/manage.pug
+      include includes/update.pug
       include includes/footer.pug
 
     //- script(src="https://s3.motionvfx.com/mvfxpublic/products/templates/1327/js/aos.js?response-content-type=application/javascript")
+
+
+      //- .gradient
+      //- a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
+      //- a.nav(name="trailer")
+      //- include includes/logos.pug
+      //- - var title = "Watch mLUT Insta Pack trailer"
+      //- - var subtitle = "See how these professional color gradings unleash \nthe potential contained in your shots."
+      //- - var videoLink = "//player.vimeo.com/video/120034840?title=0&byline=0&portrait=0"
+      //- - var videoTitle = 'mLut Insta Pack trailer'
+      //- include includes/trailer.pug
+      //- - var title = "How to use mLUT for FCP?"
+      //- - var subtitle = "Take a peek at these videos and grab some tips and tricks to master your work. \nEndless possibilities await!"
+      //- - var videoLink = "https://www.youtube.com/embed/9tF-MzNxz4c?rel=0"
+      //- - var videoTitle = 'mLut Insta Pack tutorial'
+      //- include includes/trailer.pug
+      //- include includes/mosaic.pug
+      //- - var title = "Luts preview"
+      //- include includes/prevs.pug
+      //- - var urlBefore = `${mediaRootUrl}/big_before.jpg`
+      //- - var urlAfter = `${mediaRootUrl}/big_after.jpg`
+      //- include includes/prevs-big.pug
+      //- include includes/compatible-software.pug
+      //- include includes/tech-spec.pug
+      //- include includes/minstaller.pug

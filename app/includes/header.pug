@@ -1,35 +1,14 @@
-section.header(style='height: calc(100vh - 4rem - 8px); opacity: 0')
-  .header__image.image__background
-    - var image = `${mediaRootUrl}/header_bg.jpg`
-    - var sizes = '(max-width: 1024px) 1600px, 100vw'
-    - var alt = 'Happy couple'
-    - var imageWidth = '2400'
-    - var imageHeight = '1172'
-    //- include components/image-background.pug
-    - var placeholder = getParsedImage(image)
-    - var srcset = getParsedImage(image, 'srcSet')
-    
-      img(
-        alt=alt,
-        height=height
-        data-src=getParsedImage(image, 'placeholder'),
-        data-srcset=srcset,
-        sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
-      )
+section.header.bg--dark.text-center
   .container
-    .header-logo
-      - var image = `${mediaRootUrl}/mlut_insta_logo_@2x.png`
-      - var alt = 'mLut Insta Pack logo'
-      - var imageWidth = '1200'
-      - var imageHeight = '737'
-      //- include components/image.pug
-      - var placeholder = getParsedImage(image)
-      - var srcset = getParsedImage(image, 'srcSet')
-      img(
-        alt=alt,
-        data-src=getParsedImage(image, 'src'),
-        data-srcset=srcset,
-        sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
-      )
-
-    h1.header-title A Selection Of Insta Color Gradings for FCPX
+    .row
+      .col-12
+        .header__content
+          .header__logo
+            h1.header__title mInstaller
+            p.header_logo__subtitle Your MotionVFX cloud.
+          .header__buttons
+            include components/buttons.pug
+          p.header__text Acess your entire MotionVFX FCP Plugins and Motion Templates collection with a click.
+          a.header__link.link--yellow(href="http://google.com", target="_blank", rel="noopener noreferrer") Watch more
+          .header__promo
+            img(src="https://via.placeholder.com/1920x1080", alt="", srcset="")

@@ -1,14 +1,62 @@
+// @font-face {
+//   font-family: Proxima;
+//   src: url('/static/fonts/proximanova-bold-webfont.woff2') format('woff2'),
+//     url('/static/fonts/proximanova-bold-webfont.woff') format('woff'),
+//     url('/static/fonts/proximanova-bold-webfont.ttf') format('truetype');
+//   font-weight: 700;
+//   font-style: normal;
+//   font-display: fallback;
+// }
+// @font-face {
+//   font-family: Proxima;
+//   src: url('/static/fonts/proximanova-light-webfont.woff2') format('woff2'),
+//     url('/static/fonts/proximanova-light-webfont.woff') format('woff'),
+//     url('/static/fonts/proximanova-light-webfont.ttf') format('truetype');
+//   font-weight: 300;
+//   font-style: normal;
+//   font-display: fallback;
+// }
+// @font-face {
+//   font-family: Proxima;
+//   src: url('/static/fonts/proximanova-regular-webfont.woff2') format('woff2'),
+//     url('/static/fonts/proximanova-regular-webfont.woff') format('woff'),
+//     url('/static/fonts/proximanova-regular-webfont.ttf') format('truetype');
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: fallback;
+// }
+// @font-face {
+//   font-family: Proxima;
+//   src: url('/static/fonts/proximanova-semibold-webfont.woff2') format('woff2'),
+//     url('/static/fonts/proximanova-semibold-webfont.woff') format('woff'),
+//     url('/static/fonts/proximanova-semibold-webfont.ttf') format('truetype');
+//   font-weight: 600;
+//   font-style: normal;
+//   font-display: fallback;
+// }
+
+$rem: 20px;
+
+$font-size-title: $rem * 2;
+$font-size-sub-title: $rem * 1.2;
+$font-size-body: $rem * .9;
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lora', serif;
+  font-family: 'Proxima', sans-serif;
   font-weight: 400;
+  font-size: $font-size-title;
+  span {
+    font-size: $font-size-sub-title;
+  }
 }
 
 main {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Proxima', sans-serif;
   font-weight: 300;
+  font-size: $font-size-body;
 }

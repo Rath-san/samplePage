@@ -1,0 +1,45 @@
+-
+  var notifications = [
+    {
+      date: '2m ago',
+      text: 'New template! Hi-tech Business \nPresentation'
+    },
+    {
+      date: '37m ago',
+      text: 'mGrid plugin is avalible now!'
+    },
+    {
+      date: 'Yesterday 15:37',
+      text: 'mLUT plugin is now compatible with \napple Silicon!'
+    }
+  ]
+
+section.content.bg--dark
+  .container
+    .row
+      .col-12
+        .content__content
+          h2.content__title.title--varied
+            span Access your content<br>
+            | anywhere 
+          p.content__text Find purchased templates and plugins with ease. Install them with one click.
+      .col-6
+        h2.content__notification__title-2.title--varied
+          span Built-in<br>
+          | notification system
+        p.content__notification__text__sub Never miss a thing.
+      .col-6 
+        .notifications
+          for not in notifications
+            .notification__item
+              .notification__head
+                .notification__icon
+                  svg(width='18' height='18' viewbox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M9 0C14 0 18 4 18 9C18 14 14 18 9 18C4 18 0 14 0 9C0 4 4 0 9 0Z' fill='black')
+                    path(d='M6.5002 13.7H5.3002C5.0002 13.7 4.7002 13.4 4.7002 13.1V4.80005C4.7002 4.50005 4.9002 4.30005 5.2002 4.30005H6.5002C6.8002 4.30005 7.0002 4.50005 7.0002 4.80005V13.1C7.0002 13.4 6.8002 13.7 6.5002 13.7Z' fill='white')
+                    path(d='M12.7004 13.7H11.5004C11.2004 13.7 10.9004 13.4 10.9004 13.1V4.80005C10.9004 4.50005 11.1004 4.30005 11.4004 4.30005H12.7004C13.0004 4.30005 13.2004 4.50005 13.2004 4.80005V13.1C13.2004 13.4 13.0004 13.7 12.7004 13.7Z' fill='white')
+                    path(d='M9.1998 9.90005C9.0998 10 8.8998 10 8.7998 9.90005C8.4998 9.70005 7.7998 9.10005 7.7998 8.90005V4.80005C7.7998 4.50005 7.9998 4.30005 8.2998 4.30005H9.5998C9.8998 4.30005 10.0998 4.50005 10.0998 4.80005V8.90005C10.0998 9.10005 9.4998 9.70005 9.1998 9.90005Z' fill='white')
+                .notification__title MINSTALLER
+                .notification__date= not.date
+              .notification__body
+                .notification__text= not.text

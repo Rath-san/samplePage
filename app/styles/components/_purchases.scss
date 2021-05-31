@@ -1,0 +1,34 @@
+.purchases {
+  padding: 15rem 0;
+  &__image {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    img {
+      width: 100%;
+    }
+    &--products {
+      left: calc((100vw - 100% * 2) / -2);
+    }
+    &--projects {
+      left: calc((100vw - 100% * 2) / 2);
+    }
+  }
+  &__content {
+    position: relative;
+    z-index: 1;
+
+  }
+  &__title {
+
+  }
+  &__subtitle {
+
+  }
+  &__text {
+
+  }
+
+}

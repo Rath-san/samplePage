@@ -1,35 +1,21 @@
 .footer {
-  color: #fff;
-  z-index: -1;
-  position: relative;
-  text-align: center;
+  max-height: 100vh;
   overflow: hidden;
-
-  &__content {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @media screen and (max-width: 420px) {
-      padding: 0 5%;
-    }
-  }
-
-  $text-shadow: 0 0 20px#000;
+  background: rgb(2,0,36);
+  padding-bottom: 0;
+  background:
+    radial-gradient(circle at 17.71% 43.75%, #131918, transparent 26%),radial-gradient(circle at 13.85% 13.22%, #000000, transparent 100%),radial-gradient(circle at 67.24% 61.17%, #1c0e33, transparent 100%),radial-gradient(circle at 93.8% 90.37%, #000000, transparent 100%),radial-gradient(circle at 82.34% 23.67%, #235a75, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%);
 
   &__title {
     margin-bottom: 2rem;
-    text-shadow: $text-shadow;
+  }
+  
+  &__text {
+    max-width: 34em;
+    margin: 0 auto;
   }
 
-  &__text {
-    margin-bottom: 2rem;
-    max-width: 500px;
-    line-height: 1.7rem;
-    text-shadow: $text-shadow;
-    @media screen and (max-width: 600px) {
-      white-space: normal;
-    }
+  &__buttons {
+    margin: 5rem 0;
   }
 }
