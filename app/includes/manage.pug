@@ -1,3 +1,23 @@
+-
+  var manageImages = [
+    {
+      alt: 'test',
+      src: 'https://via.placeholder.com/300x100'
+    },
+    {
+      alt: 'test',
+      src: 'https://via.placeholder.com/300'
+    },
+    {
+      alt: 'test',
+      src: 'https://via.placeholder.com/300'
+    },
+    {
+      alt: 'test',
+      src: 'https://via.placeholder.com/300'
+    }
+  ]
+
 section.manage.bg--light
   .container
     .row
@@ -15,8 +35,9 @@ section.manage.bg--light
             | right inside mInstaller
       .col-6
         .manage__comp__wrapper
-          .manage__comp
-            img(src="https://via.placeholder.com/300", alt="", srcset="")
-            img(src="https://via.placeholder.com/300", alt="", srcset="")
-            img(src="https://via.placeholder.com/300", alt="", srcset="")
-            img(src="https://via.placeholder.com/300", alt="", srcset="")
+          .manage__comp.scene-3d
+            each image in manageImages
+              .object-3d
+                .mesh-3d
+                  img(src=image.src, alt=image.alt, srcset="")
+                .shadow-3d

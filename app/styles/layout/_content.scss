@@ -1,0 +1,147 @@
+
+.content {
+  padding: 10rem 0;
+  background-repeat: no-repeat;
+  position: relative;
+  &__bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    img {
+      width: 110%;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    margin-bottom: 20rem;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__notification {
+    &__title-2 {
+      margin-bottom: 2rem;
+      margin-top: auto;
+    }
+  }
+
+}
+
+.notification {
+  &s {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &__item {
+    background-color: #1E1F22;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+    width: 460px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__head {
+    background-color: #322E31;
+    color: #615E60;
+    display: flex;
+    padding: 10px;
+    font-size: .8em;
+
+  }
+
+  &__icon {
+    margin-right: 10px;
+    margin-top: -2px;
+  }
+
+  &__title {
+
+  }
+
+  &__date {
+    margin-left: auto;
+  }
+
+  &__body {
+    color: #fff;
+    padding: 20px 20px 20px 36px;
+  }
+
+  &__text {
+    margin-bottom: 5px;
+    white-space: pre-line;
+  }
+}
+
+/*
+  Animation for notifications proto steps
+  - first item enters from right
+  - when next item enters from right move previous one up
+  - after interval expires fade it out
+*/
+
+.notification__item {
+  opacity: 0;
+  animation: notification-anim 1.5s forwards;
+  transition: opacity .5s ease;
+  &:nth-child(1) {
+    animation-delay: 0s;
+  }
+  &:nth-child(2) {
+    animation-delay: .5s;
+  }
+  &:nth-child(3) {
+    animation-delay: 1s;
+  }
+}
+
+.content {
+  .notifications {
+    animation: notifications-up-anim 1.5s both;
+    transform: translate(80%, 100%);
+  }
+  &:hover {
+    .notification__item {
+    }
+  }
+}
+
+@keyframes notifications-up-anim {
+  0% {
+    transform: translate(80%, 100%);
+  }
+  33% {
+    transform: translate(80%, 66%);
+  }
+  66% {
+    transform: translate(80%, 33%);
+  }
+  100% {
+    transform: translate(80%, 0%);
+  }
+}
+
+@keyframes notification-anim {
+  0% {
+    opacity: 0;
+    transform: translateX(0%);
+  }
+  33% {
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+}

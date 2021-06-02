@@ -1,0 +1,37 @@
+.store {
+  padding: 10rem 0;
+  &__content {
+
+  }
+
+  &__title {
+
+  }
+
+  &__subtitle {
+
+  }
+
+  &__payment {
+    &__list {
+      &__item {
+
+      }
+    }
+  }
+
+  $bs-col-padding: 15px;
+  $image-offset: 10%;
+
+  &__promo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: calc(100% + (100vw - 200%) / 2);
+    max-width: 1540px;
+  }
+
+}

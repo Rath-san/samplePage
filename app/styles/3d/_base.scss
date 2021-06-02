@@ -1,0 +1,39 @@
+.scene-3d {
+  transform: rotateX(40deg) rotateZ(-32deg);
+  transform-style: preserve-3d;
+}
+
+.object-3d {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+$mesh-z-position: 400px;
+
+.mesh-3d {
+  transform: translateZ($mesh-z-position);
+  transform-style: preserve-3d;
+  // opacity: 0;
+}
+
+$shadow-color: #000;
+$shadow-core-mpl: 1;
+$shadow-size: 45%;
+$shadow-size-computed: (100% - $shadow-size) / 2;
+
+.shadow-3d {
+  position: absolute;
+  opacity: .35;
+  top: $shadow-size-computed;
+  bottom: $shadow-size-computed;
+  left: $shadow-size-computed;
+  right: $shadow-size-computed;
+  background-color: rgba($shadow-color, $shadow-core-mpl);
+  box-shadow:
+    0 0 100px 160px rgba($shadow-color, 1),
+    0 0 160px 100px rgba($shadow-color, .25);
+}
+
+// .scene-3d > .object-3d > .mesh-3d + .shadow-3d

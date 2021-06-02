@@ -1,27 +1,30 @@
 -
   var notifications = [
     {
-      date: '2m ago',
-      text: 'New template! Hi-tech Business \nPresentation'
+      date: 'Yesterday 15:37',
+      text: 'mLUT plugin is now compatible with \napple Silicon!'
     },
     {
       date: '37m ago',
       text: 'mGrid plugin is avalible now!'
     },
     {
-      date: 'Yesterday 15:37',
-      text: 'mLUT plugin is now compatible with \napple Silicon!'
+      date: '2m ago',
+      text: 'New template! Hi-tech Business \nPresentation'
     }
   ]
 
 section.content.bg--dark
+  .content__bg.bg--full--absolute
+    img(src="/images/macbook_bg.jpg", alt="", srcset="")
   .container
     .row
       .col-12
         .content__content
-          h2.content__title.title--varied
-            span Access your content<br>
-            | anywhere 
+          .section__header
+            h2.content__title.title--varied
+              span Access your content<br>
+              | anywhere 
           p.content__text Find purchased templates and plugins with ease. Install them with one click.
       .col-6
         .content__left

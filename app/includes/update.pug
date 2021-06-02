@@ -1,5 +1,46 @@
+-
+  var updateImagesBg = [
+    {
+      alt: "",
+      src: "https://via.placeholder.com/370x320",
+      level: 1
+    },
+    {
+      alt: "",
+      src: "https://via.placeholder.com/370x320",
+      level: 2
+    },
+    {
+      alt: "",
+      src: "https://via.placeholder.com/370x320",
+      level: 6
+    },
+    {
+      alt: "",
+      src: "https://via.placeholder.com/370x320",
+      level: 2
+    },
+    {
+      alt: "",
+      src: "https://via.placeholder.com/370x320",
+      level: 6
+    },
+    {
+      alt: "",
+      src: "https://via.placeholder.com/370x320",
+      level: 1
+    }
+  ]
+
 section.update.bg--dark.text-center
-  .update__bg
+  .update__bg.bg--full--absolute
+    .update__bg__matrix__shadow.bg--full--absolute
+    .update__bg__matrix__shadow.update__bg__matrix__shadow--2.bg--full--absolute
+    canvas#glowingBinaryMatrix.update__bg__matrix
+    #parallax.update__bg__items
+      each image in updateImagesBg
+        .update__bg__item__wrapper(data-level=image.level)
+          img.update__bg__item(src=image.src, alt=image.alt)
   .container
     .row 
       .col-12

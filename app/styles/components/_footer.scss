@@ -1,10 +1,33 @@
 .footer {
   max-height: 100vh;
+  padding-top: 10rem;
   overflow: hidden;
   background: rgb(2,0,36);
   padding-bottom: 0;
+  background: #000;
   background:
-    radial-gradient(circle at 17.71% 43.75%, #131918, transparent 26%),radial-gradient(circle at 13.85% 13.22%, #000000, transparent 100%),radial-gradient(circle at 67.24% 61.17%, #1c0e33, transparent 100%),radial-gradient(circle at 93.8% 90.37%, #000000, transparent 100%),radial-gradient(circle at 82.34% 23.67%, #235a75, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%);
+    radial-gradient(
+      100% 50% at 0% 90%,
+      rgba(124, 35, 175, 0.24) 0%,
+      hsla(0, 0%, 100%, 0) 100%
+    ),
+    radial-gradient(
+      100% 50% at 100% 100%,
+      rgba(124, 35, 175, 0.24) 0%,
+      hsla(0, 0%, 100%, 0) 100%
+    ),
+    radial-gradient(
+      25% 50% at 0% 100%,
+      hsla(223, 100%, 50%, 0.1) 0%,
+      hsla(0, 0%, 100%, 0) 100%
+    ),
+    radial-gradient(
+      50% 50% at 105% 80%,
+      hsla(223, 100%, 50%, 0.1) 0%,
+      hsla(0, 0%, 100%, 0) 100%
+    )
+  ;
+
 
   &__title {
     margin-bottom: 2rem;

@@ -1,0 +1,33 @@
+.payment {
+  &__list {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    &__item {
+      margin-right: 1rem;
+      &__icon {
+        display: block;
+        line-height: 1;
+        &.icon {
+          &--apple-pay {
+            svg {
+              height: 20px;
+            }
+          }
+
+          &--paypal {
+            svg {
+              height: 20px;
+            }
+          }
+
+          &--secure-payment {
+            svg {
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

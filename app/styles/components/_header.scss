@@ -1,9 +1,22 @@
 .header {
-  max-height: 85vh;
+  max-height: 20rem;
   min-height: 1170px;
   background: rgb(2,0,36);
   background:
-    radial-gradient(circle at 17.71% 43.75%, #131918, transparent 26%),radial-gradient(circle at 13.85% 13.22%, #000000, transparent 100%),radial-gradient(circle at 67.24% 61.17%, #1c0e33, transparent 37%),radial-gradient(circle at 93.8% 90.37%, #000000, transparent 100%),radial-gradient(circle at 82.34% 23.67%, #235a75, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%);
+    radial-gradient(
+      33.51% 36.91% at 57.12% 51.28%,
+      rgba(255, 0, 41, 0.37) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      95.75% 105.64% at 18.55% 14.37%,
+      #0048ff27 0%, #ffffff00 100%);
+    // radial-gradient(circle at 17.71% 43.75%, #131918, transparent 26%),
+    // radial-gradient(circle at 13.85% 13.22%, #000000, transparent 100%),
+    // radial-gradient(circle at 67.24% 61.17%, #1c0e33, transparent 37%),
+    // radial-gradient(circle at 93.8% 90.37%, #000000, transparent 100%),
+    // radial-gradient(circle at 82.34% 23.67%, #235a75, transparent 100%),
+    // radial-gradient(circle at 50% 50%, #000000, #000000 100%);
   &__logo {
     margin-top: 15%;
   }

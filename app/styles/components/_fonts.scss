@@ -50,6 +50,8 @@ h6 {
   font-family: 'Proxima', sans-serif;
   font-weight: 400;
   font-size: $font-size-title;
+  line-height: 1;
+  margin-bottom: 0;
   span {
     font-size: $font-size-sub-title;
   }
@@ -59,4 +61,13 @@ main {
   font-family: 'Proxima', sans-serif;
   font-weight: 300;
   font-size: $font-size-body;
+}
+
+.section {
+  &__header {
+    margin-bottom: 2rem;
+  }
+  &__text {
+    margin-bottom: 2.5rem;
+  }
 }

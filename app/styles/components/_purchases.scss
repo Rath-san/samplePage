@@ -1,35 +1,59 @@
 .purchases {
-  padding: 15rem 0;
-  height: 100vh;
+  padding: 25rem 0;
+  // background-color: lightslategrey !important;
+  background: #000;
+  background:
+    radial-gradient(
+      35% 35% at 35% 40%,
+      hsla(253, 100%, 50%, 0.122) 0%,
+      hsla(0, 0%, 100%, 0) 100%
+    ),
+    radial-gradient(
+      50% 50% at 40% 50%,
+      hsla(223, 100%, 50%, 0.153) 0%,
+      hsla(0, 0%, 100%, 0) 100%
+    );
   &__image {
     position: absolute;
     z-index: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-    img {
-      width: 100%;
-    }
+    &__wrapper {}
+    &__item {}
+    &__shadow {}
+
     &--products {
-      left: calc((100vw - 100% * 2) / -2);
+      right: 50%;
+      .purchases {
+        &__image {
+          &__wrapper {
+            &:first-child {
+              transform: translate3d(500px, 180px, 410px);
+            }
+          }
+        }
+      }
     }
     &--projects {
-      left: calc((100vw - 100% * 2) / 2);
+      left: 125%;
+    }
+
+    img {
+      width: 100%;
     }
   }
   &__content {
     position: relative;
     z-index: 1;
-
   }
   &__title {
-
   }
   &__subtitle {
-
   }
   &__text {
-
   }
-
 }
+
+// rotation transform
+// rotateX(40deg) rotateZ(-32deg)
