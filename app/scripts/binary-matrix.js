@@ -13,9 +13,15 @@ export const glowingBinaryMatrix = ({
 
   // setup
   const matrixHeight = canvas.parentElement.clientHeight
-  const matrixWidth = window.innerWidth
+  let matrixWidth = window.innerWidth
   canvas.height = matrixHeight
   canvas.width = matrixWidth
+
+  const resize = () => {
+    matrixWidth = window.innerWidth
+  }
+
+  window.addEventListener('resize', resize)
   
   let charSet = text.split('')
 
@@ -32,7 +38,7 @@ export const glowingBinaryMatrix = ({
 
   const rain = () => {
     ctx.fillStyle = bgColor
-    ctx.fillRect(0, 0, matrixWidth, matrixHeight)
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
 
     for (var column = 0; column < drops.length; column++) {
       ctx.fillStyle = textColor
