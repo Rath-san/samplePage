@@ -3,15 +3,12 @@ section.purchases.bg--dark
     .row
       .col-6
         .purchases__image.purchases__image--products
-          .scene-3d
-            .purchases__image__wrapper.object-3d
-              .purchases__image__item.mesh-3d
-                img(src="https://via.placeholder.com/1000x1000", alt="", sizes="", srcset="")
-              .purchases__image__shadow.shadow-3d
-            .purchases__image__wrapper.object-3d
-              .purchases__image__item.mesh-3d
-                img(src="https://via.placeholder.com/1000x1000", alt="", sizes="", srcset="")
-              .purchases__image__shadow.shadow-3d
+          - var n = 1
+          while n < 9
+            .tile__wrapper(data-index=n)
+              .tile
+                img.tile__mesh(src=`/images/ptl_0${n++}.png` alt='' srcset='')
+                img.tile__shadow(src=`/images/ptl_0${n}_shadow.png` alt='' srcset='')
       .col-6
         .purchases__content
           .section__header
@@ -29,8 +26,9 @@ section.purchases.bg--dark
             b different machines, 
             | uninstall plugins and templates, find tutorials and reach our support directly in connection with specific products.
         .purchases__image.purchases__image--projects
-          .scene-3d
-            .purchases__image__wrapper.object-3d
-              .purchases__image__item.mesh-3d
-                img(src="https://via.placeholder.com/750x1000", alt="", sizes="", srcset="")
-              .purchases__image__shadow.shadow-3d
+          - var n = 1
+          while n < 3
+            .tile__wrapper(data-index=n)
+              .tile
+                img.tile__mesh(src=`/images/ptr_0${n++}.png` alt='' srcset='')
+                img.tile__shadow(src=`/images/ptr_0${n}_shadow.png` alt='' srcset='')

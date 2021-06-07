@@ -1,5 +1,7 @@
 .manage {
   padding: 20rem 0;
+  position: relative;
+  z-index: 20;
   &__content {
 
   }
@@ -16,29 +18,17 @@
   }
 
   &__comp {
-    // perspective: 2000px;
-    // transition: transform 1s ease-in-out;
-    // transform: rotateX(40deg) rotateZ(-32deg);
-    // transform-style: preserve-3d;
-    // display: flex;
-    // flex-wrap: wrap;
-    // width: 760px;
-    // perspective-origin: bottom left;
-    
-    &__wrapper {
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      position: absolute;
-      top: 50%;
-      transform: translate(50%, -50%);
-    }
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img {
       transform-style: preserve-3d;
-      // border: 1px solid red;
-      // padding: 2rem;
     }
+
     .object-3d {
       &:nth-child(1) {
         transform: translate3d(400px, 200px, 400px);

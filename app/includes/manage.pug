@@ -34,8 +34,15 @@ section.manage.bg--light
             b FPS 
             | right inside mInstaller
       .col-6
-        .manage__comp__wrapper
-          .manage__comp.scene-3d
+        .manage__comp
+          - var h = 1
+          while h < 6
+            .tile__wrapper(data-index=h)
+              .tile
+                img.tile__mesh(src=`/images/mt_0${h++}.png` alt='' srcset='')
+                img.tile__shadow(src=`/images/mt_0${h}_shadow.png` alt='' srcset='')
+        //- .manage__comp__wrapper
+          //- .manage__comp.scene-3d
             each image in manageImages
               .object-3d
                 .mesh-3d

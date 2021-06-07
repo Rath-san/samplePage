@@ -1,9 +1,9 @@
 import { paralax } from './paralax';
 import { glowingBinaryMatrix } from './binary-matrix'
-import { 
-  cards,
-  // CARDS_TRANSFORMATION_DATA
-} from './cards'
+import {
+  animateTiles,
+  INITIAL_TRANSFORMS
+} from './tiles'
 import { detectOs, OSs } from './device-detection'
 
 ;(() => {
@@ -26,20 +26,38 @@ import { detectOs, OSs } from './device-detection'
       })
     }
 
+    const tileSections = [
+      {
+        section: 'products',
+        sectionClass: '.purchases__image--products',
+      },
+      {
+        section: 'projects',
+        sectionClass: '.purchases__image--projects',
+      },
+      {
+        section: 'manage',
+        sectionClass: '.manage__comp',
+      }
+    ]
+
+    tileSections.map(tso => {
+      const tileAnim = animateTiles({
+        tilesContainer: tso.sectionClass,
+        initialTransforms: INITIAL_TRANSFORMS[tso.section]
+      })
+      tileAnim.play()
+      return tileAnim
+    })
+
     // update section
     const paralaxSelector = document.querySelector('.update__bg__items')
     const mouseContainer = document.querySelector('section.update')
 
-    const cardsPurchasesScene = document.querySelector('.purchases .scene-3d')
-
-    // cards(cardsPurchasesScene, CARDS_TRANSFORMATION_DATA.PURCHASES)
-
-    console.log(cardsPurchasesScene);
-
     paralax({
       selector: paralaxSelector,
       mouseContainer,
-      offsetMultiplierX: 1000,
+      offsetMultiplierX: 2000,
       offsetMultiplierY: 500
     })
 
