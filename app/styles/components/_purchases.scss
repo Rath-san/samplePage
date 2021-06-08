@@ -1,6 +1,5 @@
 .purchases {
   padding: 25rem 0;
-  // background-color: lightslategrey !important;
   background: #000;
   background:
     radial-gradient(
@@ -13,6 +12,8 @@
       hsla(223, 100%, 50%, 0.153) 0%,
       hsla(0, 0%, 100%, 0) 100%
     );
+  background-color: lightslategrey !important;
+
   &__image {
     position: absolute;
     z-index: 0;
@@ -25,7 +26,9 @@
     &__shadow {}
 
     &--products {
-      right: 50%;
+      width: 70%;
+      right: 120%;
+      top: 40%;
       .purchases {
         &__image {
           &__wrapper {
@@ -37,7 +40,8 @@
       }
     }
     &--projects {
-      left: 125%;
+      left: 120%;
+      top: 70%;
     }
 
     img {

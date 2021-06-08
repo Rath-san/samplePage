@@ -82,9 +82,21 @@ img {
   top: 0;
 }
 
+@keyframes progressTrans {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 500px;
+  }
+}
+
 $progress-height: 4px;
 $progress-border-rad: $progress-height / 2;
 $progress-fill-width: 75%;
+
+$progress-fill-color-1: rgba(63,251,123,1);
+$progress-fill-color-2: rgba(70,252,232,1);
 
 .progress__bar {
   position: relative;
@@ -100,18 +112,15 @@ $progress-fill-width: 75%;
     width: $progress-fill-width;
     border-radius: $progress-border-rad;
     background: rgb(63,251,123);
-    background: linear-gradient(90deg, rgba(63,251,123,1) 0%, rgba(70,252,232,1) 100%);
-    height: 100%;
-  }
-
-  &:after {
-    @extend %ph-pseudo;
-    border-radius: $progress-border-rad;
-    width: $progress-fill-width;
+    background: linear-gradient(90deg, $progress-fill-color-1 0%, $progress-fill-color-2 66%, $progress-fill-color-1 100%);
     height: 100%;
     box-shadow:
       0 0 50px rgb(63,251,123),
       10px 0 80px #0ff;
+    will-change: backgound;
+    animation-duration: 1s;
+    animation-name: progressTrans;
+    animation-iteration-count: infinite;
   }
 
   &__wrapper {

@@ -1,3 +1,5 @@
+- var storeText = "Fast and secure payments for your convenience. \nUse you favourite method. ApplePay, Paypal \n- we've got you covered."
+
 section.store.bg--dark
   .container
     .row
@@ -7,8 +9,7 @@ section.store.bg--dark
             h2.store__title
               | Built-in store <br>
               span The whole content at your fingertips.
-          p.section__text.store__text
-            | Fast and secure payments for your convenience. Use you favourite method. ApplePay, Paypal - we've got you covered.
+          p.section__text.store__text= storeText
           ul.store__payment__list.payment__list
             li.payment__list__item
               i.payment__list__item__icon.icon--apple-pay

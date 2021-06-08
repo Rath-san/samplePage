@@ -1,5 +1,5 @@
 .manage {
-  padding: 20rem 0;
+  padding: 15rem 0;
   position: relative;
   z-index: 20;
   &__content {
@@ -18,12 +18,16 @@
   }
 
   &__comp {
-    width: 100%;
+    width: 120%;
     height: 100%;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: absolute;
+    left: -20%;
+    top: -60%;
 
     img {
       transform-style: preserve-3d;

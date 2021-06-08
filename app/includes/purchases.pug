@@ -7,28 +7,30 @@ section.purchases.bg--dark
           while n < 9
             .tile__wrapper(data-index=n)
               .tile
-                img.tile__mesh(src=`/images/ptl_0${n++}.png` alt='' srcset='')
-                img.tile__shadow(src=`/images/ptl_0${n}_shadow.png` alt='' srcset='')
+                img.tile__mesh(src=`/images/ptl_0${n}.png` alt='' srcset='')
+                //- img.tile__shadow(src=`/images/ptl_0${n}_shadow.png` alt='' srcset='')
+            <!--#{n++}-->
       .col-6
         .purchases__content
           .section__header
             h2.purchases__title
               | Organized <br>
               span All purchases in one place
-          p.purchases__text
+          p.purchases__text.section__text
             | The easiest way to manage your 
             a(href="http://", target="_blank", rel="noopener noreferrer") downloads 
             | and 
             a(href="http://", target="_blank", rel="noopener noreferrer") licences. 
-            | You have unconstrained access to your content across your Macs. 
-          p.purchases__text
+            | #{"\nYou have unconstrained access to your content across your Macs."}
+          p.purchases__text.section__text
             | Conviniently switching licences between 
             b different machines, 
-            | uninstall plugins and templates, find tutorials and reach our support directly in connection with specific products.
+            | #{"\nuninstall plugins and templates, find tutorials and reach our support \nirectly in connection with specific products."}
         .purchases__image.purchases__image--projects
-          - var n = 1
-          while n < 3
-            .tile__wrapper(data-index=n)
+          - var u = 1
+          while u < 3
+            .tile__wrapper(data-index=u)
               .tile
-                img.tile__mesh(src=`/images/ptr_0${n++}.png` alt='' srcset='')
-                img.tile__shadow(src=`/images/ptr_0${n}_shadow.png` alt='' srcset='')
+                img.tile__mesh(src=`/images/ptr_0${u}.png` alt='' srcset='')
+                //- img.tile__shadow(src=`/images/ptr_0${u}_shadow.png` alt='' srcset='')
+            <!--#{u++}-->

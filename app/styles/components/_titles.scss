@@ -3,5 +3,10 @@
     span {
       font-size: 1.25rem;
     }
+    &--inverse {
+     span {
+       line-height: 2;
+     } 
+    }
   }
 }

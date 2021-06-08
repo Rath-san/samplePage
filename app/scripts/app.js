@@ -1,9 +1,9 @@
 import { paralax } from './paralax';
 import { glowingBinaryMatrix } from './binary-matrix'
 import {
-  animateTiles,
-  INITIAL_TRANSFORMS
+  animateTiles
 } from './tiles'
+import { INITIAL_TRANSFORMS } from './tiles-config'
 import { detectOs, OSs } from './device-detection'
 
 ;(() => {

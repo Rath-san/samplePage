@@ -39,12 +39,6 @@ section.manage.bg--light
           while h < 6
             .tile__wrapper(data-index=h)
               .tile
-                img.tile__mesh(src=`/images/mt_0${h++}.png` alt='' srcset='')
-                img.tile__shadow(src=`/images/mt_0${h}_shadow.png` alt='' srcset='')
-        //- .manage__comp__wrapper
-          //- .manage__comp.scene-3d
-            each image in manageImages
-              .object-3d
-                .mesh-3d
-                  img(src=image.src, alt=image.alt, srcset="")
-                .shadow-3d
+                img.tile__mesh(src=`/images/mt_0${h}.png` alt='' srcset='')
+                //- img.tile__shadow(src=`/images/mt_0${h}_shadow.png` alt='' srcset='')
+            <!--#{h++}-->

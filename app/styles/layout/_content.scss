@@ -3,6 +3,9 @@
   padding: 10rem 0;
   background-repeat: no-repeat;
   position: relative;
+  background: url('/images/network_bg.jpg');
+  background-repeat: repeat-x;
+  // background-size: cov;
   &__bg {
     display: flex;
     justify-content: center;
