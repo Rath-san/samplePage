@@ -1,3 +1,8 @@
+const shadowBlur = 15
+const shadowColor = '#00000090'
+const shadowX = '-10'
+const meshY = 60
+
 export const INITIAL_TRANSFORMS = {
   products: [
     {
@@ -16,19 +21,20 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -meshY,
+            filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
@@ -47,19 +53,20 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -meshY,
+            filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
@@ -78,19 +85,20 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -meshY,
+            filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
@@ -109,19 +117,20 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -meshY,
+            filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+      //   shadow: {
+      //     from: {
+      //       opacity: 0,
+      //       scale: 0.8
+      //     },
+      //     to: {
+      //       opacity: 1,
+      //       scale: 1
+      //     }
+      //   }
       }
     },
     {
@@ -140,19 +149,20 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -meshY,
+            filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
@@ -171,19 +181,20 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -meshY,
+            filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
@@ -202,19 +213,20 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -meshY,
+            filter: `drop-shadow(${shadowX}px ${100}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
@@ -233,19 +245,20 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -90,
+            filter: `drop-shadow(${shadowX}px ${120}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     }
   ],
@@ -266,19 +279,20 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -meshY,
+            filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
@@ -297,25 +311,26 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -meshY,
+            filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     }
   ],
   manage: [
     {
-      initialPosition: { x: '6%', y: -1, zIndex: 2, width: '70%' },
+      initialPosition: { x: '6%', y: '-10%', zIndex: 2, width: '70%' },
       transformations: {
         tile: {
           from: {
@@ -330,23 +345,24 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -0
+            y: -120,
+            filter: `drop-shadow(${shadowX}px ${120}px ${50}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
-      initialPosition: { x: '86%', y: '-5%', zIndex: 1 },
+      initialPosition: { x: '80%', y: '-5%', zIndex: 1 },
       transformations: {
         tile: {
           from: {
@@ -361,24 +377,25 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -0
+            y: -120,
+            filter: `drop-shadow(${shadowX}px ${120}px ${50}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            y: 40,
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     y: 40,
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
-      initialPosition: { x: '29%', y: '52%' },
+      initialPosition: { x: '25%', y: '62%' },
       transformations: {
         tile: {
           from: {
@@ -393,23 +410,24 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -0
+            y: -80,
+            filter: `drop-shadow(${shadowX}px ${80}px ${20}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
-      initialPosition: { x: '81%', y: '178%', zIndex: 1, width: '40%'},
+      initialPosition: { x: '126%', y: '69%' },
       transformations: {
         tile: {
           from: {
@@ -424,23 +442,24 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -0
+            y: -120,
+            filter: `drop-shadow(${shadowX}px ${120}px ${60}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
     },
     {
-      initialPosition: { x: '126%', y: '59%' },
+      initialPosition: { x: '73%', y: '217%', zIndex: 1, width: '40%'},
       transformations: {
         tile: {
           from: {
@@ -455,20 +474,21 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: 0
+            y: -15,
+            filter: `drop-shadow(${shadowX}px ${15}px ${shadowBlur}px ${shadowColor})`
           }
         },
-        shadow: {
-          from: {
-            opacity: 0,
-            scale: 0.8
-          },
-          to: {
-            opacity: 1,
-            scale: 1
-          }
-        }
+        // shadow: {
+        //   from: {
+        //     opacity: 0,
+        //     scale: 0.8
+        //   },
+        //   to: {
+        //     opacity: 1,
+        //     scale: 1
+        //   }
+        // }
       }
-    }
+    },
   ]
 }

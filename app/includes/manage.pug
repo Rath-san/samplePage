@@ -1,23 +1,3 @@
--
-  var manageImages = [
-    {
-      alt: 'test',
-      src: 'https://via.placeholder.com/300x100'
-    },
-    {
-      alt: 'test',
-      src: 'https://via.placeholder.com/300'
-    },
-    {
-      alt: 'test',
-      src: 'https://via.placeholder.com/300'
-    },
-    {
-      alt: 'test',
-      src: 'https://via.placeholder.com/300'
-    }
-  ]
-
 section.manage.bg--light
   .container
     .row
@@ -40,5 +20,4 @@ section.manage.bg--light
             .tile__wrapper(data-index=h)
               .tile
                 img.tile__mesh(src=`/images/mt_0${h}.png` alt='' srcset='')
-                //- img.tile__shadow(src=`/images/mt_0${h}_shadow.png` alt='' srcset='')
             <!--#{h++}-->

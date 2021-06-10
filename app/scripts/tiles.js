@@ -1,4 +1,4 @@
-import gsap, { TimelineLite } from 'gsap';
+import gsap, { TimelineLite, Back, Expo, Sine } from 'gsap';
 
 gsap.config({
   force3D: true,
@@ -37,18 +37,24 @@ export const animateTiles = ({ tilesContainer, initialTransforms }) => {
       {...transformations.tile.to, duration: animDuration / 4 },
       0
     )
-      .fromTo(
+
+    if (tileMesh) {
+      tl.fromTo(
         tileMesh,
         transformations.mesh.from,
-        {...transformations.mesh.to, duration: animDuration / 1.5 },
+        {...transformations.mesh.to, duration: animDuration / 1.5, ease: Sine.easeInOut },
         0
       )
-      .fromTo(
+    }
+
+    if (tileShadow) {
+      tl.fromTo(
         tileShadow,
         transformations.shadow.from,
-        {...transformations.shadow.to, duration: animDuration / 1.5 },
+        {...transformations.shadow.to, duration: animDuration / 1.5, ease: Sine.easeInOut },
         0
       );
+    }
 
     mainTL.add(tl, `-=${.5}`);
   });

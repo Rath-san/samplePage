@@ -41,13 +41,34 @@ import { detectOs, OSs } from './device-detection'
       }
     ]
 
-    tileSections.map(tso => {
+    const tileTimelines = tileSections.map(tso => {
       const tileAnim = animateTiles({
         tilesContainer: tso.sectionClass,
         initialTransforms: INITIAL_TRANSFORMS[tso.section]
       })
       tileAnim.play()
       return tileAnim
+    })
+
+    tileSections.forEach((section, index) => {
+      const sectionClass = `${section.sectionClass}`
+
+      const tileSection = document.querySelector(sectionClass)
+
+      // DEBUG
+      tileSection
+        .addEventListener('mouseenter' , () => {
+          tileTimelines[index].reverse()
+          // console.log(tileTimelines[index]);
+        })
+
+      tileSection
+        .addEventListener('mouseleave', () => {
+          tileTimelines[index].play()
+          // console.log(tileTimelines[index]);
+        })
+      // END DEBUG
+
     })
 
     // update section
