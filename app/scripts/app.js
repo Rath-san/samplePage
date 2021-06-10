@@ -46,7 +46,6 @@ import { detectOs, OSs } from './device-detection'
         tilesContainer: tso.sectionClass,
         initialTransforms: INITIAL_TRANSFORMS[tso.section]
       })
-      tileAnim.play()
       return tileAnim
     })
 
@@ -68,8 +67,41 @@ import { detectOs, OSs } from './device-detection'
           // console.log(tileTimelines[index]);
         })
       // END DEBUG
-
     })
+
+    const animatedTileSections = [
+      {
+        class: '.purchases',
+        tileSectionsIndex: [0, 1]
+      },
+      {
+        class: '.manage',
+        tileSectionsIndex: [2]
+      }
+    ]
+
+    animatedTileSections.forEach(s => {
+      const cbIn = () => {
+        s.tileSectionsIndex.forEach(tlIndex => {
+          tileTimelines[tlIndex].play()
+        })
+      }
+      const cbOut = () => {
+        s.tileSectionsIndex.forEach(tlIndex => {
+          tileTimelines[tlIndex].reverse()
+        })
+      };
+
+      doOnVisible({
+        sectionSelector: [document.querySelector(s.class)],
+        cbIn,
+        cbOut,
+        threshold: .4
+      })
+    })
+
+    // play when visible
+    // reverse when leawing
 
     // update section
     const paralaxSelector = document.querySelector('.update__bg__items')
@@ -95,3 +127,34 @@ import { detectOs, OSs } from './device-detection'
     })
   })
 })()
+
+
+const doOnVisible = ({
+  sectionSelector,
+  cbIn = () => {},
+  cbOut = () => {},
+  threshold = 0,
+}) => {
+  const lazyAnimate = (target) => {
+    const io = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            cbIn()
+            // observer.disconnect()
+          } else {
+            cbOut()
+          }
+        })
+      },
+      {
+        threshold
+      }
+    )
+
+    io.observe(target)
+  }
+
+  sectionSelector.forEach(lazyAnimate)
+
+}
