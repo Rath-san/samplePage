@@ -1,5 +1,8 @@
 .store {
   padding: 15rem 0;
+  @media screen and (max-width : 768px) {
+    padding: 4rem 0;
+  }
   &__content {
 
   }
@@ -14,8 +17,15 @@
 
   &__payment {
     &__list {
-      &__item {
-
+      @media screen and (max-width : 768px) {
+        justify-content: space-between;
+        margin-bottom: 3rem;
+      }
+      .payment__list__item {
+        display: flex;
+        @media screen and (max-width : 768px) {
+          margin: unset;
+        }
       }
     }
   }
@@ -32,6 +42,11 @@
     z-index: 1;
     width: calc(100% + (100vw - 200%) / 2);
     max-width: 1540px;
+    @media screen and (max-width : 768px) {
+      position: relative;
+      width: 150%;
+      left: calc(5% + 15px);
+    }
   }
 
 }

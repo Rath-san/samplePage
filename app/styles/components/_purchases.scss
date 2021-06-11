@@ -12,6 +12,9 @@
       hsla(223, 100%, 50%, 0.153) 0%,
       hsla(0, 0%, 100%, 0) 100%
     );
+  @media screen and (max-width : 768px) {
+    padding: 8rem 0 4rem 0;
+  }
   // background-color: lightslategrey !important;
 
   &__image {
@@ -38,10 +41,18 @@
           }
         }
       }
+      @media screen and (max-width : 768px) {
+        top: 100px;
+        padding-bottom: 100%;
+      }
     }
     &--projects {
       left: 90%;
       top: 70%;
+      @media screen and (max-width : 768px) {
+        left: 50%;
+        top: 140%;
+      }
     }
 
     img {

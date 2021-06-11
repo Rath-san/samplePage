@@ -346,7 +346,8 @@ export const INITIAL_TRANSFORMS = {
           },
           to: {
             y: -120,
-            filter: `drop-shadow(${shadowX}px ${120}px ${50}px ${shadowColor})`
+            boxShadow: `${shadowX}px ${120}px ${50}px ${shadowColor}`
+            // filter: `drop-shadow(${shadowX}px ${120}px ${50}px ${shadowColor})`
           }
         },
         // shadow: {
@@ -378,7 +379,8 @@ export const INITIAL_TRANSFORMS = {
           },
           to: {
             y: -120,
-            filter: `drop-shadow(${shadowX}px ${120}px ${50}px ${shadowColor})`
+            boxShadow: `${shadowX}px ${120}px ${50}px ${shadowColor}`
+            // filter: `drop-shadow(${shadowX}px ${120}px ${50}px ${shadowColor})`
           }
         },
         // shadow: {
@@ -411,7 +413,8 @@ export const INITIAL_TRANSFORMS = {
           },
           to: {
             y: -80,
-            filter: `drop-shadow(${shadowX}px ${80}px ${20}px ${shadowColor})`
+            boxShadow: `${shadowX}px ${80}px ${20}px ${shadowColor}`
+            // filter: `drop-shadow(${shadowX}px ${80}px ${20}px ${shadowColor})`
           }
         },
         // shadow: {
@@ -443,7 +446,8 @@ export const INITIAL_TRANSFORMS = {
           },
           to: {
             y: -120,
-            filter: `drop-shadow(${shadowX}px ${120}px ${60}px ${shadowColor})`
+            boxShadow: `${shadowX}px ${120}px ${60}px ${shadowColor}`
+            // filter: `drop-shadow(${shadowX}px ${120}px ${60}px ${shadowColor})`
           }
         },
         // shadow: {
@@ -475,7 +479,8 @@ export const INITIAL_TRANSFORMS = {
           },
           to: {
             y: -15,
-            filter: `drop-shadow(${shadowX}px ${15}px ${shadowBlur}px ${shadowColor})`
+            boxShadow: `${shadowX}px ${15}px ${shadowBlur}px ${shadowColor}`
+            // filter: `drop-shadow(${shadowX}px ${15}px ${shadowBlur}px ${shadowColor})`
           }
         },
         // shadow: {

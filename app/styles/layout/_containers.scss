@@ -7,9 +7,12 @@
 //   min-height: -webkit-fill-available;
 // }
 
-section {
-  padding: 2rem 0;
-  // box-shadow: 0 0 0px 1px inset red;
+.bg--full--absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 main {

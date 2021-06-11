@@ -64,11 +64,24 @@ main {
 }
 
 .section {
+  padding: 2rem 0;
+  @media screen and (max-width : 768px) {
+    padding: 4rem 0;
+    white-space: unset;
+  }
   &__header {
     margin-bottom: 2rem;
   }
   &__text {
     margin-bottom: 2.5rem;
     white-space: pre-line;
+    @media screen and (max-width : 768px) {
+      white-space: unset;
+    }
+    &__content {
+      @media screen and (max-width: 768px) {
+        padding: 0 10%;
+      }
+    }
   }
 }

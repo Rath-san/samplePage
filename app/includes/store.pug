@@ -3,8 +3,8 @@
 section.store.bg--dark
   .container
     .row
-      .col-6
-        .store__content
+      .col-md-6
+        .store__content.section__text__content
           .section__header
             h2.store__title
               | Built-in store <br>
@@ -20,6 +20,6 @@ section.store.bg--dark
             li.payment__list__item
               i.payment__list__item__icon.icon--secure-payment
                 include ./components/icon-card-secure.pug
-      .col-6
+      .col-md-6
         .store__promo
           img(src="/images/store_promo.png", alt="", srcset="")

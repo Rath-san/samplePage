@@ -5,9 +5,24 @@ import {
 } from './tiles'
 import { INITIAL_TRANSFORMS } from './tiles-config'
 import { detectOs, OSs } from './device-detection'
+import {
+  backgroundAnimation,
+  HEADER_GRADIENTS,
+  FOOTER_GRADIENTS
+} from './background-animation'
 
 ;(() => {
   window.addEventListener('load', () => {
+
+    // backgroundAnimation({
+    //   selector: document.querySelector('.header'),
+    //   gradients: HEADER_GRADIENTS
+    // })
+
+    // backgroundAnimation({
+    //   selector: document.querySelector('.footer'),
+    //   gradients: FOOTER_GRADIENTS
+    // })
 
     // handling OS specific modification
     const os = detectOs();
@@ -107,12 +122,12 @@ import { detectOs, OSs } from './device-detection'
     const paralaxSelector = document.querySelector('.update__bg__items')
     const mouseContainer = document.querySelector('section.update')
 
-    paralax({
-      selector: paralaxSelector,
-      mouseContainer,
-      offsetMultiplierX: 2000,
-      offsetMultiplierY: 500
-    })
+    // paralax({
+    //   selector: paralaxSelector,
+    //   mouseContainer,
+    //   offsetMultiplierX: 2000,
+    //   offsetMultiplierY: 500
+    // })
 
     const gbmSelector = document.querySelector('#glowingBinaryMatrix')
 

@@ -4,7 +4,11 @@
     position: relative;
   }
   position: relative;
-  padding: 25rem 0 25rem 0;
+  padding: 10rem 0 20rem 0;
+  @media screen and (max-width: 768px) {
+    padding: 5rem 0;
+    overflow: hidden;
+  }
   &__subtitle {
     margin-top: 3rem;
     text-shadow: 2px 2px 10px #000;
@@ -75,11 +79,11 @@
       z-index: 1;
       &__shadow {
         box-shadow:
-          0 0 460px -70px inset black;
+          0 0 300px 40px inset #030200;
         z-index: 6;
         &--2 {
-          box-shadow: 0 0 200px 200px inset black;
-          z-index: 7;
+          box-shadow: 0 0 300px 40px inset #030200;
+          // z-index: 7;
         }
       }
     }

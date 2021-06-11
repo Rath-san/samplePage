@@ -1,24 +1,46 @@
 .header {
-  max-height: 20rem;
-  min-height: 1170px;
-  background: #000;
-  background:
-    radial-gradient(
-      35% 35% at 35% 40%,
-      hsla(253, 100%, 50%, 0.122) 0%,
-      hsla(0, 0%, 100%, 0) 100%
-    ),
-    radial-gradient(
-      30% 30% at 60% 50%,
-      hsla(276, 100%, 62%, 0.13) 0%,
-      hsla(0, 0%, 100%, 0) 100%
-    );
+  padding-top: $navbar-height;
+  background-color: #E5E5E5;
+  position: relative;
+  // background:
+  //   radial-gradient(
+  //     35% 35% at 35% 40%,
+  //     hsla(253, 100%, 50%, 0.122) 0%,
+  //     hsla(0, 0%, 100%, 0) 100%
+  //   ),
+  //   radial-gradient(
+  //     30% 30% at 60% 50%,
+  //     hsla(276, 100%, 62%, 0.13) 0%,
+  //     hsla(0, 0%, 100%, 0) 100%
+  //   );
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 23vw);
+    background: #000;
+    @media screen and (min-width: 1280px) {
+      min-height: 1200px;
+    }
+    @media screen and (max-width: 768px) {
+      height: calc(100% - 30vw);
+    }
+  }
+
   &__logo {
     margin-top: 15%;
+    @media screen and (max-width: 768px) {
+      margin-top: 20%;
+    }
   }
 
   &__buttons {
     margin: 3rem 0;
+    @media screen and (max-width: 768px) {
+      margin: 2rem 0 .5rem 0;
+    }
   }
 
   &__text {
@@ -40,7 +62,14 @@
 .shop__buttons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  // flex-shrink: 0;
+  // flex-grow: ;
+  // @media screen and (max-width: ) {
+  //   flex-direction: column;
+  // }
   .btn {
     margin: 0 .5rem;
+    margin-bottom: 1.5rem;
   }
 }

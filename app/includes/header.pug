@@ -1,8 +1,9 @@
-section.header.bg--dark.text-center
+section.header.text--light.text-center
+  .header__bg
   .container
     .row
       .col-12
-        .header__content
+        .header__content.section__text__content
           .header__logo
             h1.header__title mInstaller
             p.header_logo__subtitle Your MotionVFX cloud.
@@ -10,5 +11,5 @@ section.header.bg--dark.text-center
             include components/buttons.pug
           p.header__text Acess your entire MotionVFX FCP Plugins and Motion Templates collection with a click.
           a.header__link.link--yellow(href="http://google.com", target="_blank", rel="noopener noreferrer") Watch more
-          .header__promo
-            img(src="/images/main_screen.jpg", alt="", srcset="")
+        .header__promo
+          img(src="/images/main_screen.jpg", alt="", srcset="")

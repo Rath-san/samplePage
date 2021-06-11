@@ -1,7 +1,7 @@
 section.purchases.bg--dark
   .container
     .row
-      .col-6
+      .col-md-6
         .purchases__image.purchases__image--products
           - var n = 1
           while n < 9
@@ -10,8 +10,8 @@ section.purchases.bg--dark
                 img.tile__mesh(src=`/images/ptl_0${n}.png` alt='' srcset='')
                 //- img.tile__shadow(src=`/images/ptl_0${n}_shadow.png` alt='' srcset='')
             <!--#{n++}-->
-      .col-6
-        .purchases__content
+      .col-md-6
+        .purchases__content.section__text__content
           .section__header
             h2.purchases__title
               | Organized <br>

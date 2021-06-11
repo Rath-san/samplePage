@@ -28,7 +28,7 @@ export const glowingBinaryMatrix = ({
   const columns = matrixWidth / fontSize
   const rows = matrixHeight / fontSize
 
-  const ctx = canvas.getContext('2d')
+  const ctx = canvas.getContext('2d', {alpha: false})
   ctx.font = fontSize + 'px Proxima'
 
   const drops = []
@@ -54,10 +54,11 @@ export const glowingBinaryMatrix = ({
       drops[column]++
     }
   }
-
+  
   const run = () => {
-    setInterval(rain, speed)
+    rain()
+    window.requestAnimationFrame(run)
   }
 
-  run()
+  window.requestAnimationFrame(run)
 }
