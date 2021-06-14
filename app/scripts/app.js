@@ -1,5 +1,5 @@
 import 'intersection-observer'
-import {lazyAnimations} from './lazy-animation'
+import { lazyAnimations } from './lazy-animation'
 
 import { paralax } from './paralax'
 import { glowingBinaryMatrix } from './binary-matrix'
@@ -11,7 +11,6 @@ import {
   HEADER_GRADIENTS,
   FOOTER_GRADIENTS
 } from './background-animation'
-
 ;(() => {
   window.addEventListener('load', () => {
     backgroundAnimation({
@@ -78,23 +77,23 @@ import {
       return tileAnim
     })
 
-    tileSections.forEach((section, index) => {
-      const sectionClass = `${section.sectionClass}`
+    // DEBUG
+    // tileSections.forEach((section, index) => {
+    //   const sectionClass = `${section.sectionClass}`
 
-      const tileSection = document.querySelector(sectionClass)
+    //   const tileSection = document.querySelector(sectionClass)
 
-      // DEBUG
-      tileSection.addEventListener('mouseenter', () => {
-        tileTimelines[index].reverse()
-        // console.log(tileTimelines[index]);
-      })
+    //   tileSection.addEventListener('mouseenter', () => {
+    //     tileTimelines[index].reverse()
+    //     // console.log(tileTimelines[index]);
+    //   })
 
-      tileSection.addEventListener('mouseleave', () => {
-        tileTimelines[index].play()
-        // console.log(tileTimelines[index]);
-      })
-      // END DEBUG
-    })
+    //   tileSection.addEventListener('mouseleave', () => {
+    //     tileTimelines[index].play()
+    //     // console.log(tileTimelines[index]);
+    //   })
+    // })
+    // END DEBUG
 
     const animatedTileSections = [
       {
@@ -134,12 +133,12 @@ import {
     const paralaxSelector = document.querySelector('.update__bg__items')
     const mouseContainer = document.querySelector('section.update')
 
-    // paralax({
-    //   selector: paralaxSelector,
-    //   mouseContainer,
-    //   offsetMultiplierX: 2000,
-    //   offsetMultiplierY: 500
-    // })
+    paralax({
+      selector: paralaxSelector,
+      mouseContainer,
+      offsetMultiplierX: 2000,
+      offsetMultiplierY: 500
+    })
 
     const gbmSelector = document.querySelector('#glowingBinaryMatrix')
 
