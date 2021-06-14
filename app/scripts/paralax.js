@@ -28,6 +28,8 @@ export const paralax = ({
     let _mouseX = e.clientX
     let _mouseY = e.clientY
 
+    console.log()
+
     const getDepth = (level) => `translate(
         ${
           initialPositionOffset - ((_mouseX - _w) * level) / offsetMultiplierX

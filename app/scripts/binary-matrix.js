@@ -22,13 +22,17 @@ export const glowingBinaryMatrix = ({
   }
 
   window.addEventListener('resize', resize)
-  
+
   let charSet = text.split('')
 
   const columns = matrixWidth / fontSize
   const rows = matrixHeight / fontSize
 
-  const ctx = canvas.getContext('2d', {alpha: false})
+  canvas.offscreenCanvas = document.createElement('canvas')
+  canvas.offscreenCanvas.width = canvas.width
+  canvas.offscreenCanvas.height = canvas.height
+
+  const ctx = canvas.offscreenCanvas.getContext('2d', { alpha: false })
   ctx.font = fontSize + 'px Proxima'
 
   const drops = []
@@ -36,7 +40,10 @@ export const glowingBinaryMatrix = ({
     drops[column] = getRandom(0, rows)
   }
 
+  const ctxOriginal = canvas.getContext('2d')
+
   const rain = () => {
+    // console.log(drops);
     ctx.fillStyle = bgColor
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -53,12 +60,15 @@ export const glowingBinaryMatrix = ({
 
       drops[column]++
     }
-  }
-  
-  const run = () => {
-    rain()
-    window.requestAnimationFrame(run)
+    ctxOriginal.drawImage(canvas.offscreenCanvas, 0, 0)
   }
 
-  window.requestAnimationFrame(run)
+  const run = () => {
+    // rain()
+    setInterval(rain, speed)
+    // window.requestAnimationFrame(run)
+  }
+
+  run()
+  // window.requestAnimationFrame(run)
 }

@@ -1,5 +1,4 @@
-;(() => {
-  // Animating sections
+export const lazyAnimations = ({ selector }) => {
   const animatedSections = document.querySelectorAll('.animated')
 
   const lazyAnimate = (target) => {
@@ -14,7 +13,8 @@
         })
       },
       {
-        threshold: 0.01
+        threshold: 0.01,
+        rootMargin: '90%'
       }
     )
 
@@ -22,4 +22,4 @@
   }
 
   animatedSections.forEach(lazyAnimate)
-})()
+}

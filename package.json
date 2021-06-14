@@ -87,6 +87,7 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "gsap": "^3.6.1",
+    "intersection-observer": "^0.12.0",
     "jquery": "^3.6.0",
     "slick-slider": "^1.8.2"
   }

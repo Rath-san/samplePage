@@ -39,7 +39,7 @@ section.update.bg--dark.text-center
     canvas#glowingBinaryMatrix.update__bg__matrix
     #parallax.update__bg__items
       each image in updateImagesBg
-        .update__bg__item__wrapper(data-level=image.level)
+        .update__bg__item__wrapper.animated.animation--fade.animation--bottom(data-level=image.level)
           img.update__bg__item(src=image.src, alt=image.alt)
   .container
     .row 
@@ -52,4 +52,5 @@ section.update.bg--dark.text-center
         .update__progress
           .progress__bar__wrapper
             .progress__bar
+              .progress__bar__fill
             .progress__bar__text Synchronizing...

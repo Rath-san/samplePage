@@ -85,12 +85,12 @@ $text-color: #FBFBFB;
   }
 }
 
-%ph-pseudo {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-}
+// %ph-pseudo {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+// }
 
 @keyframes progressTrans {
   0% {
@@ -110,25 +110,28 @@ $progress-fill-color-2: rgba(70,252,232,1);
 
 .progress__bar {
   position: relative;
-  width: 100%;
+  width: 75%;
   height: $progress-height;
   max-width: 768px;
   background-color: #333;
   margin: 2rem auto 1rem auto;
   border-radius: $progress-border-rad;
   opacity: 0.85;
-  &::before {
-    @extend %ph-pseudo;
+  &__fill {
+      position: absolute;
+    left: 0;
+    top: 0;
     width: $progress-fill-width;
     border-radius: $progress-border-rad;
-    background: rgb(63,251,123);
+    background: $progress-fill-color-1;
     background: linear-gradient(90deg, $progress-fill-color-1 0%, $progress-fill-color-2 66%, $progress-fill-color-1 100%);
     height: 100%;
     box-shadow:
-      0 0 50px rgb(63,251,123),
-      10px 0 80px #0ff;
+      0 0 50px $progress-fill-color-1,
+      10px 0 80px $progress-fill-color-2;
     will-change: backgound;
     animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
     animation-name: progressTrans;
     animation-iteration-count: infinite;
   }

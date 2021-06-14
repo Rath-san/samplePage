@@ -1,8 +1,15 @@
 .manage {
-  padding: 15rem 0;
+  padding: 10rem 0;
   position: relative;
+  @media screen and (max-width: 768px) {
+    padding: 8rem 0;
+  }
   z-index: 20;
   &__content {
+
+  }
+
+  &__title {
 
   }
 
@@ -27,7 +34,12 @@
 
     position: absolute;
     left: -20%;
-    top: -60%;
+    top: -30%;
+
+    @media screen and (max-width: 768px) {
+      left: -60%;
+      top: -170px;
+    }
 
     img {
       transform-style: preserve-3d;
