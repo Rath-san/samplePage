@@ -79,6 +79,7 @@ main {
       white-space: unset;
     }
     &__content {
+      padding: 0 10%;
       @media screen and (max-width: 768px) {
         padding: 0 10%;
       }

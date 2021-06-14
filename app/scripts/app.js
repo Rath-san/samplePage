@@ -69,7 +69,8 @@ import { notificationsAnim } from './notifications'
     const tileSections = [
       {
         section: 'products',
-        sectionClass: '.purchases__image--products'
+        sectionClass: '.purchases__image--products',
+        order: 'reversed'
       },
       {
         section: 'projects',
@@ -84,7 +85,8 @@ import { notificationsAnim } from './notifications'
     const tileTimelines = tileSections.map((tso) => {
       const tileAnim = animateTiles({
         tilesContainer: tso.sectionClass,
-        initialTransforms: INITIAL_TRANSFORMS[tso.section]
+        initialTransforms: INITIAL_TRANSFORMS[tso.section],
+        order: tso.order
       })
       return tileAnim
     })

@@ -4,7 +4,7 @@ gsap.config({
   force3D: true
 })
 
-export const animateTiles = ({ tilesContainer, initialTransforms, order = 'reversed' }) => {
+export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
   const tilesWrappers = document.querySelectorAll(
     `${tilesContainer} .tile__wrapper`
   )
@@ -20,7 +20,7 @@ export const animateTiles = ({ tilesContainer, initialTransforms, order = 'rever
   const animDuration = 1
   const tileObject = Array.from(document.querySelectorAll(`${tilesContainer} .tile`))
 
-  if (order === 'reversed') {
+  if (order && order === 'reversed') {
     tileObject.reverse()
   }
 
