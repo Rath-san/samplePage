@@ -1,5 +1,7 @@
 .store {
   padding: 15rem 0;
+  position: relative;
+  // z-index: 30;
   @media screen and (max-width : 768px) {
     padding: 4rem 0;
   }
@@ -13,6 +15,11 @@
 
   &__subtitle {
 
+  }
+
+  .container {
+    position: relative;
+    z-index: 40;
   }
 
   &__payment {

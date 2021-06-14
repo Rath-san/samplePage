@@ -1,4 +1,5 @@
 .update {
+  overflow: hidden;
   .container {
     z-index: 1;
     position: relative;
@@ -63,8 +64,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-around;
-        width: 4000px;
-        max-width: 4000px;
+        width: 2400px;
         margin: auto;
         position: absolute;
         transform: translateX(-50%);
@@ -91,34 +91,6 @@
           // z-index: 7;
         }
       }
-    }
-  }
-}
-
-.animated {
-  // transform: transla;
-  // will-change: transform;
-  will-change: opacity, transform;
-  transition:
-    opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  // &--in {
-  // }
-  // &--out {
-  // }
-}
-
-.animation {
-  &--fade {
-    opacity: 0;
-    &.animated-in {
-      opacity: 1;
-    }
-  }
-  &--bottom {
-    transform: translate3d(0, 100%, 0);
-    &.animated-in {
-      transform: translate3d(0, 0%, 0);
     }
   }
 }

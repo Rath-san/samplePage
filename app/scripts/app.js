@@ -1,6 +1,8 @@
 import 'intersection-observer'
 import { lazyAnimations } from './lazy-animation'
 
+import { progressAnim } from './progress-bar'
+
 import { paralax } from './paralax'
 import { glowingBinaryMatrix } from './binary-matrix'
 import { animateTiles } from './tiles'
@@ -11,31 +13,41 @@ import {
   HEADER_GRADIENTS,
   FOOTER_GRADIENTS
 } from './background-animation'
+import { notificationsAnim } from './notifications'
 ;(() => {
   window.addEventListener('load', () => {
-    backgroundAnimation({
-      selector: document.querySelector('.header__bg'),
-      gradients: HEADER_GRADIENTS
-    })
+    const gradientAnimations = [
+      {
+        section: '.header__bg',
+        animations: HEADER_GRADIENTS
+      },
+      {
+        section: '.footer',
+        animations: FOOTER_GRADIENTS
+      }
+    ]
 
-    backgroundAnimation({
-      selector: document.querySelector('.footer'),
-      gradients: FOOTER_GRADIENTS
+    gradientAnimations.forEach(({ section, animations }) => {
+      const selector = document.querySelector(section)
+      const animation = backgroundAnimation({
+        selector,
+        gradients: animations
+      })
+
+      const cbIn = () => animation.play()
+      const cbOut = () => animation.pause()
+
+      doOnVisible({
+        sectionSelector: [selector],
+        cbIn,
+        cbOut,
+        threshold: 0.7
+      })
     })
 
     lazyAnimations({
       selector: document.querySelectorAll('.animated')
     })
-
-    // backgroundAnimation({
-    //   selector: document.querySelector('.header'),
-    //   gradients: HEADER_GRADIENTS
-    // })
-
-    // backgroundAnimation({
-    //   selector: document.querySelector('.footer'),
-    //   gradients: FOOTER_GRADIENTS
-    // })
 
     // handling OS specific modification
     const os = detectOs()
@@ -77,24 +89,6 @@ import {
       return tileAnim
     })
 
-    // DEBUG
-    // tileSections.forEach((section, index) => {
-    //   const sectionClass = `${section.sectionClass}`
-
-    //   const tileSection = document.querySelector(sectionClass)
-
-    //   tileSection.addEventListener('mouseenter', () => {
-    //     tileTimelines[index].reverse()
-    //     // console.log(tileTimelines[index]);
-    //   })
-
-    //   tileSection.addEventListener('mouseleave', () => {
-    //     tileTimelines[index].play()
-    //     // console.log(tileTimelines[index]);
-    //   })
-    // })
-    // END DEBUG
-
     const animatedTileSections = [
       {
         class: '.purchases',
@@ -126,8 +120,23 @@ import {
       })
     })
 
-    // play when visible
-    // reverse when leawing
+    const notificationSectionAnim = notificationsAnim({
+      notificationContainer: '.notifications'
+    })
+
+    const playNotifAnim = () => {
+      notificationSectionAnim.play()
+    }
+    const reverseNotifAnim = () => {
+      notificationSectionAnim.reverse()
+    }
+
+    doOnVisible({
+      sectionSelector: [document.querySelector('.content')],
+      cbIn: playNotifAnim,
+      cbOut: reverseNotifAnim,
+      threshold: 0.5
+    })
 
     // update section
     const paralaxSelector = document.querySelector('.update__bg__items')
@@ -151,6 +160,10 @@ import {
       speed: 100,
       text: '01101101 01001001 01101110 01110011 01110100 01100001 01101100 01101100 01100101 01110010'
     })
+
+    progressAnim({
+      selector: '.progress__bar'
+    })
   })
 })()
 
@@ -166,7 +179,6 @@ const doOnVisible = ({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             cbIn()
-            // observer.disconnect()
           } else {
             cbOut()
           }

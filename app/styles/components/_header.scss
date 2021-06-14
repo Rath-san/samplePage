@@ -43,6 +43,22 @@
     }
   }
 
+  &__title {
+    font-size: 70px;
+    margin-bottom: .75rem;
+    @media screen and (max-width: 768px) {
+      font-size: 50px;
+      margin-bottom: .25rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 23px;
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
   &__text {
     margin: 0 auto 2rem auto;
     max-width: 20em;
@@ -55,9 +71,15 @@
   &__promo {
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 20px 150px -50px #00000060;
+    box-shadow: 0 20px 150px -50px #00000060;;
     img {
       height: auto;
+      width: calc(100% + 2px);
+      margin-left: -1px;
+      margin-top: -1px;
+      border-radius: .7rem;
+      display: block;
+      max-width: unset;
     }
   }
 }
@@ -72,7 +94,7 @@
   //   flex-direction: column;
   // }
   .btn {
-    margin: 0 .5rem;
+    margin: 0 1rem;
     margin-bottom: 1.5rem;
   }
 }
