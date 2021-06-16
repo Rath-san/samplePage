@@ -53,7 +53,7 @@ export const INITIAL_TRANSFORMS = {
             z: 0
           },
           to: {
-            z: 50
+            z: 25
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -85,7 +85,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            z: 110
+            z: 130
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }

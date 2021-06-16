@@ -1,4 +1,4 @@
-import gsap, { TimelineLite, Sine, Back } from 'gsap'
+import gsap, { TimelineLite } from 'gsap'
 
 gsap.config({
   force3D: true
@@ -37,9 +37,7 @@ export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
       tl.fromTo(
         tileMesh,
         {
-          ...transformations.mesh.from,
-          // opacity: 1,
-          // z: 0
+          ...transformations.mesh.from
         },
         {
           ...transformations.mesh.to,
