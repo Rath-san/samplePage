@@ -3,32 +3,44 @@
     {
       alt: "",
       src: "/images/update_01.png",
-      level: 1
+      level: 1,
+      width: 1000,
+      height: 876
     },
     {
       alt: "",
       src: "/images/update_02.jpg",
-      level: 2
+      level: 2,
+      width: 1000,
+      height: 876
     },
     {
       alt: "",
       src: "/images/update_03.jpg",
-      level: 6
+      level: 6,
+      width: 1000,
+      height: 876
     },
     {
       alt: "",
       src: "/images/update_04.jpg",
-      level: 2
+      level: 2,
+      width: 1000,
+      height: 876
     },
     {
       alt: "",
       src: "/images/update_05.jpg",
-      level: 6
+      level: 6,
+      width: 1000,
+      height: 876
     },
     {
       alt: "",
       src: "/images/update_06.png",
-      level: 1
+      level: 1,
+      width: 1000,
+      height: 876
     }
   ]
 
@@ -38,9 +50,15 @@ section.update.bg--dark.text-center
     .update__bg__matrix__shadow.update__bg__matrix__shadow--2.bg--full--absolute
     canvas#glowingBinaryMatrix.update__bg__matrix
     #parallax.update__bg__items
-      each image in updateImagesBg
-        .update__bg__item__wrapper.animated.animation--fade.animation--bottom(data-level=image.level)
-          img.update__bg__item(src=image.src, alt=image.alt)
+      each img in updateImagesBg
+        .update__bg__item__wrapper.animated.animation--fade.animation--bottom(data-level=img.level)
+          //- img.update__bg__item(src=image.src, alt=image.alt)
+          .update__bg__item
+            - var image = img.src
+            - var alt = img.alt
+            - var imageWidth = img.width
+            - var imageHeight = img.height
+            include components/image.pug
   .container
     .row 
       .col-12

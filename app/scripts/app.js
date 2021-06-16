@@ -131,7 +131,7 @@ import './lazy-images'
     }
 
     doOnVisible({
-      sectionSelector: [document.querySelector('.content')],
+      sectionSelector: [document.querySelector('.notifications')],
       cbIn: playNotifAnim,
       cbOut: () => {},
       threshold: 0.7

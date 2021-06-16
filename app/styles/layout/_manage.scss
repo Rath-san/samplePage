@@ -29,14 +29,16 @@
     width: 77%;
     height: 100%;
 
-    // display: flex;
-
     align-items: center;
     justify-content: center;
 
     position: absolute;
     left: 0%;
     top: -40%;
+
+    .tile__wrapper {
+      width: 100%;
+    }
 
     @media screen and (max-width: 768px) {
       left: -20%;
@@ -52,7 +54,6 @@
 
     .tile__wrapper {
       &:nth-child(1) {
-        
         transform: translate3d(-5%, -41%, 0);
         z-index: 2;
         width: 83%;

@@ -27,12 +27,14 @@
         will-change: transform;
         padding: 0 4rem;
         transition: transform 0.15s ease;
+        width: 100%;
         @media screen and (max-width: 768px) {
           display: none;
         }
         &:nth-child(1) {
           .update__bg__item {
             transform: translateY(110%);
+            filter: blur(10px);
           }
         }
         &:nth-child(2) {
@@ -58,6 +60,7 @@
         &:nth-child(6) {
           .update__bg__item {
             transform: translateY(50%);
+            filter: blur(10px);
           }
         }
       }

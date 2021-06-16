@@ -2,35 +2,67 @@
   var purchaseLeftImages = [
     {
       src: '/images/ptl_01.jpg',
-      alt: ''
+      alt: '',
+      width: 1060,
+      height: 940
     },
     {
       src: '/images/ptl_02.jpg',
-      alt: ''
+      alt: '',
+      width: 1060,
+      height: 940
     },
     {
       src: '/images/ptl_03.jpg',
-      alt: ''
+      alt: '',
+      width: 1060,
+      height: 940
     },
     {
       src: '/images/ptl_04.jpg',
-      alt: ''
+      alt: '',
+      width: 1060,
+      height: 940
     },
     {
       src: '/images/ptl_05.jpg',
-      alt: ''
+      alt: '',
+      width: 1060,
+      height: 940
     },
     {
       src: '/images/ptl_08.jpg',
-      alt: ''
+      alt: '',
+      width: 1060,
+      height: 940
     },
     {
       src: '/images/ptl_07.jpg',
-      alt: ''
+      alt: '',
+      width: 1441,
+      height: 452
     },
     {
       src: '/images/ptl_06.jpg',
-      alt: ''
+      alt: '',
+      width: 1060,
+      height: 940
+    }
+  ]
+
+-
+  var purchaseRightImages = [
+    {
+      src: '/images/ptr_01.jpg',
+      alt: '',
+      width: 1750,
+      height: 1856
+    },
+    {
+      src: '/images/ptr_02.jpg',
+      alt: '',
+      width: 1368,
+      height: 1902
     }
   ]
 
@@ -43,11 +75,16 @@ section.purchases.bg--dark
       .col-md-6
         .purchases__image.purchases__image--products.scene
           each imgL in purchaseLeftImages
-            .tile__wrapper(data-index=n)
+            .tile__wrapper
               .tile.object
                 .mesh
                   .face-front
-                    img.tile__mesh(src=imgL.src alt=imgL.alt srcset='')
+                    //- img.tile__mesh(src=imgL.src alt=imgL.alt srcset='')
+                    - var image = imgL.src
+                    - var alt = imgL.alt
+                    - var imageWidth = imgL.width
+                    - var imageHeight = imgL.height
+                    include components/image.pug
                 .shadow
                 //- img.tile__shadow(src=`/images/ptl_0${n}_shadow.png` alt='' srcset='')
       .col-md-6
@@ -67,13 +104,19 @@ section.purchases.bg--dark
             b different machines, 
             | #{"\nuninstall plugins and templates, find tutorials and reach our support \nirectly in connection with specific products."}
         .purchases__image.purchases__image--projects.scene
-          - var u = 1
-          while u < 3
-            .tile__wrapper(data-index=u)
+          //- - var u = 1
+          //- while u < 3
+          each imgR in purchaseRightImages
+            .tile__wrapper
               .tile.object
                 .mesh
                   .face-front
-                    img.tile__mesh(src=`/images/ptr_0${u}.jpg` alt='' srcset='')
+                    //- img.tile__mesh(src=`/images/ptr_0${u}.jpg` alt='' srcset='')
+                    - var image = imgR.src
+                    - var alt = imgR.alt
+                    - var imageWidth = imgR.width
+                    - var imageHeight = imgR.height
+                    include components/image.pug
                 .shadow
                 //- img.tile__shadow(src=`/images/ptr_0${u}_shadow.png` alt='' srcset='')
-            <!--#{u++}-->
+              //- <!--#{u++}-->
