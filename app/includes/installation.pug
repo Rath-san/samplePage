@@ -5,5 +5,49 @@ section.installation.bg--light.text-center
         .installation__content.section__text__content
           h2.installation__title.section__title Installation tutorial
           p.installation__text.section__text= `Acess your entire MotionVFX FCP Plugins \nand Motion Templates collection within a click.`
+        //- .yt.embed-responsive.embed-responsive-16by9.animated.animated--fade--bottom
+        - var videoLink = 'https://www.youtube.com/embed/GTuK_Ozwidk?rel=0'
+        - var videoPlaceholder = "https://i.ytimg.com/vi/GTuK_Ozwidk/maxresdefault.jpg"
+        - var title = 'mInstaller'
         .installation__promo
-          iframe(src="https://www.youtube.com/embed/GTuK_Ozwidk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="")
+          iframe(
+            src=videoLink,
+            srcdoc=videoPlaceholder ? `
+              <style>
+                * {
+                    padding:0;
+                    margin:0;
+                    overflow:hidden
+                  }
+                html,
+                body {
+                  height:100%
+                }
+                img,
+                span {
+                  position:absolute;
+                  width:100%;
+                  top:0;
+                  bottom:0;
+                  margin:auto
+                }
+                span {
+                  height:1.5em;
+                  text-align:center;
+                  font-size: 38px;
+                  color:white;
+                  text-shadow:0 0 0.5em black;
+                }
+                </style>
+                <a href=${videoLink}&autoplay=1>
+                  <img src=${videoPlaceholder} alt=${title}>
+                  <span>&#x25BA;</span>
+                </a>
+            ` : false
+            frameborder="0",
+            allow="autoplay; encrypted-media",
+            allowfullscreen="",
+            title= title,
+            style=`background-color: #000`
+          )
+        //- iframe(src="https://www.youtube.com/embed/GTuK_Ozwidk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="")

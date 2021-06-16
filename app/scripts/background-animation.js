@@ -11,14 +11,14 @@ export const HEADER_GRADIENTS = [
     type: 'radial-gradient',
     size,
     position,
-    colorPrimary: 'hsla(253, 100%, 50%, 0.122) 0%',
+    colorPrimary: 'hsla(175, 100%, 29%, 0.15) 0%',
     colorSecondary: 'hsla(0, 0%, 100%, 0) 100%'
   },
   {
     type: 'radial-gradient',
     size,
     position,
-    colorPrimary: 'hsla(276, 100%, 62%, 0.13) 0%',
+    colorPrimary: 'hsla(276, 100%, 62%, 0.15) 0%',
     colorSecondary: 'hsla(0, 0%, 100%, 0) 100%'
   }
 ]
@@ -31,49 +31,14 @@ export const FOOTER_GRADIENTS = [
     colorPrimary: 'rgba(124, 35, 175, 0.24) 0%',
     colorSecondary: 'hsla(0, 0%, 100%, 0) 100%'
   },
-  // {
-  //   type: 'radial-gradient',
-  //   size,
-  //   position: `${randomPosition}% 100%`,
-  //   colorPrimary: 'rgba(124, 35, 175, 0.24) 0%',
-  //   colorSecondary: 'hsla(0, 0%, 100%, 0) 100%'
-  // },
-  // {
-  //   type: 'radial-gradient',
-  //   size,
-  //   position: `${randomPosition}% 100%`,
-  //   colorPrimary: 'hsla(223, 100%, 50%, 0.1) 0%',
-  //   colorSecondary: 'hsla(0, 0%, 100%, 0) 100%'
-  // },
   {
     type: 'radial-gradient',
     size,
     position: `${randomPosition}% 80%`,
-    colorPrimary: 'hsla(223, 100%, 50%, 0.1) 0%',
+    colorPrimary: 'hsla(223, 100%, 50%, 0.15) 0%',
     colorSecondary: 'hsla(0, 0%, 100%, 0) 100%'
   }
 ]
-
-// // radial-gradient(
-// //   100% 50% at 0% 90%,
-// //   rgba(124, 35, 175, 0.24) 0%,
-// //   hsla(0, 0%, 100%, 0) 100%
-// // ),
-// // radial-gradient(
-// //   100% 50% at 100% 100%,
-// //   rgba(124, 35, 175, 0.24) 0%,
-// //   hsla(0, 0%, 100%, 0) 100%
-// // ),
-// radial-gradient(
-//   25% 50% at 0% 100%,
-//   hsla(223, 100%, 50%, 0.1) 0%,
-//   hsla(0, 0%, 100%, 0) 100%
-// ),
-// radial-gradient(
-//   50% 50% at 105% 80%,
-//   hsla(223, 100%, 50%, 0.1) 0%,
-//   hsla(0, 0%, 100%, 0) 100%
-// )
 
 const constructGradient = ({
   type,

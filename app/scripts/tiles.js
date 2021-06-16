@@ -5,9 +5,9 @@ gsap.config({
 })
 
 export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
-  const tilesWrappers = document.querySelectorAll(
+  const tilesWrappers = Array.from(document.querySelectorAll(
     `${tilesContainer} .tile__wrapper`
-  )
+  ))
 
   tilesWrappers.forEach((item, index) => {
     gsap.set(item, initialTransforms[index].initialPosition)
@@ -17,37 +17,33 @@ export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
     paused: true
   })
 
-  const animDuration = 1
-  const tileObject = Array.from(document.querySelectorAll(`${tilesContainer} .tile`))
+  const animDuration = 1.5
 
-  if (order && order === 'reversed') {
-    tileObject.reverse()
+  if (order === -1) {
+    tilesWrappers.reverse()
   }
 
-  tileObject.forEach((tile, index) => {
+  tilesWrappers.forEach((tile, index) => {
     const tl = new TimelineLite({
       // repeat: -1,
-      // yoyo: true,
+      // yoyo: true
     })
 
     const transformations = initialTransforms[index].transformations
-
-    const tileMesh = tile.querySelector('.tile__mesh')
-    const tileShadow = tile.querySelector('.tile__shadow')
-    tl.fromTo(
-      tile,
-      transformations.tile.from,
-      { ...transformations.tile.to, duration: animDuration / 4 },
-      0
-    )
+    const tileMesh = tile.querySelector('.mesh')
+    const tileShadow = tile.querySelector('.shadow')
 
     if (tileMesh) {
       tl.fromTo(
         tileMesh,
-        transformations.mesh.from,
+        {
+          ...transformations.mesh.from,
+          opacity: 0
+        },
         {
           ...transformations.mesh.to,
-          duration: animDuration / 1.5,
+          opacity: 1,
+          duration: animDuration,
           ease: Sine.easeInOut
         },
         0
@@ -57,17 +53,19 @@ export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
     if (tileShadow) {
       tl.fromTo(
         tileShadow,
-        transformations.shadow.from,
         {
-          ...transformations.shadow.to,
-          duration: animDuration / 1.5,
+          opacity: 0
+        },
+        {
+          opacity: 0.5,
+          duration: animDuration,
           ease: Sine.easeInOut
         },
-        0
+        '-=.5'
       )
     }
 
-    mainTL.add(tl, `-=${0.5}`)
+    mainTL.add(tl, `-=${1.9}`)
   })
 
   return mainTL

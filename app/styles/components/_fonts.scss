@@ -75,12 +75,12 @@ main {
   &__text {
     margin-bottom: 2.5rem;
     white-space: pre-line;
-    @media screen and (max-width : 768px) {
+    @media screen and (max-width : 1440px) {
       white-space: unset;
     }
     &__content {
-      padding: 0 10%;
-      @media screen and (max-width: 768px) {
+      // padding: 0 10%;
+      @media screen and (max-width: 1440px) {
         padding: 0 10%;
       }
     }

@@ -12,4 +12,9 @@ section.header.text--light.text-center
           p.header__text Acess your entire MotionVFX FCP Plugins and Motion Templates collection with a click.
           a.header__link.link--yellow(href="http://google.com", target="_blank", rel="noopener noreferrer") Watch more
         .header__promo.animated.animation--fade.animation--bottom
-          img(src="/images/main_screen.jpg", alt="", srcset="" height="720")
+          - var image = `/images/main_screen.jpg`
+          - var alt = 'mInstaller promo image'
+          - var imageWidth = '2560'
+          - var imageHeight = '1460'
+          include components/image.pug
+          //- img(src="/images/main_screen.jpg", alt="", srcset="" height="720")

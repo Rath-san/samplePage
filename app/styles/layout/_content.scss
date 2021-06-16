@@ -14,8 +14,15 @@
     justify-content: center;
     align-items: center;
     margin-top: 5rem;
+    .img-lazy {
+      width: 100%;
+      max-width: 1280px;
+    }
     @media screen and (max-width : 768px) {
-      bottom: 470px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      bottom: 45%;
     }
   }
 
@@ -54,7 +61,8 @@
     overflow: hidden;
     font-size: 0.875rem;
     margin-bottom: 20px;
-    width: 460px;
+    width: 100%;
+    max-width: 460px;
     opacity: 0;
     &:last-child {
       margin-bottom: 0;

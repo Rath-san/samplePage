@@ -5,25 +5,23 @@
     padding-left: 0;
     &__item {
       margin-right: 1rem;
+      svg {
+        display: block;
+        height: 20px;
+      }
       &__icon {
         display: block;
         line-height: 1;
         &.icon {
           &--apple-pay {
-            svg {
-              height: 20px;
-            }
           }
 
           &--paypal {
-            svg {
-              height: 20px;
-            }
           }
 
           &--secure-payment {
             svg {
-              height: 20px;
+              margin-top: -3px;
             }
           }
         }

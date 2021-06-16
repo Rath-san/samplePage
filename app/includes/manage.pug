@@ -1,3 +1,27 @@
+-
+  var manageImages = [
+    {
+      image: '/images/mt_01.jpg',
+      alt: ''
+    },
+    {
+      image: '/images/mt_02.jpg',
+      alt: ''
+    },
+    {
+      image: '/images/mt_03.jpg',
+      alt: ''
+    },
+    {
+      image: '/images/mt_04.jpg',
+      alt: ''
+    },
+    {
+      image: '/images/mt_05.png',
+      alt: ''
+    }
+  ]
+
 section.manage.bg--light
   .container
     .row
@@ -15,10 +39,13 @@ section.manage.bg--light
             b FPS 
             | right inside mInstaller
       .col-md-6
-        .manage__comp
-          - var h = 1
-          while h < 6
+        .manage__comp.scene
+          each img in manageImages
             .tile__wrapper(data-index=h)
-              .tile
-                img.tile__mesh(src=`/images/mt_0${h}.png` alt='' srcset='')
-            <!--#{h++}-->
+              .tile.object
+                .mesh
+                  .face-front
+                    img(src=img.image alt='' srcset='')
+                  //- .face-bottom
+                    //- img(src=`/images/update_0${h}.jpg` alt='' srcset='')
+                .shadow

@@ -1,15 +1,15 @@
 .icon {
   &--apple {
-    line-height: 0;
+    // line-height: 0;
     svg {
-      margin-top: -13px;
+      margin-top: -3px;
     }
   }
 
   &--windows {
-    line-height: 0;
-    svg {
-      margin-top: -10px;
-    }
+    // line-height: 0;
+    // svg {
+    //   margin-top: -7px;
+    // }
   }
 }

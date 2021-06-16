@@ -16,7 +16,12 @@
 
 section.content.bg--dark
   .content__bg.bg--full--absolute
-    img(src="/images/macbook.jpg", alt="", srcset="")
+    - var image = `/images/macbook.jpg`
+    - var alt = 'mInstaller promo image'
+    - var imageWidth = '2560'
+    - var imageHeight = '1460'
+    include components/image.pug
+    //- img(src="/images/macbook.jpg", alt="", srcset="")
   .container
     .row
       .col-md-12

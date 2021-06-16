@@ -1,5 +1,4 @@
-import {is_cached} from './utils';
-
+import { is_cached } from './utils'
 ;(() => {
   // Lazy images
   const images = document.querySelectorAll('.img-lazy')
@@ -18,7 +17,7 @@ import {is_cached} from './utils';
 
             img.onload = () => {
               img.style.opacity = 1
-              placeholder.style.opacity = 0;
+              placeholder.style.opacity = 0
             }
 
             img.src = img.dataset.src
@@ -27,7 +26,8 @@ import {is_cached} from './utils';
             observer.disconnect()
           }
         })
-      }, {
+      },
+      {
         rootMargin: '100%'
       }
     )
@@ -39,15 +39,19 @@ import {is_cached} from './utils';
 })()
 
 const headerComp = () => {
-
   const header = document.querySelector('.header')
-  const headerImages = Array.from(header.querySelectorAll('img'));
+  const headerImages = Array.from(header.querySelectorAll('img'))
 
-  const imagesresolved = Promise.all(headerImages.map(image => new Promise((res, rej) => {
-    image.onload = () => {
-      res();
-    }
-  })));
+  const imagesresolved = Promise.all(
+    headerImages.map(
+      (image) =>
+        new Promise((res, rej) => {
+          image.onload = () => {
+            res()
+          }
+        })
+    )
+  )
 
   imagesresolved.then(() => {
     header.classList.add('animated-in')
@@ -57,7 +61,6 @@ const headerComp = () => {
     img.src = img.dataset.src
     img.srcset = img.dataset.srcset
   })
-
 }
 
 headerComp()

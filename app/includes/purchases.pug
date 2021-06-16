@@ -1,16 +1,54 @@
+-
+  var purchaseLeftImages = [
+    {
+      src: '/images/ptl_01.jpg',
+      alt: ''
+    },
+    {
+      src: '/images/ptl_02.jpg',
+      alt: ''
+    },
+    {
+      src: '/images/ptl_03.jpg',
+      alt: ''
+    },
+    {
+      src: '/images/ptl_04.jpg',
+      alt: ''
+    },
+    {
+      src: '/images/ptl_05.jpg',
+      alt: ''
+    },
+    {
+      src: '/images/ptl_08.jpg',
+      alt: ''
+    },
+    {
+      src: '/images/ptl_07.jpg',
+      alt: ''
+    },
+    {
+      src: '/images/ptl_06.jpg',
+      alt: ''
+    }
+  ]
+
+
 section.purchases.bg--dark
-  .update__bg__matrix__shadow--2.bg--full--absolute
+  //- .update__bg__matrix__shadow--2.bg--full--absolute
   .container
     .row
       .col-md-6
-        .purchases__image.purchases__image--products
-          - var n = 1
-          while n < 9
+        .purchases__image.purchases__image--products.scene
+          each imgL in purchaseLeftImages
             .tile__wrapper(data-index=n)
-              .tile
-                img.tile__mesh(src=`/images/ptl_0${n}.png` alt='' srcset='')
+              .tile.object
+                .mesh
+                  .face-front
+                    img.tile__mesh(src=imgL.src alt=imgL.alt srcset='')
+                .shadow
                 //- img.tile__shadow(src=`/images/ptl_0${n}_shadow.png` alt='' srcset='')
-            <!--#{n++}-->
       .col-md-6
         .purchases__content.section__text__content
           .section__header
@@ -27,11 +65,14 @@ section.purchases.bg--dark
             | Conviniently switching licences between 
             b different machines, 
             | #{"\nuninstall plugins and templates, find tutorials and reach our support \nirectly in connection with specific products."}
-        .purchases__image.purchases__image--projects
+        .purchases__image.purchases__image--projects.scene
           - var u = 1
           while u < 3
             .tile__wrapper(data-index=u)
-              .tile
-                img.tile__mesh(src=`/images/ptr_0${u}.png` alt='' srcset='')
+              .tile.object
+                .mesh
+                  .face-front
+                    img.tile__mesh(src=`/images/ptr_0${u}.jpg` alt='' srcset='')
+                .shadow
                 //- img.tile__shadow(src=`/images/ptr_0${u}_shadow.png` alt='' srcset='')
             <!--#{u++}-->

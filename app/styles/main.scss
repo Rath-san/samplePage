@@ -1,5 +1,6 @@
 @import './abstract/variables';
 @import './utils/animations';
+@import './components/lazy-image';
 @import './components/fonts';
 @import './components/button';
 @import './components/titles';
@@ -86,13 +87,6 @@ $text-color: #FBFBFB;
   }
 }
 
-// %ph-pseudo {
-//   content: '';
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-// }
-
 @keyframes progressTrans {
   0% {
     background-position: 0;
@@ -104,7 +98,7 @@ $text-color: #FBFBFB;
 
 $progress-height: 4px;
 $progress-border-rad: $progress-height / 2;
-$progress-fill-width: 75%;
+$progress-fill-width: 100%;
 
 $progress-fill-color-1: rgba(63,251,123,1);
 $progress-fill-color-2: rgba(70,252,232,1);
@@ -144,24 +138,66 @@ $progress-fill-color-2: rgba(70,252,232,1);
   &__text {
     font-size: 0.75rem;
   }
+}
+
+.scene {
+  transform: rotateX(36deg) rotateZ(-33deg);
+  transform-style: preserve-3d;
+}
+
+.tile__wrapper {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.object {
+  transform-style: preserve-3d;
+  opacity: 1;
+}
+
+.mesh {
+  transform-style: preserve-3d;
+  opacity: 0;
+}
+
+div[class^="face"] {
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
+.face-front {
+  transform-style: preserve-3d;
+}
+
+.face-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-10px);
+  width: 100%;
+  height: 100%;
+  img {
+    display: none;
+  }
+
+  background-color: #111;
+  background-image: linear-gradient(139deg, #111 49%, #333 50%, #111 51%);
 
 }
 
-.tile {
-  position: relative;
+$shadow-offset: 50px;
+$shadow-color: #000;
+
+.shadow {
+  position: absolute;
+  top: $shadow-offset;
+  bottom: $shadow-offset;
+  left: $shadow-offset;
+  right: $shadow-offset;
   opacity: 0;
-  &__wrapper {
-    position: absolute;
-  }
-  &__mesh {
-    position: inherit;
-    z-index: 1;
-    max-width: 100%;
-  }
-  &__shadow {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    // max-width: 120%;
-  }
+  background-color: $shadow-color;
+  box-shadow:
+    0 0 30px $shadow-offset $shadow-color !important;
 }

@@ -31,9 +31,9 @@
     &__shadow {}
 
     &--products {
-      width: 70%;
-      right: 120%;
-      top: 80%;
+      width: 50%;
+      right: 110%;
+      top: 25%;
       z-index: 30;
       .purchases {
         &__image {
@@ -50,8 +50,8 @@
       }
     }
     &--projects {
-      left: 90%;
-      top: 80%;
+      left: 160%;
+      top: 40%;
       z-index: 30;
       @media screen and (max-width : 768px) {
         left: 60%;

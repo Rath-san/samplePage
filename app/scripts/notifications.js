@@ -6,12 +6,12 @@ export const notificationsAnim = ({ notificationContainer }) => {
   })
 
   const animDuration = 1
-  let opacity = 1
+  let opacity = 0.6
   const tileObject = document.querySelectorAll(
     `${notificationContainer} .notification__item`
   )
 
-  Array.from(tileObject).reverse().forEach((tile, index) => {
+  Array.from(tileObject).forEach((tile, index) => {
     const tl = new TimelineLite({
       // repeat: -1,
       // yoyo: true
@@ -31,7 +31,7 @@ export const notificationsAnim = ({ notificationContainer }) => {
       0
     )
 
-    opacity -= 0.2
+    opacity += 0.2
     mainTL.add(tl)
   })
 

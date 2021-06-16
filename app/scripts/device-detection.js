@@ -1,22 +1,20 @@
 export const OSs = {
-  Windows: 'Win',
-  MacOS: 'Mac',
-  UNIX: 'X11',
-  Linux: 'Linux',
+  Windows: 'win',
+  MacOS: 'mac',
+  // UNIX: 'x11',
+  Linux: 'linux'
 }
 
-// if (navigator.appVersion.indexOf('Win') != -1) OSName = 'Windows'
-// if (navigator.appVersion.indexOf('Mac') != -1) OSName = 'MacOS'
-// if (navigator.appVersion.indexOf('X11') != -1) OSName = 'UNIX'
-// if (navigator.appVersion.indexOf('Linux') != -1) OSName = 'Linux'
+const searchForEntry = (os, input) => RegExp(`${os}`, 'i').test(input)
 
 export const detectOs = () => {
   let OSName = 'Unknown OS'
 
   Object.keys(OSs).forEach(OSsKey => {
-    if (navigator.appVersion.indexOf(OSs[OSsKey]) != -1) OSName = OSsKey
+    if (searchForEntry(OSs[OSsKey], navigator.appVersion)) OSName = OSs[OSsKey]
   })
 
   // Display the OS name
+  console.log(OSName);
   return OSName
 }

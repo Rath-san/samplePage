@@ -6,7 +6,7 @@ const meshY = 60
 export const INITIAL_TRANSFORMS = {
   products: [
     {
-      initialPosition: { x: 0, y: 0 },
+      initialPosition: { x: '-29%', y: '34%' },
       transformations: {
         tile: {
           from: {
@@ -21,7 +21,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -meshY
+            z: 150
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -38,7 +38,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '41%', y: '65%' },
+      initialPosition: { x: '-21%', y: '153%' },
       transformations: {
         tile: {
           from: {
@@ -50,10 +50,10 @@ export const INITIAL_TRANSFORMS = {
         },
         mesh: {
           from: {
-            y: 0
+            z: 0
           },
           to: {
-            y: -meshY
+            z: 50
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -70,7 +70,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '-48%', y: '79%', zIndex: 1 },
+      initialPosition: { x: '-147%', y: '77%', zIndex: 1 },
       transformations: {
         tile: {
           from: {
@@ -85,7 +85,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -meshY
+            z: 110
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -102,7 +102,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '-90%', y: '10%' },
+      initialPosition: { x: '-150%', y: '-61%' },
       transformations: {
         tile: {
           from: {
@@ -117,7 +117,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -meshY
+            z: 90
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -134,7 +134,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '-41%', y: '-66%', zIndex: -1 },
+      initialPosition: { x: '-22%', y: '-117%', zIndex: -1 },
       transformations: {
         tile: {
           from: {
@@ -149,7 +149,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -meshY
+            z: 170
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -166,7 +166,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '56%', y: '-64%', zIndex: -1 },
+      initialPosition: { x: '123%', y: '48%', zIndex: -1 },
       transformations: {
         tile: {
           from: {
@@ -181,7 +181,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -meshY
+            z: 140
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -198,7 +198,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '96%', y: '40%' },
+      initialPosition: { x: '48%', y: '329%', width: '130%', z: 90 },
       transformations: {
         tile: {
           from: {
@@ -213,7 +213,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -meshY
+            z: 45
             // filter: `drop-shadow(${shadowX}px ${100}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -230,7 +230,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '110%', y: '-26%' },
+      initialPosition: { x: '93%', y: '-58%' },
       transformations: {
         tile: {
           from: {
@@ -245,7 +245,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -90
+            z: 160
             // filter: `drop-shadow(${shadowX}px ${120}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -264,7 +264,7 @@ export const INITIAL_TRANSFORMS = {
   ],
   projects: [
     {
-      initialPosition: { x: 0, y: 0 },
+      initialPosition: { x: '-47%', y: '-30%', width: '75%' },
       transformations: {
         tile: {
           from: {
@@ -279,7 +279,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -meshY
+            z: 100
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -296,7 +296,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '31%', y: '-53%' },
+      initialPosition: { x: '57%', y: '-74%', z: 100, width: '55%' },
       transformations: {
         tile: {
           from: {
@@ -311,7 +311,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -meshY
+            z: 100
             // filter: `drop-shadow(${shadowX}px ${meshY}px ${shadowBlur}px ${shadowColor})`
           }
         }
@@ -330,7 +330,7 @@ export const INITIAL_TRANSFORMS = {
   ],
   manage: [
     {
-      initialPosition: { x: '6%', y: '-10%', zIndex: 2, width: '70%' },
+      initialPosition: { x: '-5%', y: '-41%', zIndex: 2, width: '83%' },
       transformations: {
         tile: {
           from: {
@@ -342,10 +342,10 @@ export const INITIAL_TRANSFORMS = {
         },
         mesh: {
           from: {
-            y: 0
+            z: 0
           },
           to: {
-            y: -120
+            z: 120
             // boxShadow: `${shadowX}px ${120}px ${50}px ${shadowColor}`
             // filter: `drop-shadow(${shadowX}px ${120}px ${50}px ${shadowColor})`
           }
@@ -363,7 +363,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '80%', y: '-5%', zIndex: 1 },
+      initialPosition: { x: '80%', y: '6%', zIndex: 1 },
       transformations: {
         tile: {
           from: {
@@ -378,7 +378,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -120
+            z: 50
             // boxShadow: `${shadowX}px ${120}px ${50}px ${shadowColor}`
             // filter: `drop-shadow(${shadowX}px ${120}px ${50}px ${shadowColor})`
           }
@@ -397,7 +397,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '25%', y: '62%' },
+      initialPosition: { x: '-42%', y: '60%' },
       transformations: {
         tile: {
           from: {
@@ -412,7 +412,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -80
+            z: 130
             // boxShadow: `${shadowX}px ${80}px ${20}px ${shadowColor}`
             // filter: `drop-shadow(${shadowX}px ${80}px ${20}px ${shadowColor})`
           }
@@ -430,7 +430,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '126%', y: '69%' },
+      initialPosition: { x: '80%', y: '135%' },
       transformations: {
         tile: {
           from: {
@@ -445,7 +445,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -120
+            z: 40
             // boxShadow: `${shadowX}px ${120}px ${60}px ${shadowColor}`
             // filter: `drop-shadow(${shadowX}px ${120}px ${60}px ${shadowColor})`
           }
@@ -463,7 +463,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '73%', y: '217%', zIndex: 1, width: '40%' },
+      initialPosition: { x: '-101%', y: '401%', z: 130, zIndex: 1, width: '36%' },
       transformations: {
         tile: {
           from: {
@@ -478,7 +478,7 @@ export const INITIAL_TRANSFORMS = {
             y: 0
           },
           to: {
-            y: -15
+            z: 25
             // boxShadow: `${shadowX}px ${15}px ${shadowBlur}px ${shadowColor}`
             // filter: `drop-shadow(${shadowX}px ${15}px ${shadowBlur}px ${shadowColor})`
           }

@@ -14,6 +14,7 @@ import {
   FOOTER_GRADIENTS
 } from './background-animation'
 import { notificationsAnim } from './notifications'
+import './lazy-images'
 ;(() => {
   window.addEventListener('load', () => {
     const gradientAnimations = [
@@ -64,13 +65,16 @@ import { notificationsAnim } from './notifications'
       osSpecificButtons.mac.forEach((btn) => {
         btn.style.display = 'none'
       })
+      osSpecificButtons.windows.forEach(btn => {
+        btn.classList.replace('btn__outline--light', 'btn__fill--primary')
+      })
     }
 
     const tileSections = [
       {
         section: 'products',
         sectionClass: '.purchases__image--products',
-        order: 'reversed'
+        order: -1
       },
       {
         section: 'projects',
@@ -88,6 +92,7 @@ import { notificationsAnim } from './notifications'
         initialTransforms: INITIAL_TRANSFORMS[tso.section],
         order: tso.order
       })
+
       return tileAnim
     })
 
@@ -97,7 +102,7 @@ import { notificationsAnim } from './notifications'
         tileSectionsIndex: [0, 1]
       },
       {
-        class: '.manage',
+        class: '.manage__content',
         tileSectionsIndex: [2]
       }
     ]
@@ -108,16 +113,11 @@ import { notificationsAnim } from './notifications'
           tileTimelines[tlIndex].play()
         })
       }
-      const cbOut = () => {
-        s.tileSectionsIndex.forEach((tlIndex) => {
-          tileTimelines[tlIndex].reverse()
-        })
-      }
 
       doOnVisible({
         sectionSelector: [document.querySelector(s.class)],
         cbIn,
-        cbOut,
+        cbOut: () => {},
         threshold: 0.4
       })
     })
@@ -129,15 +129,12 @@ import { notificationsAnim } from './notifications'
     const playNotifAnim = () => {
       notificationSectionAnim.play()
     }
-    const reverseNotifAnim = () => {
-      notificationSectionAnim.reverse()
-    }
 
     doOnVisible({
       sectionSelector: [document.querySelector('.content')],
       cbIn: playNotifAnim,
-      cbOut: reverseNotifAnim,
-      threshold: 0.5
+      cbOut: () => {},
+      threshold: 0.7
     })
 
     // update section
@@ -163,8 +160,17 @@ import { notificationsAnim } from './notifications'
       text: '01101101 01001001 01101110 01110011 01110100 01100001 01101100 01101100 01100101 01110010'
     })
 
-    progressAnim({
+    const progressBarAnim = progressAnim({
       selector: '.progress__bar'
+    })
+
+    const playProgressBarAnim = () => progressBarAnim.play()
+
+    doOnVisible({
+      sectionSelector: [document.querySelector('.update__progress')],
+      cbIn: playProgressBarAnim,
+      cbOut: () => {},
+      threshold: 0.5
     })
   })
 })()
@@ -173,7 +179,8 @@ const doOnVisible = ({
   sectionSelector,
   cbIn = () => {},
   cbOut = () => {},
-  threshold = 0
+  threshold = 0,
+  disconectOnIn = true
 }) => {
   const lazyAnimate = (target) => {
     const io = new IntersectionObserver(
@@ -181,6 +188,7 @@ const doOnVisible = ({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             cbIn()
+            if (disconectOnIn) observer.disconnect()
           } else {
             cbOut()
           }

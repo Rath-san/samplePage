@@ -8,4 +8,8 @@ section.footer.bg--dark.text-center
           .footer__buttons
             include components/buttons.pug
         .footer__promo
-          img(src="/images/footer_promo.jpg", alt="", srcset="")
+          - var image = `/images/footer_promo.jpg`
+          - var alt = 'MOTIONVFX shop interface'
+          - var imageWidth = '2560'
+          - var imageHeight = '1460'
+          include components/image.pug

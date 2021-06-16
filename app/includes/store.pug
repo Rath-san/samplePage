@@ -3,7 +3,7 @@
 section.store.bg--dark
   .container
     .row
-      .col-md-6
+      .col-lg-6
         .store__content.section__text__content
           .section__header
             h2.store__title
@@ -20,6 +20,12 @@ section.store.bg--dark
             li.payment__list__item
               i.payment__list__item__icon.icon--secure-payment
                 include ./components/icon-card-secure.pug
-      .col-md-6
+      .col-lg-6
         .store__promo
-          img(src="/images/store_promo.png", alt="", srcset="")
+          - var image = `/images/store_promo.png`
+          - var alt = 'mInstaller store promo image'
+          - var imageWidth = '2560'
+          - var imageHeight = '1460'
+          include components/image.pug
+          //- img(src="/images/store_promo.png", alt="", srcset="")
+
