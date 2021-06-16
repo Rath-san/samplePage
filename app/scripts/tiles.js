@@ -1,13 +1,13 @@
-import gsap, { TimelineLite, Sine } from 'gsap'
+import gsap, { TimelineLite, Sine, Back } from 'gsap'
 
 gsap.config({
   force3D: true
 })
 
 export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
-  const tilesWrappers = Array.from(document.querySelectorAll(
-    `${tilesContainer} .tile__wrapper`
-  ))
+  const tilesWrappers = Array.from(
+    document.querySelectorAll(`${tilesContainer} .tile__wrapper`)
+  )
 
   tilesWrappers.forEach((item, index) => {
     gsap.set(item, initialTransforms[index].initialPosition)
@@ -17,7 +17,7 @@ export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
     paused: true
   })
 
-  const animDuration = 1.5
+  const animDuration = 1
 
   if (order === -1) {
     tilesWrappers.reverse()
@@ -38,13 +38,14 @@ export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
         tileMesh,
         {
           ...transformations.mesh.from,
-          opacity: 0
+          // opacity: 1,
+          // z: 0
         },
         {
           ...transformations.mesh.to,
           opacity: 1,
           duration: animDuration,
-          ease: Sine.easeInOut
+          ease: 'back.out(2)'
         },
         0
       )
@@ -57,15 +58,14 @@ export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
           opacity: 0
         },
         {
-          opacity: 0.5,
-          duration: animDuration,
-          ease: Sine.easeInOut
+          opacity: 0.25,
+          duration: animDuration
         },
-        '-=.5'
+        '<0.1'
       )
     }
 
-    mainTL.add(tl, `-=${1.9}`)
+    mainTL.add(tl, index ? '<0.1' : '0')
   })
 
   return mainTL

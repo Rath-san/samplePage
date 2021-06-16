@@ -118,7 +118,7 @@ import './lazy-images'
         sectionSelector: [document.querySelector(s.class)],
         cbIn,
         cbOut: () => {},
-        threshold: 0.4
+        threshold: 0.5
       })
     })
 
