@@ -330,7 +330,7 @@ export const INITIAL_TRANSFORMS = {
   ],
   manage: [
     {
-      initialPosition: { x: '-5%', y: '-41%', zIndex: 2, width: '83%' },
+      initialPosition: {} /*{ x: '-5%', y: '-41%', zIndex: 2, width: '83%' }*/,
       transformations: {
         tile: {
           from: {
@@ -363,7 +363,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '80%', y: '6%', zIndex: 1 },
+      initialPosition: {} /*{ x: '80%', y: '6%', zIndex: 1 }*/,
       transformations: {
         tile: {
           from: {
@@ -397,7 +397,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '-42%', y: '60%' },
+      initialPosition: {} /*{ x: '-42%', y: '60%' }*/,
       transformations: {
         tile: {
           from: {
@@ -430,7 +430,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '80%', y: '135%' },
+      initialPosition: {} /*{ x: '80%', y: '135%' }*/,
       transformations: {
         tile: {
           from: {
@@ -463,7 +463,7 @@ export const INITIAL_TRANSFORMS = {
       }
     },
     {
-      initialPosition: { x: '-101%', y: '401%', z: 130, zIndex: 1, width: '36%' },
+      initialPosition: {} /*{ x: '-101%', y: '401%', z: 130, zIndex: 1, width: '36%' }*/,
       transformations: {
         tile: {
           from: {

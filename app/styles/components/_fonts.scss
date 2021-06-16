@@ -80,6 +80,8 @@ main {
     }
     &__content {
       // padding: 0 10%;
+      position: relative;
+      z-index: 32;
       @media screen and (max-width: 1440px) {
         padding: 0 10%;
       }

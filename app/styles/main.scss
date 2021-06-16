@@ -66,6 +66,8 @@ $text-color: #FBFBFB;
   }
   &__text {
     margin-bottom: 0;
+    max-width: 20em;
+    margin: auto;
     @media screen and (max-width : 768px) {
       max-width: 17em;
       margin: auto;

@@ -8,7 +8,7 @@
   padding: 10rem 0 20rem 0;
   @media screen and (max-width: 768px) {
     padding: 5rem 0;
-    overflow: hidden;
+    // overflow: hidden;
   }
   &__subtitle {
     margin-top: 3rem;
@@ -27,6 +27,9 @@
         will-change: transform;
         padding: 0 4rem;
         transition: transform 0.15s ease;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
         &:nth-child(1) {
           .update__bg__item {
             transform: translateY(110%);
@@ -39,12 +42,12 @@
         }
         &:nth-child(3) {
           .update__bg__item {
-            transform: translateY(100%);
+            transform: translateY(80%);
           }
         }
         &:nth-child(4) {
           .update__bg__item {
-            transform: translateY(130%);
+            transform: translateY(100%);
           }
         }
         &:nth-child(5) {
@@ -80,13 +83,18 @@
       &__shadow {
         box-shadow: 0 0 300px 40px inset #030200;
         @media screen and (max-width: 768px) {
-          box-shadow: 0 0 100px 40px inset #030200;
+          height: 120%;
+          width: 120%;
+          left: -10% !important;
+          box-shadow: 0 -100px 100px 40px inset #030200;
+          // display: none;
         }
         z-index: 6;
         &--2 {
           box-shadow: 0 0 300px 40px inset #030200;
           @media screen and (max-width: 768px) {
-            box-shadow: 0 0 120px 90px inset #030200;
+            display: none;
+            // box-shadow: 0 0 120px 90px inset #030200;
           }
           // z-index: 7;
         }

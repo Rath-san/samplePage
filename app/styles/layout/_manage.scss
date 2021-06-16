@@ -1,3 +1,4 @@
+
 .manage {
   padding: 10rem 0;
   position: relative;
@@ -38,8 +39,43 @@
     top: -40%;
 
     @media screen and (max-width: 768px) {
-      left: -60%;
-      top: -170px;
+      left: -20%;
+      top: -500px;
+      width: 50%;
     }
+
+    @media screen and (min-width: 400px) and (max-width: 768px) {
+      left: 450px;
+      top: -270px;
+      width: 300px;
+    }
+
+    .tile__wrapper {
+      &:nth-child(1) {
+        
+        transform: translate3d(-5%, -41%, 0);
+        z-index: 2;
+        width: 83%;
+      }
+      &:nth-child(2) {
+        transform: translate3d(80%, 6%, 0);
+        z-index: 1;
+      }
+
+      &:nth-child(3) {
+        transform: translate3d(-42%, 60%, 0);
+        
+      }
+      &:nth-child(4) {
+        transform: translate3d(80%, 135%, 0);
+      }
+      &:nth-child(5) {
+        transform: translate3d(-101%, 401%, 130px);
+        z-index: 1;
+        width: 35%;
+      }
+    }
+
+
   }
 }
