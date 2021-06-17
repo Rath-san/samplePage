@@ -42,7 +42,7 @@ import './lazy-images'
         sectionSelector: [selector],
         cbIn,
         cbOut,
-        threshold: 0.7
+        threshold: 0.5
       })
     })
 
@@ -180,7 +180,7 @@ const doOnVisible = ({
   cbIn = () => {},
   cbOut = () => {},
   threshold = 0,
-  disconectOnIn = true
+  disconectOnIn = false
 }) => {
   const lazyAnimate = (target) => {
     const io = new IntersectionObserver(

@@ -25,8 +25,8 @@ export const notificationsAnim = ({ notificationContainer }) => {
       {
         opacity,
         x: 0,
-        ease: Sine.easeInOut,
-        duration: animDuration / 3
+        ease: 'back.out(2)',
+        duration: animDuration / 1.75
       },
       0
     )
