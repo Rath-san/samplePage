@@ -1,5 +1,5 @@
 .manage {
-  padding: 10rem 0;
+  padding: 15rem 0;
   position: relative;
   @media screen and (min-width: 580px) and (max-width: 768px) {
     padding: 60% 0 4rem 0;
@@ -73,7 +73,7 @@
         transform: translate3d(80%, 135%, 0);
       }
       &:nth-child(5) {
-        transform: translate3d(-101%, 401%, 130px);
+        transform: translate3d(-109%, 431%, 150px);
         z-index: 1;
         width: 35%;
       }

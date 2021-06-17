@@ -482,17 +482,17 @@ export const INITIAL_TRANSFORMS = {
             // boxShadow: `${shadowX}px ${15}px ${shadowBlur}px ${shadowColor}`
             // filter: `drop-shadow(${shadowX}px ${15}px ${shadowBlur}px ${shadowColor})`
           }
+        },
+        shadow: {
+          // from: {
+          //   opacity: 0,
+          //   scale: 0.8
+          // },
+          to: {
+            opacity: .75
+            // scale: 1
+          }
         }
-        // shadow: {
-        //   from: {
-        //     opacity: 0,
-        //     scale: 0.8
-        //   },
-        //   to: {
-        //     opacity: 1,
-        //     scale: 1
-        //   }
-        // }
       }
     }
   ]

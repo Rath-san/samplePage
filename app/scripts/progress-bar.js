@@ -23,7 +23,7 @@ export const progressAnim = ({ selector }) => {
     },
     {
       width: '100%',
-      duration: 1.5,
+      duration: 3,
       ease: Sine.easeInOut,
       onComplete: onCompleteTo
     }

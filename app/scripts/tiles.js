@@ -57,9 +57,10 @@ export const animateTiles = ({ tilesContainer, initialTransforms, order }) => {
         },
         {
           opacity: 0.25,
+          ...(transformations.shadow ? transformations.shadow.to : {}),
           duration: animDuration
         },
-        '<0.1'
+        '<0.2'
       )
     }
 
