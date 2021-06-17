@@ -1,17 +1,17 @@
-
 .manage {
   padding: 10rem 0;
   position: relative;
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 580px) and (max-width: 768px) {
     padding: 60% 0 4rem 0;
+  }
+  @media screen and (max-width: 580px) {
+    padding: 70% 0 4rem 0;
   }
   z-index: 20;
   &__content {
-
   }
 
   &__title {
-
   }
 
   &__text {
@@ -40,58 +40,43 @@
       width: 100%;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 580px) and (max-width: 768px) {
       left: -4%;
       top: -630px;
       width: 40%;
     }
 
-    // @media screen and (min-width: 400px) and (max-width: 768px) {
-    //   left: 450px;
-    //   top: -270px;
-    //   width: 300px;
-    // }
+    @media screen and (max-width: 580px) {
+      top: -635px;
+      width: 50%;
+    }
+
+    @media screen and (max-width: 580px) {
+      top: -555px;
+    }
 
     .tile__wrapper {
       &:nth-child(1) {
         transform: translate3d(-5%, -41%, 0);
         z-index: 2;
         width: 83%;
-        // @media screen and (max-width: 768px) {
-        //   transform: translate3d(15%, 239%, 0);
-        // }
       }
       &:nth-child(2) {
         transform: translate3d(80%, 6%, 0);
         z-index: 1;
-        // @media screen and (max-width: 768px) {
-        //   transform: translate3d(90%, 116%, 0);
-        // }
       }
 
       &:nth-child(3) {
         transform: translate3d(-42%, 60%, 0);
-        // @media screen and (max-width: 768px) {
-        //   transform: translate3d(-120%, 273%, 0);
-        // }
-        
       }
       &:nth-child(4) {
         transform: translate3d(80%, 135%, 0);
-        // @media screen and (max-width: 768px) {
-        //   transform: translate3d(-30%, 308%, 0);
-        // }
       }
       &:nth-child(5) {
         transform: translate3d(-101%, 401%, 130px);
         z-index: 1;
         width: 35%;
-        // @media screen and (max-width: 768px) {
-        //   transform: translate3d(-327%, 1059%, 130px);
-        // }
       }
     }
-
-
   }
 }
