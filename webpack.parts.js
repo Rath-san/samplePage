@@ -172,6 +172,7 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
             sizes: [320, 640, 960, 1200, 1800, 2400],
             placeholder: true,
             placeholderSize: 20,
+            quality: 65
             // limit: 15000,
           }
         }
