@@ -1,6 +1,7 @@
 .tech-spec {
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+  padding: 10rem 0;
+  // padding-top: 4rem;
+  // padding-bottom: 2rem;
 
   &__title {
     margin-bottom: 3rem;
@@ -19,12 +20,12 @@
     }
     .td-right {
       text-align: right;
-      padding-right: 2.5%;
-      width: 46%;
+      padding-right: 1rem;
+      width: 50%;
     }
     .td-left {
       text-align: left;
-      padding-left: 2.5%;
+      padding-left: 1rem;
     }
   }
 
@@ -34,7 +35,7 @@
     h2 {
       color: #000;
       font-size: 2.2rem;
-      font-weight: 400;
+      // font-weight: 400;
       line-height: 3rem;
       // font-family: 'Lora', serif;
     }

@@ -47,7 +47,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Proxima', sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
   font-weight: 400;
   font-size: $font-size-title;
   line-height: 1;
@@ -62,7 +62,7 @@ b {
 }
 
 main {
-  font-family: 'Proxima', sans-serif;
+  font-family: 'Hind Siliguri', sans-serif;
   font-weight: 300;
   font-size: $font-size-body;
 }
@@ -73,12 +73,36 @@ main {
     padding: 4rem 0;
     white-space: unset;
   }
+
+  
   &__header {
     margin-bottom: 2rem;
   }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: .85;
+  }
+  &__subtitle {
+    font-size: .65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  &__display {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
   &__text {
+    font-size: 1rem;
     margin-bottom: 2.5rem;
+    font-weight: 400;
     white-space: pre-line;
+    &--inset {
+      padding-left: 3rem;
+    }
     @media screen and (max-width : 1440px) {
       white-space: unset;
     }

@@ -28,14 +28,14 @@
     }
   ]
 section.tech-spec
-  .tech-spec__bg
+  //- .tech-spec__bg
     video(autoplay muted loop)
       source(src="/images/hud_linear_techspec.mp4" type="video/mp4")
   .container
     .row
       .col-12
         .tech-spec-info
-          h2.tech-spec__title Technical specification
+          h2.tech-spec__title.section__title Technical specification
           table.tech-spec__table
             for val in techSpecData
               tr
