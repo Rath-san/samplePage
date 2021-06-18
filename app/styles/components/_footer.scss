@@ -1,56 +1,30 @@
 .footer {
   // max-height: 100vh;
-  padding-top: 10rem;
-  overflow: hidden;
-  background: rgb(2,0,36);
-  padding-bottom: 0;
-  background: #000;
-  @media screen and (max-width : 768px) {
-    padding-top: 5rem;
-  }
-  // @media screen and (max-width: 768px) {
-    
+  padding: 5rem 0;
+  // overflow: hidden;
+  // background: rgb(2,0,36);
+  // padding-bottom: 0;
+  // background: #000;
+  // @media screen and (max-width : 768px) {
+    // padding-top: 5rem;
   // }
-  // background:
-  //   radial-gradient(
-  //     100% 50% at 0% 90%,
-  //     rgba(124, 35, 175, 0.24) 0%,
-  //     hsla(0, 0%, 100%, 0) 100%
-  //   ),
-  //   radial-gradient(
-  //     100% 50% at 100% 100%,
-  //     rgba(124, 35, 175, 0.24) 0%,
-  //     hsla(0, 0%, 100%, 0) 100%
-  //   ),
-  //   radial-gradient(
-  //     25% 50% at 0% 100%,
-  //     hsla(223, 100%, 50%, 0.1) 0%,
-  //     hsla(0, 0%, 100%, 0) 100%
-  //   ),
-  //   radial-gradient(
-  //     50% 50% at 105% 80%,
-  //     hsla(223, 100%, 50%, 0.1) 0%,
-  //     hsla(0, 0%, 100%, 0) 100%
-  //   )
-  // ;
-
 
   &__title {
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
   }
   
   &__text {
-    max-width: 34em;
-    margin: 0 auto 5rem auto;
-    @media screen and (max-width: 768px) {
-      margin: 0 auto 3rem auto;
-    }
+    // max-width: 34em;
+    // margin: 0 auto 5rem auto;
+    // @media screen and (max-width: 768px) {
+    //   margin: 0 auto 3rem auto;
+    // }
   }
 
-  &__buttons {
-    margin: 0 0 5rem 0;
-    @media screen and (max-width: 768px) {
-      margin: 0 0 0 0;
-    }
-  }
+  // &__buttons {
+  //   margin: 0 0 5rem 0;
+  //   @media screen and (max-width: 768px) {
+  //     margin: 0 0 0 0;
+  //   }
+  // }
 }

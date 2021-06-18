@@ -1,15 +1,21 @@
 section.footer.bg--dark.text-center
+  //- - var image = `/images/mHUD_footer.jpg`
+  //- - var alt = 'Woman in cinematic alley'
+  //- include components/image-background.pug
   .container
     .row
       .col-12
         .footer__content.section__text__content
-          h2.footer__title Safety first
-          p.footer__text Secured direct connection with your MotionVFX account. Browse our store, purchase and download our products and pay without worrying about your privacy and security. Let us take care of that.
-          .footer__buttons
-            include components/buttons.pug
-        .footer__promo
-          - var image = `/images/footer_promo.jpg`
-          - var alt = 'MOTIONVFX shop interface'
-          - var imageWidth = '2560'
-          - var imageHeight = '1460'
-          include components/image.pug
+          h2.footer__title This is footer
+          p.footer__text This is footer description
+          .button-buy
+            | {% with discount_text="INTRO", version=2 %} {% include "product/buy_button.jinja2" %} {% endwith %}
+          //- .footer__buttons
+          //-   include components/buttons.pug
+        //- .footer__promo
+        //-   img(src="https://via.placeholder/1920x1080", alt="", srcset="")
+          //- - var image = `/images/footer_promo.jpg`
+          //- - var alt = 'MOTIONVFX shop interface'
+          //- - var imageWidth = '2560'
+          //- - var imageHeight = '1460'
+          //- include components/image.pug

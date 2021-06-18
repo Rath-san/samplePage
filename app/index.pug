@@ -36,11 +36,27 @@ html(lang="en")
     .top-bar
     main.mInstaller
       include includes/header.pug
-      a(name="installation" href="#", rel="noopener noreferrer") 
-      include includes/installation.pug
-      include includes/purchases.pug
-      //- include includes/store.pug
-      include includes/content.pug
-      include includes/manage.pug
-      include includes/update.pug
+      //- a(name="installation" href="#", rel="noopener noreferrer") 
+      a.nav(name="trailer")
+      - var title = " Watch tutorial"
+      - var subtitle = "View them in action!"
+      - var text = "See the power of this plugin in action!"
+      - var videoLink = "//player.vimeo.com/video/110782329?title=0&amp;byline=0&amp;portrait=0"
+      - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
+      - var videoTitle = 'mLut Insta Pack tutorial'
+      include includes/trailer.pug
+      a.nav(name="trailer")
+      - var title = " Watch trailer"
+      - var subtitle = "View them in action!"
+      - var text = "See the power of this plugin in action!"
+      - var videoLink = "//player.vimeo.com/video/110782329?title=0&amp;byline=0&amp;portrait=0"
+      - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
+      - var videoTitle = 'mLut Insta Pack trailer'
+      include includes/trailer.pug
+      section.big-comp
+        .container
+          .row
+            .col-12 big section
+      include includes/tech-spec.pug
+      include includes/minstaller.pug
       include includes/footer.pug
