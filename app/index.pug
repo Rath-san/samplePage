@@ -53,10 +53,19 @@ html(lang="en")
       - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
       - var videoTitle = 'mLut Insta Pack trailer'
       include includes/trailer.pug
-      section.big-comp
+      section.big-comp.bg--dark
         .container
           .row
             .col-12 big section
+              #fadeEffect
+                .img-fade__wrapper.img-fade__wrapper--1
+                  .shadow.shadow--1
+                  img(src="https://via.placeholder.com/1920x1080", alt="", srcset="")
+                  .shadow
+                .img-fade__wrapper.img-fade__wrapper--2
+                  //- .shadow.shadow--2
+                  img(src="https://via.placeholder.com/1920x1080", alt="", srcset="")
+
       include includes/tech-spec.pug
       include includes/minstaller.pug
       include includes/footer.pug

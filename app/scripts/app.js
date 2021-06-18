@@ -15,10 +15,12 @@
 // } from './background-animation'
 // import { notificationsAnim } from './notifications'
 // import './lazy-images'
+import { animateOnScroll } from './animate-on-scroll'
 import './scroll_to_anchor'
 ;(() => {
   window.addEventListener('load', () => {
     console.log(`hello mTransition fade`)
+    animateOnScroll({})
     // handling OS specific modification
     //   const os = detectOs()
     //   const osSpecificButtons = {
