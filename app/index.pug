@@ -82,6 +82,19 @@ html(lang="en")
         ]
 
       section.showcase
+        div(class=`case__item case__item--2`)
+          .case__item__bg
+            img(src='/images/fade_bg_1.jpg', alt="")
+            //- video(controls=false, autoplay, muted, playsinline)
+            //-   source(src=)
+          .case__item__body
+            .container
+              .row
+                div(class=`col-md-6`)
+                  .section__head
+                    h2.section__subtitle #{'beautiful compositions and dynamic shots?'}
+                    p.section__title #{'Diversified, ready-made, and easy to use'}
+                    p.section__text.section__text--inset #{'These video stylizations are just an endless source of creative ideas for your work. Mix and match various effects to generate even more looks and invent visualizations.'}
         each val, index in showcaseData
           - var offset = index + 1
           div(class=`case__item case__item--${index}`)
@@ -96,19 +109,6 @@ html(lang="en")
                       h2.section__subtitle= val.subtitle
                       p.section__title= val.title
                       p.section__text.section__text--inset= val.text
-        div(class=`case__item case__item--2`)
-          .case__item__bg
-            img(src='/images/fade_bg_1.jpg', alt="")
-            //- video(controls=false, autoplay, muted, playsinline)
-            //-   source(src=)
-          .case__item__body
-            .container
-              .row
-                div(class=`col-md-6`)
-                  .section__head
-                    h2.section__subtitle #{'beautiful compositions and dynamic shots?'}
-                    p.section__title #{'Diversified, ready-made, and easy to use'}
-                    p.section__text.section__text--inset #{'These video stylizations are just an endless source of creative ideas for your work. Mix and match various effects to generate even more looks and invent visualizations.'}
       include includes/presets.pug
       //- section.presets.bg--dark.text-center
       //-   .container
