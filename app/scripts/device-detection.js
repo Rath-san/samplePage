@@ -15,6 +15,5 @@ export const detectOs = () => {
   })
 
   // Display the OS name
-  console.log(OSName);
   return OSName
 }

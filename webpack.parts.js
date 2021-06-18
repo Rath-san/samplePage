@@ -171,8 +171,9 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
             ...options,
             sizes: [320, 640, 960, 1200, 1800, 2400],
             placeholder: true,
-            placeholderSize: 20,
-            quality: 65
+            placeholderSize: 10,
+            quality: 80,
+            adapter: require('responsive-loader/sharp')
             // limit: 15000,
           }
         }

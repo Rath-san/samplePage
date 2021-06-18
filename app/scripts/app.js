@@ -15,8 +15,29 @@ import {
 } from './background-animation'
 import { notificationsAnim } from './notifications'
 import './lazy-images'
+import './scroll_to_anchor'
 ;(() => {
   window.addEventListener('load', () => {
+    // handling OS specific modification
+    const os = detectOs()
+    const osSpecificButtons = {
+      windows: document.querySelectorAll(`[data-os=${OSs.Windows}]`),
+      mac: document.querySelectorAll(`[data-os=${OSs.MacOS}]`)
+    }
+
+    if (os === OSs.MacOS) {
+      osSpecificButtons.windows.forEach((btn) => {
+        btn.style.display = 'none'
+      })
+    } else if (os === OSs.Windows) {
+      osSpecificButtons.mac.forEach((btn) => {
+        btn.style.display = 'none'
+      })
+      osSpecificButtons.windows.forEach(btn => {
+        btn.classList.replace('btn__outline--light', 'btn__fill--primary')
+      })
+    }
+
     const gradientAnimations = [
       {
         section: '.header__bg',
@@ -49,26 +70,6 @@ import './lazy-images'
     lazyAnimations({
       selector: document.querySelectorAll('.animated')
     })
-
-    // handling OS specific modification
-    const os = detectOs()
-    const osSpecificButtons = {
-      windows: document.querySelectorAll(`[data-os=${OSs.Windows}]`),
-      mac: document.querySelectorAll(`[data-os=${OSs.MacOS}]`)
-    }
-
-    if (os === OSs.MacOS) {
-      osSpecificButtons.windows.forEach((btn) => {
-        btn.style.display = 'none'
-      })
-    } else if (os === OSs.Windows) {
-      osSpecificButtons.mac.forEach((btn) => {
-        btn.style.display = 'none'
-      })
-      osSpecificButtons.windows.forEach(btn => {
-        btn.classList.replace('btn__outline--light', 'btn__fill--primary')
-      })
-    }
 
     const tileSections = [
       {
