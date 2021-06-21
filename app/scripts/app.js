@@ -21,20 +21,27 @@ import Splitting from 'splitting'
 ;(() => {
   window.addEventListener('load', () => {
     const titles = Array.from(document.querySelectorAll('.section__title'))
-    titles.forEach((tile) => (tile.dataset.visible = false))
+    const subTitles = Array.from(document.querySelectorAll('.section__subtitle'))
+    const displays = Array.from(document.querySelectorAll('.section__display'))
+
+    Array.from(document.querySelectorAll('.section__head')).forEach((tile) => (tile.dataset.visible = false))
 
     // animateOnScroll({})
     Splitting({
-      target: titles,
+      target: [...titles, ...subTitles],
       by: 'words'
     })
 
+    Splitting({
+      target: displays
+    })
+
     const cbIn = (target) => {
-      target.dataset.visible = true
+      target.closest('.section__head').dataset.visible = true
     }
 
     const cbOut = (target) => {
-      target.dataset.visible = false
+      target.closest('.section__head').dataset.visible = false
     }
 
     doOnVisible({

@@ -263,7 +263,15 @@ $shadow-color: #000;
 }
 
 .showcase {
+  $text-shadow-color: #000;
+  $text-shadow-size: 10px;
   padding-bottom: 0;
+  h2 {
+    text-shadow: 0 0 ($text-shadow-size * 2) $text-shadow-color
+  }
+  p {
+    text-shadow: 0 0 ($text-shadow-size) $text-shadow-color;
+  }
 }
 .case {
   &__item {
@@ -320,6 +328,10 @@ $shadow-color: #000;
 }
 
 .presets {
+  padding: 3rem 0 3rem 0;
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0 3rem 0;
+  }
 }
 
 .product {
@@ -362,5 +374,40 @@ $shadow-color: #000;
 .btn-collapse {
   @media screen and (min-width: 768px) {
     display: none;
+  }
+}
+
+.t {
+  &table {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  &row {
+
+  }
+  &cell {
+    flex: 1;
+    flex-basis: 50%;
+    padding: 0 1rem 1rem 1rem;
+    @media screen and (max-width: 450px) {
+      flex-basis: 100%;
+      padding-left: 0;
+    }
+
+  }
+  &label {
+    text-align: right;
+    color: #9A9A9A;
+    @media screen and (max-width: 450px) {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: left;
+      padding-bottom: 0;
+    }
+  }
+  &data {
+    text-align: left;
   }
 }

@@ -1,28 +1,64 @@
-.section__title {
-  .word {
+.section__head {
+  .word,
+  .char {
     display: inline-block;
   }
   &[data-visible='true'] {
-    .word {
-      opacity: 1;
-      transform: translateX(0em);
+    .section {
+      &__title {
+        .word {
+          opacity: 1;
+          transform: translateX(0em);
+        }
+      }
+      &__subtitle {
+        .word {
+          opacity: 1;
+          transform: translateX(0em);
+        }
+      }
+      &__display {
+        .char {
+          opacity: 1;
+          transform: translateY(0em);
+        }
+      }
     }
   }
 
   &[data-visible='false'] {
-    .word {
-      opacity: 0;
-      transform: translateX(calc(0.2em * var(--word-index)));
+    .section {
+      &__title {
+        .word {
+          opacity: 0;
+          transform: translateX(calc(0.2em * var(--word-index)));
+        }
+      }
+      &__subtitle {
+        .word {
+          opacity: 0;
+          transform: translateX(calc(0.4em * var(--word-index)));
+        }
+      }
+      &__display {
+        .char {
+          opacity: 0;
+          transform: translateY(calc(-0.2em * var(--char-index)));
+        }
+      }
     }
   }
 }
 
 $animation-duration: 1s;
 
-.splitting .word {
-  transition: transform $animation-duration cubic-bezier(0.3, 0, 0.3, 1),
-    opacity $animation-duration linear;
-  transition-delay: calc(20ms + (50ms * var(--word-index)));
+.splitting  {
+  .word,
+  .char {
+    transition: transform $animation-duration cubic-bezier(0.3, 0, 0.3, 1),
+      opacity $animation-duration linear;
+    transition-delay: calc(20ms + (50ms * var(--word-index)));
+  }
 }
 
 .bg--full--absolute {

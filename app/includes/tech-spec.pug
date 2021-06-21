@@ -35,13 +35,15 @@ section.tech-spec
     .row
       .col-12
         .tech-spec-info
-          h2.tech-spec__title.section__title Technical specification
-          table.tech-spec__table
-            for val in techSpecData
-              tr
-                td.td-right= val.name
-                if val.value.title
-                  td.td-left
+          .section__text__content
+            .section__head
+              h2.tech-spec__title.section__title Technical specification
+            .ttable.tech-spec__table
+              for val in techSpecData
+                //- .trow
+                .tcell.tlabel= val.name
+                .tcell.tdata
+                  if val.value.title
                     a(href=val.value.link, target="_blank", rel="noopener noreferrer")= val.value.title
-                else
-                  td.td-left= val.value
+                  else
+                    | #{val.value}

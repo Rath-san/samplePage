@@ -24,7 +24,7 @@ html(lang="en")
     //- script(src='scripts/custom_pages_wrap.js')
     //- script(src='scripts/beforeafter.js')
     script(src='scripts/scroll_to_anchor.js')
-    //- script(src='scripts/menu.js')
+    script(src='scripts/menu.js')
 
     //- 1 sekcja top - video
     //- 2 sekja trailer standard
@@ -40,7 +40,7 @@ html(lang="en")
     - var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
 
   body
-    //- include includes/submenu.pug
+    include includes/submenu.pug
     include includes/navbar.pug
     .top-bar
     main.mInstaller
@@ -102,6 +102,7 @@ html(lang="en")
                       p.section__title= val.title
                       p.section__text.section__text--inset= val.text
       include includes/presets.pug
+      a.nav(href="#" name='specs', rel="noopener noreferrer") 
       include includes/tech-spec.pug
       include includes/minstaller.pug
       include includes/footer.pug
