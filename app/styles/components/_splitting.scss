@@ -17,6 +17,12 @@
           transform: translateX(0em);
         }
       }
+      &__text {
+        .word {
+          opacity: 1;
+          transform: translateX(0em);
+        }
+      }
       &__display {
         .char {
           opacity: 1;
@@ -40,6 +46,12 @@
           transform: translateX(calc(0.4em * var(--word-index)));
         }
       }
+      &__text {
+        .word {
+          opacity: 0;
+          transform: translateX(calc(0.4em * var(--word-index)));
+        }
+      }
       &__display {
         .char {
           opacity: 0;
@@ -50,14 +62,14 @@
   }
 }
 
-$animation-duration: 1s;
+$animation-duration: .5s;
 
 .splitting  {
   .word,
   .char {
     transition: transform $animation-duration cubic-bezier(0.3, 0, 0.3, 1),
       opacity $animation-duration linear;
-    transition-delay: calc(20ms + (50ms * var(--word-index)));
+    transition-delay: calc(10ms + (20ms * var(--word-index)));
   }
 }
 

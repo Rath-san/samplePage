@@ -23,12 +23,13 @@ import Splitting from 'splitting'
     const titles = Array.from(document.querySelectorAll('.section__title'))
     const subTitles = Array.from(document.querySelectorAll('.section__subtitle'))
     const displays = Array.from(document.querySelectorAll('.section__display'))
+    const texts = Array.from(document.querySelectorAll('.section__text'))
 
     Array.from(document.querySelectorAll('.section__head')).forEach((tile) => (tile.dataset.visible = false))
 
     // animateOnScroll({})
     Splitting({
-      target: [...titles, ...subTitles],
+      target: [...titles, ...subTitles, ...texts],
       by: 'words'
     })
 

@@ -35,10 +35,10 @@ button[aria-expanded="false"] {
   justify-content: center;
   height: 50px;
   position: relative;
-  border-radius: 0;
+  border-radius: .2rem;
   outline: 0;
   margin-top: 0rem;
-  text-transform: uppercase;
+  font-weight: 600;
   &:focus {
     outline: 0;
     border-radius: 0;
@@ -48,8 +48,8 @@ button[aria-expanded="false"] {
   }
   svg {
     position: absolute;
-    right: 1em;
-    height: 15px;
+    right: 1.5em;
+    height: 12px;
     transform: rotate(90deg);
   }
 }
