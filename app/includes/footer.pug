@@ -6,10 +6,11 @@ section.footer.bg--dark.text-center
     .row
       .col-12
         .footer__content.section__text__content
-          h2.footer__title.section__title Let's make things interesting!
-          p.footer__text.section__text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque minus debitis, repellat eos, similique, non rem vero quod laborum numquam a tempore! Fuga praesentium repellendus obcaecati, voluptate maiores aspernatur magnam!
-          .button-buy
-            | {% with discount_text="INTRO", version=2 %} {% include "product/buy_button.jinja2" %} {% endwith %}
+          .section__head
+            h2.footer__title.section__title Let's make things interesting!
+            p.footer__text.section__text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque minus debitis, repellat eos, similique, non rem vero quod laborum numquam a tempore! Fuga praesentium repellendus obcaecati, voluptate maiores aspernatur magnam!
+            .button-buy
+              | {% with discount_text="INTRO", version=2 %} {% include "product/buy_button.jinja2" %} {% endwith %}
           //- .footer__buttons
           //-   include components/buttons.pug
         //- .footer__promo

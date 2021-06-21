@@ -15,199 +15,112 @@
 // } from './background-animation'
 // import { notificationsAnim } from './notifications'
 // import './lazy-images'
-import { animateOnScroll } from './animate-on-scroll'
+// import { animateOnScroll } from './animate-on-scroll'
 import './scroll_to_anchor'
+import Splitting from 'splitting'
 ;(() => {
   window.addEventListener('load', () => {
-    console.log(`hello mTransition fade`)
-    animateOnScroll({})
-    // handling OS specific modification
-    //   const os = detectOs()
-    //   const osSpecificButtons = {
-    //     windows: document.querySelectorAll(`[data-os=${OSs.Windows}]`),
-    //     mac: document.querySelectorAll(`[data-os=${OSs.MacOS}]`)
-    //   }
+    const titles = Array.from(document.querySelectorAll('.section__title'))
+    titles.forEach((tile) => (tile.dataset.visible = false))
 
-    //   if (os === OSs.MacOS) {
-    //     osSpecificButtons.windows.forEach((btn) => {
-    //       btn.style.display = 'none'
-    //     })
-    //   } else if (os === OSs.Windows) {
-    //     osSpecificButtons.mac.forEach((btn) => {
-    //       btn.style.display = 'none'
-    //     })
-    //     osSpecificButtons.windows.forEach(btn => {
-    //       btn.classList.replace('btn__outline--light', 'btn__fill--primary')
-    //     })
-    //   }
+    // animateOnScroll({})
+    Splitting({
+      target: titles,
+      by: 'words'
+    })
 
-    //   const gradientAnimations = [
-    //     {
-    //       section: '.header__bg',
-    //       animations: HEADER_GRADIENTS
-    //     },
-    //     {
-    //       section: '.footer',
-    //       animations: FOOTER_GRADIENTS
-    //     }
-    //   ]
+    const cbIn = (target) => {
+      target.dataset.visible = true
+    }
 
-    //   gradientAnimations.forEach(({ section, animations }) => {
-    //     const selector = document.querySelector(section)
-    //     const animation = backgroundAnimation({
-    //       selector,
-    //       gradients: animations
-    //     })
+    const cbOut = (target) => {
+      target.dataset.visible = false
+    }
 
-    //     const cbIn = () => animation.play()
-    //     const cbOut = () => animation.pause()
+    doOnVisible({
+      sectionSelector: titles,
+      cbIn,
+      cbOut,
+      disconectOnIn: false,
+      threshold: 1
+    })
 
-    //     doOnVisible({
-    //       sectionSelector: [selector],
-    //       cbIn,
-    //       cbOut,
-    //       threshold: 0.5
-    //     })
-    //   })
+    const caseItem0Video = document.querySelector('.case__item--0 video')
+    const caseItem0VideoSources = caseItem0Video.querySelectorAll('source')
+    const video1 = `${caseItem0VideoSources[0].src}`
+    const video2 = `${caseItem0VideoSources[1].src}`
+    const showcase = Array.from(document.querySelectorAll('.case__item--0'))
 
-    //   lazyAnimations({
-    //     selector: document.querySelectorAll('.animated')
-    //   })
+    // switching video on enter
+    const switchVideo = (newVid) => {
+      caseItem0VideoSources[0].src = newVid
 
-    //   const tileSections = [
-    //     {
-    //       section: 'products',
-    //       sectionClass: '.purchases__image--products',
-    //       order: -1
-    //     },
-    //     {
-    //       section: 'projects',
-    //       sectionClass: '.purchases__image--projects'
-    //     },
-    //     {
-    //       section: 'manage',
-    //       sectionClass: '.manage__comp'
-    //     }
-    //   ]
+      caseItem0Video.load()
+      caseItem0Video.play()
+    }
 
-    //   const tileTimelines = tileSections.map((tso) => {
-    //     const tileAnim = animateTiles({
-    //       tilesContainer: tso.sectionClass,
-    //       initialTransforms: INITIAL_TRANSFORMS[tso.section],
-    //       order: tso.order
-    //     })
-
-    //     return tileAnim
-    //   })
-
-    //   const animatedTileSections = [
-    //     {
-    //       class: '.purchases',
-    //       tileSectionsIndex: [0, 1]
-    //     },
-    //     {
-    //       class: '.manage__content',
-    //       tileSectionsIndex: [2]
-    //     }
-    //   ]
-
-    //   animatedTileSections.forEach((s) => {
-    //     const cbIn = () => {
-    //       s.tileSectionsIndex.forEach((tlIndex) => {
-    //         tileTimelines[tlIndex].play()
-    //       })
-    //     }
-
-    //     doOnVisible({
-    //       sectionSelector: [document.querySelector(s.class)],
-    //       cbIn,
-    //       cbOut: () => {},
-    //       threshold: 0.5
-    //     })
-    //   })
-
-    //   const notificationSectionAnim = notificationsAnim({
-    //     notificationContainer: '.notifications'
-    //   })
-
-    //   const playNotifAnim = () => {
-    //     notificationSectionAnim.play()
-    //   }
-
-    //   doOnVisible({
-    //     sectionSelector: [document.querySelector('.notifications')],
-    //     cbIn: playNotifAnim,
-    //     cbOut: () => {},
-    //     threshold: 0.7
-    //   })
-
-    //   // update section
-    //   const paralaxSelector = document.querySelector('.update__bg__items')
-    //   const mouseContainer = document.querySelector('section.update')
-
-    //   paralax({
-    //     selector: paralaxSelector,
-    //     mouseContainer,
-    //     offsetMultiplierX: 2000,
-    //     offsetMultiplierY: 500
-    //   })
-
-    //   const gbmSelector = document.querySelector('#glowingBinaryMatrix')
-
-    //   // binary matrix
-    //   glowingBinaryMatrix({
-    //     canvas: gbmSelector,
-    //     fontSize: 20,
-    //     textColor: 'rgba(70,252,232, 1)',
-    //     bgColor: '#00000005',
-    //     speed: 100,
-    //     text: '01101101 01001001 01101110 01110011 01110100 01100001 01101100 01101100 01100101 01110010'
-    //   })
-
-    //   const progressBarAnim = progressAnim({
-    //     selector: '.progress__bar'
-    //   })
-
-    //   const playProgressBarAnim = () => progressBarAnim.play()
-
-    //   doOnVisible({
-    //     sectionSelector: [document.querySelector('.update__progress')],
-    //     cbIn: playProgressBarAnim,
-    //     cbOut: () => {},
-    //     threshold: 0.5
-    //   })
+    doOnVisible({
+      sectionSelector: showcase,
+      cbIn: (target, up) => {
+        if (up) {
+          switchVideo(video1)
+        } else {
+          switchVideo(video2)
+        }
+      },
+      cbOut: () => {},
+      disconectOnIn: false,
+      threshold: 0.5,
+      useDirection: true,
+      rootMargin: '1000px'
+    })
   })
 })()
 
-// const doOnVisible = ({
-//   sectionSelector,
-//   cbIn = () => {},
-//   cbOut = () => {},
-//   threshold = 0,
-//   disconectOnIn = false
-// }) => {
-//   const lazyAnimate = (target) => {
-//     const io = new IntersectionObserver(
-//       (entries, observer) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             cbIn()
-//             if (disconectOnIn) observer.disconnect()
-//           } else {
-//             cbOut()
-//           }
-//         })
-//       },
-//       {
-//         threshold
-//       }
-//     )
+const doOnVisible = ({
+  sectionSelector,
+  cbIn = () => {},
+  cbOut = () => {},
+  threshold = 0,
+  disconectOnIn = false,
+  useDirection = false,
+  rootMargin = '0px'
+}) => {
+  let lastTriggerPosition
 
-//     io.POLL_INTERVAL = 100
-//     io.USE_MUTATION_OBSERVER = false
+  const lazyAnimate = (target) => {
+    const io = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (useDirection) {
+              let y = entry.boundingClientRect.y
+              const up =
+                lastTriggerPosition !== undefined
+                  ? lastTriggerPosition > y
+                  : true
+              lastTriggerPosition = y
+              cbIn(target, up)
+            } else {
+              cbIn(target)
+            }
+            if (disconectOnIn) observer.disconnect()
+          } else {
+            cbOut(target)
+          }
+        })
+      },
+      {
+        threshold,
+        rootMargin
+      }
+    )
 
-//     io.observe(target)
-//   }
+    io.POLL_INTERVAL = 100
+    io.USE_MUTATION_OBSERVER = false
 
-//   sectionSelector.forEach(lazyAnimate)
-// }
+    io.observe(target)
+  }
+
+  sectionSelector.forEach(lazyAnimate)
+}

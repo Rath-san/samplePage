@@ -6,7 +6,7 @@ module.exports = {
     node: true,
     "jquery": true
   },
-  plugins: ['import', 'promise', 'compat', 'node'],
+  plugins: ['import', 'promise', 'node'],
   extends: [
     'plugin:promise/recommended',
     'standard'

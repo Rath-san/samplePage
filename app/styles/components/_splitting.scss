@@ -1,0 +1,34 @@
+.section__title {
+  .word {
+    display: inline-block;
+  }
+  &[data-visible='true'] {
+    .word {
+      opacity: 1;
+      transform: translateX(0em);
+    }
+  }
+
+  &[data-visible='false'] {
+    .word {
+      opacity: 0;
+      transform: translateX(calc(0.2em * var(--word-index)));
+    }
+  }
+}
+
+$animation-duration: 1s;
+
+.splitting .word {
+  transition: transform $animation-duration cubic-bezier(0.3, 0, 0.3, 1),
+    opacity $animation-duration linear;
+  transition-delay: calc(20ms + (50ms * var(--word-index)));
+}
+
+.bg--full--absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

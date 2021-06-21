@@ -121,7 +121,7 @@ exports.loadCSS = ({ include, exclude, use } = {}) => ({
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
 
         include,
         exclude,

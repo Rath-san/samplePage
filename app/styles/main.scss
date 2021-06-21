@@ -2,7 +2,7 @@
 @import './utils/animations';
 @import './components/lazy-image';
 @import './components/fonts';
-// @import './components/button';
+@import './components/button';
 @import './components/titles';
 // @import './components/links';
 // @import './components/icons';
@@ -15,10 +15,12 @@
 @import './layout/containers';
 @import './components/tech-spec';
 @import './components/minstaller';
+@import './components/scroll-to-btn';
 // @import './layout/manage';
 // @import './layout/content';
 // @import './layout/store';
 // @import './3d/base';
+@import './components/splitting';
 
 img {
   max-width: 100%;
@@ -260,7 +262,9 @@ $shadow-color: #000;
   }
 }
 
-.showcase {}
+.showcase {
+  padding-bottom: 0;
+}
 .case {
   &__item {
     position: relative;
@@ -293,15 +297,21 @@ $shadow-color: #000;
       display: flex;
       // align-items: flex-end;
       align-items: center;
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         position: static;
       }
       .section {
         &__head {
-          max-width: 25em
+          max-width: 25em;
+          @media screen and (max-width: 768px) {
+            margin: 0 0 auto 0;
+          }
         }
         &__text {
           margin-bottom: 0;
+          @media screen and (max-width: 768px) {
+            padding: 0;
+          }
         }
 
       }
@@ -309,9 +319,7 @@ $shadow-color: #000;
   }
 }
 
-
 .presets {
-  padding: 10rem 0;
 }
 
 .product {
@@ -320,11 +328,39 @@ $shadow-color: #000;
     grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
     gap: .35rem 0.5rem;
+    .product {
+      margin-bottom: 0 !important;
+      padding: 0 !important;
+    }
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem 0.5rem;
+    }
     .example__item {
-      &:nth-child(3n) {
+      &:nth-last-child(1) {
+        grid-column: span 2 !important;
+        grid-row: span 2 !important;
+      }
+      &:nth-child(3n + 1) {
         grid-column: span 2;
         grid-row: span 2;
+        @media screen and (max-width: 767px) {
+          grid-column: span 1;
+          grid-row: span 1;
+        }
       }
     }
+  }
+}
+
+.collapse:not(.show) {
+  @media screen and (min-width: 767px) {
+    display: block;
+  }
+}
+
+.btn-collapse {
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 }

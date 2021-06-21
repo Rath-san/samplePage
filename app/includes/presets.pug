@@ -9,6 +9,9 @@
   //- ]
 //- - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
 
+- var entriesLength = 50
+- var collapseAfterLength = 8
+
 section.presets.bg--dark.text-center
   //- .image__background__shadow
   //- - var image = `/images/mHUD_gfx_prev.jpg`
@@ -20,7 +23,7 @@ section.presets.bg--dark.text-center
     .row
       .col-12
         .section__head
-          h2.section__display 50
+          h2.section__display #{entriesLength}
           p.section__title Analog film look presets
           p.section__subtitle hover or tap to see preview animations
         .section__body
@@ -34,27 +37,26 @@ section.presets.bg--dark.text-center
             .videoList
               .product-grid
                 //- - var localLoopIndex = 1
-                - for(var i = 1; i <= 50; i++)
+                - for(var i = 1; i <= entriesLength; i++)
                   - var num = i.toString().length < 2 ? `0${i}` : i
-                  div(class=`example__item`)
+                  div(class=`example__item ${i > collapseAfterLength ? `collapse prev-collapse-preset` : ''}`)
                     div(class=`product`)
                       .product-preview
                         //- img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=')
                         div(style="padding-bottom: calc(226 / 400 * 100%); background: #000")
                         .preview-wrapper.zoom(data-mp4-url=`https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/${num}.mp4`)
                           .preview-image-container
-                            img.img-fluid(src=`https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/${num}.jpg` alt='Sports Content Plugin For Final Cut Pro' onerror="this.style.display='none'" onload="this.style.display='block'" style='display: block;')
+                            img.img-fluid(src=`https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/${num}.jpg` alt='Fade' onerror="this.style.display='none'" onload="this.style.display='block'" style='display: block;')
                             .preview-video-container(style='height: 198.781px; display: none;')
-            //- - var notCollapsedItems = 4
-            //- - if (localLoopIndex > notCollapsedItems)
-            //-   button.button.btn-collapse(type='button' data-toggle='collapse' data-target=`.prev-collapse-${section.label.toLowerCase()}` aria-expanded="false")
-            //-     span.label-collapsed Show more
-            //-     span.label-expanded Collapse
-            //-     |  (#{`${section.count - notCollapsedItems}`})
-            //-     svg.btn-collapse-arrow(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 36.6 61.5' style='enable-background:new 0 0 36.6 61.5;' xml:space='preserve' height='20')
-            //-       style(type='text/css').
-            //-         .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
-            //-       polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
+              //- - if (localLoopIndex > collapseAfterLength)
+              button.button.btn-collapse(type='button' data-toggle='collapse' data-target=`.prev-collapse-preset` aria-expanded="false")
+                span.label-collapsed Show more
+                span.label-expanded Collapse
+                |  (#{`${entriesLength - collapseAfterLength}`})
+                svg.btn-collapse-arrow(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 36.6 61.5' style='enable-background:new 0 0 36.6 61.5;' xml:space='preserve' height='20')
+                  style(type='text/css').
+                    .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
+                  polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
           //- - currentIndex += section.count
 
     //- .row.text-left
