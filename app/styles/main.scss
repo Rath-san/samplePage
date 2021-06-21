@@ -352,6 +352,10 @@ $shadow-color: #000;
       &:nth-last-child(1) {
         grid-column: span 2 !important;
         grid-row: span 2 !important;
+        @media screen and (max-width: 767px) {
+          grid-column: span 1 !important;
+          grid-row: span 1 !important;
+        }
       }
       &:nth-child(3n + 1) {
         grid-column: span 2;
