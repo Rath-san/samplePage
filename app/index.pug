@@ -67,7 +67,7 @@ html(lang="en")
       -
         var showcaseData = [
           {
-            src: ['/images/up.mp4', '/images/test_3.mp4'],
+            //- src: ['/images/up.mp4', '/images/test_3.mp4'],
             alt: 'alt',
             subtitle: 'Match the movement with any video',
             //- title: 'Diverse, effective & fully customizable',
@@ -94,8 +94,9 @@ html(lang="en")
           - var offset = index + 1
           div(class=`case__item case__item--${index}`)
             .case__item__bg
-              video(controls=false, muted, playsinline, data-alt-src=val.src[1])
-                each src in val.src
+              video(src='/images/up.mp4' controls=false, muted, playsinline)
+              video(src='/images/test_3.mp4' controls=false, muted, playsinline)
+                //- each src in val.src
                   source(src=src type='video/mp4')
             .case__item__body
               .container

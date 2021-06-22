@@ -294,8 +294,13 @@ $shadow-color: #000;
     }
     &__bg {
       video {
+        position: absolute;
         width: 100%;
         display: block;
+        opacity: 0;
+        &.active {
+          opacity: 1;
+        }
       }
       img {
         width: 100%;

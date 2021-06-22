@@ -18,7 +18,6 @@ import './lazy-images'
 // import { animateOnScroll } from './animate-on-scroll'
 import './scroll_to_anchor'
 import Splitting from 'splitting'
-
 ;(() => {
   window.addEventListener('load', () => {
     const titles = Array.from(document.querySelectorAll('.section__title'))
@@ -58,35 +57,36 @@ import Splitting from 'splitting'
     })
 
     // switching movie section
-    const caseItem0Video = document.querySelector('.case__item--0 video')
-    const caseItem0VideoSources = caseItem0Video.querySelectorAll('source')
-    const videos = [
-      `${caseItem0VideoSources[0].src}`,
-      `${caseItem0VideoSources[1].src}`
-    ]
-    let activeVideoIndex = 0
+    const videos = Array.from(document.querySelectorAll('.case__item--0 video'))
     const showcase = Array.from(document.querySelectorAll('.case__item--0'))
+    let activeVideoIndex = 1
+    let playing = false
 
-    // switching video on enter
-    const switchVideo = () => {
-      caseItem0VideoSources[0].src = videos[activeVideoIndex]
+    videos[0].classList.add('active')
+    videos[0].onended = function () {
+      this.classList.remove('active')
+      this.currentTime = 0
+      videos[1].classList.add('active')
+      playing = false
+    }
 
-      activeVideoIndex += 1
-
-      if (activeVideoIndex >= videos.length) {
-        activeVideoIndex = 0
-      }
+    videos[1].onended = function () {
+      this.classList.remove('active')
+      this.currentTime = 0
+      videos[0].classList.add('active')
+      playing = false
     }
 
     doOnVisible({
       sectionSelector: showcase,
       cbIn: (target) => {
-        caseItem0Video.play()
+        if (!playing) {
+          videos.filter(item => item.classList.contains('active'))[0].play()
+          playing = true
+        }
       },
       cbOut: (target, up) => {
-        switchVideo()
-        caseItem0Video.load()
-        caseItem0Video.pause()
+        // switchVideo()
       },
       disconectOnIn: false,
       threshold: 0.5,
