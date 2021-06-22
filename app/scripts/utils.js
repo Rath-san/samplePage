@@ -1,6 +1,6 @@
-export const is_cached = (img_url) => {
+export const isCached = (imgUrl) => {
   var imgEle = document.createElement('img')
-  imgEle.src = img_url
+  imgEle.src = imgUrl
   return imgEle.complete || imgEle.width + imgEle.height > 0
 }
 

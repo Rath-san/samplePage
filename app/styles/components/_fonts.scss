@@ -75,6 +75,17 @@ main {
     margin-bottom: 2rem;
     max-width: 25em;
     margin: auto;
+    @media screen and (max-width : 768px) {
+      padding: 0 5%;
+    }
+
+    .showcase &,
+    .tech-spec & {
+      @media screen and (max-width : 768px) {
+        // max-width: 7em;
+        padding: 0;
+      }
+    }
   }
 
   &__title {
@@ -85,6 +96,19 @@ main {
     @media screen and (max-width: 1024px) {
       font-size: 32px;
       margin-bottom: 1rem;
+    }
+
+    br {
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
+    }
+
+    .trailer & {
+      @media screen and (max-width : 768px) {
+        max-width: 7em;
+        margin: 0 auto 1rem auto;
+      }
     }
   }
   &__subtitle {

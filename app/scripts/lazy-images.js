@@ -1,4 +1,4 @@
-import { is_cached } from './utils'
+import { isCached } from './utils'
 ;(() => {
   // Lazy images
   const images = document.querySelectorAll('.img-lazy')
@@ -11,7 +11,7 @@ import { is_cached } from './utils'
             const img = entry.target.querySelector('img')
             const placeholder = entry.target.querySelector('.placeholder')
 
-            if (is_cached(img.dataset.src)) {
+            if (isCached(img.dataset.src)) {
               entry.target.classList.add('img-cached')
             }
 
@@ -41,26 +41,41 @@ import { is_cached } from './utils'
 const headerComp = () => {
   const header = document.querySelector('.header')
   const headerImages = Array.from(header.querySelectorAll('img'))
+  const headerVideos = Array.from(header.querySelectorAll('video'))
 
-  const imagesresolved = Promise.all(
-    headerImages.map(
-      (image) =>
-        new Promise((res, rej) => {
-          image.onload = () => {
-            res()
+  const headerComponents = [...headerImages, ...headerVideos]
+
+  const componentsResolved = Promise.all(
+    headerComponents.map(
+      (component) =>
+        new Promise((resolve, reject) => {
+          if (component.nodeName === 'VIDEO') {
+            component.onloadeddata = () => {
+              resolve()
+            }
+          } else {
+            component.onload = () => {
+              resolve()
+            }
           }
         })
     )
   )
 
-  imagesresolved.then(() => {
-    header.classList.add('animated-in')
-  })
+  componentsResolved
+    .then((e) => {
+      header.classList.add('animated-in')
+    })
+    .catch((e) => {
+      console.log(e)
+    })
 
-  headerImages.forEach((img, index) => {
-    img.src = img.dataset.src
-    img.srcset = img.dataset.srcset
+  headerComponents.forEach((el, index) => {
+    el.src = el.dataset.src
+    if (el.srcset) {
+      el.srcset = el.dataset.srcset
+    }
   })
 }
 
-// headerComp()
+headerComp()
