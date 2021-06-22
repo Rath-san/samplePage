@@ -57,6 +57,7 @@ import Splitting from 'splitting'
       threshold: 1
     })
 
+    // switching movie section
     const caseItem0Video = document.querySelector('.case__item--0 video')
     const caseItem0VideoSources = caseItem0Video.querySelectorAll('source')
     const videos = [

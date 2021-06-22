@@ -321,6 +321,9 @@ $shadow-color: #000;
             margin: 0 0 auto 0;
           }
         }
+        &__title {
+          white-space: pre-line;
+        }
         &__text {
           margin-bottom: 0;
           @media screen and (max-width: 768px) {
