@@ -40,10 +40,36 @@
   }
 
   &__logo {
-    // margin-top: 15%;
-    // @media screen and (max-width: 768px) {
-    //   margin-top: 20%;
-    // }
+    margin-top: 7rem;
+    @media screen and (max-width: 768px) {
+      margin-top: 10rem;
+    }
+    img {
+      height: auto;
+      width: 320px;
+      margin-bottom: 2rem;
+      @media screen and (max-width: 768px) {
+        width: 200px;
+      }
+    }
+    svg {
+      width: 320px;
+      height: 160px;
+    }
+    .logo {
+      &__title {
+        font-size: 46px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        transform: translate(11%, 25%);
+      }
+      &__subtitle {
+        font-size: 140px;
+        font-weight: 600;
+        letter-spacing: 6px;
+        transform: translate(0, 99%);
+      }
+    }
   }
 
   &__buttons {
@@ -64,9 +90,10 @@
 
   &__subtitle {
     // font-size: 23px;
-    // @media screen and (max-width: 768px) {
-    //   font-size: 20px;
-    // }
+    @media screen and (max-width: 768px) {
+      max-width: 15em;
+      // font-size: 20px;
+    }
   }
 
   &__text {
@@ -79,13 +106,13 @@
   }
 
   &__promo {
-  //   border-radius: 5px;
-  //   overflow: hidden;
-  //   box-shadow: 0 20px 150px -50px #00000060;;
-  //   img {
-  //     height: auto;
-  //     border-radius: .2rem;
-  //   }
+    //   border-radius: 5px;
+    //   overflow: hidden;
+    //   box-shadow: 0 20px 150px -50px #00000060;;
+    //   img {
+    //     height: auto;
+    //     border-radius: .2rem;
+    //   }
   }
 }
 
@@ -108,5 +135,4 @@
 .video-responsive {
   position: relative;
   padding-bottom: 1250 / 2560 * 100%;
-
 }

@@ -1,14 +1,14 @@
 .footer {
   // max-height: 100vh;
   position: relative;
-  padding: 5rem 0;
+  padding: 19.4rem 0;
   // overflow: hidden;
   // background: rgb(2,0,36);
   // padding-bottom: 0;
   // background: #000;
-  // @media screen and (max-width : 768px) {
-    // padding-top: 5rem;
-  // }
+  @media screen and (max-width : 768px) {
+    padding: 10rem 0;
+  }
 
   &__title {
     // margin-bottom: 2rem;
