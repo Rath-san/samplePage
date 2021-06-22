@@ -78,7 +78,12 @@ html(lang="en")
       section.showcase
         div(class=`case__item case__item--2`)
           .case__item__bg
-            img(src='/images/fade_bg_1.jpg', alt="")
+            - var image = `/images/fade_bg_1.jpg`
+            - var alt = ''
+            - var imageWidth = '2560'
+            - var imageHeight = '1150'
+            include includes/components/image.pug
+            //- img(src='/imawges/fade_bg_1.jpg', alt="")
           .case__item__body
             .container
               .row

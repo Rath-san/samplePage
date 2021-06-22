@@ -13,6 +13,8 @@
 section.footer.bg--dark.text-center
   - var image = `/images/footer_3.jpg`
   - var alt = 'Woman in cinematic alley'
+  - var width = '2560'
+  - var height = '1150'
   include components/image-background.pug
   //- #slider.slider
     each img, index in footerSliderItems
@@ -34,8 +36,8 @@ section.footer.bg--dark.text-center
           //-   include components/buttons.pug
         //- .footer__promo
         //-   img(src="https://via.placeholder/1920x1080", alt="", srcset="")
-          //- - var image = `/images/footer_promo.jpg`
-          //- - var alt = 'MOTIONVFX shop interface'
-          //- - var imageWidth = '2560'
-          //- - var imageHeight = '1460'
-          //- include components/image.pug
+          - var image = `/images/footer_promo.jpg`
+          - var alt = 'MOTIONVFX shop interface'
+          - var imageWidth = '2560'
+          - var imageHeight = '1460'
+          include components/image.pug
