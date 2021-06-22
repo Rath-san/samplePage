@@ -11,8 +11,20 @@ section.header.text--light.text-center
       .col-12
         .header__content.section__text__content
           .header__logo
-            h1.header__title mTransition Fade
+            svg(xmlns='http://www.w3.org/2000/svg' width='500px' height='100px')
+              defs
+                lineargradient#lgrad(x1='100%' y1='50%' x2='0%' y2='50%' gradienttransform='rotate(60)')
+                  stop(offset='0' stop-color='black')
+                  stop(offset='1' stop-color='white')
+                mask#myMask(x='0' y='0' width='100%' height='100%')
+                  rect(x='0' y='0' width='100%' height='100%' fill='url(#lgrad)')
+              g(mask='url(#myMask)')
+                text#myText(x='100' y='0' text-anchor='middle' font-size='25' transform='translate(100,50)' fill='#fff') mTransition
+                text#myText(x='100' y='0' text-anchor='middle' font-size='75' transform='translate(100,100)' fill='#fff') Fade
+
+            //- h1.header__title mTransition Fade
             p.header__subtitle Transition your stuff.
+
           //- .header__buttons
           //-   include components/buttons.pug
           //- p.header__text Acess your entire MotionVFX FCP Plugins and Motion Templates collection with a click.

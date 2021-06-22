@@ -14,17 +14,22 @@
 //   FOOTER_GRADIENTS
 // } from './background-animation'
 // import { notificationsAnim } from './notifications'
-// import './lazy-images'
+import './lazy-images'
 // import { animateOnScroll } from './animate-on-scroll'
 import './scroll_to_anchor'
 import Splitting from 'splitting'
+
 ;(() => {
   window.addEventListener('load', () => {
     const titles = Array.from(document.querySelectorAll('.section__title'))
-    const subTitles = Array.from(document.querySelectorAll('.section__subtitle'))
+    const subTitles = Array.from(
+      document.querySelectorAll('.section__subtitle')
+    )
     const displays = Array.from(document.querySelectorAll('.section__display'))
 
-    Array.from(document.querySelectorAll('.section__head')).forEach((tile) => (tile.dataset.visible = false))
+    Array.from(document.querySelectorAll('.section__head')).forEach(
+      (tile) => (tile.dataset.visible = false)
+    )
 
     // animateOnScroll({})
     Splitting({
@@ -54,33 +59,44 @@ import Splitting from 'splitting'
 
     const caseItem0Video = document.querySelector('.case__item--0 video')
     const caseItem0VideoSources = caseItem0Video.querySelectorAll('source')
-    const video1 = `${caseItem0VideoSources[0].src}`
-    const video2 = `${caseItem0VideoSources[1].src}`
+    const videos = [
+      `${caseItem0VideoSources[0].src}`,
+      `${caseItem0VideoSources[1].src}`
+    ]
+    let activeVideoIndex = 0
     const showcase = Array.from(document.querySelectorAll('.case__item--0'))
 
     // switching video on enter
-    const switchVideo = (newVid) => {
-      caseItem0VideoSources[0].src = newVid
+    const switchVideo = () => {
+      caseItem0VideoSources[0].src = videos[activeVideoIndex]
 
-      caseItem0Video.load()
-      caseItem0Video.play()
+      activeVideoIndex += 1
+
+      if (activeVideoIndex >= videos.length) {
+        activeVideoIndex = 0
+      }
     }
 
     doOnVisible({
       sectionSelector: showcase,
-      cbIn: (target, up) => {
-        if (up) {
-          switchVideo(video1)
-        } else {
-          switchVideo(video2)
-        }
+      cbIn: (target) => {
+        caseItem0Video.play()
       },
-      cbOut: () => {},
+      cbOut: (target, up) => {
+        switchVideo()
+        caseItem0Video.load()
+        caseItem0Video.pause()
+      },
       disconectOnIn: false,
       threshold: 0.5,
       useDirection: true,
-      rootMargin: '1000px'
+      rootMargin: '30%'
     })
+
+    // slider
+    // slider({
+    //   node: document.getElementById('slider')
+    // })
   })
 })()
 
@@ -99,21 +115,16 @@ const doOnVisible = ({
     const io = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
+          let y = entry.boundingClientRect.y
+          const up =
+            lastTriggerPosition !== undefined ? lastTriggerPosition > y : true
+          lastTriggerPosition = y
+
           if (entry.isIntersecting) {
-            if (useDirection) {
-              let y = entry.boundingClientRect.y
-              const up =
-                lastTriggerPosition !== undefined
-                  ? lastTriggerPosition > y
-                  : true
-              lastTriggerPosition = y
-              cbIn(target, up)
-            } else {
-              cbIn(target)
-            }
+            cbIn(target, up)
             if (disconectOnIn) observer.disconnect()
           } else {
-            cbOut(target)
+            cbOut(target, up)
           }
         })
       },

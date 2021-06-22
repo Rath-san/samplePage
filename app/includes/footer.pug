@@ -1,7 +1,26 @@
+-
+  var footerSliderItems = [
+    {
+      src: '/images/footer_1.jpg',
+      alt: 'test'
+    },
+    {
+      src: '/images/footer_2.jpg',
+      alt: 'test'
+    }
+  ]
+
 section.footer.bg--dark.text-center
-  //- - var image = `/images/mHUD_footer.jpg`
-  //- - var alt = 'Woman in cinematic alley'
-  //- include components/image-background.pug
+  - var image = `/images/footer_3.jpg`
+  - var alt = 'Woman in cinematic alley'
+  include components/image-background.pug
+  //- #slider.slider
+    each img, index in footerSliderItems
+      if index === 0
+        div(class="slider__item active")
+      else
+        div(class="slider__item active")
+        img(src=img.src, alt=img.alt, srcset="")
   .container
     .row
       .col-12
