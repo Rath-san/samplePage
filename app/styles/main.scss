@@ -285,6 +285,12 @@ $shadow-color: #000;
         &__body {
           justify-content: flex-end;
         }
+        &__bg {
+          padding-bottom: 0.4492 * 100%;
+          @media screen and (max-width: 767px) {
+            position: static;
+          }
+        }
       }
     }
     &--1 {
@@ -317,7 +323,7 @@ $shadow-color: #000;
       display: flex;
       align-items: center;
       @media screen and (max-width: 767px) {
-        position: static;
+        position: static !important;
       }
       .section {
         &__head {
