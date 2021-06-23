@@ -126,7 +126,7 @@ main {
     font-size: .9rem;
     margin-bottom: 2.5rem;
     font-weight: 400;
-    white-space: pre-line;
+    // white-space: pre-line;
     @media screen and (max-width: 1024px) {
       font-size: 18px;
     }
@@ -139,7 +139,7 @@ main {
     &__content {
       // padding: 0 10%;
       position: relative;
-      z-index: 32;
+      z-index: 0;
       @media screen and (max-width: 1440px) {
         padding: 0 10%;
       }

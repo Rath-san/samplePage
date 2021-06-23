@@ -9,7 +9,7 @@
   //- ]
 //- - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
 
-- var entriesLength = 50
+- var entriesLength = 51
 - var collapseAfterLength = 8
 
 section.presets.bg--dark.text-center
@@ -32,7 +32,37 @@ section.presets.bg--dark.text-center
           //- each section in sections
           //-   - var minColumns = 2
           //-   <!--#{sectionItems = currentIndex + section.count - 1}-->
-          .examples
+          .videoList.center
+            .cover.product-list-wrapper
+              #productList.product-list
+                .container.site-content.container-lg
+                  #productsContainer.row.product-grid
+                    - for(var i = 1; i <= entriesLength; i++)
+                      - var num = i.toString().length < 2 ? `0${i}` : i
+                      - var imageName = `/images/img/${num}`
+                      - var videoName = `/images/video/${num}`
+                      - var isEven = entriesLength % 2 == 0
+                      div(class=`col-6 col-lg-4 product ${i > collapseAfterLength ? 'collapse prev-collapse' : ''} ${!isEven && i === entriesLength ? 'offset-3' : ''} offset-lg-0` id=`prev-collapse-${i}`)
+                        a
+                          .product-preview
+                            img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=' width='600' height='338')
+                            .preview-wrapper.zoom(data-mp4-url=`${videoName}.mp4`)
+                              .preview-image-container
+                                img.img-fluid(src=`${imageName}.jpg` alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
+                              .preview-video-container(style='display: none')
+
+                    .col-12.col-btn-collapse
+                      button.button.btn-collapse(type='button' data-toggle='-collapse' data-target='.prev-collapse' aria-expanded='false')
+                        span
+                          span.label-collapsed Show more
+                          span.label-expanded Collapse
+                          |  (#{`${entriesLength - collapseAfterLength}`})
+                        svg.btn-collapse-arrow(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 36.6 61.5' style='enable-background:new 0 0 36.6 61.5;' xml:space='preserve' height='20')
+                          style(type='text/css').
+                            .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
+                          polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
+
+          //- .examples <---------------------- old one
             //- .section__title=section.label
             .videoList
               .product-grid
@@ -44,9 +74,9 @@ section.presets.bg--dark.text-center
                       .product-preview
                         //- img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=')
                         div(style="padding-bottom: calc(226 / 400 * 100%); background: #000")
-                        .preview-wrapper.zoom(data-mp4-url=`https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/${num}.mp4`)
+                        .preview-wrapper.zoom(data-mp4-url=`/images/video/${num}.mp4`)
                           .preview-image-container
-                            img.img-fluid(src=`https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/${num}.jpg` alt='Fade' onerror="this.style.display='none'" onload="this.style.display='block'" style='display: block;')
+                            img.img-fluid(src=`/images/img/${num}.jpg` alt='Fade' onerror="this.style.display='none'" onload="this.style.display='block'" style='display: block;')
                             .preview-video-container(style='height: 198.781px; display: none;')
               //- - if (localLoopIndex > collapseAfterLength)
               button.button.btn-collapse(type='button' data-toggle='collapse' data-target=`.prev-collapse-preset` aria-expanded="false")

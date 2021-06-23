@@ -1,4 +1,4 @@
-// import 'intersection-observer'
+import 'intersection-observer'
 // import { lazyAnimations } from './lazy-animation'
 
 // import { progressAnim } from './progress-bar'
@@ -92,6 +92,14 @@ import Splitting from 'splitting'
       threshold: 0.5,
       useDirection: true,
       rootMargin: '30%'
+    })
+
+    Array.from(document.querySelectorAll('.btn-collapse')).forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true'
+        btn.setAttribute('aria-expanded', !expanded)
+        $(btn.dataset.target).collapse('toggle')
+      })
     })
 
     // slider

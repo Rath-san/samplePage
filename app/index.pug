@@ -21,7 +21,7 @@ html(lang="en")
     script(src='scripts/jquery-3.4.1.min.js')
     script(src='scripts/bootstrap-4.1.3.bundle.min.js')
     script(src='https://s3.motionvfx.com/mvfxpublic/products/templates/source/media/scroll_to_anchor.js')
-    //- script(src='scripts/custom_pages_wrap.js')
+    script(src='scripts/custom_pages_wrap.js')
     //- script(src='scripts/beforeafter.js')
     script(src='scripts/scroll_to_anchor.js')
     script(src='scripts/menu.js')
@@ -51,17 +51,17 @@ html(lang="en")
       - var subtitle = "See them do their magic!"
       - var text = "View the cinematic shading effects these transitions create and how they boost the atmosphere of your edit."
       - var videoLink = "//player.vimeo.com/video/110782329?title=0&amp;byline=0&amp;portrait=0"
-      - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
+      //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
       - var videoTitle = 'mLut Insta Pack tutorial'
       include includes/trailer.pug
       a.nav(name="tutorial")
       - var sectionClasses = 'tutorial'
       - var title = "WATCH TUTORIAL"
       - var subtitle = "Learn to master the transitions!"
-      - var text = "Get the know-how for the most efficient workflow \nand spectacular results."
-      - var videoLink = "//player.vimeo.com/video/110782329?title=0&amp;byline=0&amp;portrait=0"
-      - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
-      - var videoTitle = 'mLut Insta Pack trailer'
+      - var text = "Get the know-how for the most efficient workflow and spectacular results."
+      - var videoLink = "https://www.youtube.com/embed/YxPrtn64rFQ?rel=0"
+      //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
+      - var videoTitle = 'mLut Insta Pack tutorial'
       include includes/trailer.pug
 
       -
@@ -91,9 +91,9 @@ html(lang="en")
                   .section__head
                     h2.section__subtitle #{'Build a truly cinematic feeling'}
                     p.section__title 
-                      | Create a unique mood
+                      | Create a unique mood 
                       br
-                      |  & evoke emotions
+                      | & evoke emotions
                     p.section__text.section__text--inset #{'These diversified and customizable footage shifts use shadow and darkness to switch between the videos and build up the suspense.'}
         each val, index in showcaseData
           - var offset = index + 1
