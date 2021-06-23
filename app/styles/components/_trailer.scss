@@ -1,7 +1,5 @@
 .trailer {
   text-align: center;
-  margin-top: 2rem;
-  // margin-top: 3rem;
   // padding: 5rem 0;
   padding-bottom: 0;
   @media screen and (max-width: 768px) {
@@ -21,7 +19,6 @@
     max-width: 700px;
     margin: auto;
     margin-bottom: 3rem;
-    // white-space: pre-line;
     @media screen and (max-width: 768px) {
         white-space: inherit;
     }

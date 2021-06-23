@@ -401,7 +401,7 @@ $shadow-color: #000;
 .videoList .product-grid .product {
   -webkit-animation: fadein .5s ease-out alternate;
   animation: fadein .5s ease-out alternate;
-  padding: 0 .25rem .5rem 0;
+  padding: 0 .5rem .5rem 0;
   @media (max-width: 575.98px) {
     &:nth-child(2n) {
       padding: 0 0 .25rem .25rem;

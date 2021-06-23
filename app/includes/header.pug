@@ -1,5 +1,5 @@
 section.header.text--light.text-center
-  .header__bg
+  .header__bg(style="opacity:0")
     //- .video-responsive
     video(data-src='https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/Top2.mp4' controls=false, autoplay, loop, muted, playsinline type='video/mp4')
       //- source(src='video-small.mp4' type='video/mp4' media='all and (max-width: 480px)')
@@ -28,6 +28,7 @@ section.header.text--light.text-center
             - var placeholder = getParsedImage(image)
             - var srcset = getParsedImage(image, 'srcSet')
             img(
+              style="opacity:0"
               alt=alt,
               height=height
               data-src=getParsedImage(image, 'src'),
@@ -36,7 +37,7 @@ section.header.text--light.text-center
             )
             //- img(src="/images/logos.png", alt="", srcset="" height="720")
             //- h1.header__title mTransition Fade
-            p.header__subtitle Cinematic Fade Transitions For Final Cut Pro.
+            p.header__subtitle(style="opacity:0") Cinematic Fade Transitions For Final Cut Pro.
 
           //- .header__buttons
           //-   include components/buttons.pug
