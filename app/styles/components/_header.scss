@@ -20,7 +20,10 @@
     align-items: center;
     justify-content: center;
     height: 1440px;
-    max-height: 92vh;
+    max-height: calc(100vh - 37px - 1rem);
+    @media screen and (max-height: 450px) {
+      max-height: 100vh;
+    }
   }
 
   &__bg {

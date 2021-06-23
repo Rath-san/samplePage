@@ -11,29 +11,29 @@ section.header.text--light.text-center
       .col-12
         .header__content.section__text__content
           .header__logo
-            svg(xmlns='http://www.w3.org/2000/svg')
-              defs
-                lineargradient#grad(x1='100%' y1='100%' x2='60%' y2='60%' gradienttransform='rotate(0)')
-                  stop(offset='0' stop-color='black')
-                  stop(offset='1' stop-color='white')
-                mask#fadeMask(x='0' y='0' width='100%' height='100%')
-                  rect(x='0' y='0' width='100%' height='100%' fill='url(#grad)')
-              g(mask='url(#fadeMask)')
-                text.logo__title(x='0' y='0' ) mTransition
-                text.logo__subtitle(x='0' y='0') Fade
-            //- - var image = `/images/logos.png`
-            //- - var alt = 'mTransition Fade logo'
-            //- - var imageWidth = '1200'
-            //- - var imageHeight = '737'
-            //- - var placeholder = getParsedImage(image)
-            //- - var srcset = getParsedImage(image, 'srcSet')
-            //- img(
-            //-   alt=alt,
-            //-   height=height
-            //-   data-src=getParsedImage(image, 'src'),
-            //-   data-srcset=srcset,
-            //-   sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
-            //- )
+            //- svg(xmlns='http://www.w3.org/2000/svg')
+            //-   defs
+            //-     lineargradient#grad(x1='100%' y1='100%' x2='60%' y2='60%' gradienttransform='rotate(0)')
+            //-       stop(offset='0' stop-color='black')
+            //-       stop(offset='1' stop-color='white')
+            //-     mask#fadeMask(x='0' y='0' width='100%' height='100%')
+            //-       rect(x='0' y='0' width='100%' height='100%' fill='url(#grad)')
+            //-   g(mask='url(#fadeMask)')
+            //-     text.logo__title(x='0' y='0' ) mTransition
+            //-     text.logo__subtitle(x='0' y='0') Fade
+            - var image = `/images/logos.png`
+            - var alt = 'mTransition Fade logo'
+            - var imageWidth = '1200'
+            - var imageHeight = '737'
+            - var placeholder = getParsedImage(image)
+            - var srcset = getParsedImage(image, 'srcSet')
+            img(
+              alt=alt,
+              height=height
+              data-src=getParsedImage(image, 'src'),
+              data-srcset=srcset,
+              sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
+            )
             //- img(src="/images/logos.png", alt="", srcset="" height="720")
             //- h1.header__title mTransition Fade
             p.header__subtitle Cinematic Fade Transitions For Final Cut Pro.

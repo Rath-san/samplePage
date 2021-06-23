@@ -27,7 +27,7 @@ img {
   max-width: 100%;
 }
 
-$text-color: #FBFBFB;
+$text-color: #fbfbfb;
 
 .text--light {
   color: $text-color;
@@ -42,7 +42,7 @@ $text-color: #FBFBFB;
   }
 
   &--light {
-    background-color: #E5E5E5;
+    background-color: #e5e5e5;
     color: #222;
   }
 }
@@ -54,19 +54,19 @@ $text-color: #FBFBFB;
 .installation {
   padding-top: 8rem;
   padding-bottom: 8rem;
-  @media screen and (max-width : 768px) {
+  @media screen and (max-width: 768px) {
     padding-top: 2rem;
     padding-bottom: 4rem;
   }
   &__content {
     margin-bottom: 6rem;
-    @media screen and (max-width : 768px) {
+    @media screen and (max-width: 768px) {
       margin-bottom: 2rem;
     }
   }
   &__title {
     margin: 2rem 0;
-    @media screen and (max-width : 768px) {
+    @media screen and (max-width: 768px) {
       margin: 0 0 2rem 0;
     }
   }
@@ -74,7 +74,7 @@ $text-color: #FBFBFB;
     margin-bottom: 0;
     max-width: 20em;
     margin: auto;
-    @media screen and (max-width : 768px) {
+    @media screen and (max-width: 768px) {
       max-width: 17em;
       margin: auto;
     }
@@ -91,7 +91,6 @@ $text-color: #FBFBFB;
       width: 100%;
       height: 100%;
     }
-
   }
 }
 
@@ -108,8 +107,8 @@ $progress-height: 4px;
 $progress-border-rad: $progress-height / 2;
 $progress-fill-width: 100%;
 
-$progress-fill-color-1: rgba(63,251,123,1);
-$progress-fill-color-2: rgba(70,252,232,1);
+$progress-fill-color-1: rgba(63, 251, 123, 1);
+$progress-fill-color-2: rgba(70, 252, 232, 1);
 
 .progress__bar {
   position: relative;
@@ -121,16 +120,20 @@ $progress-fill-color-2: rgba(70,252,232,1);
   border-radius: $progress-border-rad;
   opacity: 0.85;
   &__fill {
-      position: absolute;
+    position: absolute;
     left: 0;
     top: 0;
     width: $progress-fill-width;
     border-radius: $progress-border-rad;
     background: $progress-fill-color-1;
-    background: linear-gradient(90deg, $progress-fill-color-1 0%, $progress-fill-color-2 66%, $progress-fill-color-1 100%);
+    background: linear-gradient(
+      90deg,
+      $progress-fill-color-1 0%,
+      $progress-fill-color-2 66%,
+      $progress-fill-color-1 100%
+    );
     height: 100%;
-    box-shadow:
-      0 0 50px $progress-fill-color-1,
+    box-shadow: 0 0 50px $progress-fill-color-1,
       10px 0 80px $progress-fill-color-2;
     will-change: backgound;
     animation-duration: 1s;
@@ -140,7 +143,6 @@ $progress-fill-color-2: rgba(70,252,232,1);
   }
 
   &__wrapper {
-
   }
 
   &__text {
@@ -170,7 +172,7 @@ $progress-fill-color-2: rgba(70,252,232,1);
   opacity: 0;
 }
 
-div[class^="face"] {
+div[class^='face'] {
   border-radius: 2.5%;
   overflow: hidden;
 }
@@ -192,7 +194,6 @@ div[class^="face"] {
 
   background-color: #111;
   background-image: linear-gradient(139deg, #111 49%, #333 50%, #111 51%);
-
 }
 
 $shadow-offset: 50px;
@@ -211,7 +212,6 @@ $shadow-color: #000;
 // }
 
 #fadeEffect {
-
   .shadow {
     position: absolute;
     top: 0;
@@ -232,14 +232,12 @@ $shadow-color: #000;
     width: 100%;
     &--1 {
       will-change: transform, opacity;
-      transition:
-        transform 3s cubic-bezier(0.075, 0.82, 0.165, 1),
+      transition: transform 3s cubic-bezier(0.075, 0.82, 0.165, 1),
         opacity 3s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     &--2 {
       will-change: transform, opacity;
-      transition:
-        transform 3s cubic-bezier(0.075, 0.82, 0.165, 1),
+      transition: transform 3s cubic-bezier(0.075, 0.82, 0.165, 1),
         opacity 3s cubic-bezier(0.075, 0.82, 0.165, 1);
       opacity: 0;
       transform: scale(1.35);
@@ -251,7 +249,7 @@ $shadow-color: #000;
   &:hover {
     .img-fade__wrapper {
       &--1 {
-        transform: scale(.75);
+        transform: scale(0.75);
         opacity: 0;
       }
       &--2 {
@@ -262,8 +260,6 @@ $shadow-color: #000;
     }
   }
 }
-
-
 
 .showcase {
   padding-bottom: 0;
@@ -344,7 +340,6 @@ $shadow-color: #000;
             padding: 0;
           }
         }
-
       }
     }
   }
@@ -359,7 +354,6 @@ $shadow-color: #000;
   .section__subtitle {
     margin-bottom: 2.5rem;
   }
-
 }
 
 .product {
@@ -397,6 +391,26 @@ $shadow-color: #000;
   }
 }
 
+@media (max-width: 575.98px) {
+  .videoList .container.container-lg {
+      padding-left: 0;
+      padding-right: 0;
+  }
+}
+
+.videoList .product-grid .product {
+  -webkit-animation: fadein .5s ease-out alternate;
+  animation: fadein .5s ease-out alternate;
+  padding: 0 .25rem .5rem 0;
+  @media (max-width: 575.98px) {
+    &:nth-child(2n) {
+      padding: 0 0 .25rem .25rem;
+    }
+      margin-bottom: 0px;
+  }
+}
+
+
 .collapse:not(.show) {
   @media screen and (min-width: 767px) {
     display: block;
@@ -413,10 +427,8 @@ $shadow-color: #000;
   &table {
     display: flex;
     flex-wrap: wrap;
-
   }
   &row {
-
   }
   &cell {
     flex: 1;
@@ -426,11 +438,10 @@ $shadow-color: #000;
       flex-basis: 100%;
       padding-left: 0;
     }
-
   }
   &label {
     text-align: right;
-    color: #9A9A9A;
+    color: #9a9a9a;
     @media screen and (max-width: 450px) {
       text-transform: uppercase;
       font-weight: 600;
