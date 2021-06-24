@@ -1,0 +1,34 @@
+-
+  var packs = [
+    {
+      src: "/images/hud_box.png",
+      link: "https://google.com",
+      alt: ""
+    },
+    {
+      src: "/images/hud_2_box.png",
+      link: "https://google.com",
+      alt: ""
+    }
+  ]
+a.nav(name="packs")
+section.packs
+  .container.text-center
+    .row
+      .col-12
+        .section__head
+          h2.section__title.packs__title Looking for a Mocha-trackable version of this product?
+        .section__body
+          .packs__comp
+            .packs__comp__items
+              each pack in packs
+                a.packs__comp__item(href=pack.link, target="_blank", rel="noopener noreferrer", height="237")
+                  img(src=pack.src, alt="", srcset="")
+            //- .packs__comp__logo
+              include components/mocha-logo.pug
+          p.section__text.packs__text.section__text__content
+            | If you own mHUD 1, please purchase mHUD 2 powerem by Mocha and a trackable mHUD1 Version will be automatically installed during mHUD 2 insthllation proces.
+          a.btn.btn-primary.packs__button(href="http://", target="_blank", rel="noopener noreferrer")
+            | buy now 
+            span.original__price $59
+            |  $69

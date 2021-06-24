@@ -12,7 +12,7 @@ html(lang="en")
     link(rel='shortcut icon' href='css/static/images/favicon.png' type='image/png')
     //- FONTS
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
 
     link(href='css/custom_pages_wrap.css' rel="stylesheet" type="text/css")
     link(href='css/bootstrap-4.1.3.min.css' rel="stylesheet" type="text/css")
@@ -22,21 +22,10 @@ html(lang="en")
     script(src='scripts/bootstrap-4.1.3.bundle.min.js')
     script(src='https://s3.motionvfx.com/mvfxpublic/products/templates/source/media/scroll_to_anchor.js')
     script(src='scripts/custom_pages_wrap.js')
-    //- script(src='scripts/beforeafter.js')
+
     script(src='scripts/scroll_to_anchor.js')
     script(src='scripts/menu.js')
 
-    //- 1 sekcja top - video
-    //- 2 sekja trailer standard
-    //- 3 sekcja tutorial standard
-    //- 4 sekcja video po skrolu lub animacja
-    //- 5 statyczna sekcja taka jak widac
-    //- 6 Prevki
-    //- 7 Technicale
-    //- 8 Footer statyczne zdjecie w tle
-
-    - var mediaRootUrl = '/images'
-    - var templateImagesUrl = '/images'
     - var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
 
   body
@@ -45,77 +34,69 @@ html(lang="en")
     .top-bar
     main.mInstaller
       include includes/header.pug
-      a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
-      a.nav(name="trailer")
-      - var title = "WATCH TRAILER"
-      - var subtitle = "See them do their magic!"
-      - var text = "View the cinematic shading effects these transitions create and how they boost the atmosphere of your edit."
-      - var videoLink = "//player.vimeo.com/video/110782329?title=0&amp;byline=0&amp;portrait=0"
-      //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
-      - var videoTitle = 'mLut Insta Pack tutorial'
-      include includes/trailer.pug
-      a.nav(name="tutorial")
-      - var sectionClasses = 'tutorial'
-      - var title = "WATCH TUTORIAL"
-      - var subtitle = "Learn to master the transitions!"
-      - var text = "Get the know-how for the most efficient workflow and spectacular results."
-      - var videoLink = "https://www.youtube.com/embed/YxPrtn64rFQ?rel=0"
-      //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
-      - var videoTitle = 'mLut Insta Pack tutorial'
-      include includes/trailer.pug
+      a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('packs');" tabindex="-1")
+      a(href="#", name='packs', rel="noopener noreferrer") 
+      include includes/packs.pug
+      .bg--dark.tutorial
+        a.nav(name="trailer")
+        - var title = "Watch trailer"
+        - var subtitle = "View them in action!"
+        - var text = "See the power of this plugin in action!"
+        - var videoLink = "//player.vimeo.com/video/110782329?title=0&amp;byline=0&amp;portrait=0"
+        - var videoTitle = 'mLut Insta Pack trailer'
+        include includes/trailer.pug
 
       -
         var showcaseData = [
           {
-            //- src: ['/images/up.mp4', '/images/test_3.mp4'],
+            src: ['/images/mHUD_gfx_1.jpg'],
+            title: 'A futuristic power-up for your edits',
             alt: 'alt',
-            subtitle: 'Match the movement with any video',
-            //- title: 'Diverse, effective & fully customizable',
-            text: 'Several adjustable presets and custom movements set directly in the viewport give you creative freedom and let you work with ease. From quick slides and zooms to long blackouts - this pack has got you covered.'
+            text: 'Add mind-blowing HUD details and create stunningly spectacular scenes.'
+          },
+          {
+            src: ['/images/mHUD_gfx_2.jpg'],
+            title: 'A wide selection of diversified layouts',
+            alt: 'alt',
+            text: 'Create countless modern interfaces, display screens and holographic projections.'
+          },
+          {
+            src: ['/images/mHUD_gfx_3.jpg'],
+            title: 'Add extra depth by moving layers in space',
+            alt: 'alt',
+            text: 'Design 3D compositions with footage and motion design.'
           }
         ]
 
       section.showcase
-        div(class=`case__item case__item--2`)
-          .case__item__bg
-            - var image = `/images/fade_bg_1.jpg`
-            - var alt = ''
-            - var imageWidth = '2560'
-            - var imageHeight = '1150'
-            include includes/components/image.pug
-            //- img(src='/imawges/fade_bg_1.jpg', alt="")
-          .case__item__body
-            .container
-              .row
-                div(class=`col-md-6`)
-                  .section__head
-                    h2.section__subtitle #{'Build a truly cinematic feeling'}
-                    p.section__title 
-                      | Create a unique mood 
-                      br
-                      | & evoke emotions
-                    p.section__text.section__text--inset #{'These diversified and customizable footage shifts use shadow and darkness to switch between the videos and build up the suspense.'}
         each val, index in showcaseData
           - var offset = index + 1
           div(class=`case__item case__item--${index}`)
             .case__item__bg
-              video(src='/images/up.mp4' controls=false, muted, playsinline)
-              video(src='/images/test_3.mp4' controls=false, muted, playsinline)
-                //- each src in val.src
-                  source(src=src type='video/mp4')
+              - var image = val.src
+              - var alt = val.alt
+              - var imageWidth = '2560'
+              - var imageHeight = '1150'
+              - var sizes= "100vw"
+              include includes/components/image.pug
             .case__item__body
               .container
                 .row
-                  div(class=`col-md-6 ${offset % 2 === 0 ? '' : 'offset-md-6'}`)
+                  div(class=`col-md-6 ${offset % 2 !== 0 ? '' : 'offset-lg-6'}`)
                     .section__head
-                      h2.section__subtitle= val.subtitle
-                      p.section__title
-                        | Diverse, effective 
-                        br
-                        | & fully customizable
-                      p.section__text.section__text--inset= val.text
+                      h2.section__title=val.title
+                      p.section__text.section__text--inset #{'These diversified and customizable footage shifts use shadow and darkness to switch between the videos and build up the suspense.'}
       include includes/presets.pug
-      a.nav(href="#" name='specs', rel="noopener noreferrer") 
+      a.nav(href="#" name='specs', rel="noopener noreferrer")
+      .bg--light
+      a.nav(name="tutorial")
+      - var title = "Watch tutorial"
+      - var subtitle = "Gen the know-how!"
+      - var text = "Learn how to ust the plugin to create stunning design"
+      - var videoLink = "https://www.youtube.com/embed/9tF-MzNxz4c?rel=0"
+      - var videoPlaceholder = "https://i.ytimg.com/vi/9tF-MzNxz4c/maxresdefault.jpg"
+      - var videoTitle = 'mLut Insta Pack tutorial'
+      include includes/trailer.pug
       include includes/tech-spec.pug
       include includes/minstaller.pug
       include includes/footer.pug

@@ -1,39 +1,10 @@
-// @font-face {
-//   font-family: Proxima;
-//   src: url('/static/fonts/proximanova-bold-webfont.woff2') format('woff2'),
-//     url('/static/fonts/proximanova-bold-webfont.woff') format('woff'),
-//     url('/static/fonts/proximanova-bold-webfont.ttf') format('truetype');
-//   font-weight: 700;
-//   font-style: normal;
-//   font-display: fallback;
-// }
-// @font-face {
-//   font-family: Proxima;
-//   src: url('/static/fonts/proximanova-light-webfont.woff2') format('woff2'),
-//     url('/static/fonts/proximanova-light-webfont.woff') format('woff'),
-//     url('/static/fonts/proximanova-light-webfont.ttf') format('truetype');
-//   font-weight: 300;
-//   font-style: normal;
-//   font-display: fallback;
-// }
-// @font-face {
-//   font-family: Proxima;
-//   src: url('/static/fonts/proximanova-regular-webfont.woff2') format('woff2'),
-//     url('/static/fonts/proximanova-regular-webfont.woff') format('woff'),
-//     url('/static/fonts/proximanova-regular-webfont.ttf') format('truetype');
-//   font-weight: 400;
-//   font-style: normal;
-//   font-display: fallback;
-// }
-// @font-face {
-//   font-family: Proxima;
-//   src: url('/static/fonts/proximanova-semibold-webfont.woff2') format('woff2'),
-//     url('/static/fonts/proximanova-semibold-webfont.woff') format('woff'),
-//     url('/static/fonts/proximanova-semibold-webfont.ttf') format('truetype');
-//   font-weight: 600;
-//   font-style: normal;
-//   font-display: fallback;
-// }
+@font-face {
+  font-family: ModeNine;
+  src: url('/fonts/modenine.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
 
 $rem: 20px;
 
@@ -47,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: 'ModeNine', sans-serif;
   font-weight: 400;
   font-size: $font-size-title;
   line-height: 1;
@@ -59,7 +30,7 @@ b {
 }
 
 main {
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: $font-size-body;
 }
@@ -126,7 +97,6 @@ main {
     font-size: .9rem;
     margin-bottom: 2.5rem;
     font-weight: 400;
-    // white-space: pre-line;
     @media screen and (max-width: 1024px) {
       font-size: 18px;
     }
@@ -137,7 +107,6 @@ main {
       white-space: unset;
     }
     &__content {
-      // padding: 0 10%;
       position: relative;
       z-index: 0;
       @media screen and (max-width: 1440px) {

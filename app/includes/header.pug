@@ -1,30 +1,29 @@
 section.header.text--light.text-center
   .header__bg(style="opacity:0")
-    //- .video-responsive
-    video(data-src='https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/Top2.mp4' controls=false, autoplay, loop, muted, playsinline type='video/mp4')
-      //- source(src='video-small.mp4' type='video/mp4' media='all and (max-width: 480px)')
-      //- source(src='video-small.webm' type='video/webm' media='all and (max-width: 480px)')
-      //- source(src= )
-      //- source(src='video.webm' type='video/webm')
+    - var image1 = `/images/mHUD_top.jpg`
+    - var sizes = ''
+    - var alt = 'Happy couple'
+    - var imageWidth = '2400'
+    - var imageHeight = '1172'
+    - var placeholder = getParsedImage(image1)
+    - var srcset = getParsedImage(image1, 'srcSet')
+    img(
+      alt=alt,
+      height=height
+      data-src=getParsedImage(image1, 'src'),
+      data-srcset=srcset,
+      sizes=sizes || '(max-width: 1024px) 100vw'
+    )
+
   .container
     .row
       .col-12
         .header__content.section__text__content
           .header__logo
-            //- svg(xmlns='http://www.w3.org/2000/svg')
-            //-   defs
-            //-     lineargradient#grad(x1='100%' y1='100%' x2='60%' y2='60%' gradienttransform='rotate(0)')
-            //-       stop(offset='0' stop-color='black')
-            //-       stop(offset='1' stop-color='white')
-            //-     mask#fadeMask(x='0' y='0' width='100%' height='100%')
-            //-       rect(x='0' y='0' width='100%' height='100%' fill='url(#grad)')
-            //-   g(mask='url(#fadeMask)')
-            //-     text.logo__title(x='0' y='0' ) mTransition
-            //-     text.logo__subtitle(x='0' y='0') Fade
-            - var image = `/images/logos.png`
+            - var image = `/images/logo_mHUD.png`
             - var alt = 'mTransition Fade logo'
-            - var imageWidth = '1200'
-            - var imageHeight = '737'
+            - var imageWidth = '900'
+            - var imageHeight = '400'
             - var placeholder = getParsedImage(image)
             - var srcset = getParsedImage(image, 'srcSet')
             img(
@@ -35,18 +34,5 @@ section.header.text--light.text-center
               data-srcset=srcset,
               sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
             )
-            //- img(src="/images/logos.png", alt="", srcset="" height="720")
-            //- h1.header__title mTransition Fade
-            p.header__subtitle(style="opacity:0") Cinematic Fade Transitions For Final Cut Pro.
-
-          //- .header__buttons
-          //-   include components/buttons.pug
-          //- p.header__text Acess your entire MotionVFX FCP Plugins and Motion Templates collection with a click.
-          //- a.header__link.link--yellow(href="#", rel="noopener noreferrer" onclick="scrollToAnchor('installation');") Watch more
-        .header__promo.animated.animation--fade.animation--bottom
-          //- - var image = `/images/main_screen.jpg`
-          //- - var alt = 'mInstaller promo image'
-          //- - var imageWidth = '2560'
-          //- - var imageHeight = '1460'
-          //- include components/image.pug
-          //- img(src="/images/main_screen.jpg", alt="", srcset="" height="720")
+            p.header__subtitle(style="opacity:0") Pack Of Trackable Info Callouts For mTracker 3D.
+          p.header__text.header__text--bottom *PRE-KEYED PRORES 4444 FILES FOR ANY COMPOSITING SOFTWARE INCLUDED.

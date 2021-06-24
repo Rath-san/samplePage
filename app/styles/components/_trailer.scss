@@ -4,6 +4,7 @@
   padding-bottom: 0;
   @media screen and (max-width: 768px) {
     margin-top: 0rem;
+    padding-bottom: 1rem;
   }
   &__text {
     padding: 0 10%;
@@ -22,6 +23,9 @@
     @media screen and (max-width: 768px) {
         white-space: inherit;
     }
+  }
+  .yt {
+    z-index: 10;
   }
 }
 

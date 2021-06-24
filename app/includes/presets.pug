@@ -1,16 +1,15 @@
 -
-  //- var sections = [
-  //-   { 'name':'Circural', 'label': 'Circural', 'count': 10,},
-  //-   { 'name':'Complex', 'label': 'Complex', 'count': 5,},
-  //-   { 'name':'Linear', 'label': 'Linear', 'count': 10,},
-  //-   { 'name':'Loaders', 'label': 'Loaders', 'count': 10,},
-  //-   { 'name':'Miscellaneous', 'label': 'Miscellaneous', 'count': 5,},
-  //-   { 'name':'Warning', 'label': 'Warning', 'count': 10,},
-  //- ]
-//- - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
+  var sections = [
+    { 'name':'Circural', 'label': 'Circural', 'count': 10,},
+    { 'name':'Complex', 'label': 'Complex', 'count': 5,},
+    { 'name':'Linear', 'label': 'Linear', 'count': 10,},
+    { 'name':'Loaders', 'label': 'Loaders', 'count': 10,},
+    { 'name':'Miscellaneous', 'label': 'Miscellaneous', 'count': 5,},
+    { 'name':'Warning', 'label': 'Warning', 'count': 10,},
+  ]
 
-- var entriesLength = 51
-- var collapseAfterLength = 8
+- var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
+- var notCollapsedItems = 4
 
 section.presets.bg--dark.text-center
   //- .image__background__shadow
@@ -20,91 +19,80 @@ section.presets.bg--dark.text-center
   //- - var imageWidth = 1
   //- include components/image-background.pug
   .container
-    .row
+    .row(style="position: relative; z-index: 2;")
       .col-12
         .section__head
-          p.section__display #{entriesLength}
-          h2.section__title all-purpose transitions
-          p.section__subtitle hover or tap to see preview animations
+          .presets__bg
+            video(autoplay muted loop)
+              source(src="/images/hud_linear_upprev.mp4" type="video/mp4")
+          //- p.section__display 
+          h2.section__title #{totalIndex} all-purpose transitions
+          p.section__text hover or tap to see preview animations
         .section__body
-          //- - var currentIndex = 1
-          //- - var sectionItems = 0
-          //- each section in sections
-          //-   - var minColumns = 2
-          //-   <!--#{sectionItems = currentIndex + section.count - 1}-->
-          .videoList.center
-            .cover.product-list-wrapper
-              #productList.product-list
-                .container.site-content.container-lg
-                  #productsContainer.row.product-grid
-                    - for(var i = 1; i <= entriesLength; i++)
-                      - var num = i.toString().length < 2 ? `0${i}` : i
-                      - var imageName = `/images/img/${num}`
-                      - var videoName = `/images/video/${num}`
-                      - var isEven = entriesLength % 2 == 0
-                      div(class=`col-6 col-lg-4 product ${i > collapseAfterLength ? 'collapse prev-collapse' : ''} ${!isEven && i === entriesLength ? 'offset-3' : ''} offset-lg-0` id=`prev-collapse-${i}`)
-                        a
-                          .product-preview
-                            img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=' width='600' height='338')
-                            .preview-wrapper.zoom(data-mp4-url=`${videoName}.mp4`)
-                              .preview-image-container
-                                img.img-fluid(src=`${imageName}.jpg` alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
-                              .preview-video-container(style='display: none')
+          - var currentIndex = 1
+          - var sectionItems = 0
+          each section in sections
+            - var minColumns = 2
+            - sectionItems = currentIndex + section.count - 1
+            - var isEven = section.count % 2 == 0
+            .videoList.center
+              .section__title=section.label
+              .cover.product-list-wrapper
+                #productList.product-list
+                  .container.site-content.container-lg
+                    #productsContainer.row.product-grid
+                      //- - for(var i = 1; i <= entriesLength; i++)
+                        - var num = i.toString().length < 2 ? `0${i}` : i
+                        - var imageName = `/images/img/${num}`
+                        - var videoName = `/images/video/${num}`
+                        - var isEven = entriesLength % 2 == 0
+                      
+                      - var localLoopIndex = 1
+                      - for(var i = currentIndex; i <= sectionItems; i++)
+                        - var baseUrl = '/images'
+                        - var baseUrl = 'https://s3.motionvfx.com/mvfxpublic/images/mhud'
 
-                    .col-12.col-btn-collapse
-                      button.button.btn-collapse(type='button' data-toggle='-collapse' data-target='.prev-collapse' aria-expanded='false')
-                        span
-                          span.label-collapsed Show more
-                          span.label-expanded Collapse
-                          |  (#{`${entriesLength - collapseAfterLength}`})
-                        svg.btn-collapse-arrow(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 36.6 61.5' style='enable-background:new 0 0 36.6 61.5;' xml:space='preserve' height='20')
-                          style(type='text/css').
-                            .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
-                          polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
+                        - var num = i.toString().length < 2 ? `0${i}` : i
+                        - var imageName = `${baseUrl}/${num}`
+                        - var videoName = `${baseUrl}/${num}`
+                        div(class=`col-6 col-lg-4 product ${localLoopIndex > notCollapsedItems ? `collapse prev-collapse-${section.label.toLowerCase()}` : ''} ${!isEven && i === entriesLength ? 'offset-3' : ''} offset-lg-0` id=`prev-collapse-${i}`)
+                          - localLoopIndex++
+                          a
+                            .product-preview
+                              img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=' width='600' height='338')
+                              .preview-wrapper.zoom(data-mp4-url=`${videoName}.mp4`)
+                                .preview-image-container
+                                  img.img-fluid(src=`${imageName}.jpg` alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
+                                .preview-video-container(style='display: none')
 
-          //- .examples <---------------------- old one
-            //- .section__title=section.label
-            .videoList
-              .product-grid
-                //- - var localLoopIndex = 1
-                - for(var i = 1; i <= entriesLength; i++)
-                  - var num = i.toString().length < 2 ? `0${i}` : i
-                  div(class=`example__item ${i > collapseAfterLength ? `collapse prev-collapse-preset` : ''}`)
-                    div(class=`product`)
-                      .product-preview
-                        //- img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=')
-                        div(style="padding-bottom: calc(226 / 400 * 100%); background: #000")
-                        .preview-wrapper.zoom(data-mp4-url=`/images/video/${num}.mp4`)
-                          .preview-image-container
-                            img.img-fluid(src=`/images/img/${num}.jpg` alt='Fade' onerror="this.style.display='none'" onload="this.style.display='block'" style='display: block;')
-                            .preview-video-container(style='height: 198.781px; display: none;')
-              //- - if (localLoopIndex > collapseAfterLength)
-              button.button.btn-collapse(type='button' data-toggle='collapse' data-target=`.prev-collapse-preset` aria-expanded="false")
-                span.label-collapsed show more
-                span.label-expanded Collapse
-                |  (#{`${entriesLength - collapseAfterLength}`})
-                svg.btn-collapse-arrow(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 36.6 61.5' style='enable-background:new 0 0 36.6 61.5;' xml:space='preserve' height='20')
-                  style(type='text/css').
-                    .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
-                  polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
-          //- - currentIndex += section.count
-
-    //- .row.text-left
+                      .col-12.col-btn-collapse
+                        button.button.btn-collapse(type='button' data-toggle='-collapse' data-target=`.prev-collapse-${section.label.toLowerCase()}` aria-expanded='false')
+                          span
+                            span.label-collapsed Show more
+                            span.label-expanded Collapse
+                            |  (#{`${section.count - notCollapsedItems}`})
+                          svg.btn-collapse-arrow(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 36.6 61.5' style='enable-background:new 0 0 36.6 61.5;' xml:space='preserve' height='20')
+                            style(type='text/css').
+                              .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
+                            polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
+            - currentIndex += section.count
+    .row.text-left
       .col-12
-        h2.section__title.presets__title--2
-          | #{"Easily \nCustomizable"}
-    //- .row.text-left
-      .col-10.offset-1
-        .row
-          .col-4
+        .presets__bottom__text
+          .presets__bg.presets__bg--2
+            video(autoplay muted loop)
+              source(src="/images/hud_linear_underprev_1.mp4" type="video/mp4")
+          h2.section__title.presets__title--2
+            | #{"Easily \nCustomizable"}
+          .presets__bottom__paragraphs
             p.section__text
               b On-screen Controls 
               | #{"\nAut the peset in place directly in the viewport"}
-          .col-4
+
             p.section__text
               b Colorization & Glow 
               | #{"\nFind the perfect look to match your elit"}
-          .col-4
+
             p.section__text
               b Adjustable Animation 
               | #{"\nTweak the movement to suit your nerds"}
