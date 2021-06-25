@@ -1,62 +1,30 @@
-// button[aria-expanded="true"] {
-//   .label {
-//     &-collapsed {
-//       display: none;
-//     }
-//     &-expanded {
-//       display: block;
-//     }
-//   }
-//   svg {
-//     transform: rotate(-90deg);
-//   }
-// }
-// button[aria-expanded="false"] {
-//   .label {
-//     &-collapsed {
-//       display: block;
-//     }
-//     &-expanded {
-//       display: none;
-//     }
-//   }
-// }
+.btn {
 
-// .btn-collapse {
-//   cursor: pointer;
-//   border: 1px solid #fff;
-//   color: #fff;
-//   white-space: nowrap;
-//   background-color: transparent;
-//   display: flex;
-//   margin: auto;
-//   width: 250px;
-//   align-items: center;
-//   justify-content: center;
-//   height: 50px;
-//   position: relative;
-//   border-radius: .2rem;
-//   outline: 0;
-//   margin-top: 0rem;
-//   font-weight: 600;
-//   &:focus {
-//     outline: 0;
-//     border-radius: 0;
-//   }
-//   span {
-//     margin-right: .5em;
-//   }
-//   svg {
-//     position: absolute;
-//     right: 1.5em;
-//     height: 12px;
-//     transform: rotate(90deg);
-//   }
-// }
+}
 
 .btn {
   &-collapse {
     margin-top: 2rem;
+  }
+  &--yellow {
+    // letter-spacing: 1px;
+    background-color: #f3c63e;
+    border: none;
+    padding: 16px 40px;
+    line-height: 1;
+    // text-transform: uppercase;
+    border-radius: .2rem;
+    color: #000;
+    &:hover {
+      background-color: #f1bb18 !important;
+      color: #000;
+    }
+    &:hover,
+    &:active,
+    &:visited {
+      outline: none;
+      box-shadow: none;
+    }
   }
 }
 
