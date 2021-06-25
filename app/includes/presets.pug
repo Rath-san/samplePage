@@ -40,10 +40,10 @@ section.presets.bg--dark.text-center
                     - for(var i = 1; i <= entriesLength; i++)
                       - var num = i.toString().length < 2 ? `0${i}` : i
                       -
-                        var imageName = placeholders.image.preset
+                        var imageName = placeholders.image.preset()
                           //- `/images/img/${num}.jpg`
                       -
-                        var videoName = `https://s3.motionvfx.com/mvfxpublic/products/templates/{{templateNumber}}/media/${num}.mp4`
+                        var videoName = `https://s3.motionvfx.com/mvfxpublic/products/templates/${templateNumber}/media/${num}.mp4`
                           //- `/images/video/${num}.mp4`
                       - var isEven = entriesLength % 2 == 0
                       div(class=`col-6 col-lg-4 product ${i > collapseAfterLength ? 'collapse prev-collapse' : ''} ${!isEven && i === entriesLength ? 'offset-3' : ''} offset-lg-0` id=`prev-collapse-${i}`)

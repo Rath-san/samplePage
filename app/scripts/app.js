@@ -94,6 +94,10 @@ import './scroll_to_anchor'
     //   rootMargin: '30%'
     // })
 
+    setTimeout(() => {
+      document.body.classList.add('ready')
+    }, 200)
+
     Array.from(document.querySelectorAll('.btn-collapse')).forEach((btn, i) => {
       btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true'

@@ -1,34 +1,34 @@
 .video {
   text-align: center;
-  // padding: 5rem 0;
-  padding-bottom: 0;
+  // padding-bottom: 0;
   @media screen and (max-width: 768px) {
     margin-top: 0rem;
   }
-  &__text {
-    padding: 0 10%;
-    @media screen and (max-width: 420px) {
-      padding: 0 5%;
-    }
-  }
-  &__title {
-    margin-bottom: 2rem;
-  }
+  // &__text {
+  //   padding: 0 10%;
+  //   @media screen and (max-width: 420px) {
+  //     padding: 0 5%;
+  //   }
+  // }
+  // &__title {
+  //   margin-bottom: 1.5rem;
+  // }
 
-  &__subtitle {
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 3rem;
-    @media screen and (max-width: 768px) {
-        white-space: inherit;
-    }
-  }
+  // &__subtitle {
+  //   max-width: 700px;
+  //   margin: auto;
+  //   margin-bottom: 3rem;
+  //   @media screen and (max-width: 768px) {
+  //       white-space: inherit;
+  //   }
+  // }
 
-  .tutorial {
-    margin-top: 0;
+  &.tutorial {
+    // margin-top: 0;
   }
   
-  .trailer {
-    // margin-top: 0;
+  &.trailer {
+    padding: calc(37px + (2 * 0.5rem) + 1px + 5rem) 0 5rem 0;
+    margin-top: calc((37px + (2 * 0.5rem) + 1px) * -1);
   }
 }

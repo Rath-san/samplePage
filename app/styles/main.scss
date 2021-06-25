@@ -4,23 +4,21 @@
 @import './components/fonts';
 @import './components/button';
 @import './components/titles';
-// @import './components/links';
-// @import './components/icons';
 @import './components/header';
 @import './components/footer';
-// @import './components/purchases';
-// @import './components/payment-list';
 @import './components/video';
-// @import './layout/update';
-@import './layout/containers';
 @import './components/tech-spec';
 @import './components/minstaller';
 @import './components/scroll-to-btn';
-// @import './layout/manage';
-// @import './layout/content';
-// @import './layout/store';
-// @import './3d/base';
 @import './components/splitting';
+@import './components/mocha-info';
+@import './layout/containers';
+@import './layout/interface';
+@import './layout/showcase';
+@import './layout/presets';
+@import './layout/split-image';
+@import './utils/bg';
+
 // @import './components/slider';
 
 img {
@@ -258,174 +256,6 @@ $shadow-color: #000;
         transition-delay: 1s;
       }
     }
-  }
-}
-
-.showcase {
-  padding-bottom: 0;
-}
-
-.case {
-  &__item {
-    position: relative;
-    color: #fff;
-    background-color: #000;
-    &--0 {
-      padding-bottom: 0.4492 * 100%;
-      img {
-        position: absolute;
-        width: 100%;
-        display: block;
-      }
-      @media screen and (max-width: 767px) {
-        padding-bottom: 0;
-      }
-      .case__item {
-        &__bg,
-        &__body {
-          position: absolute;
-          left: 0;
-          right: 0;
-        }
-        &__body {
-          justify-content: flex-end;
-        }
-        &__bg {
-          padding-bottom: 0.4492 * 100%;
-          @media screen and (max-width: 767px) {
-            position: static;
-          }
-        }
-      }
-    }
-    &--1 {
-      .case__item__body {
-        justify-content: flex-start;
-      }
-    }
-    &__bg {
-      video {
-        position: absolute;
-        width: 100%;
-        display: block;
-        opacity: 0;
-        &.active {
-          opacity: 1;
-        }
-      }
-      img {
-        width: 100%;
-      }
-    }
-    &__body {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 2rem;
-      display: flex;
-      align-items: center;
-      @media screen and (max-width: 767px) {
-        position: static !important;
-      }
-      .section {
-        &__head {
-          max-width: 25em;
-          @media screen and (max-width: 768px) {
-            margin: 0 0 auto 0;
-          }
-        }
-        &__title {
-          // white-space: pre-line;
-        }
-        &__text {
-          margin-bottom: 0;
-          @media screen and (max-width: 768px) {
-            padding: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
-.presets {
-  padding: 3rem 0 3rem 0;
-  @media screen and (max-width: 768px) {
-    padding: 1rem 0 3rem 0;
-  }
-
-  .section__subtitle {
-    margin-bottom: 2.5rem;
-  }
-}
-
-.product {
-  &-grid {
-    // display: grid;
-    // grid-template-columns: repeat(4, 1fr);
-    // margin: 0 auto;
-    // gap: .35rem 0.5rem;
-    // .product {
-    //   margin-bottom: 0 !important;
-    //   padding: 0 !important;
-    // }
-    // @media screen and (max-width: 767px) {
-    //   grid-template-columns: repeat(2, 1fr);
-    //   gap: 0.5rem 0.5rem;
-    // }
-    // .example__item {
-    //   &:nth-last-child(1) {
-    //     grid-column: span 2 !important;
-    //     grid-row: span 2 !important;
-    //     @media screen and (max-width: 767px) {
-    //       grid-column: span 1 !important;
-    //       grid-row: span 1 !important;
-    //     }
-    //   }
-    //   &:nth-child(3n + 1) {
-    //     grid-column: span 2;
-    //     grid-row: span 2;
-    //     @media screen and (max-width: 767px) {
-    //       grid-column: span 1;
-    //       grid-row: span 1;
-    //     }
-    //   }
-    // }
-  }
-}
-
-@media (max-width: 575.98px) {
-  .videoList .container.container-lg {
-      padding-left: 0;
-      padding-right: 0;
-  }
-}
-
-.videoList .product-grid .product {
-  -webkit-animation: fadein .5s ease-out alternate;
-  animation: fadein .5s ease-out alternate;
-  padding: 0 .5rem .5rem 0;
-  @media (max-width: 575.98px) {
-    &:nth-child(2n) {
-      padding: 0 0 .25rem .25rem;
-    }
-      margin-bottom: 0px;
-  }
-}
-
-
-.collapse:not(.show) {
-  @media screen and (min-width: 767px) {
-    display: block;
-  }
-}
-
-.btn-collapse {
-  @media screen and (min-width: 768px) {
-    display: none;
   }
 }
 

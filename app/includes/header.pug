@@ -1,6 +1,6 @@
 section.header.text--light.text-center
   .header__bg(style="opacity:0")
-    img(data-src=placeholders.image.hd, alt="")
+    img(data-src=placeholders.image.hd(), alt="")
     //- video(data-src='https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/Top2.mp4' controls=false, autoplay, loop, muted, playsinline type='video/mp4')
   .container
     .row
@@ -21,6 +21,11 @@ section.header.text--light.text-center
             //-   data-srcset=srcset,
             //-   sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
             //- )
-            img(data-src=placeholders.image.logo, alt="", srcset="")
+            img(data-src=placeholders.image.logo(), alt="", srcset="")
             p.header__subtitle(style="opacity:0") Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim non quis a velit magni dolores itaque possimus eaque ratione nisi, ipsum est recusandae similique maiores dolorum, aliquid sint, nostrum autem?
-        .header__promo.animated.animation--fade.animation--bottom
+          .mocha-info
+            .mocha-info__content
+              | New Apple Silicon&hairsp;&ndash;&hairsp;ready version of
+              img(data-src='https://s3.motionvfx.com/mvfxpublic/products/templates/1338/media/mocha.png' width='152' height='210' alt='Mocha')
+
+        //- .header__promo.animated.animation--fade.animation--bottom

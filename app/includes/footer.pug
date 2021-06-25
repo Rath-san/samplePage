@@ -17,7 +17,7 @@ section.footer.bg--dark.text-center
   //- - var height = '1150'
   //- include components/image-background.pug
   .image__background
-    img(src=placeholders.image.hd, alt="")
+    img(src=placeholders.image.hd(), alt="")
   .container
     .row
       .col-12
@@ -25,8 +25,8 @@ section.footer.bg--dark.text-center
           .section__head
             h2.footer__title.section__title=placeholders.text.title
             p.footer__text.section__text=placeholders.text.lorem
-            .button-buy
-              | {% with discount_text="INTRO", version=2 %} {% include "product/buy_button.jinja2" %} {% endwith %}
+        .button-buy
+          | {% with discount_text="INTRO", version=2 %} {% include "product/buy_button.jinja2" %} {% endwith %}
           //- .footer__buttons
           //-   include components/buttons.pug
         //- .footer__promo

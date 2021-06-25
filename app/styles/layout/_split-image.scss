@@ -1,0 +1,11 @@
+.split-image {
+  position: relative;
+  .section {
+    &__bg {
+      position: absolute;
+      img {
+
+      }
+    }
+  }
+}
