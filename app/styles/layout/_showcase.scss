@@ -3,6 +3,16 @@
   // padding-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
+  .carousel {
+    max-height: 1440px;
+  }
+
+  .section {
+    &__head {
+      margin: 0;
+    }
+  }
+
 }
 
 .case {
@@ -10,6 +20,11 @@
     position: relative;
     color: #fff;
     background-color: #000;
+
+    &__qt {
+      height: 50%;
+    }
+
     &--0 {
       padding-bottom: 0.4492 * 100%;
       img {

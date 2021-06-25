@@ -1,25 +1,5 @@
--
-  var images = [
-    {
-      src: src=placeholders.image.hd(),
-      alt: 'This is alt'
-    },
-    {
-      src: src=placeholders.image.hd(),
-      alt: 'This is alt'
-    },
-    {
-      src: src=placeholders.image.hd(),
-      alt: 'This is alt'
-    }
-  ]
-
-#carouselExampleIndicators.carousel.slide(data-ride='carousel')
-  ol.carousel-indicators
-    li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
-    li(data-target='#carouselExampleIndicators' data-slide-to='1')
-    li(data-target='#carouselExampleIndicators' data-slide-to='2')
+#carouselExamples.carousel.slide(data-ride='carousel')
   .carousel-inner
     each img, index in images
-      div(class=`carousel-item ${index === 0 && 'active'}`)
+      div(class=`carousel-item ${active(index)}`)
         img.d-block.w-100(src=img.src alt=img.alt)

@@ -37,6 +37,7 @@ html(lang="en")
           hd: () => `https://via.placeholder.com/1920x1080/${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`,
           logo: () => `https://via.placeholder.com/320x160/${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`,
           preset: () => `https://via.placeholder.com/320x180/${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`,
+          icon: (size) => `https://via.placeholder.com/${size}x${size}/${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`,
         },
         video: {
           youtube: 'https://www.youtube.com/embed/5iPH-br_eJQ?rel=0',
@@ -89,24 +90,48 @@ html(lang="en")
           }
         ]
 
+      -
+        var images = [
+          {
+            src: src=placeholders.image.hd(),
+            alt: 'This is alt'
+          },
+          {
+            src: src=placeholders.image.hd(),
+            alt: 'This is alt'
+          },
+          {
+            src: src=placeholders.image.hd(),
+            alt: 'This is alt'
+          }
+        ]
+      
+      - var active = (index) => `${index === 0 && 'active' }`
+
       section.showcase
-        include includes/components/slider.pug
-        //- div(class=`case__item case__item--2`)
+        div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade` data-ride='carousel')
           .case__item__bg
+            include includes/components/slider.pug
             //- - var image = `/images/fade_bg_1.jpg`
             //- - var alt = ''
             //- - var imageWidth = '2560'
             //- - var imageHeight = '1150'
             //- include includes/components/image.pug
-            img(src=placeholders.image.hd(), alt="")
+            //- img(src=placeholders.image.hd(), alt="")
           .case__item__body
             .container
               .row
-                div(class=`col-md-6`)
+                div(class=`col-md-6 offset-md-6 case__item__qt`)
                   .section__head
                     h2.section__subtitle=placeholders.text.subtitle
                     p.section__title=placeholders.text.title
                     p.section__text.section__text--inset=placeholders.text.lorem
+                div(class=`col-md-6 offset-md-6`)
+                  ol.carousel-indicators
+                    each img, index in images
+                      li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
+                        img(src=placeholders.image.icon(64), alt="")
+
       include includes/split-image.pug
       include includes/presets.pug
       a.nav(href="#" name='specs', rel="noopener noreferrer") 
