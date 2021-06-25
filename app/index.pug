@@ -26,43 +26,54 @@ html(lang="en")
     script(src='scripts/scroll_to_anchor.js')
     script(src='scripts/menu.js')
 
-    //- 1 sekcja top - video
-    //- 2 sekja trailer standard
-    //- 3 sekcja tutorial standard
-    //- 4 sekcja video po skrolu lub animacja
-    //- 5 statyczna sekcja taka jak widac
-    //- 6 Prevki
-    //- 7 Technicale
-    //- 8 Footer statyczne zdjecie w tle
-
     - var mediaRootUrl = '/images'
     - var templateImagesUrl = '/images'
     - var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
+
+    -
+      var placeholders = {
+        image: {
+          hd: 'https://via.placeholder.com/1920x1080',
+          logo: 'https://via.placeholder.com/320x160',
+          preset: 'https://via.placeholder.com/320x180',
+        },
+        video: {
+          youtube: 'https://www.youtube.com/embed/5iPH-br_eJQ?rel=0',
+          videoTitle: 'This is video title',
+          vimeo: 'https://player.vimeo.com/video/112879331'
+        },
+        text: {
+          display: 'This is dispaly',
+          lorem: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta iusto minima eaque fuga ab quas, illo alias aliquid est facere, praesentium tenetur soluta magnam quae sint non unde voluptatibus voluptatum.',
+          title: 'This is title',
+          subtitle: 'This is subtitle'
+        }
+      }
 
   body
     include includes/submenu.pug
     include includes/navbar.pug
     .top-bar
-    main.mInstaller
+    main.mCensor
       include includes/header.pug
       a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
       a.nav(name="trailer")
       - var title = "WATCH TRAILER"
-      - var subtitle = "See them do their magic!"
-      - var text = "View the cinematic shading effects these transitions create and how they boost the atmosphere of your edit."
-      - var videoLink = "//player.vimeo.com/video/110782329?title=0&amp;byline=0&amp;portrait=0"
+      - var subtitle = placeholders.text.subtitle
+      - var text = placeholders.text.lorem
+      - var videoLink = placeholders.video.vimeo
       //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
-      - var videoTitle = 'mLut Insta Pack tutorial'
-      include includes/trailer.pug
+      - var videoTitle = placeholders.video.videoTitle
+      include includes/video.pug
       a.nav(name="tutorial")
       - var sectionClasses = 'tutorial'
       - var title = "WATCH TUTORIAL"
-      - var subtitle = "Learn to master the transitions!"
-      - var text = "Get the know-how for the most efficient workflow and spectacular results."
-      - var videoLink = "https://www.youtube.com/embed/YxPrtn64rFQ?rel=0"
+      - var subtitle = placeholders.text.subtitle
+      - var text = placeholders.text.lorem
+      - var videoLink = placeholders.video.youtube
       //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
-      - var videoTitle = 'mLut Insta Pack tutorial'
-      include includes/trailer.pug
+      - var videoTitle = placeholders.video.videoTitle
+      include includes/video.pug
 
       -
         var showcaseData = [
@@ -78,29 +89,27 @@ html(lang="en")
       section.showcase
         div(class=`case__item case__item--2`)
           .case__item__bg
-            - var image = `/images/fade_bg_1.jpg`
-            - var alt = ''
-            - var imageWidth = '2560'
-            - var imageHeight = '1150'
-            include includes/components/image.pug
-            //- img(src='/imawges/fade_bg_1.jpg', alt="")
+            //- - var image = `/images/fade_bg_1.jpg`
+            //- - var alt = ''
+            //- - var imageWidth = '2560'
+            //- - var imageHeight = '1150'
+            //- include includes/components/image.pug
+            img(src=placeholders.image.hd, alt="")
           .case__item__body
             .container
               .row
                 div(class=`col-md-6`)
                   .section__head
-                    h2.section__subtitle #{'Build a truly cinematic feeling'}
-                    p.section__title 
-                      | Create a unique mood 
-                      br
-                      | & evoke emotions
-                    p.section__text.section__text--inset #{'These diversified and customizable footage shifts use shadow and darkness to switch between the videos and build up the suspense.'}
-        each val, index in showcaseData
+                    h2.section__subtitle=placeholders.text.subtitle
+                    p.section__title=placeholders.text.title
+                    p.section__text.section__text--inset=placeholders.text.lorem
+        //- each val, index in showcaseData
           - var offset = index + 1
           div(class=`case__item case__item--${index}`)
             .case__item__bg
-              video(src='/images/up.mp4' controls=false, muted, playsinline)
-              video(src='/images/test_3.mp4' controls=false, muted, playsinline)
+              img(src=placeholders.image.hd, alt="")
+              //- video(src='/images/up.mp4' controls=false, muted, playsinline)
+              //- video(src='/images/test_3.mp4' controls=false, muted, playsinline)
                 //- each src in val.src
                   source(src=src type='video/mp4')
             .case__item__body

@@ -38,6 +38,12 @@
     }
   }
 
+  img {
+
+    height: 100%;
+    object-fit: cover;
+  }
+
   // &__buttons {
   //   margin: 0 0 5rem 0;
   //   @media screen and (max-width: 768px) {

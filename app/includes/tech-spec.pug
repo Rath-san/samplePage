@@ -1,16 +1,50 @@
+//- <div class="ttable tech-spec__table">
+//-                     <div class="tcell tlabel">Supported software</div>
+//-                     <div class="tcell tdata">
+//-   {% autoescape off %}
+//-  {{ product.productdetails.minimal_requirements.replace('FCP 10', 'FCP\xa010').replace('Motion 5', 'Motion\xa05').replace(', ', ',<br>') }}
+//-  {% endautoescape %}   
+//-                     </div>
+//-                     <div class="tcell tlabel">Includes</div>
+//-                     <div class="tcell tdata">51 presets</div>
+//-                     <div class="tcell tlabel">Size</div>
+//-                     <div class="tcell tdata">{{ "%.1f MB"|format(product.productdetails.source_size / 1000) }}</div>
+                    
+//-                     {% for kind in ['trailer', 'tutorial'] %}
+//-                         {% with musics=product.productdetails.music.select_related('music_portal').all().filter(used_in_trailer=kind=='trailer') %}
+//-                             {% if length(musics) %}
+//-                                 <div class="tcell tlabel">Music used in {{ kind }}</div>
+//-                                 <div class="tcell tdata">
+//-                                     {% for music in musics %}
+                                    //-      {% if music.music_portal.name == "www.premiumbeat.com" or music.music_portal.name ==  "www.shutterstock.com" %}
+//-                                             <a href="{{ music.url }}" target="_blank" rel="noopener noreferrer">{{ music.music_portal.name.replace('www.','') }} — {{ music.title }}</a>{% if not loop.last %},&nbsp;<wbr>{% endif %}
+//-                                         {% else %}
+//-                                             {{ music.music_portal.name.replace('www.','') }} — {{ music.title }}{% if not loop.last %},&nbsp;<wbr>{% endif %}
+//-                                         {%endif%}
+//-                                     {%endfor%}
+//-                                 </div>
+//-                             {% endif %}
+//-                         {% endwith %}
+//-                     {% endfor %}
+//-                   </div>
+//-                 </div>
+
+- var dev = true
+
 -
-  var techSpecData = [
+  var techSpecDataDev = [
     {
       name: 'Supported software',
       value: 'FCP 10.5'
+      ,
     },
     {
       name: 'Includes',
-      value: 'Over 160 titles for FCP'
+      value: 'Number of presets'
     },
     {
       name: 'Size',
-      value: '517 MB'
+      value: '100 MB'
     },
     {
       name: 'Music used in trailer',
@@ -27,6 +61,24 @@
       }
     }
   ]
+
+-
+  var techSpecDataProd = [
+        {
+      name: 'Supported software',
+      value: `{% autoescape off %}{{ product.productdetails.minimal_requirements.replace('FCP 10', 'FCP\xa010').replace('Motion 5', 'Motion\xa05').replace(', ', ',<br>') }}{% endautoescape %}`
+      ,
+    },
+    {
+      name: 'Includes',
+      value: 'Number of presets'
+    },
+    {
+      name: 'Size',
+      value: `{{ "%.1f MB"|format(product.productdetails.source_size / 1000) }}`
+    },
+  ]
+
 section.tech-spec
   //- .tech-spec__bg
     video(autoplay muted loop)
@@ -39,7 +91,7 @@ section.tech-spec
             .section__head
               h2.tech-spec__title.section__title Technical specification
             .ttable.tech-spec__table
-              for val in techSpecData
+              for val in dev ? techSpecDataDev : techSpecDataProd
                 //- .trow
                 .tcell.tlabel= val.name
                 .tcell.tdata
@@ -47,3 +99,20 @@ section.tech-spec
                     a(href=val.value.link, target="_blank", rel="noopener noreferrer")= val.value.title
                   else
                     | #{val.value}
+              if !dev
+                #{`{% for kind in ['trailer', 'tutorial'] %}
+                    {% with musics=product.productdetails.music.select_related('music_portal').all().filter(used_in_trailer=kind=='trailer') %}
+                        {% if length(musics) %}
+                            <div class="tcell tlabel">Music used in {{ kind }}</div>
+                            <div class="tcell tdata">
+                                {% for music in musics %}
+                  {% if music.music_portal.name == "www.premiumbeat.com" or music.music_portal.name ==  "www.shutterstock.com" %}
+                                        <a href="{{ music.url }}" target="_blank" rel="noopener noreferrer">{{ music.music_portal.name.replace('www.','') }} — {{ music.title }}</a>{% if not loop.last %},&nbsp;<wbr>{% endif %}
+                                    {% else %}
+                                        {{ music.music_portal.name.replace('www.','') }} — {{ music.title }}{% if not loop.last %},&nbsp;<wbr>{% endif %}
+                                    {%endif%}
+                                {%endfor%}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                {% endfor %}}`}

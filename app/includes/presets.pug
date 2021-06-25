@@ -23,9 +23,9 @@ section.presets.bg--dark.text-center
     .row
       .col-12
         .section__head
-          p.section__display #{entriesLength}
-          h2.section__title all-purpose transitions
-          p.section__subtitle hover or tap to see preview animations
+          p.section__display=placeholders.text.display
+          h2.section__title=placeholders.text.title
+          p.section__subtitle=placeholders.text.subtitle
         .section__body
           //- - var currentIndex = 1
           //- - var sectionItems = 0
@@ -39,16 +39,20 @@ section.presets.bg--dark.text-center
                   #productsContainer.row.product-grid
                     - for(var i = 1; i <= entriesLength; i++)
                       - var num = i.toString().length < 2 ? `0${i}` : i
-                      - var imageName = `/images/img/${num}`
-                      - var videoName = `/images/video/${num}`
+                      -
+                        var imageName = placeholders.image.preset
+                          //- `/images/img/${num}.jpg`
+                      -
+                        var videoName = `https://s3.motionvfx.com/mvfxpublic/products/templates/{{templateNumber}}/media/${num}.mp4`
+                          //- `/images/video/${num}.mp4`
                       - var isEven = entriesLength % 2 == 0
                       div(class=`col-6 col-lg-4 product ${i > collapseAfterLength ? 'collapse prev-collapse' : ''} ${!isEven && i === entriesLength ? 'offset-3' : ''} offset-lg-0` id=`prev-collapse-${i}`)
                         a
                           .product-preview
                             img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=' width='600' height='338')
-                            .preview-wrapper.zoom(data-mp4-url=`${videoName}.mp4`)
+                            .preview-wrapper.zoom(data-mp4-url=`${videoName}`)
                               .preview-image-container
-                                img.img-fluid(src=`${imageName}.jpg` alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
+                                img.img-fluid(src=`${imageName}` alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
                               .preview-video-container(style='display: none')
 
                     .col-12.col-btn-collapse

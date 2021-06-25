@@ -1,4 +1,4 @@
-.trailer {
+.video {
   text-align: center;
   // padding: 5rem 0;
   padding-bottom: 0;
@@ -23,8 +23,12 @@
         white-space: inherit;
     }
   }
-}
 
-.tutorial {
-  margin-top: 0;
+  .tutorial {
+    margin-top: 0;
+  }
+  
+  .trailer {
+    // margin-top: 0;
+  }
 }

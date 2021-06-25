@@ -10,7 +10,7 @@
 @import './components/footer';
 // @import './components/purchases';
 // @import './components/payment-list';
-@import './components/trailer';
+@import './components/video';
 // @import './layout/update';
 @import './layout/containers';
 @import './components/tech-spec';
@@ -264,6 +264,7 @@ $shadow-color: #000;
 .showcase {
   padding-bottom: 0;
 }
+
 .case {
   &__item {
     position: relative;
@@ -271,6 +272,11 @@ $shadow-color: #000;
     background-color: #000;
     &--0 {
       padding-bottom: 0.4492 * 100%;
+      img {
+        position: absolute;
+        width: 100%;
+        display: block;
+      }
       @media screen and (max-width: 767px) {
         padding-bottom: 0;
       }
@@ -452,5 +458,6 @@ $shadow-color: #000;
   }
   &data {
     text-align: left;
+    max-width: 50%;
   }
 }
