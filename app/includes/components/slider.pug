@@ -1,5 +1,4 @@
-#carouselExamples.carousel.slide(data-ride='carousel')
-  .carousel-inner
-    each img, index in images
-      div(class=`carousel-item ${active(index)}`)
-        img.d-block.w-100(src=img.src alt=img.alt)
+.carousel-inner
+  each img, index in images
+    div(class=`carousel-item ${active(index)}`)
+      img.d-block.w-100(src=img.src alt=img.alt)
