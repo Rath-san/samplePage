@@ -1,6 +1,5 @@
 
 .showcase {
-  // padding-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
   .carousel {
@@ -9,7 +8,7 @@
 
   .section {
     &__head {
-      margin: 0;
+      margin: 0 0 3rem 0;
     }
   }
 
@@ -20,7 +19,6 @@
     position: relative;
     color: #fff;
     background-color: #000;
-
     &__qt {
       height: 50%;
     }

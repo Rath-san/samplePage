@@ -1,9 +1,7 @@
 .header {
-  // padding-top: $navbar-height;
-  // background-color: #E5E5E5;
   position: relative;
-  // overflow: hidden;
   padding: 0;
+  background-color: #ccc;
 
   &.animated-in {
     .header {
@@ -67,6 +65,7 @@
     // transition-delay: ;
     img {
       height: 100%;
+      width: 100%;
       object-fit: cover;
     }
   }

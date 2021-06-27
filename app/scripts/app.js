@@ -20,6 +20,19 @@ import './scroll_to_anchor'
 // import Splitting from 'splitting'
 ;(() => {
   window.addEventListener('load', () => {
+
+    // CAROUSEL
+
+    // get slider
+    // get slider change time
+    // render progres based on slider timeout %
+    const slider = $('#carouselExamples')
+
+    slider.on('slid.bs.carousel', () => {
+      console.log('next');
+    })
+
+
     // const titles = Array.from(document.querySelectorAll('.section__title'))
     // const subTitles = Array.from(
     //   document.querySelectorAll('.section__subtitle')

@@ -94,22 +94,28 @@ html(lang="en")
         var images = [
           {
             src: src=placeholders.image.hd(),
-            alt: 'This is alt'
+            alt: 'This is alt',
+            icon: placeholders.image.icon(32),
+            text: 'solid'
           },
           {
             src: src=placeholders.image.hd(),
-            alt: 'This is alt'
+            alt: 'This is alt',
+            icon: placeholders.image.icon(32),
+            text: 'pixelate'
           },
           {
             src: src=placeholders.image.hd(),
-            alt: 'This is alt'
+            alt: 'This is alt',
+            icon: placeholders.image.icon(32),
+            text: 'blur'
           }
         ]
       
       - var active = (index) => `${index === 0 && 'active' }`
 
       section.showcase
-        div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade` data-ride='carousel')
+        div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade` data-ride='carousel' data-pause="false")
           .case__item__bg
             include includes/components/slider.pug
             //- - var image = `/images/fade_bg_1.jpg`
@@ -130,7 +136,8 @@ html(lang="en")
                   ol.carousel-indicators
                     each img, index in images
                       li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
-                        img(src=placeholders.image.icon(64), alt="")
+                        img(src=img.icon, alt="")
+                        p=img.text
 
       include includes/split-image.pug
       include includes/presets.pug
