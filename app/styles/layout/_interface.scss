@@ -3,11 +3,14 @@
   padding-bottom: 0;
 
   &__image {
-    width: 130%;
-    margin-left: -15%;
+    width: 120%;
+    margin-left: -10%;
     margin-top: -6rem;
     position: relative;
     z-index: 0;
+    img {
+      border-radius: 6px 6px 0 0;
+    }
   }
 
   .section {
