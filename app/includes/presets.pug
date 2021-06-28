@@ -9,8 +9,9 @@
   //- ]
 //- - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
 
-- var entriesLength = 51
-- var collapseAfterLength = 8
+- var entriesLength = 5
+- var collapseAfterLength = 4
+- var isEven = (data) => data % 2 == 0
 
 section.presets.bg--dark.text-center
   //- .image__background__shadow
@@ -36,17 +37,17 @@ section.presets.bg--dark.text-center
             .cover.product-list-wrapper
               #productList.product-list
                 .container.site-content.container-lg
-                  #productsContainer.row.product-grid
+                  #productsContainer(class=`row product-grid ${isEven ? 'justify-content-center' : ''}`)
                     - for(var i = 1; i <= entriesLength; i++)
                       - var num = i.toString().length < 2 ? `0${i}` : i
                       -
-                        var imageName = placeholders.image.preset()
+                        var imageName = `https://s3.motionvfx.com/mvfxpublic/images/mcensor/prevs/${num}.jpg`
                           //- `/images/img/${num}.jpg`
                       -
-                        var videoName = `https://s3.motionvfx.com/mvfxpublic/products/templates/${templateNumber}/media/${num}.mp4`
+                        var videoName = `https://s3.motionvfx.com/mvfxpublic/images/mcensor/prevs/${num}.mp4`
                           //- `/images/video/${num}.mp4`
-                      - var isEven = entriesLength % 2 == 0
-                      div(class=`col-6 col-lg-4 product ${i > collapseAfterLength ? 'collapse prev-collapse' : ''} ${!isEven && i === entriesLength ? 'offset-3' : ''} offset-lg-0` id=`prev-collapse-${i}`)
+
+                      div(class=`col-6 col-lg-4 product ${i > collapseAfterLength ? 'collapse prev-collapse' : ''} offset-lg-0` id=`prev-collapse-${i}`)
                         a
                           .product-preview
                             img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=' width='600' height='338')

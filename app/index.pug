@@ -64,11 +64,12 @@ html(lang="en")
       - var title = "WATCH TRAILER"
       - var subtitle = placeholders.text.subtitle
       - var text = placeholders.text.lorem
-      - var videoLink = placeholders.video.vimeo
+      - var videoLink = 'https://player.vimeo.com/video/147835725'
       //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
       - var videoTitle = placeholders.video.videoTitle
       include includes/video.pug
       a.nav(name="tutorial")
+      - var background = '/images/tutorial_bg.jpg'
       - var sectionClasses = 'tutorial bg__dark'
       - var title = "WATCH TUTORIAL"
       - var subtitle = placeholders.text.subtitle
@@ -80,32 +81,21 @@ html(lang="en")
       include includes/new-interface.pug
 
       -
-        var showcaseData = [
-          {
-            //- src: ['/images/up.mp4', '/images/test_3.mp4'],
-            alt: 'alt',
-            subtitle: 'Match the movement with any video',
-            //- title: 'Diverse, effective & fully customizable',
-            text: 'Several adjustable presets and custom movements set directly in the viewport give you creative freedom and let you work with ease. From quick slides and zooms to long blackouts - this pack has got you covered.'
-          }
-        ]
-
-      -
         var images = [
           {
-            src: src=placeholders.image.hd(),
+            src: '/images/slider_1.jpg',
             alt: 'This is alt',
             icon: placeholders.image.icon(32),
             text: 'solid'
           },
           {
-            src: src=placeholders.image.hd(),
+            src: '/images/slider_2.jpg',
             alt: 'This is alt',
             icon: placeholders.image.icon(32),
             text: 'pixelate'
           },
           {
-            src: src=placeholders.image.hd(),
+            src: '/images/slider_3.jpg',
             alt: 'This is alt',
             icon: placeholders.image.icon(32),
             text: 'blur'
@@ -115,7 +105,7 @@ html(lang="en")
       - var active = (index) => `${index === 0 && 'active' }`
 
       section.showcase
-        div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade` data-ride='carousel' data-pause="false")
+        div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade`)
           .case__item__bg
             include includes/components/slider.pug
             //- - var image = `/images/fade_bg_1.jpg`
@@ -133,11 +123,13 @@ html(lang="en")
                     p.section__title=placeholders.text.title
                     p.section__text.section__text--inset=placeholders.text.lorem
                 div(class=`col-md-6 offset-md-6`)
-                  ol.carousel-indicators
-                    each img, index in images
-                      li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
-                        img(src=img.icon, alt="")
-                        p=img.text
+                  .carousel-indicators__wrapper
+                    ol.carousel-indicators
+                      each img, index in images
+                        li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
+                          img(src=img.icon, alt="")
+                          p=img.text
+                    .carousel-progress
 
       include includes/split-image.pug
       include includes/presets.pug

@@ -20,92 +20,34 @@ import './scroll_to_anchor'
 // import Splitting from 'splitting'
 ;(() => {
   window.addEventListener('load', () => {
+    const sliderOptions = {
+      interval: 5000,
+      keyboard: true,
+      ride: 'carousel',
+      pause: false
+    }
 
-    // CAROUSEL
+    const slider = $('#carouselExamples').carousel(sliderOptions)
+    const sliderProgress = $('.carousel-progress')
 
-    // get slider
-    // get slider change time
-    // render progres based on slider timeout %
-    const slider = $('#carouselExamples')
+    const sliderProgressStart = () =>
+      sliderProgress.css({
+        transform: `scaleX(1)`,
+        transition: `transform ${sliderOptions.interval}ms ease-in-out`
+      })
 
-    slider.on('slid.bs.carousel', () => {
-      console.log('next');
+    const sliderProgressReset = () =>
+      sliderProgress.css({
+        transform: `scaleX(0)`,
+        transition: 'none'
+      })
+
+    slider.on('slide.bs.carousel', () => {
+      sliderProgressStart()
+      setTimeout(() => {
+        sliderProgressReset()
+      }, sliderOptions.interval)
     })
-
-
-    // const titles = Array.from(document.querySelectorAll('.section__title'))
-    // const subTitles = Array.from(
-    //   document.querySelectorAll('.section__subtitle')
-    // )
-    // const displays = Array.from(document.querySelectorAll('.section__display'))
-
-    // Array.from(document.querySelectorAll('.section__head')).forEach(
-    //   (tile) => (tile.dataset.visible = false)
-    // )
-
-    // animateOnScroll({})
-    // Splitting({
-    //   target: [...titles, ...subTitles],
-    //   by: 'words'
-    // })
-
-    // Splitting({
-    //   target: displays
-    // })
-
-    // const cbIn = (target) => {
-    //   target.closest('.section__head').dataset.visible = true
-    // }
-
-    // const cbOut = (target) => {
-    //   target.closest('.section__head').dataset.visible = false
-    // }
-
-    // doOnVisible({
-    //   sectionSelector: titles,
-    //   cbIn,
-    //   cbOut,
-    //   disconectOnIn: false,
-    //   threshold: 1
-    // })
-
-    // switching movie section
-    // const videos = Array.from(document.querySelectorAll('.case__item--0 video'))
-    // const showcase = Array.from(document.querySelectorAll('.case__item--0'))
-    // let activeVideo = videos[0]
-    // let playing = false
-
-    // videos[0].classList.add('active')
-    // videos[0].onended = function () {
-    //   videos[1].classList.add('active')
-    //   this.currentTime = 0
-    //   activeVideo = videos[1]
-    //   playing = false
-    // }
-
-    // videos[1].onended = function () {
-    //   this.classList.remove('active')
-    //   this.currentTime = 0
-    //   activeVideo = videos[0]
-    //   playing = false
-    // }
-
-    // doOnVisible({
-    //   sectionSelector: showcase,
-    //   cbIn: (target) => {
-    //     if (!playing) {
-    //       activeVideo.play()
-    //       playing = true
-    //     }
-    //   },
-    //   cbOut: (target, up) => {
-    //     // switchVideo()
-    //   },
-    //   disconectOnIn: false,
-    //   threshold: 0.5,
-    //   useDirection: true,
-    //   rootMargin: '30%'
-    // })
 
     setTimeout(() => {
       document.body.classList.add('ready')
@@ -118,11 +60,6 @@ import './scroll_to_anchor'
         $(btn.dataset.target).collapse('toggle')
       })
     })
-
-    // slider
-    // slider({
-    //   node: document.getElementById('slider')
-    // })
   })
 })()
 
