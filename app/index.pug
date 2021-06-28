@@ -127,7 +127,8 @@ html(lang="en")
                     ol.carousel-indicators
                       each img, index in images
                         li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
-                          img(src=img.icon, alt="")
+                          div(class=`css-icon css-icon--${img.text}`)
+                          //- img(src=img.icon, alt="")
                           p=img.text
                     .carousel-progress
 

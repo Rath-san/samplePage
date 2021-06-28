@@ -1,7 +1,7 @@
 .carousel {
   $container-rad: .2rem;
   &-progress {
-    background-color: #fff;
+    background-color: #2D71BC;
     border-radius: $container-rad;
     // width: 100%;
     height: 2px;
@@ -47,6 +47,57 @@
       // padding: 0 1.1rem;
       font-weight: 600;
 
+      &.active {
+        .css-icon {
+          background-color: #2D71BC;
+          border-color: lighten($color: #3680D5, $amount: 10%);
+          &::before,
+          &::after {
+            background-color: darken(#2D71BC, 10%);
+          }
+        }
+      }
+
+      .css-icon {
+
+        background-color: #626262;
+        border: 2px solid lighten($color: #7B7B7B, $amount: 10%);
+        width: 32px;
+        height: 32px;
+        margin-bottom: .6rem;
+        border-radius: .1rem;
+        &--solid { 
+
+        }
+        &--pixelate {
+          position: relative;
+          &::before,
+          &::after {
+            position: absolute;
+            content: "";
+            width: 50%;
+            height: 50%;
+            background-color: #444444;
+          }
+
+          &::before {
+            top: 0;
+            left: 0;
+          }
+          &::after {
+            right: 0;
+            bottom: 0;
+          }
+        }
+        &--blur {
+          // border-bottom-left-radius: 50%;
+          // border-bottom-right-radius: 50%;
+          border-radius: 50% 50% 50% 5%;
+          transform: translateY(4px) rotate(135deg) scale(.9);
+          // margin-bottom: -2px;
+        }
+      }
+
       img {
         margin-bottom: .6rem;
       }
@@ -57,6 +108,7 @@
         font-size: .7rem;
         letter-spacing: 1px;
         line-height: 1.2;
+        font-weight: 700;
       }
 
       &:last-child {
@@ -67,14 +119,20 @@
 
     .active {
       background-color: transparent;
-      color: aqua;
+      color: lighten($color: #3680D5, $amount: 10%);
     }
   }
   &-inner {
     
   }
   &-item {
-
+    img {
+      @media screen and (min-width: 768px) {
+        min-height: 600px;
+        max-height: 1440px;
+        object-fit: cover;
+      }
+    }
   }
 }
 

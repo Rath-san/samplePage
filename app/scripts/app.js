@@ -17,7 +17,7 @@ import 'intersection-observer'
 import './lazy-images'
 // import { animateOnScroll } from './animate-on-scroll'
 import './scroll_to_anchor'
-// import Splitting from 'splitting'
+import Splitting from 'splitting'
 ;(() => {
   window.addEventListener('load', () => {
     const sliderOptions = {
@@ -53,6 +53,39 @@ import './scroll_to_anchor'
       document.body.classList.add('ready')
     }, 200)
 
+    // text splitting
+    const titles = Array.from(document.querySelectorAll('.section__title'))
+    const subTitles = Array.from(
+      document.querySelectorAll('.section__subtitle')
+    )
+    const displays = Array.from(document.querySelectorAll('.section__display'))
+
+    Splitting({
+      target: [...titles, ...subTitles],
+      by: 'words'
+    })
+
+    Splitting({
+      target: displays
+    })
+
+    const cbIn = (target) => {
+      target.closest('.section__head').dataset.visible = true
+    }
+
+    const cbOut = (target) => {
+      target.closest('.section__head').dataset.visible = false
+    }
+
+    doOnVisible({
+      sectionSelector: titles,
+      cbIn,
+      cbOut,
+      disconectOnIn: false,
+      threshold: 1
+    })
+
+    // collapsible btn
     Array.from(document.querySelectorAll('.btn-collapse')).forEach((btn, i) => {
       btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true'
