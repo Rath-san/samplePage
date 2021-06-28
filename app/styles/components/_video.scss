@@ -38,10 +38,11 @@
 
   &.tutorial {
     // margin-top: 0;
+    // margin-bottom: ;
   }
   
   &.trailer {
-    padding: calc(37px + (2 * 0.5rem) + 1px + 5rem) 0 5rem 0;
+    padding: calc(37px + (2 * 0.5rem) + 1px + 5rem) 0 7rem 0;
     margin-top: calc((37px + (2 * 0.5rem) + 1px) * -1);
     .embed-responsive-16by9::before {
       padding-top: 273 / 640 * 100%;
