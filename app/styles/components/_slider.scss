@@ -1,3 +1,5 @@
+$color-active: lighten($color: #2f75c4, $amount: 10%);
+
 .carousel {
   $container-rad: .2rem;
   &-progress {
@@ -28,8 +30,7 @@
     padding: 1rem 1.75rem;
     margin: 1rem 0 0 0;
     border-radius: $container-rad;
-    // box-shadow: 0 0 15px 0 #00000050;
-    box-shadow: $shadow-1;
+    box-shadow: 0 0 20px #000;
 
     li {
       position: relative;
@@ -44,57 +45,78 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      // padding: 0 1.1rem;
       font-weight: 600;
+
+      &:hover {
+        .css-icon {
+          &--solid {
+            background-image: url('/images/solid_h.png');
+          }
+          &--pixelate {
+            background-image: url('/images/pixel_h.png');
+          }
+          &--blur {
+            background-image: url('/images/blur_h.png');
+          }
+        }
+        p {
+          color: $color-active;
+        }
+      }
 
       &.active {
         .css-icon {
-          background-color: #2D71BC;
-          border-color: lighten($color: #3680D5, $amount: 10%);
-          &::before,
-          &::after {
-            background-color: darken(#2D71BC, 10%);
+          &--solid {
+            background-image: url('/images/solid_h.png');
+          }
+          &--pixelate {
+            background-image: url('/images/pixel_h.png');
+          }
+          &--blur {
+            background-image: url('/images/blur_h.png');
           }
         }
       }
 
       .css-icon {
 
-        background-color: #626262;
-        border: 2px solid lighten($color: #7B7B7B, $amount: 10%);
+        // background-color: #626262;
+        // border: 2px solid lighten($color: #7B7B7B, $amount: 10%);
         width: 32px;
         height: 32px;
         margin-bottom: .6rem;
         border-radius: .1rem;
         &--solid { 
-
+          background-image: url('/images/solid.png');
+          background-size: cover;
         }
         &--pixelate {
-          position: relative;
-          &::before,
-          &::after {
-            position: absolute;
-            content: "";
-            width: 50%;
-            height: 50%;
-            background-color: #444444;
-          }
+          background-image: url('/images/pixel.png');
+          background-size: cover;
+          // position: relative;
+          // &::before,
+          // &::after {
+          //   position: absolute;
+          //   content: "";
+          //   width: 50%;
+          //   height: 50%;
+          //   background-color: #444444;
+          // }
 
-          &::before {
-            top: 0;
-            left: 0;
-          }
-          &::after {
-            right: 0;
-            bottom: 0;
-          }
+          // &::before {
+          //   top: 0;
+          //   left: 0;
+          // }
+          // &::after {
+          //   right: 0;
+          //   bottom: 0;
+          // }
         }
         &--blur {
-          // border-bottom-left-radius: 50%;
-          // border-bottom-right-radius: 50%;
-          border-radius: 50% 50% 50% 5%;
-          transform: translateY(4px) rotate(135deg) scale(.9);
-          // margin-bottom: -2px;
+          background-image: url('/images/blur.png');
+          background-size: cover;
+          // border-radius: 50% 50% 50% 5%;
+          // transform: translateY(4px) rotate(135deg) scale(.9);
         }
       }
 
@@ -117,9 +139,14 @@
 
     }
 
+    // .icon {
+    //   width: 32px;
+    //   height: 32px;
+    // }
+
     .active {
       background-color: transparent;
-      color: lighten($color: #3680D5, $amount: 10%);
+      color: $color-active;
     }
   }
   &-inner {

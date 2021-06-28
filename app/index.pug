@@ -62,8 +62,8 @@ html(lang="en")
       a.nav(name="trailer")
       - var sectionClasses = 'trailer bg__light'
       - var title = "WATCH TRAILER"
-      - var subtitle = placeholders.text.subtitle
-      - var text = placeholders.text.lorem
+      - var subtitle = 'See the stunning results!'
+      - var text = 'View the plugin in action and watch the spectacular effects you can achieve with minimum effort.'
       - var videoLink = 'https://player.vimeo.com/video/147835725'
       //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
       - var videoTitle = placeholders.video.videoTitle
@@ -72,8 +72,8 @@ html(lang="en")
       - var background = '/images/tutorial_bg.jpg'
       - var sectionClasses = 'tutorial bg__dark'
       - var title = "WATCH TUTORIAL"
-      - var subtitle = placeholders.text.subtitle
-      - var text = placeholders.text.lorem
+      - var subtitle = 'Learn the workflow!'
+      - var text = 'Get the know-how and maximize the efficiency of your work. Grab some tips & tricks to find shortcuts to a perfect result.'
       - var videoLink = placeholders.video.youtube
       //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
       - var videoTitle = placeholders.video.videoTitle
@@ -85,19 +85,19 @@ html(lang="en")
           {
             src: '/images/slider_1.jpg',
             alt: 'This is alt',
-            icon: placeholders.image.icon(32),
+            icon: '/images/solid.png',
             text: 'solid'
           },
           {
             src: '/images/slider_2.jpg',
             alt: 'This is alt',
-            icon: placeholders.image.icon(32),
+            icon: '/images/pixel.png',
             text: 'pixelate'
           },
           {
             src: '/images/slider_3.jpg',
             alt: 'This is alt',
-            icon: placeholders.image.icon(32),
+            icon: '/images/blur.png',
             text: 'blur'
           }
         ]
@@ -119,15 +119,16 @@ html(lang="en")
               .row
                 div(class=`col-md-6 offset-md-6 case__item__qt`)
                   .section__head
-                    h2.section__subtitle=placeholders.text.subtitle
-                    p.section__title=placeholders.text.title
-                    p.section__text.section__text--inset=placeholders.text.lorem
+                    h2.section__subtitle Choose the right look for your purpose
+                    p.section__title Different effect styles
+                    p.section__text.section__text--inset Use solid color, blur or pixellate to match the topic you're working with. Customize the details for each of these styles and create a cohesive composition.
                 div(class=`col-md-6 offset-md-6`)
                   .carousel-indicators__wrapper
                     ol.carousel-indicators
                       each img, index in images
                         li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
                           div(class=`css-icon css-icon--${img.text}`)
+                          //- .icon
                           //- img(src=img.icon, alt="")
                           p=img.text
                     .carousel-progress
