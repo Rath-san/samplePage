@@ -1,6 +1,7 @@
 .mocha-info {
   opacity: 0;
   transition: opacity 1s .3s;
+  text-transform: uppercase;
 
   &__content {
     display: flex;

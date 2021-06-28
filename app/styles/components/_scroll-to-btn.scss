@@ -12,6 +12,7 @@
   height: 37px;
   width: 22px;
   position: relative;
+  z-index: 1;
 
   @media all and (max-height: 450px) {
     // margin-bottom: .5rem;
