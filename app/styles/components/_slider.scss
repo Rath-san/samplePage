@@ -1,4 +1,5 @@
 $color-active: lighten($color: #2f75c4, $amount: 10%);
+$spacing: 2.25rem;
 
 .carousel {
   $container-rad: .2rem;
@@ -27,7 +28,7 @@ $color-active: lighten($color: #2f75c4, $amount: 10%);
     background-color: #000;
     justify-content: left;
     display: inline-flex;
-    padding: 1rem 1.75rem;
+    padding: 1rem $spacing;
     margin: 1rem 0 0 0;
     border-radius: $container-rad;
     box-shadow: 0 0 20px #000;
@@ -38,7 +39,7 @@ $color-active: lighten($color: #2f75c4, $amount: 10%);
       height: unset;
       width: unset;
       margin-left: 0;
-      margin-right: 1.75rem;
+      margin-right: $spacing;
       text-indent: unset;
       cursor: pointer;
       background-color: transparent;
