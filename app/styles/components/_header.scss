@@ -84,7 +84,8 @@
     svg {
       // width: 100%;
       width: 560px;
-      height: 160px;
+      margin-bottom: 1.5rem;
+      // height: 160px;
       @media screen and (max-width: 768px) {
         width: 100%;
       }
@@ -210,25 +211,28 @@
 
 // LOGO ANIM
 .svg-logo {
+  z-index: 2;
   .letter {
     fill: #fff;
     .animated-in & {
       opacity: 1;
+      transform: translateY(0);
     }
   }
   .censor {
     fill: #E31E26;
     .animated-in & {
       opacity: 1;
+      transform: scaleX(1);
     }
   }
 
   .letter,
   .censor {
-    will-change: opacity;
+    will-change: opacity, transform;
     transition:
       transform 1s cubic-bezier(0.3, 0, 0.3, 1),
       opacity .5s linear;
-    transition-delay: calc(10ms + (200ms * var(--path-index)));
+    transition-delay: calc(10ms + (100ms * var(--path-index)));
   }
 }
