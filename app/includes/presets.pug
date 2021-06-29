@@ -10,7 +10,7 @@
 //- - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
 
 - var entriesLength = 5
-- var collapseAfterLength = 4
+- var collapseAfterLength = 5
 - var isEven = (data) => data % 2 == 0
 
 section.presets.bg--dark.text-center
@@ -56,7 +56,7 @@ section.presets.bg--dark.text-center
                                 img.img-fluid(src=`${imageName}` alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
                               .preview-video-container(style='display: none')
 
-                    .col-12.col-btn-collapse
+                    //- .col-12.col-btn-collapse
                       button.button.btn-collapse(type='button' data-toggle='-collapse' data-target='.prev-collapse' aria-expanded='false')
                         span
                           span.label-collapsed Show more

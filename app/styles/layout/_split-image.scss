@@ -9,9 +9,15 @@
       left: 0;
       right: 0;
       display: flex;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
       .img-lazy {
         width: 50%;
         height: 100%;
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
         img {
           object-fit: cover;
         }

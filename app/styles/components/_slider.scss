@@ -23,6 +23,11 @@ $spacing: 2.25rem;
       display: inline-flex;
       flex-direction: column;
       position: relative;
+      @media screen and (max-width: 768px) {
+        position: absolute;
+        bottom: 20.9vh;
+        right: 0px;
+      }
     }
     position: static;
     background-color: #000;
@@ -32,6 +37,9 @@ $spacing: 2.25rem;
     margin: 1rem 0 0 0;
     border-radius: $container-rad;
     box-shadow: 0 0 20px #000;
+    @media screen and (max-width: 768px) {
+      padding: .75rem 1.25rem;
+    }
 
     li {
       position: relative;
@@ -47,6 +55,9 @@ $spacing: 2.25rem;
       flex-direction: column;
       align-items: center;
       font-weight: 600;
+      @media screen and (max-width: 768px) {
+        margin-right: 1.25rem;
+      }
 
       &:hover {
         .css-icon {
@@ -87,6 +98,10 @@ $spacing: 2.25rem;
         height: 32px;
         margin-bottom: .6rem;
         border-radius: .1rem;
+        @media screen and (max-width: 768px) {
+          transform: scale(.75);
+          margin-bottom: .3rem;
+        }
         &--solid { 
           background-image: url('/images/solid.png');
           background-size: cover;
@@ -154,11 +169,14 @@ $spacing: 2.25rem;
     
   }
   &-item {
-    img {
+    .img-lazy {
+      img {
+        object-fit: cover;
+      }
       @media screen and (min-width: 768px) {
         min-height: 600px;
-        max-height: 1440px;
-        object-fit: cover;
+        // max-height: 1440px;
+        // object-fit: cover;
       }
     }
   }
