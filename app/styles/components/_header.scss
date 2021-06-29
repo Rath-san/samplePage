@@ -42,6 +42,10 @@
     @media screen and (max-height: 450px) {
       max-height: 100vh;
     }
+    @media screen and (max-width: 768px) {
+      max-height: 100vh;
+      padding: 0;
+    }
   }
 
   &__bg {
@@ -75,9 +79,15 @@
   }
 
   &__logo {
+    padding: 5%;
     margin-top: 7rem;
     svg {
-      // margin-bottom: 2rem;
+      // width: 100%;
+      width: 560px;
+      height: 160px;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
     }
     @media screen and (max-width: 768px) {
       margin-top: 10rem;
@@ -98,10 +108,7 @@
         width: 200px;
       }
     }
-    svg {
-      width: 560px;
-      height: 160px;
-    }
+
     .logo {
       $divider: 1.5;
       &__title {
@@ -155,6 +162,8 @@
     @media screen and (max-width: 768px) {
       max-width: 15em;
       // font-size: 20px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -197,4 +206,29 @@
 .video-responsive {
   position: relative;
   padding-bottom: 1250 / 2560 * 100%;
+}
+
+// LOGO ANIM
+.svg-logo {
+  .letter {
+    fill: #fff;
+    .animated-in & {
+      opacity: 1;
+    }
+  }
+  .censor {
+    fill: #E31E26;
+    .animated-in & {
+      opacity: 1;
+    }
+  }
+
+  .letter,
+  .censor {
+    will-change: opacity;
+    transition:
+      transform 1s cubic-bezier(0.3, 0, 0.3, 1),
+      opacity .5s linear;
+    transition-delay: calc(10ms + (200ms * var(--path-index)));
+  }
 }

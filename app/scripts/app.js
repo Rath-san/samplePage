@@ -20,6 +20,19 @@ import './scroll_to_anchor'
 import Splitting from 'splitting'
 ;(() => {
   window.addEventListener('load', () => {
+    // animate logo
+
+    // grab logo
+    const logo = document.querySelector('.svg-logo')
+    // split by elements
+    const elements = Array.from(logo.querySelectorAll('g > *'))
+    // add offset to element
+    elements.forEach((el, index) => {
+      el.style = `
+        --path-index: ${index};
+      `
+    })
+
     const sliderOptions = {
       interval: 5000,
       keyboard: true,
