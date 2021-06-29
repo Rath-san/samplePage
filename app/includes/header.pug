@@ -1,6 +1,19 @@
 section.header.text--light.text-center
   .header__bg(style="opacity:0")
-    img(data-src='/images/header_bg.jpg', alt="")
+    //- img(data-src='/images/header_bg.jpg', alt="")
+    - var image = `/images/header_bg.jpg`
+    - var alt = 'People in white clothes with censored eyes, looking at their mobile devices'
+    - var imageWidth = '2005'
+    - var imageHeight = '940'
+    - var placeholder = getParsedImage(image)
+    - var srcset = getParsedImage(image, 'srcSet')
+    img(
+      alt=alt,
+      height=height
+      data-src=getParsedImage(image, 'src'),
+      data-srcset=srcset,
+      sizes=sizes || '(max-width: 1024px) 300vw, 100vw'
+    )
     //- video(data-src='https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/Top2.mp4' controls=false, autoplay, loop, muted, playsinline type='video/mp4')
   .container
     .row

@@ -10,4 +10,9 @@ section.interface.text-center.bg__dark
         .section__body.interface__image
           //- ~30% larger than 1280px ~ 1660px
           //- 1920x840
-          img(src='/images/interface_bg.jpg', alt="", srcset="")
+          - var image = '/images/interface_bg.jpg'
+          - var alt = 'mCensor refreshed interface'
+          - var imageWidth = '1920'
+          - var imageHeight = '840'
+          - var sizes = ''
+          include components/image.pug

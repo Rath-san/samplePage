@@ -1,7 +1,17 @@
 section.split-image.bg__dark.text-center
   .section__bg
-    img(src='/images/left_img.jpg', alt="", srcset="")
-    img(src='/images/right_img.jpg', alt="", srcset="")
+    - var image = '/images/left_img.jpg'
+    - var alt = 'Sport car with censored registration number, application transform controls'
+    - var imageWidth = '1280'
+    - var imageHeight = '625'
+    - var sizes = '50vw'
+    include components/image.pug
+    - var image = '/images/right_img.jpg'
+    - var alt = 'Shoe with censored product label'
+    - var imageWidth = '1280'
+    - var imageHeight = '625'
+    - var sizes = '50vw'
+    include components/image.pug
   .container
     .row
       .col-12

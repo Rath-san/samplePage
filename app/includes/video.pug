@@ -1,7 +1,12 @@
 section(class=`video ${sectionClasses}`)
   - if (background)
     .image__background
-      img(src=background, alt="")
+      - var image = background
+      - var alt = 'Pixelated background'
+      - var imageWidth = '2560'
+      - var imageHeight = '1150'
+      - var sizes = ''
+      include components/image.pug
   .container.text-center
     .row
       .col

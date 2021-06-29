@@ -141,7 +141,7 @@ import Splitting from 'splitting'
 
       headerComponents.forEach((el, index) => {
         el.src = el.dataset.src
-        if (el.srcset) {
+        if (el.dataset.srcset) {
           el.srcset = el.dataset.srcset
         }
       })
