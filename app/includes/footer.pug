@@ -17,12 +17,13 @@ section.footer.bg--dark.text-center
   //- - var height = '1150'
   //- include components/image-background.pug
   .image__background
-    - var image = '/images/footer_bg.jpg'
-    - var alt = 'City central square with people casually strolling, with censored faces'
-    - var imageWidth = '2560'
-    - var imageHeight = '1150'
-    - var sizes = ''
-    include components/image.pug
+    img(src=placeholders.image.hd(), alt="", srcset="")
+    //- - var image = '/images/footer_bg.jpg'
+    //- - var alt = 'City central square with people casually strolling, with censored faces'
+    //- - var imageWidth = '2560'
+    //- - var imageHeight = '1150'
+    //- - var sizes = ''
+    //- include components/image.pug
   .container
     .row
       .col-12

@@ -15,17 +15,13 @@ html(lang="en")
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
-    link(href='css/custom_pages_wrap.css' rel="stylesheet" type="text/css")
-    link(href='css/bootstrap-4.1.3.min.css' rel="stylesheet" type="text/css")
-    link(href='css/menu.css' rel='stylesheet' type="text/css")
+    link(href='css/vendor/custom_pages_wrap.css' rel="stylesheet" type="text/css")
+    link(href='css/vendor/bootstrap-4.1.3.min.css' rel="stylesheet" type="text/css")
+    link(href='css/vendor/menu.css' rel='stylesheet' type="text/css")
 
-    script(src='scripts/jquery-3.4.1.min.js')
-    script(src='scripts/bootstrap-4.1.3.bundle.min.js')
-    script(src='https://s3.motionvfx.com/mvfxpublic/products/templates/source/media/scroll_to_anchor.js')
-    script(src='scripts/custom_pages_wrap.js')
-    //- script(src='scripts/beforeafter.js')
-    script(src='scripts/scroll_to_anchor.js')
-    script(src='scripts/menu.js')
+    script(src='scripts/vendor/jquery-3.4.1.min.js')
+    script(src='scripts/vendor/bootstrap-4.1.3.bundle.min.js')
+    script(src='scripts/vendor/custom_pages_wrap.js')
 
     - var mediaRootUrl = '/images'
     - var templateImagesUrl = '/images'
@@ -56,7 +52,7 @@ html(lang="en")
     include includes/submenu.pug
     include includes/navbar.pug
     .top-bar
-    main.mCensor
+    main.mDonut
       include includes/header.pug
       a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
       a.nav(name="trailer")
@@ -64,76 +60,76 @@ html(lang="en")
       - var title = "WATCH TRAILER"
       - var subtitle = 'See the stunning results!'
       - var text = 'View the plugin in action and watch the spectacular effects you can achieve with minimum effort.'
-      - var videoLink = 'https://player.vimeo.com/video/147835725'
+      - var videoLink = placeholders.video.youtube
       //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
       - var videoTitle = placeholders.video.videoTitle
       include includes/video.pug
       a.nav(name="tutorial")
-      - var background = '/images/tutorial_bg.jpg'
+      //- - var background = '/images/tutorial_bg.jpg'
       - var sectionClasses = 'tutorial bg__dark'
       - var title = "WATCH TUTORIAL"
       - var subtitle = 'Learn the workflow!'
       - var text = 'Get the know-how and maximize the efficiency of your work. Grab some tips & tricks to find shortcuts to a perfect result.'
-      - var videoLink = 'https://player.vimeo.com/video/148334849'
+      - var videoLink = placeholders.video.youtube
       //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
       - var videoTitle = placeholders.video.videoTitle
       include includes/video.pug
-      include includes/new-interface.pug
+      //- include includes/new-interface.pug
 
-      -
-        var images = [
-          {
-            src: '/images/slider_1.jpg',
-            alt: 'This is alt',
-            icon: '/images/solid.png',
-            text: 'solid'
-          },
-          {
-            src: '/images/slider_2.jpg',
-            alt: 'This is alt',
-            icon: '/images/pixel.png',
-            text: 'pixelate'
-          },
-          {
-            src: '/images/slider_3.jpg',
-            alt: 'This is alt',
-            icon: '/images/blur.png',
-            text: 'blur'
-          }
-        ]
+      //- -
+      //-   var images = [
+      //-     {
+      //-       src: '/images/slider_1.jpg',
+      //-       alt: 'This is alt',
+      //-       icon: '/images/solid.png',
+      //-       text: 'solid'
+      //-     },
+      //-     {
+      //-       src: '/images/slider_2.jpg',
+      //-       alt: 'This is alt',
+      //-       icon: '/images/pixel.png',
+      //-       text: 'pixelate'
+      //-     },
+      //-     {
+      //-       src: '/images/slider_3.jpg',
+      //-       alt: 'This is alt',
+      //-       icon: '/images/blur.png',
+      //-       text: 'blur'
+      //-     }
+      //-   ]
       
-      - var active = (index) => `${index === 0 && 'active' }`
+      //- - var active = (index) => `${index === 0 && 'active' }`
 
-      section.showcase
-        div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade`)
-          .case__item__bg
-            include includes/components/slider.pug
-            //- - var image = `/images/fade_bg_1.jpg`
-            //- - var alt = ''
-            //- - var imageWidth = '2560'
-            //- - var imageHeight = '1150'
-            //- include includes/components/image.pug
-            //- img(src=placeholders.image.hd(), alt="")
-          .case__item__body
-            .container
-              .row
-                div(class=`col-md-6 offset-md-6 case__item__qt`)
-                  .section__head
-                    h2.section__subtitle Choose the right look for your purpose
-                    p.section__title Different effect styles
-                    p.section__text.section__text--inset Use solid color, blur or pixellate to match the topic you're working with. Customize the details for each of these styles and create a cohesive composition.
-                div(class=`col-md-6 offset-md-6`)
-                  .carousel-indicators__wrapper
-                    ol.carousel-indicators
-                      each img, index in images
-                        li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
-                          div(class=`css-icon css-icon--${img.text}`)
-                          //- .icon
-                          //- img(src=img.icon, alt="")
-                          p=img.text
-                    .carousel-progress
+      //- section.showcase
+      //-   div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade`)
+      //-     .case__item__bg
+      //-       include includes/components/slider.pug
+      //-       //- - var image = `/images/fade_bg_1.jpg`
+      //-       //- - var alt = ''
+      //-       //- - var imageWidth = '2560'
+      //-       //- - var imageHeight = '1150'
+      //-       //- include includes/components/image.pug
+      //-       //- img(src=placeholders.image.hd(), alt="")
+      //-     .case__item__body
+      //-       .container
+      //-         .row
+      //-           div(class=`col-md-6 offset-md-6 case__item__qt`)
+      //-             .section__head
+      //-               h2.section__subtitle Choose the right look for your purpose
+      //-               p.section__title Different effect styles
+      //-               p.section__text.section__text--inset Use solid color, blur or pixellate to match the topic you're working with. Customize the details for each of these styles and create a cohesive composition.
+      //-           div(class=`col-md-6 offset-md-6`)
+      //-             .carousel-indicators__wrapper
+      //-               ol.carousel-indicators
+      //-                 each img, index in images
+      //-                   li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
+      //-                     div(class=`css-icon css-icon--${img.text}`)
+      //-                     //- .icon
+      //-                     //- img(src=img.icon, alt="")
+      //-                     p=img.text
+      //-               .carousel-progress
 
-      include includes/split-image.pug
+      //- include includes/split-image.pug
       include includes/presets.pug
       a.nav(href="#" name='specs', rel="noopener noreferrer") 
       include includes/tech-spec.pug

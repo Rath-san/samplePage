@@ -126,15 +126,15 @@ const productionConfig = merge([
           to: path.join(__dirname, 'build/css')
         },
         // js
-        {
-          from: path.join(__dirname, 'app/scripts'),
-          to: path.join(__dirname, 'build/scripts')
-        },
+        // {
+        //   from: path.join(__dirname, 'app/scripts'),
+        //   to: path.join(__dirname, 'build/scripts')
+        // },
         // images
-        {
-          from: path.join(__dirname, 'app/images'),
-          to: path.join(__dirname, 'build/images')
-        },
+        // {
+        //   from: path.join(__dirname, 'app/images'),
+        //   to: path.join(__dirname, 'build/images')
+        // },
         // static
         {
           from: path.join(__dirname, 'app/static'),

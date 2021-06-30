@@ -100,19 +100,23 @@ section.tech-spec
                   else
                     | #{val.value}
               if !dev
-                #{`{% for kind in ['trailer', 'tutorial'] %}
-                    {% with musics=product.productdetails.music.select_related('music_portal').all().filter(used_in_trailer=kind=='trailer') %}
+                -
+                  var c = `
+                    {% for kind in ['trailer', 'tutorial'] %}
+                      {% with musics=product.productdetails.music.select_related('music_portal').all().filter(used_in_trailer=kind=='trailer') %}
                         {% if length(musics) %}
-                            <div class="tcell tlabel">Music used in {{ kind }}</div>
-                            <div class="tcell tdata">
-                                {% for music in musics %}
-                  {% if music.music_portal.name == "www.premiumbeat.com" or music.music_portal.name ==  "www.shutterstock.com" %}
-                                        <a href="{{ music.url }}" target="_blank" rel="noopener noreferrer">{{ music.music_portal.name.replace('www.','') }} — {{ music.title }}</a>{% if not loop.last %},&nbsp;<wbr>{% endif %}
-                                    {% else %}
-                                        {{ music.music_portal.name.replace('www.','') }} — {{ music.title }}{% if not loop.last %},&nbsp;<wbr>{% endif %}
-                                    {%endif%}
-                                {%endfor%}
-                            </div>
+                          <div class="tcell tlabel">Music used in {{ kind }}</div>
+                          <div class="tcell tdata">
+                          {% for music in musics %}
+                            {% if music.music_portal.name == "www.premiumbeat.com" or music.music_portal.name ==  "www.shutterstock.com" %}
+                              <a href="{{ music.url }}" target="_blank" rel="noopener noreferrer">{{ music.music_portal.name.replace('www.','') }} — {{ music.title }}</a>{% if not loop.last %},&nbsp;<wbr>{% endif %}
+                            {% else %}
+                              {{ music.music_portal.name.replace('www.','') }} — {{ music.title }}{% if not loop.last %},&nbsp;<wbr>{% endif %}
+                            {%endif%}
+                          {%endfor%}
+                          </div>
                         {% endif %}
-                    {% endwith %}
-                {% endfor %}}`}
+                      {% endwith %}
+                    {% endfor %}}
+                  `
+                | !{c}

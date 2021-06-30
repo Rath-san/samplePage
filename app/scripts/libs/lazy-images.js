@@ -1,4 +1,4 @@
-import { isCached } from './utils'
+import { isCached } from '../utils/utils'
 ;(() => {
   // Lazy images
   const images = document.querySelectorAll('.img-lazy')
