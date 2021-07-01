@@ -1,4 +1,4 @@
--
+//- -
   //- var sections = [
   //-   { 'name':'Circural', 'label': 'Circural', 'count': 10,},
   //-   { 'name':'Complex', 'label': 'Complex', 'count': 5,},
@@ -9,7 +9,7 @@
   //- ]
 //- - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
 
-- var entriesLength = 5
+- var entriesLength = 20
 - var collapseAfterLength = 5
 - var isEven = (data) => data % 2 == 0
 
@@ -24,9 +24,9 @@ section.presets.bg--dark.text-center
     .row
       .col-12
         .section__head
-          //- p.section__display=50
-          h2.section__title View examples of mCensor in action
-          p.section__subtitle Hover or tap to view animations
+          p.section__display=entriesLength
+          h2.section__title=placeholders.text.title
+          p.section__subtitle=placeholders.text.subtitle
         .section__body
           //- - var currentIndex = 1
           //- - var sectionItems = 0
@@ -41,14 +41,16 @@ section.presets.bg--dark.text-center
                     - for(var i = 1; i <= entriesLength; i++)
                       - var num = i.toString().length < 2 ? `0${i}` : i
                       -
-                        var imageName = `https://s3.motionvfx.com/mvfxpublic/images/mcensor/prevs/${num}.jpg`
+                        var imageName = placeholders.image.preset()
+                        //- `https://s3.motionvfx.com/mvfxpublic/images/mcensor/prevs/${num}.jpg`
                           //- `/images/img/${num}.jpg`
                       -
-                        var videoName = `https://s3.motionvfx.com/mvfxpublic/images/mcensor/prevs/${num}.mp4`
+                        var videoName = 'https://temp.media/video/?height=388&width=600&length=2'
+                        //- `https://s3.motionvfx.com/mvfxpublic/images/mcensor/prevs/${num}.mp4`
                           //- `/images/video/${num}.mp4`
 
                       div(class=`col-6 col-lg-4 product ${i > collapseAfterLength ? 'collapse prev-collapse' : ''} offset-lg-0` id=`prev-collapse-${i}`)
-                        a
+                        a(rel="noopener noreferrer") 
                           .product-preview
                             img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=' width='600' height='338')
                             .preview-wrapper.zoom(data-mp4-url=`${videoName}`)
@@ -56,7 +58,7 @@ section.presets.bg--dark.text-center
                                 img.img-fluid(src=`${imageName}` alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
                               .preview-video-container(style='display: none')
 
-                    //- .col-12.col-btn-collapse
+                    .col-12.col-btn-collapse
                       button.button.btn-collapse(type='button' data-toggle='-collapse' data-target='.prev-collapse' aria-expanded='false')
                         span
                           span.label-collapsed Show more
