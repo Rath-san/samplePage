@@ -12,6 +12,7 @@
 @import './components/scroll-to-btn';
 @import './components/packs';
 @import './components/button';
+@import './components/deco-title';
 
 img {
   max-width: 100%;
@@ -423,11 +424,12 @@ $shadow-color: #000;
     &--2 {
       width: 50%;
       margin: 0;
-      top: -100%;
+      top: 0%;
       right: 10%;
+      opacity: .5;
       @media screen and (max-width: 768px) {
         left: unset;
-        top: 50%;
+        top: 100%;
         right: 0;
       }
       video {

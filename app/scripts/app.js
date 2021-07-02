@@ -20,6 +20,22 @@ import './lazy-images'
 // import Splitting from 'splitting'
 ;(() => {
   window.addEventListener('load', () => {
+
+    // managing deco elements
+    const deco = Array.from(document.querySelectorAll('.deco'))
+    
+    const addDecoInner = (el) => {
+      const span = document.createElement('span')
+      span.classList.add('deco-inner')
+      el.appendChild(span)
+    }
+
+    deco.forEach(el => {
+      addDecoInner(el)
+    })
+    
+
+
     // const titles = Array.from(document.querySelectorAll('.section__title'))
     // const subTitles = Array.from(
     //   document.querySelectorAll('.section__subtitle')
@@ -56,43 +72,11 @@ import './lazy-images'
     //   threshold: 1
     // })
 
-    // // switching movie section
-    // const videos = Array.from(document.querySelectorAll('.case__item--0 video'))
-    // const showcase = Array.from(document.querySelectorAll('.case__item--0'))
-    // let activeVideo = videos[0]
-    // let playing = false
-
-    // videos[0].classList.add('active')
-    // videos[0].onended = function () {
-    //   videos[1].classList.add('active')
-    //   this.currentTime = 0
-    //   activeVideo = videos[1]
-    //   playing = false
-    // }
-
-    // videos[1].onended = function () {
-    //   this.classList.remove('active')
-    //   this.currentTime = 0
-    //   activeVideo = videos[0]
-    //   playing = false
-    // }
-
-    // doOnVisible({
-    //   sectionSelector: showcase,
-    //   cbIn: (target) => {
-    //     if (!playing) {
-    //       activeVideo.play()
-    //       playing = true
-    //     }
-    //   },
-    //   cbOut: (target, up) => {
-    //     // switchVideo()
-    //   },
-    //   disconectOnIn: false,
-    //   threshold: 0.5,
-    //   useDirection: true,
-    //   rootMargin: '30%'
-    // })
+    // visible sections
+    const sections = Array.from(document.querySelectorAll('.section__head'))
+    doOnVisible({
+      sectionSelector: sections
+    })
 
     Array.from(document.querySelectorAll('.btn-collapse')).forEach((btn, i) => {
       btn.addEventListener('click', () => {
@@ -109,45 +93,48 @@ import './lazy-images'
   })
 })()
 
-// const doOnVisible = ({
-//   sectionSelector,
-//   cbIn = () => {},
-//   cbOut = () => {},
-//   threshold = 0,
-//   disconectOnIn = false,
-//   useDirection = false,
-//   rootMargin = '0px'
-// }) => {
-//   let lastTriggerPosition
+const doOnVisible = ({
+  sectionSelector,
+  cbIn = () => {},
+  cbOut = () => {},
+  threshold = 0,
+  disconectOnIn = false,
+  useDirection = false,
+  rootMargin = '0px'
+}) => {
+  let lastTriggerPosition
 
-//   const lazyAnimate = (target) => {
-//     const io = new IntersectionObserver(
-//       (entries, observer) => {
-//         entries.forEach((entry) => {
-//           let y = entry.boundingClientRect.y
-//           const up =
-//             lastTriggerPosition !== undefined ? lastTriggerPosition > y : true
-//           lastTriggerPosition = y
+  const lazyAnimate = (target) => {
+    const io = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
 
-//           if (entry.isIntersecting) {
-//             cbIn(target, up)
-//             if (disconectOnIn) observer.disconnect()
-//           } else {
-//             cbOut(target, up)
-//           }
-//         })
-//       },
-//       {
-//         threshold,
-//         rootMargin
-//       }
-//     )
+          let y = entry.boundingClientRect.y
+          const up =
+            lastTriggerPosition !== undefined ? lastTriggerPosition > y : true
+          lastTriggerPosition = y
 
-//     io.POLL_INTERVAL = 100
-//     io.USE_MUTATION_OBSERVER = false
+          if (entry.isIntersecting) {
+            entry.target.dataset.visible = true
+            cbIn(target, up)
+            if (disconectOnIn) observer.disconnect()
+          } else {
+            entry.target.dataset.visible = false
+            cbOut(target, up)
+          }
+        })
+      },
+      {
+        threshold,
+        rootMargin
+      }
+    )
 
-//     io.observe(target)
-//   }
+    io.POLL_INTERVAL = 100
+    io.USE_MUTATION_OBSERVER = false
 
-//   sectionSelector.forEach(lazyAnimate)
-// }
+    io.observe(target)
+  }
+
+  sectionSelector.forEach(lazyAnimate)
+}
