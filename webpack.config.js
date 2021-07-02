@@ -245,7 +245,7 @@ module.exports = (env) => {
   )
 }
 
-function getPaths({
+function getPaths ({
   sourceDir = 'app',
   buildDir = 'build',
   staticDir = '',

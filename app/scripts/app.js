@@ -35,14 +35,41 @@ import './vendor/menu'
     //   `
     // })
 
-    // const sliderOptions = {
-    //   interval: 5000,
-    //   keyboard: true,
-    //   ride: 'carousel',
-    //   pause: false
-    // }
+    const sliderOptions = {
+      interval: 5000,
+      keyboard: true,
+      ride: 'carousel',
+      pause: false
+    }
 
-    // const slider = $('#carouselExamples').carousel(sliderOptions)
+    const slider = $('#carouselExamples').carousel(sliderOptions)
+
+    const sliderOptionsCon = {
+      interval: 1
+      // keyboard: true,
+      // ride: 'carousel',
+      // pause: false
+    }
+
+    const sliderContinuous = $('#carouselContinuous').carousel(sliderOptionsCon)
+
+    $('#carouselContinuous .carousel-item').each(function () {
+      var minPerSlide = 4
+      var next = $(this).next()
+      if (!next.length) {
+        next = $(this).siblings(':first')
+      }
+      next.children(':first-child').clone().appendTo($(this))
+
+      for (var i = 0; i < minPerSlide; i++) {
+        next = next.next()
+        if (!next.length) {
+          next = $(this).siblings(':first')
+        }
+
+        next.children(':first-child').clone().appendTo($(this))
+      }
+    })
     // const sliderProgress = $('.carousel-progress')
 
     // const sliderProgressStart = () =>

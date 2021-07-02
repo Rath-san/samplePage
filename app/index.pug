@@ -41,7 +41,7 @@ html(lang="en")
           vimeo: 'https://player.vimeo.com/video/112879331'
         },
         text: {
-          display: 'This is dispaly',
+          display: 'This is display',
           lorem: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta iusto minima eaque fuga ab quas, illo alias aliquid est facere, praesentium tenetur soluta magnam quae sint non unde voluptatibus voluptatum.',
           loremShort: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta iusto minima eaque fuga ab quas, illo alias aliquid est facere.',
           title: 'This is title',
@@ -77,58 +77,84 @@ html(lang="en")
       include includes/video.pug
       //- include includes/new-interface.pug
 
-      //- -
-      //-   var images = [
-      //-     {
-      //-       src: '/images/slider_1.jpg',
-      //-       alt: 'This is alt',
-      //-       icon: '/images/solid.png',
-      //-       text: 'solid'
-      //-     },
-      //-     {
-      //-       src: '/images/slider_2.jpg',
-      //-       alt: 'This is alt',
-      //-       icon: '/images/pixel.png',
-      //-       text: 'pixelate'
-      //-     },
-      //-     {
-      //-       src: '/images/slider_3.jpg',
-      //-       alt: 'This is alt',
-      //-       icon: '/images/blur.png',
-      //-       text: 'blur'
-      //-     }
-      //-   ]
+      -
+        var images = [
+          {
+            src: placeholders.image.hd(),
+            alt: 'This is alt',
+            //- icon: '/images/solid.png',
+            text: 'solid'
+          },
+          {
+            src: placeholders.image.hd(),
+            alt: 'This is alt',
+            //- icon: '/images/pixel.png',
+            text: 'pixelate'
+          },
+          {
+            src: placeholders.image.hd(),
+            alt: 'This is alt',
+            //- icon: '/images/blur.png',
+            text: 'blur'
+          }
+        ]
       
-      //- - var active = (index) => `${index === 0 && 'active' }`
+      - var active = (index) => `${index === 0 && 'active' }`
 
-      //- section.showcase
-      //-   div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade`)
-      //-     .case__item__bg
-      //-       include includes/components/slider.pug
-      //-       //- - var image = `/images/fade_bg_1.jpg`
-      //-       //- - var alt = ''
-      //-       //- - var imageWidth = '2560'
-      //-       //- - var imageHeight = '1150'
-      //-       //- include includes/components/image.pug
-      //-       //- img(src=placeholders.image.hd(), alt="")
-      //-     .case__item__body
-      //-       .container
-      //-         .row
-      //-           div(class=`col-md-6 offset-md-6 case__item__qt`)
-      //-             .section__head
-      //-               h2.section__subtitle Choose the right look for your purpose
-      //-               p.section__title Different effect styles
-      //-               p.section__text.section__text--inset Use solid color, blur or pixellate to match the topic you're working with. Customize the details for each of these styles and create a cohesive composition.
-      //-           div(class=`col-md-6 offset-md-6`)
-      //-             .carousel-indicators__wrapper
-      //-               ol.carousel-indicators
-      //-                 each img, index in images
-      //-                   li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
-      //-                     div(class=`css-icon css-icon--${img.text}`)
-      //-                     //- .icon
-      //-                     //- img(src=img.icon, alt="")
-      //-                     p=img.text
-      //-               .carousel-progress
+      section.showcase
+        div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade`)
+          .case__item__bg
+            include includes/components/slider.pug
+            //- - var image = `/images/fade_bg_1.jpg`
+            //- - var alt = ''
+            //- - var imageWidth = '2560'
+            //- - var imageHeight = '1150'
+            //- include includes/components/image.pug
+            //- img(src=placeholders.image.hd(), alt="")
+          .case__item__body
+            .container
+              .row
+                div(class=`col-12`)
+                  .section__head
+                    h2.section__subtitle Choose the right look for your purpose
+                    p.section__title Different effect styles
+                    p.section__text Use solid color, blur or pixellate to match the topic you're working with. Customize the details for each of these styles and create a cohesive composition.
+                //- div(class=`col-md-6 offset-md-6`)
+                  .carousel-indicators__wrapper
+                    ol.carousel-indicators
+                      each img, index in images
+                        li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
+                          div(class=`css-icon css-icon--${img.text}`)
+                          //- .icon
+                          //- img(src=img.icon, alt="")
+                          p=img.text
+                    .carousel-progress
+      
+      section.showcase
+        div#carouselContinuous(class=`case__item case__item--2 carousel slide carousel-continuous`)
+          .case__item__bg
+            //- include includes/components/slider.pug
+            .carousel-inner
+              each img, index in images
+                div(class=`carousel-item ${active(index)}`)
+                  //- - var image = img.src
+                  //- - var alt = img.alt
+                  //- - var imageWidth = '2560'
+                  //- - var imageHeight = '1150'
+                  //- - var sizes = '100vw'
+                  //- include image.pug
+                  img.d-block(src='https://via.placeholder.com/660x660' alt=img.alt)
+      section.showcase.bg__dark.showcase__2
+        .case__item__bg
+          img(src=placeholders.image.hd(), alt="", srcset="")
+        .case__item__body
+          .container
+            .row
+              div(class=`col-12`)
+                .section__head
+                  h2.section__subtitle Choose the right look for your purpose
+                  p.section__title Different effect styles
+                  p.section__text Use solid color, blur or pixellate to match the topic you're working with. Customize the details for each of these styles and create a cohesive composition.
 
       //- include includes/split-image.pug
       include includes/presets.pug

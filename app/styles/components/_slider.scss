@@ -1,10 +1,14 @@
-$color-active: lighten($color: #2f75c4, $amount: 10%);
+$color-active: lighten(
+  $color: #2f75c4,
+  $amount: 10%
+);
 $spacing: 2.25rem;
 
 .carousel {
-  $container-rad: .2rem;
+  $container-rad: 0.2rem;
+
   &-progress {
-    background-color: #2D71BC;
+    background-color: #2d71bc;
     border-radius: $container-rad;
     // width: 100%;
     height: 2px;
@@ -14,9 +18,8 @@ $spacing: 2.25rem;
     right: 0px;
     z-index: 15;
     transform: scaleX(0);
-    
-    transform-origin: left;
 
+    transform-origin: left;
   }
   &-indicators {
     &__wrapper {
@@ -38,7 +41,7 @@ $spacing: 2.25rem;
     border-radius: $container-rad;
     box-shadow: 0 0 20px #000;
     @media screen and (max-width: 768px) {
-      padding: .75rem 1.25rem;
+      padding: 0.75rem 1.25rem;
     }
 
     li {
@@ -91,18 +94,17 @@ $spacing: 2.25rem;
       }
 
       .css-icon {
-
         // background-color: #626262;
         // border: 2px solid lighten($color: #7B7B7B, $amount: 10%);
         width: 32px;
         height: 32px;
-        margin-bottom: .6rem;
-        border-radius: .1rem;
+        margin-bottom: 0.6rem;
+        border-radius: 0.1rem;
         @media screen and (max-width: 768px) {
-          transform: scale(.75);
-          margin-bottom: .3rem;
+          transform: scale(0.75);
+          margin-bottom: 0.3rem;
         }
-        &--solid { 
+        &--solid {
           background-image: url('/images/solid.png');
           background-size: cover;
         }
@@ -137,13 +139,13 @@ $spacing: 2.25rem;
       }
 
       img {
-        margin-bottom: .6rem;
+        margin-bottom: 0.6rem;
       }
 
       p {
         text-transform: uppercase;
         margin-bottom: 0;
-        font-size: .7rem;
+        font-size: 0.7rem;
         letter-spacing: 1px;
         line-height: 1.2;
         font-weight: 700;
@@ -152,7 +154,6 @@ $spacing: 2.25rem;
       &:last-child {
         margin-right: 0;
       }
-
     }
 
     // .icon {
@@ -166,7 +167,6 @@ $spacing: 2.25rem;
     }
   }
   &-inner {
-    
   }
   &-item {
     .img-lazy {
@@ -180,8 +180,56 @@ $spacing: 2.25rem;
       }
     }
   }
+
+  &-continuous {
+    .carousel-item {
+      // width: 33.333%;
+      // display: flex;
+      img {
+        padding: 2rem 1rem;
+        width: 25%;
+      }
+    }
+    .carousel-item-next,
+    .carousel-item-prev,
+    .carousel-item.active {
+      transition: transform 10s linear;
+    }
+
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      display: flex;
+    }
+
+    /* display 3 */
+    @media (min-width: 768px) {
+      .carousel-inner .carousel-item-right.active,
+      .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+      }
+
+      .carousel-inner .carousel-item-left.active,
+      .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+      }
+    }
+
+    .carousel-inner .carousel-item-right,
+    .carousel-inner .carousel-item-left {
+      transform: translateX(0);
+    }
+  }
 }
 
 .slide {
-
 }
+
+// @media (max-width: 768px) {
+//   .carousel-inner .carousel-item > div {
+//       display: none;
+//   }
+//   .carousel-inner .carousel-item > div:first-child {
+//       display: block;
+//   }
+// }

@@ -1,10 +1,10 @@
 .carousel-inner
   each img, index in images
     div(class=`carousel-item ${active(index)}`)
-      - var image = img.src
-      - var alt = img.alt
-      - var imageWidth = '2560'
-      - var imageHeight = '1150'
-      - var sizes = '100vw'
-      include image.pug
-      //- img.d-block.w-100(src=img.src alt=img.alt)
+      //- - var image = img.src
+      //- - var alt = img.alt
+      //- - var imageWidth = '2560'
+      //- - var imageHeight = '1150'
+      //- - var sizes = '100vw'
+      //- include image.pug
+      img.d-block.w-100(src=img.src alt=img.alt)
