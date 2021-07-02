@@ -67,22 +67,36 @@
     margin: 2rem auto;
   }
   &__button {
-    letter-spacing: 1px;
-    background-color: #f3c63e;
-    border: none;
-    border-radius: 2px;
-    padding: 16px 40px;
-    line-height: 1;
+    // letter-spacing: 1px;
+    // background-color: #f3c63e;
+    // border: none;
+    // border-radius: 2px;
+    // padding: 16px 40px;
+    // line-height: 1;
     text-transform: uppercase;
+
+    // margin: 0 auto;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.7rem;
+    background-color: #F6CC24;
+    padding: 0.7rem 1.6rem;
+    font-family: 'Proxima', sans-serif;
+    border: none;
+    // -webkit-transition: background-color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
+    font-weight: 400;
+    border-radius: 2px;
+    right: 0;
     &:hover,
     &:active {
-      background-color: darken(#f3c63e, 8%) !important;
+      background-color: #f0bc12 !important;
       &:focus {
-        box-shadow: 0 0 5px 0.2rem #f3c63e50 !important;
+        box-shadow: none !important;
       }
     }
     &:focus {
-      box-shadow: 0 0 5px 0.2rem #f3c63e50 !important;
+      box-shadow: none;
     }
     .original__price {
       color: #000;

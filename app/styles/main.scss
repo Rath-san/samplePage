@@ -360,17 +360,30 @@ $shadow-color: #000;
 }
 
 .presets {
-  padding: 3rem 0 3rem 0;
+  padding: 3rem 0 5rem 0;
+  overflow: hidden;
   @media screen and (max-width: 768px) {
     padding: 1rem 0 3rem 0;
   }
 
+  .section {
+    &__title {
+      display: initial;
+    }
+    &__text {
+      margin-top: 2.5rem;
+    }
+  }
+
   &__bottom {
     &__paragraphs {
+      position: relative;
+      z-index: 1;
       padding: 0 2rem;
       display: flex;
       @media screen and (max-width: 1024px) {
         flex-direction: column;
+        padding-top: 2.5rem;
         padding: 0;
       }
       > * {
@@ -390,7 +403,7 @@ $shadow-color: #000;
       
       .section {
         &__title {
-          margin-bottom: 2rem;
+          margin-bottom: 0;
           @media screen and (max-width: 768px) {
             margin-bottom: 1rem;
           }
@@ -413,8 +426,9 @@ $shadow-color: #000;
     z-index: 0;
     top: 15px;
 
+
     video {
-      max-width: 75%;
+      max-width: 85%;
       margin: auto;
       display: block;
       margin-top: 3rem;
@@ -422,9 +436,9 @@ $shadow-color: #000;
     }
 
     &--2 {
-      width: 50%;
+      width: 70%;
       margin: 0;
-      top: 0%;
+      top: -50%;
       right: 10%;
       opacity: .5;
       @media screen and (max-width: 768px) {

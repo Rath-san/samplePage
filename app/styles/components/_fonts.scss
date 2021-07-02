@@ -1,7 +1,7 @@
 @font-face {
   font-family: ModeNine;
   src: url('/fonts/modenine.ttf') format('truetype');
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
   font-display: fallback;
 }
@@ -60,12 +60,12 @@ main {
   }
 
   &__title {
-    font-size: 2rem;
+    font-size: 30px;
     font-weight: 600;
     line-height: 1;
     margin-bottom: 2rem;
     @media screen and (max-width: 1024px) {
-      font-size: 32px;
+      font-size: 30px;
       margin-bottom: 1rem;
     }
 
