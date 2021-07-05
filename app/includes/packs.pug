@@ -2,13 +2,13 @@
   var packs = [
     {
       src: "/images/hud_box.png",
-      link: "https://google.com",
-      alt: ""
+      link: "",
+      alt: "mHud elements collection pack presented as cover box"
     },
     {
       src: "/images/hud_2_box.png",
-      link: "https://google.com",
-      alt: ""
+      link: "https://www.motionvfx.com/store,mhud-2,p2072.html",
+      alt: "mHud 2 elements collection pack presented as cover box"
     }
   ]
 a.nav(name="packs")
@@ -23,11 +23,18 @@ section.packs
             .packs__comp__items
               each pack in packs
                 a.packs__comp__item(href=pack.link, target="_blank", rel="noopener noreferrer", height="237")
-                  img(src=pack.src, alt="", srcset="")
+                  - var image = pack.src
+                  - var alt = pack.alt
+                  - var imageWidth = '250'
+                  - var imageHeight = '250'
+                  - var sizes= "(max-width: 440px) 170px, 240px"
+                  include components/image.pug
+                  //- img(src=pack.src, alt="", srcset="")
+                  //- 
             //- .packs__comp__logo
               include components/mocha-logo.pug
           p.section__text.packs__text.section__text__content
-            | If you own mHUD 1, please purchase mHUD 2 powerem by Mocha and a trackable mHUD1 Version will be automatically installed during mHUD 2 insthllation proces.
+            | If you own mHUD 1, please purchase mHUD 2 powered by Mocha and a trackable mHUD1 Version will be automatically installed during mHUD 2 installation process.
           a.btn.btn-primary.packs__button(href="http://", target="_blank", rel="noopener noreferrer")
             | buy now 
             span.original__price $59

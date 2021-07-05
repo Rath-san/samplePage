@@ -1,8 +1,8 @@
 .minstaller {
   &__section {
-    padding: 0 5% 6rem 5%;
-    @media screen and (max-width: 420px) {
-      padding: 0 5% 6rem 5%;
+    padding: 3rem 5% 10rem 5%;
+    @media screen and (max-width: 768px) {
+      padding: 0 5% 3rem 5%;
     }
   }
   text-align: center;

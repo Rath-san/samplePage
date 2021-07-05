@@ -1,7 +1,7 @@
 section.header.text--light.text-center
   .header__bg(style="opacity:0")
     - var image1 = `/images/mHUD_top.jpg`
-    - var sizes = ''
+    - var sizes = '(max-width: 768px) 200vw'
     - var alt = 'Happy couple'
     - var imageWidth = '2400'
     - var imageHeight = '1172'
@@ -21,11 +21,14 @@ section.header.text--light.text-center
         .header__content.section__text__content
           .header__logo
             - var image = `/images/logo_mHUD.png`
-            - var alt = 'mTransition Fade logo'
+            - var alt = 'hHud logo'
             - var imageWidth = '900'
             - var imageHeight = '400'
             - var placeholder = getParsedImage(image)
             - var srcset = getParsedImage(image, 'srcSet')
+            -
+              var sizes = `(max-width: 768px) 200px, 
+                           320px`
             img(
               style="opacity:0"
               alt=alt,
@@ -35,4 +38,4 @@ section.header.text--light.text-center
               sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
             )
             p.header__subtitle(style="opacity:0") Pack Of Trackable Info Callouts For mTracker 3D.
-          p.header__text.header__text--bottom *PRE-KEYED PRORES 4444 FILES FOR ANY COMPOSITING SOFTWARE INCLUDED.
+          p.header__text.header__text--bottom *PRE-KEYED PROCESS 4444 FILES FOR ANY COMPOSITING SOFTWARE INCLUDED.

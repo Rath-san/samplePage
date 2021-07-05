@@ -9,7 +9,7 @@
   ]
 
 - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
-- var notCollapsedItems = 4
+- var notCollapsedItems = 6
 
 section.presets.bg--dark.text-center
   //- .image__background__shadow
@@ -65,16 +65,17 @@ section.presets.bg--dark.text-center
                                   img.img-fluid(src=`${imageName}.jpg` alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
                                 .preview-video-container(style='display: none')
 
-                      .col-12.col-btn-collapse
-                        button.button.btn-collapse(type='button' data-toggle='-collapse' data-target=`.prev-collapse-${section.label.toLowerCase()}` aria-expanded='false')
-                          span
-                            span.label-collapsed Show more
-                            span.label-expanded Collapse
-                            |  (#{`${section.count - notCollapsedItems}`})
-                          svg.btn-collapse-arrow(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 36.6 61.5' style='enable-background:new 0 0 36.6 61.5;' xml:space='preserve' height='20')
-                            style(type='text/css').
-                              .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
-                            polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
+                      - if (section.count > notCollapsedItems)
+                        .col-12.col-btn-collapse
+                          button.button.btn-collapse(type='button' data-toggle='-collapse' data-target=`.prev-collapse-${section.label.toLowerCase()}` aria-expanded='false')
+                            span
+                              span.label-collapsed Show more
+                              span.label-expanded Collapse
+                              |  (#{`${section.count - notCollapsedItems}`})
+                            svg.btn-collapse-arrow(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 36.6 61.5' style='enable-background:new 0 0 36.6 61.5;' xml:space='preserve' height='20')
+                              style(type='text/css').
+                                .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
+                              polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
             - currentIndex += section.count
     .row.text-left
       .col-12
