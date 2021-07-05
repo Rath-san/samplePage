@@ -151,10 +151,14 @@ html(lang="en")
             src: `/images/mini_slider_4.jpg`,
             alt: ''
           },
-          //- {
-          //-   src: `/images/mini_slider_5`,
-          //-   alt: ''
-          //- }
+          {
+            src: `/images/mini_slider_5`,
+            alt: ''
+          },
+          {
+            src: `/images/mini_slider_6`,
+            alt: ''
+          }
         ]
 
       section.showcase
@@ -188,14 +192,6 @@ html(lang="en")
           {
             src: `/images/logo_4.png`,
             alt: ``
-          },
-          {
-            src: `/images/logo_5.png`,
-            alt: ``
-          },
-          {
-            src: `/images/logo_6.png`,
-            alt: ``
           }
         ]
       section.showcase.bg__dark.showcase__2
@@ -211,7 +207,6 @@ html(lang="en")
                   img(src=img.src, alt=img.alt, srcset="")
               .image__footer
                 button.btn become a patron
-            img(src=`/images/campaign_donate.jpg`, alt="", srcset="")
         .case__item__body
           .container
             .row
@@ -220,6 +215,8 @@ html(lang="en")
                   h2.section__subtitle A complete visual toolbox
                   p.section__title Establish a successful donation campaign
                   p.section__text Whatever your goal is - introducing it in a visually appealing form will help you reach it and stay in the memory of more people. Make your cause more convincing and extend your fanbase!
+                .section__body
+                  img(src=`/images/campaign_donate.png`, alt="", srcset="")
 
       //- include includes/split-image.pug
       include includes/presets.pug
