@@ -1,6 +1,6 @@
 -
   var sections = [
-    { 'name':'Campaign Element', 'label': 'Campaign', 'count': 21,},
+    { 'name':'Campaign_Element', 'label': 'Campaign', 'count': 20,},
     { 'name':'Donation', 'label': 'Donation', 'count': 12,},
     { 'name':'Infographic', 'label': 'Infographic', 'count': 7,},
     { 'name':'List', 'label': 'List', 'count': 7,},
@@ -9,7 +9,7 @@
 - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
 
 //- - var entriesLength = 
-- var collapseAfterLength = 6
+- var notCollapsedItems = 4
 - var isEven = (data) => data % 2 == 0
 
 section.presets.bg--dark.text-center
@@ -32,13 +32,12 @@ section.presets.bg--dark.text-center
           each section in sections
             - var minColumns = 2
             - sectionItems = currentIndex + section.count - 1
-            - var isEven = section.count % 2 == 0
             .videoList.center
               .section__title=section.label
               .cover.product-list-wrapper
                 #productList.product-list
                   .container.site-content.container-lg
-                    #productsContainer.row.product-grid
+                    #productsContainer.row.product-grid.justify-content-center
                       //- - for(var i = 1; i <= entriesLength; i++)
                         - var num = i.toString().length < 2 ? `0${i}` : i
                         - var imageName = `/images/img/${num}`
@@ -51,9 +50,9 @@ section.presets.bg--dark.text-center
                         //- - var baseUrl = 'https://s3.motionvfx.com/mvfxpublic/images/mhud'
 
                         - var num = i.toString().length < 2 ? `0${i}` : i
-                        - var imageName = `${baseUrl}/jpg/${section.name} ${num}`
-                        - var videoName = `${baseUrl}/mp4/${section.name} ${num}`
-                        div(class=`col-6 col-lg-4 product ${localLoopIndex > notCollapsedItems ? `collapse prev-collapse-${section.label.toLowerCase()}` : ''} ${!isEven && i === entriesLength ? 'offset-3' : ''} offset-lg-0` id=`prev-collapse-${i}`)
+                        - var imageName = `${baseUrl}/jpg/${section.name}_${num}`
+                        - var videoName = `${baseUrl}/mp4/${section.name}_${num}`
+                        div(class=`col-6 col-lg-4 product ${localLoopIndex > notCollapsedItems ? `collapse prev-collapse-${section.label.toLowerCase()}` : ''}` id=`prev-collapse-${i}`)
                           - localLoopIndex++
                           a
                             .product-preview
@@ -74,7 +73,7 @@ section.presets.bg--dark.text-center
                               style(type='text/css').
                                 .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
                               polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
-            - currentIndex += section.count
+
 
     //- .row.text-left
       .col-12
