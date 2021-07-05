@@ -107,3 +107,28 @@
     }
   }
 }
+
+.image__comp {
+  display: flex;
+  &__side {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    .image {
+      &__head {
+
+      }
+      &__body {
+        display: flex;
+        flex-direction: column;
+        img {
+          max-width: 50%;
+        }
+      }
+      &__footer {
+
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@ import './libs/lazy-images'
 // import { doOnVisible } from './libs/do-on-visible'
 // import { animateOnScroll } from './animate-on-scroll'
 import './vendor/scroll_to_anchor'
-import './vendor/menu'
+// import './vendor/menu'
 // import Splitting from 'splitting'
 ;(() => {
   window.addEventListener('load', () => {

@@ -22,6 +22,7 @@ html(lang="en")
     script(src='scripts/vendor/jquery-3.4.1.min.js')
     script(src='scripts/vendor/bootstrap-4.1.3.bundle.min.js')
     script(src='scripts/vendor/custom_pages_wrap.js')
+    script(src='scripts/vendor/menu.js')
 
     - var mediaRootUrl = '/images'
     - var templateImagesUrl = '/images'
@@ -59,18 +60,19 @@ html(lang="en")
       a.nav(name="trailer")
       - var sectionClasses = 'trailer bg__light'
       - var title = "WATCH TRAILER"
-      - var subtitle = 'See the stunning results!'
-      - var text = placeholders.text.loremShort
+      - var subtitle = 'See them at work!'
+      - var text = 'View the presets in action and watch them create a unique visual form of the ideas you want to realize.'
       - var videoLink = placeholders.video.youtube
       //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
       - var videoTitle = placeholders.video.videoTitle
       include includes/video.pug
+
       a.nav(name="tutorial")
       //- - var background = '/images/tutorial_bg.jpg'
       - var sectionClasses = 'tutorial bg__dark'
       - var title = "WATCH TUTORIAL"
-      - var subtitle = 'Learn the workflow!'
-      - var text = placeholders.text.loremShort
+      - var subtitle = 'Learn to maximize your effects!'
+      - var text = 'Get the know-how to make your work the most effective and master your campaigns!'
       - var videoLink = placeholders.video.youtube
       //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
       - var videoTitle = placeholders.video.videoTitle
@@ -80,22 +82,22 @@ html(lang="en")
       -
         var images = [
           {
-            src: placeholders.image.hd(),
+            src: `/images/slide_1.jpg`,
             alt: 'This is alt',
             //- icon: '/images/solid.png',
-            text: 'solid'
+            //- text: 'solid'
           },
           {
-            src: placeholders.image.hd(),
+            src: `/images/slide_2.jpg`,
             alt: 'This is alt',
             //- icon: '/images/pixel.png',
-            text: 'pixelate'
+            //- text: 'pixelate'
           },
           {
-            src: placeholders.image.hd(),
+            src: `/images/slide_3.jpg`,
             alt: 'This is alt',
             //- icon: '/images/blur.png',
-            text: 'blur'
+            //- text: 'blur'
           }
         ]
       
@@ -116,9 +118,9 @@ html(lang="en")
               .row
                 div(class=`col-12`)
                   .section__head
-                    h2.section__subtitle Choose the right look for your purpose
+                    h2.section__subtitle Illustrate diverse concepts & bring your ideas to life
                     p.section__title Different effect styles
-                    p.section__text Use solid color, blur or pixellate to match the topic you're working with. Customize the details for each of these styles and create a cohesive composition.
+                    p.section__text This collection of handy, pre-animated elements lets you build a whole layout to illustrate your videos and enrich your edits. Attract donators, supporters, and clients, and raise enough money to accomplish the goal.
                 //- div(class=`col-md-6 offset-md-6`)
                   .carousel-indicators__wrapper
                     ol.carousel-indicators
@@ -130,12 +132,36 @@ html(lang="en")
                           p=img.text
                     .carousel-progress
       
+      -
+        var miniImages = [
+          {
+            src: `/images/mini_slider_1.jpg`,
+            alt: ''
+          },
+          {
+            src: `/images/mini_slider_2.jpg`,
+            alt: ''
+          },
+          {
+            src: `/images/mini_slider_3.jpg`,
+            alt: ''
+          },
+          {
+            src: `/images/mini_slider_4.jpg`,
+            alt: ''
+          },
+          //- {
+          //-   src: `/images/mini_slider_5`,
+          //-   alt: ''
+          //- }
+        ]
+
       section.showcase
         div#carouselContinuous(class=`case__item case__item--2 carousel slide carousel-continuous`)
           .case__item__bg
             //- include includes/components/slider.pug
             .carousel-inner
-              each img, index in images
+              each img, index in miniImages
                 div(class=`carousel-item ${active(index)}`)
                   //- - var image = img.src
                   //- - var alt = img.alt
@@ -143,18 +169,48 @@ html(lang="en")
                   //- - var imageHeight = '1150'
                   //- - var sizes = '100vw'
                   //- include image.pug
-                  img.d-block(src='https://via.placeholder.com/660x660' alt=img.alt)
+                  img.d-block(src=img.src alt=img.alt)
+      -
+        var logos = [
+          {
+            src: `/images/logo_1.png`,
+            alt: ``
+          },
+          {
+            src: `/images/logo_2.png`,
+            alt: ``
+          },
+          {
+            src: `/images/logo_3.png`,
+            alt: ``
+          },
+          {
+            src: `/images/logo_4.png`,
+            alt: ``
+          }
+        ]
       section.showcase.bg__dark.showcase__2
         .case__item__bg
-          img(src=placeholders.image.hd(), alt="", srcset="")
+          .image__comp
+            .img--main
+              img(src=`/images/campaign.jpg`, alt="", srcset="")
+            .image__comp__side
+              .image__head
+                p helfpul companies
+              .image__body
+                each img, index in logos
+                  img(src=img.src, alt=img.alt, srcset="")
+              .image__footer
+                button.btn become a patron
+            img(src=`/images/campaign_donate.jpg`, alt="", srcset="")
         .case__item__body
           .container
             .row
               div(class=`col-12`)
                 .section__head
-                  h2.section__subtitle Choose the right look for your purpose
-                  p.section__title Different effect styles
-                  p.section__text Use solid color, blur or pixellate to match the topic you're working with. Customize the details for each of these styles and create a cohesive composition.
+                  h2.section__subtitle A complete visual toolbox
+                  p.section__title Establish a successful donation campaign
+                  p.section__text Whatever your goal is - introducing it in a visually appealing form will help you reach it and stay in the memory of more people. Make your cause more convincing and extend your fanbase!
 
       //- include includes/split-image.pug
       include includes/presets.pug
