@@ -62,7 +62,8 @@ html(lang="en")
       - var title = "WATCH TRAILER"
       - var subtitle = 'See them at work!'
       - var text = 'View the presets in action and watch them create a unique visual form of the ideas you want to realize.'
-      - var videoLink = placeholders.video.youtube
+      //- - var videoLink = "https://www.youtube.com/embed/pBP5UxWD2BA?rel=0"
+      - var videoLink = "pBP5UxWD2BA"
       //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
       - var videoTitle = placeholders.video.videoTitle
       include includes/video.pug
@@ -73,7 +74,7 @@ html(lang="en")
       - var title = "WATCH TUTORIAL"
       - var subtitle = 'Learn to maximize your effects!'
       - var text = 'Get the know-how to make your work the most effective and master your campaigns!'
-      - var videoLink = placeholders.video.youtube
+      - var videoLink = "Q3U2_llmIIE"
       //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
       - var videoTitle = placeholders.video.videoTitle
       include includes/video.pug
@@ -120,7 +121,11 @@ html(lang="en")
                   .section__head
                     h2.section__subtitle Illustrate diverse concepts & bring your ideas to life
                     //- this will be changing
-                    p.section__title Different effect styles
+                    #carouselExamplesTitles.carousel.slide.carousel-fade
+                    .carousel-inner
+                      p(class=`carousel-item section__title active`) Different effect styles
+                      p(class=`carousel-item section__title`) Different effect styles2
+                      p(class=`carousel-item section__title`) Different effect styles3
                     p.section__text This collection of handy, pre-animated elements lets you build a whole layout to illustrate your videos and enrich your edits. Attract donators, supporters, and clients, and raise enough money to accomplish the goal.
                 //- div(class=`col-md-6 offset-md-6`)
                   .carousel-indicators__wrapper
@@ -152,11 +157,11 @@ html(lang="en")
             alt: ''
           },
           {
-            src: `/images/mini_slider_5`,
+            src: `/images/mini_slider_5.jpg`,
             alt: ''
           },
           {
-            src: `/images/mini_slider_6`,
+            src: `/images/mini_slider_6.jpg`,
             alt: ''
           }
         ]
@@ -201,7 +206,7 @@ html(lang="en")
               img(src=`/images/campaign.jpg`, alt="", srcset="")
             .image__comp__side
               .image__head
-                p helfpul companies
+                p helpful companies
               .image__body
                 each img, index in logos
                   img(src=img.src, alt=img.alt, srcset="")

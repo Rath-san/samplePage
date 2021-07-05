@@ -14,7 +14,8 @@ section(class=`video ${sectionClasses}`)
           h2.section__subtitle=title
           p.section__title #{subtitle}
           p.section__text #{text}
-        .yt.embed-responsive.embed-responsive-16by9.animated.animated--fade--bottom
+        lite-youtube(videoid=videoLink style=`background-image: url('https://i.ytimg.com/vi/${videoLink}/maxresdefault.jpg');`)
+        //- .yt.embed-responsive.embed-responsive-16by9.animated.animated--fade--bottom
           iframe(
             src=videoLink,
             srcdoc=videoPlaceholder ? `

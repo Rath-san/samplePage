@@ -20,6 +20,11 @@
 @import './layout/split-image';
 @import './utils/bg';
 @import './components/slider';
+@import '~lite-youtube-embed/src/lite-yt-embed.css';
+
+lite-youtube {
+  max-width: unset;
+}
 
 img {
   max-width: 100%;
