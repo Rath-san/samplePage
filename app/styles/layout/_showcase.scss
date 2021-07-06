@@ -23,6 +23,11 @@
     }
     .contents__wrapper {
       // transform: translateY(-25%);
+      &--big {
+        svg {
+          width: 70%;
+        }
+      }
     }
     svg {
       width: 55%;

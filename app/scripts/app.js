@@ -41,7 +41,7 @@ import 'lite-youtube-embed'
     // const hideTextOnSlide = ()
 
     const sliderOptions = {
-      interval: 10000,
+      interval: 5000,
       keyboard: true,
       ride: 'carousel',
       pause: false

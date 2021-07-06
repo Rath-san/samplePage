@@ -10,6 +10,21 @@
     padding: 10rem 0;
   }
 
+  .fd {
+    &--1 {
+      top: 10%;
+      position: absolute;
+      width: 12%;
+      right: calc(-200px + 15vw);
+    }
+    &--2 {
+      position: absolute;
+      top: 10%;
+      left: calc(-100px + 10vw);
+      width: 15%;
+    }
+  }
+
   &__comp {
     position: absolute;
     top: 0;
