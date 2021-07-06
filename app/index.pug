@@ -117,31 +117,34 @@ html(lang="en")
           .case__item__body
             .container
               .row
-                div(class=`col-12`)
+                -
+                  var sliderTitler = [
+                    'Different effect styles',
+                    'test test derest',
+                    'Different effect styles3'
+                  ]
+                div(class=`col-6`)
                   .section__head
                     h2.section__subtitle Illustrate diverse concepts & bring your ideas to life
                     //- this will be changing
-                    -
-                      var sliderTitler = [
-                        'Different effect styles',
-                        'test test derest',
-                        'Different effect styles3'
-                      ]
-                    .carousel-test
+                    .carousel-test.carousel__titles
                       each sT, index in sliderTitler
                         p(class=`carousel-title section__title ${active(index)}`)=sT
                     p.section__text This collection of handy, pre-animated elements lets you build a whole layout to illustrate your videos and enrich your edits. Attract donators, supporters, and clients, and raise enough money to accomplish the goal.
-                //- div(class=`col-md-6 offset-md-6`)
-                  .carousel-indicators__wrapper
-                    ol.carousel-indicators
-                      each img, index in images
-                        li(class=active(index))(data-target='#carouselExamples' data-slide-to=index)
-                          div(class=`css-icon css-icon--${img.text}`)
-                          //- .icon
-                          //- img(src=img.icon, alt="")
-                          p=img.text
-                    .carousel-progress
-      
+                .col-6
+                  .carousel-test.carousel__contents
+                    each sT, index in sliderTitler
+                      div(class=`carousel-title section__title ${active(index)}`)
+                        - if (index === 0)
+                          img.showcase__bg__deco(src='/images/donna.png', alt="", srcset="")
+                          .contents__wrapper
+                            include includes/svg/artist.pug
+                        - if (index === 1)
+                          .contents__wrapper
+                            include includes/svg/it.pug
+                        - if (index === 2)
+                          .contents__wrapper
+                            include includes/svg/forest_1.pug
       -
         var miniImages = [
           {
@@ -210,12 +213,12 @@ html(lang="en")
               img(src=`/images/campaign.jpg`, alt="", srcset="")
             .image__comp__side
               .image__head
-                p helpful companies
+                p Helpful companies
               .image__body
                 each img, index in logos
                   img(src=img.src, alt=img.alt, srcset="")
               .image__footer
-                button.btn become a patron
+                button.btn.btn-cta Become a patron
         .case__item__body
           .container
             .row

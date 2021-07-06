@@ -3,6 +3,13 @@
 }
 
 .btn {
+  &-cta {
+    color: #fff;
+    background-color: $color-cta;
+    text-transform: uppercase;
+    font-size: .8rem;
+    pointer-events: none;
+  }
   &-collapse {
     margin-top: 2rem;
   }

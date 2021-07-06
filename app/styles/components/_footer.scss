@@ -10,6 +10,17 @@
     padding: 10rem 0;
   }
 
+  &__comp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    svg {
+      width: 20%;
+    }
+  }
+
   &__title {
     // margin-bottom: 2rem;
   }

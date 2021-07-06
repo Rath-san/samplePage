@@ -41,18 +41,26 @@ import 'lite-youtube-embed'
     // const hideTextOnSlide = ()
 
     const sliderOptions = {
-      interval: 5000,
+      interval: 2000,
       keyboard: true,
       ride: 'carousel',
       pause: false
     }
 
     const slider = $('#carouselExamples').carousel(sliderOptions)
-    const sliderTitles = Array.from(document.querySelectorAll('#carouselExamples .carousel-title'))
+    const sliderTitles = Array.from(document.querySelectorAll('#carouselExamples .carousel__titles .carousel-title'))
+    const sliderContents = Array.from(document.querySelectorAll('#carouselExamples .carousel__contents .carousel-title'))
+
+    const sliderElements = [...sliderTitles, ...sliderContents]
 
     slider.on('slide.bs.carousel', function (e) {
       // console.log(e.to)
-      sliderTitles.forEach(i => i.classList.remove('out'))
+      sliderElements.forEach(i => i.classList.remove('out'))
+
+      sliderContents[e.from].classList.add('out')
+      sliderContents[e.from].classList.remove('active')
+      sliderContents[e.to].classList.add('active')
+
       sliderTitles[e.from].classList.add('out')
       sliderTitles[e.from].classList.remove('active')
       sliderTitles[e.to].classList.add('active')
