@@ -108,12 +108,6 @@ html(lang="en")
         div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade`)
           .case__item__bg
             include includes/components/slider.pug
-            //- - var image = `/images/fade_bg_1.jpg`
-            //- - var alt = ''
-            //- - var imageWidth = '2560'
-            //- - var imageHeight = '1150'
-            //- include includes/components/image.pug
-            //- img(src=placeholders.image.hd(), alt="")
           .case__item__body
             .container
               .row
@@ -123,15 +117,7 @@ html(lang="en")
                     'test test derest',
                     'Different effect styles3'
                   ]
-                div(class=`col-6`)
-                  .section__head
-                    h2.section__subtitle Illustrate diverse concepts & bring your ideas to life
-                    //- this will be changing
-                    .carousel-test.carousel__titles
-                      each sT, index in sliderTitler
-                        p(class=`carousel-title section__title ${active(index)}`)=sT
-                    p.section__text This collection of handy, pre-animated elements lets you build a whole layout to illustrate your videos and enrich your edits. Attract donators, supporters, and clients, and raise enough money to accomplish the goal.
-                .col-6
+                .col-xs-12.col-md-6.order-xs-12.order-md-12
                   .carousel__contents
                     each sT, index in sliderTitler
                       div(class=`carousel-title section__title ${active(index)}`)
@@ -145,6 +131,15 @@ html(lang="en")
                         - if (index === 2)
                           .contents__wrapper
                             include includes/svg/forest_1.pug
+                .col-xs-12.col-md-6.order-xs-1.order-md-1
+                  .section__head
+                    h2.section__subtitle Illustrate diverse concepts & bring your ideas to life
+                    //- this will be changing
+                    .carousel-test.carousel__titles
+                      each sT, index in sliderTitler
+                        p(class=`carousel-title section__title ${active(index)}`)=sT
+                    p.section__text This collection of handy, pre-animated elements lets you build a whole layout to illustrate your videos and enrich your edits. Attract donators, supporters, and clients, and raise enough money to accomplish the goal.
+
       -
         var miniImages = [
           {
@@ -206,7 +201,7 @@ html(lang="en")
             alt: ``
           }
         ]
-      section.showcase.bg__dark.showcase__2
+      section.showcase.bg__dark.showcase--target
         .case__item__bg
           .image__comp
             .img--main
@@ -222,10 +217,11 @@ html(lang="en")
         .case__item__body
           .container
             .row
-              .col-xs-6.col-md-12.offset-md-12
+              .col-xs-6.col-md-12.order-md-12
                 .section__body
-                  img(src=`/images/campaign_donate.png`, alt="", srcset="")
-              div(class=`col-xs-6 col-md-12 offset-md-1`)
+                  .target
+                    img(src=`/images/campaign_donate.png`, alt="", srcset="")
+              div(class=`col-xs-6 col-md-12 order-md-1`)
                 .section__head
                   h2.section__subtitle A complete visual toolbox
                   p.section__title Establish a successful donation campaign
