@@ -132,7 +132,7 @@ html(lang="en")
                         p(class=`carousel-title section__title ${active(index)}`)=sT
                     p.section__text This collection of handy, pre-animated elements lets you build a whole layout to illustrate your videos and enrich your edits. Attract donators, supporters, and clients, and raise enough money to accomplish the goal.
                 .col-6
-                  .carousel-test.carousel__contents
+                  .carousel__contents
                     each sT, index in sliderTitler
                       div(class=`carousel-title section__title ${active(index)}`)
                         - if (index === 0)

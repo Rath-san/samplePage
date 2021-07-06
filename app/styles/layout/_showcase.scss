@@ -6,19 +6,29 @@
   &__bg {
     &__deco {
       position: absolute;
-      top: -25%;
-      left: -250%;
+      top: 0%;
+      left: -120%;
       // width: 25%;
       max-width: 200px;
     }
   }
 
   .carousel__contents {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    .carousel-title {
+      width: 100%;
+      margin: auto;
+    }
     .contents__wrapper {
-      transform: translateY(-25%);
+      // transform: translateY(-25%);
     }
     svg {
-      width: 100%;
+      width: 55%;
+      margin: auto;
+      display: block;
+      // transform: translateY(-10%);
     }
     .svg {
       &-artist {

@@ -243,11 +243,11 @@ $spacing: 2.25rem;
   margin-bottom: 0;
   position: absolute;
   will-change: opacity;
-  transform: translate3d(0, 10px, 0);
+  // transform: translate3d(0, 10px, 0);
   transition: all .6s ease-out !important;
   opacity: 0;
   &.out {
-    transform: translate3d(0,-10px,0);
+    // transform: translate3d(0,-10px,0);
   }
   &.active {
     transform: translate3d(0,0,0);
