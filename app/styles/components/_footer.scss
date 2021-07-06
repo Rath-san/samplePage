@@ -14,14 +14,23 @@
     &--1 {
       top: 10%;
       position: absolute;
-      width: 12%;
+      width: 300px;
       right: calc(-200px + 15vw);
+      @media screen and (max-width: 768px) {
+        top: 5%;
+        right: calc(-200px + 25vw);
+        width: 150px;
+      }
     }
     &--2 {
       position: absolute;
       top: 10%;
       left: calc(-100px + 10vw);
-      width: 15%;
+      width: 300px;
+      @media screen and (max-width: 768px) {
+        top: 5%;
+        width: 150px;
+      }
     }
   }
 
