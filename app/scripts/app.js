@@ -48,14 +48,22 @@ import 'lite-youtube-embed'
     }
 
     const slider = $('#carouselExamples').carousel(sliderOptions)
-    const sliderTitles = Array.from(document.querySelectorAll('#carouselExamples .carousel__titles .carousel-title'))
-    const sliderContents = Array.from(document.querySelectorAll('#carouselExamples .carousel__contents .carousel-title'))
+    const sliderTitles = Array.from(
+      document.querySelectorAll(
+        '#carouselExamples .carousel__titles .carousel-title'
+      )
+    )
+    const sliderContents = Array.from(
+      document.querySelectorAll(
+        '#carouselExamples .carousel__contents .carousel-title'
+      )
+    )
 
     const sliderElements = [...sliderTitles, ...sliderContents]
 
     slider.on('slide.bs.carousel', function (e) {
       // console.log(e.to)
-      sliderElements.forEach(i => i.classList.remove('out'))
+      sliderElements.forEach((i) => i.classList.remove('out'))
 
       sliderContents[e.from].classList.add('out')
       sliderContents[e.from].classList.remove('active')
@@ -91,6 +99,10 @@ import 'lite-youtube-embed'
 
         next.children(':first-child').clone().appendTo($(this))
       }
+    })
+    // carousel-item", "active", "carousel-item-left", value: "carousel-item active carousel-item-left"
+    window.addEventListener('resize', () => {
+      $('#carouselContinuous').carousel('next')
     })
     // const sliderProgress = $('.carousel-progress')
 

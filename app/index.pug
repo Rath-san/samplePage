@@ -211,7 +211,7 @@ html(lang="en")
           .image__comp
             .img--main
               img(src=`/images/campaign.jpg`, alt="", srcset="")
-            .image__comp__side
+            .image__comp__side.d-none.d-xl-block
               .image__head
                 p Helpful companies
               .image__body
@@ -222,13 +222,14 @@ html(lang="en")
         .case__item__body
           .container
             .row
-              div(class=`col-12`)
+              .col-xs-6.col-md-12.offset-md-12
+                .section__body
+                  img(src=`/images/campaign_donate.png`, alt="", srcset="")
+              div(class=`col-xs-6 col-md-12 offset-md-1`)
                 .section__head
                   h2.section__subtitle A complete visual toolbox
                   p.section__title Establish a successful donation campaign
                   p.section__text Whatever your goal is - introducing it in a visually appealing form will help you reach it and stay in the memory of more people. Make your cause more convincing and extend your fanbase!
-                .section__body
-                  img(src=`/images/campaign_donate.png`, alt="", srcset="")
 
       //- include includes/split-image.pug
       include includes/presets.pug
