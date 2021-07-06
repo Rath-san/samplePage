@@ -1,6 +1,11 @@
 section.header.text--light.text-center
-  .header__bg(style="opacity:0")
-    img(data-src=`/images/header.jpg`, alt="", srcset="")
+  .header__bg(style="opacity:1")
+    //- img(data-src=`/images/header.jpg`, alt="", srcset="")
+    - var image = `/images/header.jpg`
+    - var alt = 'Woman in cinematic alley'
+    - var width = '2560'
+    - var height = '1150'
+    include components/image-background.pug
     //- - var image = `/images/header_bg.jpg`
     //- - var alt = 'People in white clothes with censored eyes, looking at their mobile devices'
     //- - var imageWidth = '2005'
