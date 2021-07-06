@@ -5,8 +5,23 @@
     // padding: 1rem 0 3rem 0;
   }
 
-  .section__subtitle {
-    margin-bottom: 2.5rem;
+  .section {
+    &__subtitle {
+      margin-bottom: 2.5rem;
+    }
+    &__text {
+      margin-bottom: 6rem;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 30%;
+        right: 30%;
+        bottom: -2rem;
+        background-color: #fff;
+        height: 1px;
+      }
+    }
   }
 }
 

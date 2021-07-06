@@ -170,18 +170,29 @@ html(lang="en")
 
       section.showcase
         div#carouselContinuous(class=`case__item case__item--2 carousel slide carousel-continuous`)
-          .case__item__bg
-            //- include includes/components/slider.pug
-            .carousel-inner
-              each img, index in miniImages
-                div(class=`carousel-item ${active(index)}`)
-                  //- - var image = img.src
-                  //- - var alt = img.alt
-                  //- - var imageWidth = '2560'
-                  //- - var imageHeight = '1150'
-                  //- - var sizes = '100vw'
-                  //- include image.pug
-                  img.d-block(src=img.src alt=img.alt)
+          .carousel-inner
+            each img, index in miniImages
+              div(class=`carousel-item ${active(index)}`)
+                - var image = img.src
+                - var alt = 'People in white clothes with censored eyes, looking at their mobile devices'
+                - var imageWidth = '600'
+                - var imageHeight = '600'
+                - var placeholder = getParsedImage(image)
+                - var srcset = getParsedImage(image, 'srcSet')
+                img(
+                  alt=alt,
+                  height=height
+                  src=getParsedImage(image, 'src'),
+                  srcset=srcset,
+                  sizes=sizes || '(max-width: 1024px) 300vw, 100vw'
+                )
+                //- - var image = img.src
+                //- - var alt = img.alt
+                //- - var imageWidth = '600'
+                //- - var imageHeight = '600'
+                //- - var sizes = '33.333vw'
+                //- include includes/components/image.pug
+                //- img.d-block(src=img.src alt=img.alt)
       -
         var logos = [
           {
@@ -205,7 +216,13 @@ html(lang="en")
         .case__item__bg
           .image__comp
             .img--main
-              img(src=`/images/campaign.jpg`, alt="", srcset="")
+              //- img(src=`/images/campaign.jpg`, alt="", srcset="")
+              - var image = `/images/campaign.jpg`
+              - var alt = "Kids smiling, cheering and waving to camera"
+              - var imageWidth = '1800'
+              - var imageHeight = '1055'
+              - var sizes = '80vw'
+              include includes/components/image.pug
             .image__comp__side.d-none.d-xl-block
               .image__head
                 p Helpful companies

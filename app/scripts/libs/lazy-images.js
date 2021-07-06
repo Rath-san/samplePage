@@ -11,9 +11,9 @@ import { isCached } from '../utils/utils'
             const img = entry.target.querySelector('img')
             const placeholder = entry.target.querySelector('.placeholder')
 
-            if (isCached(img.dataset.src)) {
-              entry.target.classList.add('img-cached')
-            }
+            // if (isCached(img.dataset.src)) {
+            //   entry.target.classList.add('img-cached')
+            // }
 
             img.onload = () => {
               img.style.opacity = 1

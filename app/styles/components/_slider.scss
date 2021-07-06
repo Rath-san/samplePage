@@ -169,12 +169,14 @@ $spacing: 2.25rem;
   &-inner {
   }
   &-item {
+    // position: relative;
     .img-lazy {
-      img {
-        object-fit: cover;
-      }
+      width: 100%;
+      // img {
+      //   object-fit: cover;
+      // }
       @media screen and (min-width: 768px) {
-        min-height: 600px;
+        // min-height: 600px;
         // max-height: 1440px;
         // object-fit: cover;
       }
@@ -188,6 +190,14 @@ $spacing: 2.25rem;
       img {
         padding: 2rem 1rem;
         width: 25%;
+        // img {
+        //   top: 2rem;
+        //   bottom: 2rem;
+        //   left: 1rem;
+        //   right: 1rem;
+        //   // width: unset;
+        //   // height: unset;
+        // }
         @media screen and (min-width: 576px) and (max-width: 768px) {
           width: 33.333%;
         }
