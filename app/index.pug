@@ -121,11 +121,15 @@ html(lang="en")
                   .section__head
                     h2.section__subtitle Illustrate diverse concepts & bring your ideas to life
                     //- this will be changing
-                    #carouselExamplesTitles.carousel.slide.carousel-fade
-                    .carousel-inner
-                      p(class=`carousel-item section__title active`) Different effect styles
-                      p(class=`carousel-item section__title`) Different effect styles2
-                      p(class=`carousel-item section__title`) Different effect styles3
+                    -
+                      var sliderTitler = [
+                        'Different effect styles',
+                        'test test derest',
+                        'Different effect styles3'
+                      ]
+                    .carousel-test
+                      each sT, index in sliderTitler
+                        p(class=`carousel-title section__title ${active(index)}`)=sT
                     p.section__text This collection of handy, pre-animated elements lets you build a whole layout to illustrate your videos and enrich your edits. Attract donators, supporters, and clients, and raise enough money to accomplish the goal.
                 //- div(class=`col-md-6 offset-md-6`)
                   .carousel-indicators__wrapper

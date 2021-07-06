@@ -26,16 +26,19 @@ import 'lite-youtube-embed'
   window.addEventListener('load', () => {
     // // animate logo
 
-    // // grab logo
-    // const logo = document.querySelector('.svg-logo')
-    // // split by elements
-    // const elements = Array.from(logo.querySelectorAll('g > *'))
-    // // add offset to element
-    // elements.forEach((el, index) => {
-    //   el.style = `
-    //     --path-index: ${index};
-    //   `
-    // })
+    // grab logo
+    const logo = document.querySelector('.svg-logo')
+    // split by elements
+    const elements = Array.from(logo.querySelectorAll('g > *'))
+    // add offset to element
+    elements.forEach((el, index) => {
+      el.style = `
+        --path-index: ${index};
+      `
+    })
+
+    // const showTextOnSlide
+    // const hideTextOnSlide = ()
 
     const sliderOptions = {
       interval: 5000,
@@ -45,9 +48,14 @@ import 'lite-youtube-embed'
     }
 
     const slider = $('#carouselExamples').carousel(sliderOptions)
+    const sliderTitles = Array.from(document.querySelectorAll('#carouselExamples .carousel-title'))
 
     slider.on('slide.bs.carousel', function (e) {
-      console.log(e)
+      // console.log(e.to)
+      sliderTitles.forEach(i => i.classList.remove('out'))
+      sliderTitles[e.from].classList.add('out')
+      sliderTitles[e.from].classList.remove('active')
+      sliderTitles[e.to].classList.add('active')
     })
 
     const sliderOptionsCon = {

@@ -26,6 +26,12 @@ lite-youtube {
   max-width: unset;
 }
 
+.lty-playbtn {
+  &:focus {
+    outline: none;
+  }
+}
+
 img {
   max-width: 100%;
 }
