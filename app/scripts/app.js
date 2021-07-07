@@ -75,10 +75,10 @@ import 'lite-youtube-embed'
     })
 
     const sliderOptionsCon = {
-      interval: 1
-      // keyboard: true,
-      // ride: 'carousel',
-      // pause: false
+      interval: 1,
+      keyboard: true,
+      ride: 'carousel',
+      pause: false
     }
 
     const sliderContinuous = $('#carouselContinuous').carousel(sliderOptionsCon)

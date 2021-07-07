@@ -136,9 +136,13 @@
 
     &__body {
       z-index: 1;
-      padding: 15rem 2rem;
+      padding: 20% 2rem;
       display: flex;
       align-items: center;
+      max-height: 1150px;
+      @media screen and (min-width: 767px) and (max-width: 1300px) {
+        padding: 15rem 2rem;
+      }
       @media screen and (max-width: 767px) {
         position: static !important;
         padding: 2rem 1rem;
@@ -183,7 +187,7 @@
 .img {
   &--main {
     flex: 1;
-    max-height: 1440px;
+    // max-height: 1440px;
     .img-lazy {
       height: 100%;
     }
@@ -225,7 +229,7 @@
         }
       }
       &__footer {
-
+        text-align: center;
       }
     }
   }
