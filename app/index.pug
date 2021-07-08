@@ -14,19 +14,28 @@ html(lang="en")
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;600&family=Roboto&display=swap" rel="stylesheet">
 
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;600&family=Roboto&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;600&family=Roboto&display=swap"></noscript>
+
     //- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet">
 
-    link(href='css/custom_pages_wrap.css' rel="stylesheet" type="text/css")
     link(href='css/bootstrap-4.1.3.min.css' rel="stylesheet" type="text/css")
+
+    <link rel="preload" href="css/custom_pages_wrap.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/custom_pages_wrap.css"></noscript>
+    //- link(href='css/custom_pages_wrap.css' rel="stylesheet" type="text/css")
+    
+
     link(href='css/menu.css' rel='stylesheet' type="text/css")
+    
 
     script(src='scripts/jquery-3.4.1.min.js')
     script(src='scripts/bootstrap-4.1.3.bundle.min.js')
-    script(src='https://s3.motionvfx.com/mvfxpublic/products/templates/source/media/scroll_to_anchor.js')
-    script(src='scripts/custom_pages_wrap.js')
+    script(async src='scripts/custom_pages_wrap.js')
 
-    script(src='scripts/scroll_to_anchor.js')
-    script(src='scripts/menu.js')
+    script(async src='scripts/scroll_to_anchor.js')
+    script(async src='scripts/menu.js')
 
     - var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
 
