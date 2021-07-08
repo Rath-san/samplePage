@@ -41,7 +41,7 @@
         }
       }
       .img-lazy {
-        width: 250px;
+        width: 240px;
         max-width: 100%;
         @media screen and (max-width: 440px) {
           width: 170px;
@@ -69,12 +69,19 @@
     // }
   }
   &__title {
-    max-width: 45rem;
+    max-width: 27rem;
     margin: auto;
+    font-family: 'Proxima';
+    line-height: 49px;
   }
   &__text {
-    max-width: 40em;
+    max-width: 36em;
     margin: 2rem auto;
+    font-family: 'Roboto';
+    line-height: 25px;
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
   }
   &__button {
     // letter-spacing: 1px;

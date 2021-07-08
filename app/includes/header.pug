@@ -1,6 +1,7 @@
-section.header.text--light.text-center
+- var image1 = `/images/mHUD_top.jpg`
+section.header.text--light.text-center(style=`background: url(${getParsedImage(image1)}) center / cover no-repeat`)
   .header__bg(style="opacity:0")
-    - var image1 = `/images/mHUD_top.jpg`
+    //- - var image1 = `/images/mHUD_top.jpg`
     - var sizes = '(max-width: 768px) 200vw'
     - var alt = 'Happy couple'
     - var imageWidth = '2400'
@@ -12,7 +13,8 @@ section.header.text--light.text-center
       height=height
       data-src=getParsedImage(image1, 'src'),
       data-srcset=srcset,
-      sizes=sizes || '(max-width: 1024px) 100vw'
+      sizes=`(max-width: 1024px) 150vw
+             (min-width: 1024px) 100vw`
     )
 
   .container

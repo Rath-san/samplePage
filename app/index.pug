@@ -12,7 +12,9 @@ html(lang="en")
     link(rel='shortcut icon' href='css/static/images/favicon.png' type='image/png')
     //- FONTS
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;600&family=Roboto&display=swap" rel="stylesheet">
+
+    //- <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap" rel="stylesheet">
 
     link(href='css/custom_pages_wrap.css' rel="stylesheet" type="text/css")
     link(href='css/bootstrap-4.1.3.min.css' rel="stylesheet" type="text/css")
@@ -43,7 +45,7 @@ html(lang="en")
         - var subtitle = "View them in action!"
         - var text = "See the power of this plugin in action!"
         - var videoLink = "//player.vimeo.com/video/110782329?title=0&amp;byline=0&amp;portrait=0"
-        - var videoTitle = 'mLut Insta Pack trailer'
+        - var videoTitle = 'mHud trailer'
         include includes/trailer.pug
 
       -
@@ -69,26 +71,35 @@ html(lang="en")
         ]
 
       section.showcase
-        each val, index in showcaseData
-          - var offset = index + 1
-          div(class=`case__item case__item--${index}`)
-            .case__item__bg
-              - var image = val.src
-              - var alt = val.alt
-              - var imageWidth = '2560'
-              - var imageHeight = '1150'
-              - var sizes= "100vw"
-              include includes/components/image.pug
-            .case__item__body
-              .container
-                .row
-                  div(class=`col-md-6 ${offset % 2 !== 0 ? '' : 'offset-lg-6'}`)
-                    .section__head
-                      h2.section__title.deco=val.title
-                      p.section__text.section__text--inset #{'These diversified and customizable footage shifts use shadow and darkness to switch between the videos and build up the suspense.'}
+        #carouselExampleSlidesOnly.carousel.slide.carousel-fade(data-ride='carousel', data-interval=5000 data-pause=false)
+          .carousel-inner
+            each val, index in showcaseData
+              //- .carousel-item.active
+              //-   img.d-block.w-100(src='...' alt='First slide')
+              //- .carousel-item
+              //-   img.d-block.w-100(src='...' alt='Second slide')
+              //- .carousel-item
+              //-   img.d-block.w-100(src='...' alt='Third slide')
+              .carousel-item(class=`${index === 0 ? 'active': ''}`)
+                - var offset = index + 1
+                div(class=`case__item case__item--${index}`)
+                  .case__item__bg
+                    - var image = val.src
+                    - var alt = val.alt
+                    - var imageWidth = '2560'
+                    - var imageHeight = '1150'
+                    - var sizes= "100vw"
+                    include includes/components/image.pug
+                  .case__item__body
+                    .container
+                      .row
+                        div(class=`col-md-6 ${offset % 2 !== 0 ? '' : 'offset-lg-6'}`)
+                          .section__head
+                            h2.section__title.deco=val.title
+                            p.section__text.section__text--inset #{'These diversified and customizable footage shifts use shadow and darkness to switch between the videos and build up the suspense.'}
       include includes/presets.pug
       a.nav(href="#" name='specs', rel="noopener noreferrer")
-      .bg--light
+      //- .bg--light
       //- a.nav(name="tutorial")
       //- - var title = "Watch tutorial"
       //- - var subtitle = "Gen the know-how!"

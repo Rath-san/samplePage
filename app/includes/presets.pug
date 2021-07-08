@@ -26,8 +26,8 @@ section.presets.bg--dark.text-center
             video(autoplay muted loop)
               source(src="/images/hud_linear_upprev.mp4" type="video/mp4")
           //- p.section__display 
-          h2.section__title.deco #{totalIndex} all-purpose transitions
-          p.section__text hover or tap to see preview animations
+          h2.section__title <span class="section__display deco">#{totalIndex}</span><br>diverse presets
+          p.section__text Hover or tap to see preview animations
         .section__body
           - var currentIndex = 1
           - var sectionItems = 0
@@ -62,7 +62,7 @@ section.presets.bg--dark.text-center
                               img.img-fluid(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACVCAQAAADhssdjAAABEElEQVR42u3SMQ0AAAzDsJU/6d1l0MOGECUHJRJgCSyBJbAElsASWAJLYAksgSWwBJbAElgCS2AJsASWwBJYAktgCSyBJbAElsASWAJLYAksgSWwBFgCS2AJLIElsASWwBJYAktgCSyBJbAElsASWAIsgSWwBJbAElgCS2AJLIElsASWwBJYAktgCSwBlsASWAJLYAksgSWwBJbAElgCS2AJLIElsASWwBISYAksgSWwBJbAElgCS2AJLIElsASWwBJYAktgCbAElsASWAJLYAksgSWwBJbAElgCS2AJLIElsARYAktgCSyBJbAElsASWAJLYAksgSWwBJbAElgCLIElsASWwBJYAktgCSyBJRj2xckAllbmyYMAAAAASUVORK5CYII=' width='600' height='338')
                               .preview-wrapper.zoom(data-mp4-url=`${videoName}.mp4`)
                                 .preview-image-container
-                                  img.img-fluid(src=`${imageName}.jpg` alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
+                                  img.img-fluid(src=`${imageName}.jpg` loading="lazy" alt='{{ product.head_info }}' width='600' height='338' onerror="this.style.display='none'" onload="this.style.display='block'")
                                 .preview-video-container(style='display: none')
 
                       - if (section.count > notCollapsedItems)
@@ -84,16 +84,22 @@ section.presets.bg--dark.text-center
             video(autoplay muted loop)
               source(src="/images/hud_linear_underprev_1.mp4" type="video/mp4")
           h2.section__title.presets__title--2
-            | #{"Easily \nCustomizable"}
+            | Easily <br />Customizable
           .presets__bottom__paragraphs
-            p.section__text
-              b On-screen Controls 
-              | #{"\nAut the preset in place directly in the viewport"}
+            .test
+              h5
+                b On-screen Controls 
+              p.section__text
+                | Aut the preset in place directly in the viewport
 
-            p.section__text
-              b Colorization & Glow 
-              | #{"\nFind the perfect look to match your edit"}
+            .test
+              h5
+                b Colorization & Glow 
+              p.section__text
+                | Find the perfect look to match your edit
 
-            p.section__text
-              b Adjustable Animation 
-              | #{"\nTweak the movement to suit your nerds"}
+            .test
+              h5
+                b Adjustable Animation 
+              p.section__text
+                | Tweak the movement to suit your nerds
