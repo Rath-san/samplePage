@@ -1,0 +1,117 @@
+.showcase {
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-top: -5rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
+
+  // .img-lazy {
+  //     .placeholder {
+          
+  //         padding-bottom: 70% !important;
+  //     }
+  //     img {
+  //         object-fit: cover;
+  //     }
+  // }
+}
+.case {
+  &__item {
+    position: relative;
+    color: #fff;
+    background-color: #000;
+    // @media screen and (max-width: 768px) {
+    @include respond-below(xl) {
+      .placeholder {
+        padding-bottom: 0.592 * 100% !important;
+      }
+      img {
+        object-fit: cover;
+      }
+    }
+
+    @include respond-below(sm) {
+      .placeholder {
+        padding-bottom: 0.892 * 100% !important;
+      }
+      img {
+        object-fit: cover;
+      }
+    }
+
+    // &--0 {
+    // //   padding-bottom: 0.4492 * 100%;
+    //   @media screen and (max-width: 992px) {
+    //     padding-bottom: 0;
+    //   }
+    //   .case__item {
+    //     &__bg,
+    //     &__body {
+    //       position: absolute;
+    //       left: 0;
+    //       right: 0;
+    //     }
+    //     &__body {
+    //       justify-content: flex-end;
+    //     }
+    //     &__bg {
+    //       // padding-bottom: 0.4492 * 100%;
+    //       @media screen and (max-width: 992px) {
+    //         position: static;
+    //       }
+    //     }
+    //   }
+    // }
+    &--1 {
+      .case__item__body {
+        justify-content: flex-start;
+      }
+    }
+    &__bg {
+      // video {
+      //   position: absolute;
+      //   width: 100%;
+      //   display: block;
+      //   opacity: 0;
+      //   &.active {
+      //     opacity: 1;
+      //   }
+      // }
+      img {
+        width: 100%;
+      }
+    }
+    &__body {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: 992px) {
+        position: static !important;
+      }
+      .section {
+        &__head {
+          max-width: 25em;
+          @media screen and (max-width: 992px) {
+            margin: 0 0 auto 0;
+          }
+        }
+        &__title {
+          // white-space: pre-line;
+        }
+        &__text {
+          margin-bottom: 0;
+          @media screen and (max-width: 992px) {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

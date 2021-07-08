@@ -16,25 +16,22 @@ import 'intersection-observer'
 // import { notificationsAnim } from './notifications'
 import './lazy-images'
 // import { animateOnScroll } from './animate-on-scroll'
-// import './scroll_to_anchor'
+import './scroll_to_anchor'
 // import Splitting from 'splitting'
 ;(() => {
   window.addEventListener('load', () => {
-
     // managing deco elements
     const deco = Array.from(document.querySelectorAll('.deco'))
-    
+
     const addDecoInner = (el) => {
       const span = document.createElement('span')
       span.classList.add('deco-inner')
       el.appendChild(span)
     }
 
-    deco.forEach(el => {
+    deco.forEach((el) => {
       addDecoInner(el)
     })
-    
-
 
     // const titles = Array.from(document.querySelectorAll('.section__title'))
     // const subTitles = Array.from(
@@ -108,7 +105,6 @@ const doOnVisible = ({
     const io = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
-
           let y = entry.boundingClientRect.y
           const up =
             lastTriggerPosition !== undefined ? lastTriggerPosition > y : true

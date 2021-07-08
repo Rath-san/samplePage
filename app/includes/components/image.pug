@@ -1,7 +1,7 @@
 - var placeholder = getParsedImage(image)
 - var srcset = getParsedImage(image, 'srcSet')
 
-div(id=id).img-lazy
+div.img-lazy(id=id)
   .placeholder(style=`
       padding-bottom: calc(${imageHeight} / ${imageWidth} * 100%);
       background: url(${placeholder}) center no-repeat;

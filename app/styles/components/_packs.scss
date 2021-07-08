@@ -73,13 +73,16 @@
     margin: auto;
     font-family: 'Proxima';
     line-height: 49px;
+    @include respond-below(md) {
+      line-height: 1.2;
+    }
   }
   &__text {
-    max-width: 36em;
     margin: 2rem auto;
     font-family: 'Roboto';
     line-height: 25px;
-    @media screen and (min-width: 768px) {
+    @include respond-above(md) {
+      max-width: 30em;
       padding: 0;
     }
   }

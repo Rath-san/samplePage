@@ -1,6 +1,6 @@
 - var image1 = `/images/mHUD_top.jpg`
-section.header.text--light.text-center(style=`background: url(${getParsedImage(image1)}) center / cover no-repeat`)
-  .header__bg(style="opacity:0")
+section.header.text--light.text-center(style=`background: url(${getParsedImage(image1)}) center / cover no-repeat; overflow: hidden`)
+  .header__bg(style="opacity:0; transform: scale(1.05)")
     //- - var image1 = `/images/mHUD_top.jpg`
     - var sizes = '(max-width: 768px) 200vw'
     - var alt = 'Happy couple'

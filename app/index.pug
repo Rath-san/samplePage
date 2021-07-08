@@ -71,7 +71,11 @@ html(lang="en")
         ]
 
       section.showcase
-        #carouselExampleSlidesOnly.carousel.slide.carousel-fade(data-ride='carousel', data-interval=5000 data-pause=false)
+        #carouselExampleSlidesOnly.carousel.slide.carousel-fade(
+            data-ride='carousel',
+            data-interval=5000,
+            data-pause=false
+        )
           .carousel-inner
             each val, index in showcaseData
               //- .carousel-item.active

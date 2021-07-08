@@ -1,34 +1,24 @@
-.slider {
-  &__item {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: absolute;
-    will-change: opacity;
-    opacity: 1;
-    transition: opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 0;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    &.active {
-      opacity: 1;
+.carousel {
+  &-inner {
+  }
+  &-item {
+    &.active,
+    &-next,
+    &-prev {
       z-index: 1;
     }
   }
-}
 
-.footer {
-  position: relative;
-  .slider {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
+  &-fade {
+    .carousel {
+      &-item {
+        &.active {
+          opacity: 1;
+        }
+        &-next {
+          z-index: 2;
+        }
+      }
+    }
   }
 }
