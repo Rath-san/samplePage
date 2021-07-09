@@ -1,0 +1,278 @@
+#siteSection
+  .navbar-collapse-background
+  nav.navbar.navbar-expand-lg.bg-white.fixed-top
+    .d-flex.order-0.main-logo
+      a.navbar-brand.mr-1.navbar-vfx(href='https://www.motionvfx.com/')
+        img(src='https://www.motionvfx.com/static/svg/logo.svg' alt='MotionVFX' width='31' height='31')
+        span motionVFX
+    #collapsingNavbar.navbar-collapse.order-2.collapsed-nav(style='max-height: 912px;')
+      .navbar-menu-left
+        ul.navbar-nav.text-nowrap
+          li.nav-item.d-lg-none
+            a.nav-link.cursor-pointer(data-auth-section-toggle='') Login
+          li.nav-item.dropdown
+            a.nav-link(href='https://www.motionvfx.com/store,plugins-final-cut-pro,2,8.html' role='button') Plugins
+          li.nav-item.dropdown
+            a#navbarDropdown.cursor-pointer.nav-link.dropdown-toggle.product-types-link(data-redirect-link='/store,templates-motion-final-cut-pro,1,4.html' role='button' data-toggle='dropdown') Templates
+            .dropdown-menu.fade(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='https://www.motionvfx.com/store,templates-motion-final-cut-pro,1,4.html') Motion / Final Cut Pro
+              a.dropdown-item(href='https://www.motionvfx.com/store,templates-mo2,1,6.html') mO2
+              a.dropdown-item(href='https://www.motionvfx.com/store,templates-after-effects,1,5.html') After Effects
+          li.nav-item.dropdown
+            a.nav-link.text-captialize(href='https://www.motionvfx.com/store,compositing-elements,3.html' role='button') Compositing elements
+      .navbar-menu-right
+        ul.navbar-nav.text-nowrap
+          li.nav-item.dropdown
+            a.cursor-pointer.nav-link.dropdown-toggle.product-types-link(role='button' data-toggle='dropdown') Team
+            .dropdown-menu.fade(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='https://www.motionvfx.com/page/about.html') About Us
+              a.dropdown-item(href='https://www.motionvfx.com/join-us.html') Join Us
+          li.nav-item.dropdown
+            a.cursor-pointer.nav-link.dropdown-toggle.product-types-link(role='button' data-toggle='dropdown') Help
+            .dropdown-menu.fade(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='https://www.motionvfx.com/faq.html') FAQ
+              a.dropdown-item(href='https://www.motionvfx.com/page/minstaller.html') mInstaller
+              a.dropdown-item(href='https://www.motionvfx.com/page/affiliate.html' target='_blank' rel='nofollow') Affiliate Program
+    .navbar-right.text-right.order-1.order-lg-last
+      button.menu-icon-svg.navbar-toggler
+        .icon
+      a#globalSearchToggle.search-icon-svg.cursor-pointer(data-global-search-toggle='')
+        .icon
+      a#authSectionBtn.cursor-pointer.head-icon-svg.d-none.d-md-inline(data-auth-section-toggle='' role='button')
+        .icon
+      a.bag-icon-svg.cursor-pointer.d-flex.float-right(role='button' data-minicart-toggle='')
+        .icon.d-inline-flex
+        small#cartProductCount.d-inline-flex
+  #authSection.collapse-login-popup
+    button.dismiss-btn(type='button')
+      img(src='https://www.motionvfx.com/static/svg/close.svg')
+    #authFormsContainer.card.card-body.ui-blocker(data-ui-blocker='')
+      #loginSection.container
+        .row.align-self-center.justify-content-center
+          .login-form
+            h2.text-center Please sign in
+            form#loginForm(method='POST' action='https://www.motionvfx.com/login' novalidate='' autocomplete='off')
+              input(type='hidden' name='csrfmiddlewaretoken' value='Rduxiv7V6pAEXCpaZ6WH9tXPLvjK4EVed5KiizzfmO54wL9ZeEt1VSgRr8mLSSV1')
+              .form-group
+                input#id_login_username.form-control(type='text' name='login_username' autocomplete='off' maxlength='254' placeholder='E-mail*' required='' style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAXtJREFUOBGVUj2LwkAUnIjBICIIKe8gWKRKo2BvYXMgWNlYWZ3gn1B/htekibWVcH1aIVV+wQULCxsRtMrtrGYv8RLUB8nuvjczu+9DWywWH3EcL8X3jidM07QfAfucz+ffhJdeIZNwu+iLexoFnrr5Cr/+05xSOvBoX61WYdt2BvaSgGVZ6PV6+QKGYahApVKBKJY6p2PKeduUufb7fbTbbaxWKxwOB0ynU+x2O7ium4ndk3l+KYU8AW02m8UM8Jnn81limMLlcsnDK59IMRKHiXpBQibiEZkY0co3sSxlDegoMsdx0O12Ua/XEUUR1us1jsejhFNEvaBIgK07nU4IwxDNZhOdTicDLXO205OViYrDZrORLg5Qq9VSdUpwJSEwoUjiuF+FOEzTxGAwwH6/x3a7zUD+piXjBpLukDwej2XenufJdNLQhzUYjUao1WpoNBpywIbDYZqPwi6wz6xyEATQdV2ROKmJEVMoIECszdL3ffb7n5EsnJNf8S6HAZZBgLIAAAAASUVORK5CYII="); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;')
+              .form-group
+                input#id_login_password.form-control(type='password' name='login_password' autocomplete='off' placeholder='Password*' required='' style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAXtJREFUOBGVUj2LwkAUnIjBICIIKe8gWKRKo2BvYXMgWNlYWZ3gn1B/htekibWVcH1aIVV+wQULCxsRtMrtrGYv8RLUB8nuvjczu+9DWywWH3EcL8X3jidM07QfAfucz+ffhJdeIZNwu+iLexoFnrr5Cr/+05xSOvBoX61WYdt2BvaSgGVZ6PV6+QKGYahApVKBKJY6p2PKeduUufb7fbTbbaxWKxwOB0ynU+x2O7ium4ndk3l+KYU8AW02m8UM8Jnn81limMLlcsnDK59IMRKHiXpBQibiEZkY0co3sSxlDegoMsdx0O12Ua/XEUUR1us1jsejhFNEvaBIgK07nU4IwxDNZhOdTicDLXO205OViYrDZrORLg5Qq9VSdUpwJSEwoUjiuF+FOEzTxGAwwH6/x3a7zUD+piXjBpLukDwej2XenufJdNLQhzUYjUao1WpoNBpywIbDYZqPwi6wz6xyEATQdV2ROKmJEVMoIECszdL3ffb7n5EsnJNf8S6HAZZBgLIAAAAASUVORK5CYII="); background-repeat: no-repeat; background-attachment: scroll; background-size: contain; background-position: 98% 50%;')
+              .form-group
+                small *Required Fields
+              .form-group.row.m-0
+                button.text-uppercase.btn.btn-clear.mt-0(type='button' data-switch-to='passwordRecovery') Forgot your password?
+                .ml-auto
+                  button#loginBtn.btn.btn-primary(type='submit') Sign in
+              .row.align-self-center.justify-content-center.mt-50
+                p
+                  button.btn.btn-clear.signup-link.blue(type='button' data-switch-to='signUp')
+                    | CREATE AN ACCOUNT
+                    i.arrow-icon
+      #signupSection.container.d-none
+        .row.justify-content-center.align-items-center
+          .col-md-7.col-lg-5
+            h2.text-center Sign Up
+            form#signUpForm(method='post' action='https://www.motionvfx.com/register' novalidate='')
+              input(type='hidden' name='csrfmiddlewaretoken' value='Rvb5R8BxSTOudWLWmcXGJCtqNLOIZtM1dnrQRc3R8ijUM5vLBKu0v1MstoRJNHMO')
+              .form-group
+                input#id_signup_email.form-control(type='email' name='signup_email' placeholder='E-mail address*' required='' style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg=="); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;')
+              .form-group
+                input#id_signup_password1.form-control(type='password' name='signup_password1' placeholder='Password*' required='' style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACIUlEQVQ4EX2TOYhTURSG87IMihDsjGghBhFBmHFDHLWwSqcikk4RRKJgk0KL7C8bMpWpZtIqNkEUl1ZCgs0wOo0SxiLMDApWlgOPrH7/5b2QkYwX7jvn/uc//zl3edZ4PPbNGvF4fC4ajR5VrNvt/mo0Gr1ZPOtfgWw2e9Lv9+chX7cs64CS4Oxg3o9GI7tUKv0Q5o1dAiTfCgQCLwnOkfQOu+oSLyJ2A783HA7vIPLGxX0TgVwud4HKn0nc7Pf7N6vV6oZHkkX8FPG3uMfgXC0Wi2vCg/poUKGGcagQI3k7k8mcp5slcGswGDwpl8tfwGJg3xB6Dvey8vz6oH4C3iXcFYjbwiDeo1KafafkC3NjK7iL5ESFGQEUF7Sg+ifZdDp9GnMF/KGmfBdT2HCwZ7TwtrBPC7rQaav6Iv48rqZwg+F+p8hOMBj0IbxfMdMBrW5pAVGV/ztINByENkU0t5BIJEKRSOQ3Aj+Z57iFs1R5NK3EQS6HQqF1zmQdzpFWq3W42WwOTAf1er1PF2USFlC+qxMvFAr3HcexWX+QX6lUvsKpkTyPSEXJkw6MQ4S38Ljdbi8rmM/nY+CvgNcQqdH6U/xrYK9t244jZv6ByUOSiDdIfgBZ12U6dHEHu9TpdIr8F0OP692CtzaW/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII="); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;')
+              .form-group
+                input#id_signup_password2.form-control(type='password' name='signup_password2' placeholder='Password confirmation*' required='' style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACIUlEQVQ4EX2TOYhTURSG87IMihDsjGghBhFBmHFDHLWwSqcikk4RRKJgk0KL7C8bMpWpZtIqNkEUl1ZCgs0wOo0SxiLMDApWlgOPrH7/5b2QkYwX7jvn/uc//zl3edZ4PPbNGvF4fC4ajR5VrNvt/mo0Gr1ZPOtfgWw2e9Lv9+chX7cs64CS4Oxg3o9GI7tUKv0Q5o1dAiTfCgQCLwnOkfQOu+oSLyJ2A783HA7vIPLGxX0TgVwud4HKn0nc7Pf7N6vV6oZHkkX8FPG3uMfgXC0Wi2vCg/poUKGGcagQI3k7k8mcp5slcGswGDwpl8tfwGJg3xB6Dvey8vz6oH4C3iXcFYjbwiDeo1KafafkC3NjK7iL5ESFGQEUF7Sg+ifZdDp9GnMF/KGmfBdT2HCwZ7TwtrBPC7rQaav6Iv48rqZwg+F+p8hOMBj0IbxfMdMBrW5pAVGV/ztINByENkU0t5BIJEKRSOQ3Aj+Z57iFs1R5NK3EQS6HQqF1zmQdzpFWq3W42WwOTAf1er1PF2USFlC+qxMvFAr3HcexWX+QX6lUvsKpkTyPSEXJkw6MQ4S38Ljdbi8rmM/nY+CvgNcQqdH6U/xrYK9t244jZv6ByUOSiDdIfgBZ12U6dHEHu9TpdIr8F0OP692CtzaW/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII="); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;')
+              .form-group
+                small *Required Fields
+              br
+              .row.nopadding
+                .form-check.col-12.col-sm-6.nopadding.conditions
+                  .form-group
+                    label.container-checkbox
+                      | I ACCEPT 
+                      a(href='https://www.motionvfx.com/page/conditions.html' target='blank')  CONDITIONS
+                      input(type='checkbox' name='signup_term')
+                      span.checkmark
+                .col-12.col-sm-6.text-center.text-sm-right.nopadding
+                  button.btn.btn-primary(type='submit') Create account
+            .form-group.text-center
+              p
+                button.text-uppercase.btn.btn-clear.blue.mt-50(data-switch-to='login')
+                  | Back to log in 
+                  i.arrow-icon
+      #passwordRecoverySection.container.d-none
+        .row
+          .col-12.col-md-6
+            h2.text-center Password Recovery
+            form#passRecoveryForm(method='POST' action='https://www.motionvfx.com/forgot-password' novalidate='')
+              input(type='hidden' name='csrfmiddlewaretoken' value='dHHDeAs26W5I50mdTdxoq9HFJLin5agTzzXoeEUmmlA8E9628L4Icy0HpoloTogG')
+              .form-group
+                input#id_recovery_email.form-control(type='text' name='recovery_email' maxlength='254' placeholder='E-mail*' required='')
+              br
+              .form-group.text-center
+                button.btn.btn-primary(type='submit') Send
+                p
+                  button.text-uppercase.btn.btn-clear.blue.mt-50(type='button' data-switch-to='login')
+                    | Back to log in
+                    i.arrow-icon
+          .col-12.col-md-6
+            h2.text-center Instructions
+            ul.list-custom.list-decimal-style
+              li Type in your e-mail address in the field and click SEND.
+              li
+                | Once you receive the automated e-mail, click the blue 
+                strong RECOVER PASSWORD
+                |  button to start the recovery procedure.
+              li Type in and confirm your new password.
+              li Log in using the new credentials.
+      #activationEmailSentSection.text-center.d-none
+        h2 E-mail was sent
+        p
+          | E-mail address assigned to this account requires confirmation. Check your e-mail for further instructions.
+        p
+          button.text-uppercase.btn.btn-clear(type='button' data-switch-to='login') Back to log in
+      #recoveryEmailSentSection.text-center.d-none
+        h2 E-mail was sent
+        p Follow the link in the e-mail, to start password recovery procedure.
+        p
+          button.text-uppercase.btn.btn-clear.blue(type='button' data-switch-to='login')
+            | Back to log in 
+            i.arrow-icon
+      .ui-blocker-container
+        .ui-blocker-overlay
+        .ui-blocker-message-container
+          .spinner
+            .double-bounce1
+            .double-bounce2
+    .auth-background
+    script(src='./motionVFX - Original Home of Apple Motion Templates and Final Cut Pro Plugins_files/authentication.js')
+  a#backToTopBtn.back-to-top.cursor-pointer(data-page-reload='')
+  #globalSearchWrapper.d-none.container.h-100.w-100.p-0
+    button#globalSearchDismissBtn.dismiss-btn.float-right(type='button')
+      img(src='https://www.motionvfx.com/static/svg/close.svg')
+    .d-flex.h-100.w-100.justify-content-center.align-items-center
+      .search-wrapper
+        .col-12
+          .h-100
+            .form-group
+              input.form-control.search-input(placeholder='Search...' type='text' name='global_search')
+              span#globalSearchInputClearBtn.form-clear.d-none.search-clear-btn
+                img(src='https://www.motionvfx.com/static/svg/close.svg')
+        #globalSearchResultsWrapper.col-12.search-loader.ui-blocker
+          #queryTooShortMsg.query-too-short-msg.d-none
+            ul
+              li
+                a Please enter 2 or more characters.
+          #globalSearchNoResultsMsg.no-results-msg.d-none
+            ul
+              li
+                a No results.
+          #globalSearchResults.search-results
+          .ui-blocker-container
+            .ui-blocker-message-container
+              .spinner
+                .double-bounce1
+                .double-bounce2
+  #globalSearchOverlay.d-none.w-100.h-100
+  #miniCart.minicart.hide-cart
+    .minicart-content.ui-blocker(data-ui-blocker='')
+      button.dismiss-btn(type='button' data-minicart-toggle='' aria-controls='miniCart')
+        img(src='https://www.motionvfx.com/static/svg/close.svg')
+      h3.text-center Cart preview
+      .minicart-container(style='position: relative;')
+        .text-center
+          table.table
+            tbody#minicartProducts
+        .resize-sensor(dir='ltr' style='pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;')
+          .resize-sensor-expand(style='pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;')
+            div(style='position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 490px; height: 95px;')
+          .resize-sensor-shrink(style='pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;')
+            div(style='position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%')
+      #minicartEmptyListMsg.d-none
+        .container.nothing-here
+          .text-center
+            h3.title Nothing here yet
+            p.message Add some of our awesome products!
+            a.btn.btn-primary(href='https://www.motionvfx.com/store') go to store
+      #minicartSummary.cart-summary.text-center.d-none
+        .row
+          .col-6 Total
+          #minicartTotal.col-6.price $0
+        a.btn.btn-primary(href='https://www.motionvfx.com/cart') Go to checkout
+      .ui-blocker-container
+        .ui-blocker-overlay
+        .ui-blocker-message-container
+          .spinner
+            .double-bounce1
+            .double-bounce2
+  // ADD TO CART CONFIRMATION MODAL
+  #addedToCartConfirm.modal.fade(role='dialog' aria-labelledby='addedToCartConfirm' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content.text-center
+        button.dismiss-btn(type='button' data-dismiss='modal' aria-label='Close')
+          img(src='https://www.motionvfx.com/static/svg/close.svg')
+        .modal-header
+          h2#exampleModalLongTitle.modal-title Added to cart
+        .modal-body
+          | You added 
+          span#addedProductName
+          |  to your shopping&nbsp;cart.
+        .modal-footer
+          a.btn.btn-primary(href='https://www.motionvfx.com/cart') Go to cart
+          br
+          .text-center
+            a.signup-link.btn.btn-clear(data-dismiss='modal') Continue shopping &nbsp;&nbsp;&gt;
+  // ADD TO CART CONFIRMATION MODAL
+  #twoProductsAddedToCartConfirm.modal.fade(role='dialog' aria-labelledby='twoProductsAddedToCartConfirm' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content.text-center
+        button.dismiss-btn(type='button' data-dismiss='modal' aria-label='Close')
+          img(src='https://www.motionvfx.com/static/svg/close.svg')
+        .modal-header
+          h2#exampleModalLongTitle.modal-title
+            | 2 products
+            br
+            |  added to cart
+        .modal-body
+          span#dependentProductName
+          |  requires 
+          b#dependencyProductName
+          |  to run. Both products were added to cart.
+        .modal-footer
+          a.btn.btn-primary(href='https://www.motionvfx.com/cart') Go to cart
+          br
+          .text-center
+            a.signup-link.btn.btn-clear(data-dismiss='modal') Continue shopping &nbsp;&nbsp;&gt;
+  // ALREADY IN CART CONFIRMATION MODAL
+  #alreadyInCartMsg.modal.fade(role='dialog' aria-labelledby='alreadyInCartMsg' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content.text-center
+        button.dismiss-btn(type='button' data-dismiss='modal' aria-label='Close')
+          img(src='https://www.motionvfx.com/static/svg/close.svg')
+        .modal-header
+          h2#exampleModalLongTitle.modal-title Already in cart
+        .modal-body
+          span#alreadyAddedProductName
+          |  is already in your shopping&nbsp;cart.
+        .modal-footer
+          a.btn.btn-primary(href='https://www.motionvfx.com/cart') Go to cart
+          br
+          .text-center
+            a.signup-link.btn.btn-clear(data-dismiss='modal') Continue shopping &nbsp;&nbsp;&gt;
+  // REMOVE FROM CART CONFIRMATION MODAL
+  #removeFromCartConfirm.modal.fade(role='dialog' aria-labelledby='removeFromCartConfirm' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content.text-center
+        button.dismiss-btn.product-remove-cancel(type='button' data-dismiss='modal' aria-label='Close')
+          img(src='https://www.motionvfx.com/static/svg/close.svg')
+        .modal-header
+          h2#exampleModalLongTitle.modal-title Warning
+        .modal-body
+          | All products in cart (
+          span#dependentProductNumber
+          | ) that require 
+          b#removedProductName
+          |  to run will also be deleted.
+        .modal-footer
+          a#productRemoveConfirm.btn.btn-primary(href='https://www.motionvfx.com/page/!#' data-dismiss='modal') Confirm
+          br
+          .text-center
+            a.signup-link.btn.btn-clear.product-remove-cancel(data-dismiss='modal') Cancel
