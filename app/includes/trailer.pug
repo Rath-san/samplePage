@@ -8,6 +8,7 @@ section(class=`trailer ${sectionClasses}`)
           p.section__text #{text}
         .yt.embed-responsive.embed-responsive-16by9.animated.animated--fade--bottom
           iframe(
+            loading="lazy"
             src=videoLink,
             srcdoc=videoPlaceholder ? `
               <style>
