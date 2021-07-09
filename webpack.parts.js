@@ -198,7 +198,7 @@ exports.optimizeImages = ({ include, exclude } = {}) => ({
           options: {
             progressive: true,
 
-            // optimizationLevel: 7,
+            optimizationLevel: 7,
 
             gifsicle: {
               interlaced: false
