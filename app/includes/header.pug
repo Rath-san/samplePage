@@ -1,8 +1,10 @@
-section.header.text--light.text-center
+- var header = data.header
+section.header.bg--dark
   .header__bg(style="opacity:1")
     //- img(data-src=`/images/header.jpg`, alt="", srcset="")
-    - var image = `/images/header.jpg`
-    - var alt = 'Woman in cinematic alley'
+    - var headerBg = header.images.bg
+    - var image = headerBg.src
+    - var alt = headerBg.alt
     - var width = '2560'
     - var height = '1150'
     - var sizes = '(max-width: 768px) 300vw'
@@ -23,9 +25,19 @@ section.header.text--light.text-center
     //- video(data-src='https://s3.motionvfx.com/mvfxpublic/products/templates/1322/media/Top2.mp4' controls=false, autoplay, loop, muted, playsinline type='video/mp4')
   .container
     .row
-      .col-12
-        .header__content.section__text__content
+      .col-12.col-md-6
+        .header__content
           .header__logo
+            - var headerLogo = header.images.logo
+            - var image = headerLogo.src
+            - var alt = headerLogo.alt
+            - var width = '64'
+            - var height = '64'
+            - var sizes = '64px'
+            include components/image.pug
+          h1.section__title= header.title
+          .section__text= header.text
+          //- .header__logo
             //- - var image = `/images/logos.png`
             //- - var alt = 'mTransition Fade logo'
             //- - var imageWidth = '1200'

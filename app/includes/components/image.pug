@@ -1,9 +1,11 @@
 - var placeholder = getParsedImage(image)
 - var srcset = getParsedImage(image, 'srcSet')
 
-div(id=id).img-lazy
+div(id=id).img-lazy(style=`
+  ${noBlurbg ? '' : 'background: url(' + placeholder + ') center /cover no-repeat;'}
+`)
   .placeholder(style=`
-      padding-bottom: calc(${imageHeight} / ${imageWidth} * 100%);
+      padding-bottom: calc(${height} / ${width} * 100%);
       background: url(${placeholder}) center no-repeat;
       background-size: cover;
   `)
@@ -11,5 +13,5 @@ div(id=id).img-lazy
     alt=alt,
     data-src=placeholder,
     data-srcset=srcset,
-    sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
+    sizes=sizes
   )

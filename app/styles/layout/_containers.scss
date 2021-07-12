@@ -12,6 +12,11 @@ main {
   @media screen and (max-width: 960px) {
     font-size: 0.875rem;
   }
+  // core reset
+  a:not(.btn) {
+    font-weight: unset;
+    color: unset;
+  }
 }
 
 section {

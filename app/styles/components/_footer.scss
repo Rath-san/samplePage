@@ -1,7 +1,7 @@
 .footer {
   // max-height: 100vh;
   position: relative;
-  padding: 19.4rem 0;
+  padding: 10rem 0;
   // overflow: hidden;
   // background: rgb(2,0,36);
   // padding-bottom: 0;
@@ -10,39 +10,8 @@
     padding: 10rem 0;
   }
 
-  .fd {
-    &--1 {
-      top: 10%;
-      position: absolute;
-      width: 300px;
-      right: calc(-200px + 15vw);
-      @media screen and (max-width: 768px) {
-        top: 5%;
-        right: calc(-200px + 25vw);
-        width: 150px;
-      }
-    }
-    &--2 {
-      position: absolute;
-      top: 10%;
-      left: calc(-100px + 10vw);
-      width: 300px;
-      @media screen and (max-width: 768px) {
-        top: 5%;
-        width: 150px;
-      }
-    }
-  }
-
-  &__comp {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    svg {
-      width: 20%;
-    }
+  .btn {
+    padding-left: 0;
   }
 
   &__title {

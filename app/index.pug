@@ -72,8 +72,27 @@ html(lang="en")
         plugins: {
           title: 'Creative tools to make your video look professional',
           subtitle: 'Try MotionVFX quality with demo versions of our products.',
-          plugins: 3,
-          button: 'more',
+          plugins: [
+            {
+              src: 'https://via.placeholder.com/800x450',
+              alt: '',
+              title: 'mTuber 2',
+              text: 'Video Channel Enhancer Plugin Exclusively For DVR'
+            },
+            {
+              src: 'https://via.placeholder.com/800x450',
+              alt: '',
+              title: 'm16mm',
+              text: 'Retro Film Effects Plugin for DVR'
+            },
+            {
+              src: 'https://via.placeholder.com/800x450',
+              alt: '',
+              title: 'mIntro 2',
+              text: 'Beautiful Channel Openers for DVR'
+            }
+          ],
+          button: 'more →',
         },
         baubles: {
           title: 'You gave us the challenge… \nSO WE DID IT!',
@@ -100,21 +119,21 @@ html(lang="en")
               title: 'Captivate your viewers',
               text: 'Our solutions work perfectly, empowering professionals and enthusiasts alike across the global community of video editors. And long story short, they’re the ultimate time-saving option.',
               alt: '',
-              src: `${mediaRoot}/slide-1.png`
+              src: `${mediaRoot}/mTuber_slide-2.jpg`
             },
             {
               label: 'mtitle cinematic',
               title: 'The iconic look of the movie credits',
               text: 'A collection of refined and well-designed typography presets to give the edit a truly cinematic vibe. These animated captions will adorn any project with modern motion design and turn it into a genuine masterpiece.',
               alt: '',
-              src: `${mediaRoot}/slide-2.png`
+              src: `${mediaRoot}/mTitleCinematic_slide-1.jpg`
             },
             {
               label: 'm16mm',
               title: 'Stunning nostalgic stylizations',
               text: 'Surprise your audience with sensational retro-inspired video effects and evoke memories and emotions. Stand out from the crowd with a unique sentimental touch in your works and make your viewers travel in time.',
               alt: '',
-              src: `${mediaRoot}/slide-3.png`
+              src: `${mediaRoot}/mTuber_slide-2.jpg`
             },
           ],
           button: 'more'
@@ -134,15 +153,15 @@ html(lang="en")
           images: [
             {
               alt: '',
-              src: `${mediaRoot}/packs_1.jpg`
+              src: `${mediaRoot}/packs-3.jpg`
             },
             {
               alt: '',
-              src: `${mediaRoot}/packs_2.jpg`
+              src: `${mediaRoot}/packs-2.jpg`
             },
             {
               alt: '',
-              src: `${mediaRoot}/packs_3.jpg`
+              src: `${mediaRoot}/packs-1.jpg`
             }
           ],
           title: 'All packs work perfectly on DaVinci Resolve’s free version on both Mac and Windows',
@@ -162,17 +181,17 @@ html(lang="en")
           icons: [
             {
               name: 'facebook',
-              icon: '',
+              //- icon: '',
               link: ''
             },
             {
               name: 'twitter',
-              icon: '',
+              //- icon: '',
               link: ''
             },
             {
               name: 'instagram',
-              icon: '',
+              //- icon: '',
               link: ''
             },
             {
@@ -189,6 +208,120 @@ html(lang="en")
     include includes/vendor/navbar.pug
     //- .top-bar
     main.DaVinciResolve
+      include includes/header.pug
+      .gradient
+      //- plugins
+      - var plugins = data.plugins
+      section.section.section--plugins
+        .container
+          .row
+            .col-12
+              .section__head.text-center
+                h2.section__title= plugins.title
+                p.section__text= plugins.subtitle
+              .section__content
+                //- - for(let index = 0; index < plugins.plugins; index++)
+                each plugin, index in plugins.plugins
+                  a(href="http://", target="_blank", rel="noopener noreferrer").plugin__wrapper
+                    .plugin
+                      img(src=plugin.src, alt=plugin.alt)
+                      .plugin__body
+                        h3.plugin__title= plugin.title
+                        p.plugin__text= plugin.text
+            .col-12.text-center
+              a.btn.btn-more(href="http://", target="_blank", rel="noopener noreferrer")= plugins.button
+      //- baubles
+      - var baubles = data.baubles
+      section.section.section--baubles
+        .container
+          .row.align-items-center
+            .col-6
+              .section__head
+                h2.section__title= baubles.title
+                p.section__text= baubles.text
+            .col-6
+              .baubles
+                each bauble, index in baubles.baubles
+                  p.bauble(data-index=index, style=`--bauble-index: ${index}`)= bauble.text
 
-      //- include includes/header.pug
-      //- include includes/footer.pug
+      - var slider = data.slider
+
+      section#carouselSection.bg--dark.text--light.slider.carousel.slide.carousel-fade(data-bs-ride="carousel" data-bs-interval="5000")
+        .slider__bg
+          .carousel-inner
+            each image, index in slider.images
+              div(class=`carousel-item ${index === 0 ? 'active': ''}`)
+                - var image = image.src
+                - var alt = image.alt
+                - var width = '2400'
+                - var height = '1078'
+                - var sizes = ''
+                include includes/components/image.pug
+                //- img(src=image.src, alt=image.alt)
+        .slider__content
+          .container
+            .row
+              .col-lg-6.offset-lg-6
+                //- .section__content
+
+                .section__head
+                  .carousel-indicators
+                    each image, index in slider.images
+                      button(
+                        class=`${index === 0 ? 'active' : ''}`
+                        type='button'
+                        data-bs-target='#carouselSection'
+                        data-bs-slide-to=index
+                        aria-current=`${index === 0}`
+                        aria-label=`Slide ${index + 1}`)= image.label
+                  .carousel-inner__text
+                    each image, index in slider.images
+                      div(class=`carousel-item__text ${index === 0 ? 'active': ''}` data-index=`${index}`)
+                        h2.section__title(style=`--text-index: ${0}`)= image.title
+                        p.section__text(style=`--text-index: ${1}`)= image.text
+                        a.btn.btn-more.btn-more--transparent(href="http://", target="_blank", rel="noopener noreferrer" style=`--text-index: ${2}` data-index=`${index}`)= plugins.button
+      .gradient__bg.text--light.bg--dark
+        - var free = data.free
+        - var freeImage = free.images[0]
+        section.section.section--free
+          .container
+            .row.align-items-center
+              .col-md-6
+                - var image = freeImage.src
+                - var alt = freeImage.src
+                - var width = '1280'
+                - var height = '721'
+                - var sizes = '(max-width: 768px) 100vw, 640px'
+                - var noBlurbg = true
+                include includes/components/image.pug
+              .col-md-6
+                .section__head
+                  h2.section__title= free.title
+                  p.section__text= free.text
+                  a.btn.btn-pink(href="http://", target="_blank", rel="noopener noreferrer")= free.button
+        - var packs = data.packs
+        - var packsImages = packs.images
+        section.section.section--packs
+          .container
+            .row.align-items-center
+              .col-6
+                .section__head
+                  .os-icons
+                    - var icons = packs.icons
+                    i(class=`${icons[0]}`) apple 
+                    | or 
+                    i(class=`${icons[1]}`) win
+                  h2.section__title= packs.title
+                  p.section__text= packs.text
+              .col-6
+                .packs__image__comp
+                  each image, index in packsImages
+                    - var image = image.src
+                    - var alt = image.src
+                    - var width = '1280'
+                    - var height = '721'
+                    - var sizes = '(max-width: 100vw) 50vw'
+                    include includes/components/image.pug
+
+
+      include includes/footer.pug
