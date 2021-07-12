@@ -367,15 +367,19 @@ $arrow-radius: 0.2rem;
         width: 150%;
         left: 10%;
         top: 10%;
+
         $offset-base: 1rem;
         &:nth-child(1) {
           transform: translate($offset-base * 0, $offset-base * 0);
+          box-shadow: 0 0 40px 20px rgba(0, 0, 0, .33);
         }
         &:nth-child(2) {
           transform: translate($offset-base * 6, $offset-base * 4);
+          box-shadow: 0 0 80px 40px rgba(0, 0, 0, .66);
         }
         &:nth-child(3) {
           transform: translate($offset-base * 12, $offset-base * 8);
+          box-shadow: 0 0 120px 60px rgba(0, 0, 0, .99);
         }
       }
     }
