@@ -281,6 +281,11 @@ html(lang="en")
                         p.section__text(style=`--text-index: ${1}`)= image.text
                         a.btn.btn-more.btn-more--transparent(href="http://", target="_blank", rel="noopener noreferrer" style=`--text-index: ${2}` data-index=`${index}`)= plugins.button
       .gradient__bg.text--light.bg--dark
+        .background
+          .gradient-floating
+            .circle.blue
+            .circle.red
+
         - var free = data.free
         - var freeImage = free.images[0]
         section.section.section--free
@@ -291,14 +296,14 @@ html(lang="en")
                 - var alt = freeImage.src
                 - var width = '1280'
                 - var height = '721'
-                - var sizes = '(max-width: 768px) 100vw, 640px'
+                - var sizes = '(max-width: 768px) 100vw, 960px'
                 - var noBlurbg = true
                 include includes/components/image.pug
               .col-md-6
                 .section__head
                   h2.section__title= free.title
                   p.section__text= free.text
-                  a.btn.btn-pink(href="http://", target="_blank", rel="noopener noreferrer")= free.button
+                  a.btn.btn-pink(href="https://www.motionvfx.com/store,mhellodv,p3607.html", target="_blank", rel="noopener noreferrer")= free.button
         - var packs = data.packs
         - var packsImages = packs.images
         section.section.section--packs
@@ -308,9 +313,11 @@ html(lang="en")
                 .section__head
                   .os-icons
                     - var icons = packs.icons
-                    i(class=`${icons[0]}`) apple 
+                    div(class=`os-icon ${icons[0]}`)
+                      include includes/components/icon-apple.pug 
                     | or 
-                    i(class=`${icons[1]}`) win
+                    div(class=`os-icon ${icons[1]}`)
+                      include includes/components/icon-windows.pug
                   h2.section__title= packs.title
                   p.section__text= packs.text
               .col-6

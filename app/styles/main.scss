@@ -62,15 +62,21 @@ lite-youtube {
   //   color-stop(#e19e2f),
   //   to(#d03535)
   // );
-  background: linear-gradient(
-    90deg,
-    #2f777a,
-    #60ad9d,
-    #97b82e,
-    #f2dc2d,
-    #e19e2f,
-    #d03535
-  );
+  background: linear-gradient(to right,
+    #3fd5ef,
+    #fde92d,
+    #f1565b,
+    #3fd5ef
+  )
+  // linear-gradient(
+  //   90deg,
+  //   #2f777a,
+  //   #60ad9d,
+  //   #97b82e,
+  //   #f2dc2d,
+  //   #e19e2f,
+  //   #d03535
+  // );
 }
 
 .section-- {
@@ -89,11 +95,37 @@ lite-youtube {
   &slider {
   }
   &free {
+    .placeholder {
+      padding-bottom: 75% !important;
+    }
+    img {
+      object-fit: cover;
+    }
   }
   &packs {
-    .os-icons {
-      margin-bottom: 2rem;
+    .os-icon {
+      &s {
+        line-height: 0;
+        align-items: center;
+        margin-bottom: 3rem;
+        display: flex;
+      }
+
+      width: 30px;
+      height: 30px;
+      margin-right: 1rem;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
     }
+    
+    .windows {
+      margin-left: 1rem;
+      margin-bottom: -6px;
+    }
+
     .section__head {
       // max-width: 30em;
     }
@@ -190,6 +222,139 @@ $arrow-radius: 0.2rem;
     transform: translateX(0);
   }
 }
+
+.gradient__bg {
+  position: relative;
+}
+
+@keyframes moveBlue {
+  0% {
+      transform: translate3D(-50vw, -10vh, 0)
+  }
+
+  30% {
+      transform: translate3D(0, 35vh, 0) rotate(80deg) translate3D(-50vw, -10vh, 0)
+  }
+
+  60% {
+      transform: translate3D(20vw, 50vh, 0) rotate(160deg) translate3D(-50vw, -10vh, 0)
+  }
+
+  80% {
+      transform: rotate(240deg) translate3D(-50vw, -10vh, 0)
+  }
+
+  100% {
+      transform: rotate(360deg) translate3D(-50vw, -10vh, 0)
+  }
+}
+
+@keyframes moveRed {
+  0% {
+      transform: translate3D(40vw, 35vh, 0)
+  }
+
+  30% {
+      transform: translate3D(-10vw, -35vh, 0) rotate(95deg) translate3D(40vw, 35vh, 0)
+  }
+
+  60% {
+      transform: translate3D(-10vw, 10vh, 0) rotate(170deg) translate3D(40vw, 35vh, 0)
+  }
+
+  80% {
+      transform: translate3D(0vw, -20vh, 0) rotate(290deg) translate3D(40vw, 35vh, 0)
+  }
+
+  100% {
+      transform: rotate(360deg) translate3D(40vw, 35vh, 0)
+  }
+}
+
+.background {
+  background-color: #00030f;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+@media all and (max-width: 1199.98px) {
+  .gradient-floating {
+      filter:blur(20px);
+      height: 100%;
+      display: grid;
+      align-items: center;
+      justify-content: center
+  }
+
+  .gradient-floating .circle {
+      grid-row: 1;
+      grid-column: 1;
+      width: 200vw;
+      height: 200vw;
+      border-radius: 50%
+  }
+
+  .gradient-floating .blue {
+      opacity: .25;
+      background: radial-gradient(#3fd5ef, transparent 66%);
+      transform: translate3D(-60vw, -20vh, 0)
+  }
+
+  .gradient-floating .red {
+      opacity: .25;
+      background: radial-gradient(#f1565b, transparent 66%);
+      transform: translate3D(55vw, 20vh, 0)
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .gradient-floating {
+      filter:blur(150px);
+      height: 100%;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .gradient-floating .circle {
+      grid-row: 1;
+      grid-column: 1;
+      width: 90vw;
+      height: 90vw;
+      border-radius: 50%
+  }
+
+  .gradient-floating .blue {
+      opacity: .3;
+      background: radial-gradient(#3fd5ef, transparent 66%)
+  }
+}
+
+@media all and (min-width: 1200px) and (min-width: 1200px) {
+  .gradient-floating .blue {
+      animation:moveBlue 20s infinite
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .gradient-floating .red {
+      opacity:.3;
+      background: radial-gradient(#f1565b, transparent 66%)
+  }
+}
+
+@media all and (min-width: 1200px) and (min-width: 1200px) {
+  .gradient-floating .red {
+      animation:moveRed 20s infinite
+  }
+}
+
+
+
 
 .packs {
   &__image {
