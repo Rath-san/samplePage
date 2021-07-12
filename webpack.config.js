@@ -139,6 +139,11 @@ const productionConfig = merge([
         {
           from: path.join(__dirname, 'app/static'),
           to: path.join(__dirname, 'build/static')
+        },
+        // fonts
+        {
+          from: path.join(__dirname, 'app/fonts'),
+          to: path.join(__dirname, 'build/fonts')
         }
       ])
     ]
