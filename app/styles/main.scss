@@ -84,10 +84,17 @@ lite-youtube {
     padding-bottom: 0;
     .section {
       &__content {
-        display: flex;
-        margin-bottom: 3rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        // display: flex;
+        // margin-bottom: 3rem;
+        // flex-wrap: wrap;
+        // justify-content: center;
+        .product-grid {
+          justify-content: center;
+        }
+        .custom-col {
+          flex: 0 0 33.333%;
+          max-width: 33.333%;
+        }
       }
     }
   }
