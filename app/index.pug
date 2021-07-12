@@ -68,11 +68,11 @@ html(lang="en")
               src: `${mediaRoot}/top.jpg`
             }
           },
-          title: 'We’re now ready for DaVinci Resolve 17.2.2!',
+          title: 'We’re now ready \nfor DaVinci Resolve 17.2.2!',
           text: 'What if we showed you how to seamlessly combine the endless possibilities of MotionVFX’s templates with the industry’s one software tool for all things editing, including color correction, visual effects, motion graphics and audio post production?'
         },
         plugins: {
-          title: 'Creative tools to make your video look professional',
+          title: 'Creative tools to make your video \nlook professional',
           subtitle: 'Try MotionVFX quality with demo versions of our products.',
           plugins: [
             {
@@ -221,41 +221,41 @@ html(lang="en")
               .section__head.text-center
                 h2.section__title= plugins.title
                 p.section__text= plugins.subtitle
-              .section__content
-                .product-list-wrapper
-                  #productList.product-list
-                    #productListContainer.container.site-content.container-lg
-                      #productsContainer.row.product-grid
-                        //- | {% include &apos;product/product_grid.jinja2&apos; %}
-                        each plugin, index in plugins.plugins
-                          .col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.custom-col.product-wrapper
-                            .product
+              //- .section__content
+              .product-list-wrapper
+                #productList.product-list
+                  #productListContainer.container.site-content.container-lg
+                    #productsContainer.row.product-grid
+                      //- | {% include &apos;product/product_grid.jinja2&apos; %}
+                      each plugin, index in plugins.plugins
+                        .col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.custom-col.product-wrapper
+                          .product
+                            a(data-focus-on-product='3594' href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
+                            .product-preview
                               a(data-focus-on-product='3594' href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
-                              .product-preview
+                                img.img-fluid(width='800' height='449' alt='' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADhCAQAAABMvyuXAAAByUlEQVR42u3TMQ0AAAzDsJU/6SHo28uGECk5oIoEYBAwCBgEDAIGAYOAQcAgYBDAIGAQMAgYBAwCBgGDgEHAIGAQwCBgEDAIGAQMAgYBg4BBwCCAQcAgYBAwCBgEDAIGAYOAQcAggEHAIGAQMAgYBAwCBgGDgEEAg4BBwCBgEDAIGAQMAgYBg4BBAIOAQcAgYBAwCBgEDAIGAYMABgGDgEHAIGAQMAgYBAwCBgGDAAYBg4BBwCBgEDAIGAQMAgYBg0gABgGDgEHAIGAQMAgYBAwCBgEMAgYBg4BBwCBgEDAIGAQMAgYBDAIGAYOAQcAgYBAwCBgEDAIYBAwCBgGDgEHAIGAQMAgYBAwCGAQMAgYBg4BBwCBgEDAIGAQwCBgEDAIGAYOAQcAgYBAwCBgEMAgYBAwCBgGDgEHAIGAQMAhgEDAIGAQMAgYBg4BBwCBgEDAIYBAwCBgEDAIGAYOAQcAgYBAwiARgEDAIGAQMAgYBg4BBwCBgEMAgYBAwCBgEDAIGAYOAQcAgYBDAIGAQMAgYBAwCBgGDgEHAIIBBwCBgEDAIGAQMAgYBg4BBwCCAQcAgYBAwCBgEDAIGAYOAQQCDgEHAIGAQmHuSyQDisCaXtQAAAABJRU5ErkJggg==')
+                              .preview-wrapper.zoom(data-mp4-url='https://s3.motionvfx.com/mvfxpublic/templates/mp4/mBackdrop_Trailer.mp4')
                                 a(data-focus-on-product='3594' href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
-                                  img.img-fluid(width='800' height='449' alt='' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAADhCAQAAABMvyuXAAAByUlEQVR42u3TMQ0AAAzDsJU/6SHo28uGECk5oIoEYBAwCBgEDAIGAYOAQcAgYBDAIGAQMAgYBAwCBgGDgEHAIGAQwCBgEDAIGAQMAgYBg4BBwCCAQcAgYBAwCBgEDAIGAYOAQcAggEHAIGAQMAgYBAwCBgGDgEEAg4BBwCBgEDAIGAQMAgYBg4BBAIOAQcAgYBAwCBgEDAIGAYMABgGDgEHAIGAQMAgYBAwCBgGDAAYBg4BBwCBgEDAIGAQMAgYBg0gABgGDgEHAIGAQMAgYBAwCBgEMAgYBg4BBwCBgEDAIGAQMAgYBDAIGAYOAQcAgYBAwCBgEDAIYBAwCBgGDgEHAIGAQMAgYBAwCGAQMAgYBg4BBwCBgEDAIGAQwCBgEDAIGAYOAQcAgYBAwCBgEMAgYBAwCBgGDgEHAIGAQMAhgEDAIGAQMAgYBg4BBwCBgEDAIYBAwCBgEDAIGAYOAQcAgYBAwiARgEDAIGAQMAgYBg4BBwCBgEMAgYBAwCBgEDAIGAYOAQcAgYBDAIGAQMAgYBAwCBgGDgEHAIIBBwCBgEDAIGAQMAgYBg4BBwCCAQcAgYBAwCBgEDAIGAYOAQQCDgEHAIGAQmHuSyQDisCaXtQAAAABJRU5ErkJggg==')
-                                .preview-wrapper.zoom(data-mp4-url='https://s3.motionvfx.com/mvfxpublic/templates/mp4/mBackdrop_Trailer.mp4')
-                                  a(data-focus-on-product='3594' href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
-                                    .preview-image-container
-                                      //- img.img-fluid(alt='mBackdrop' src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/plugin_box_xs77eCP.jpg' width='800' height='449' onload="this.style.display='block'" style='display: block;')
-                                    .preview-video-container(style='display: none;')
-                                    .gradient-bg
-                                  a.btn-buy.no-pointer-events.text-uppercase.cursor-pointer(data-add-to-cart='{ "productId": "3594", "productTitle": "mBackdrop" }')
-                                    | Buy now $69
-                                  a.mute-trigger.text-uppercase.cursor-pointer.d-none
-                                    //- img.mute-btn.d-none(src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/mute.svg')
-                                    //- img.unmute-btn(src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/unmute.svg')
-                              .info-bar
-                                .marks-container
-                                  .mark-icon.silicon M1
-                                .software-icon-container
-                                  .placeholder.software-icon
-                                  //- img.software-icon(src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/fcp_color_icon.png' width='30' height='30')
-                              .caption
-                                a.title.caption-link(href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
-                                  | mBackdrop
-                                a.subtitle.caption-link(href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
-                                  | Motion Design Backgrounds for&nbsp;Final&nbsp;Cut&nbsp;Pro
+                                  .preview-image-container
+                                    //- img.img-fluid(alt='mBackdrop' src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/plugin_box_xs77eCP.jpg' width='800' height='449' onload="this.style.display='block'" style='display: block;')
+                                  .preview-video-container(style='display: none;')
+                                  .gradient-bg
+                                a.btn-buy.no-pointer-events.text-uppercase.cursor-pointer(data-add-to-cart='{ "productId": "3594", "productTitle": "mBackdrop" }')
+                                  | Buy now $69
+                                a.mute-trigger.text-uppercase.cursor-pointer.d-none
+                                  //- img.mute-btn.d-none(src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/mute.svg')
+                                  //- img.unmute-btn(src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/unmute.svg')
+                            .info-bar
+                              .marks-container
+                                .mark-icon.silicon M1
+                              .software-icon-container
+                                .placeholder.software-icon
+                                //- img.software-icon(src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/fcp_color_icon.png' width='30' height='30')
+                            .caption
+                              a.title.caption-link(href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
+                                | mBackdrop
+                              a.subtitle.caption-link(href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
+                                | Motion Design Backgrounds for&nbsp;Final&nbsp;Cut&nbsp;Pro
 
                 //- - for(let index = 0; index < plugins.plugins; index++)
                 //- each plugin, index in plugins.plugins
@@ -328,7 +328,7 @@ html(lang="en")
         section.section.section--free
           .container
             .row.align-items-center
-              .col-md-6
+              .col-md-5
                 - var image = freeImage.src
                 - var alt = freeImage.src
                 - var width = '1280'
@@ -336,7 +336,7 @@ html(lang="en")
                 - var sizes = '(max-width: 768px) 100vw, 960px'
                 - var noBlurbg = true
                 include includes/components/image.pug
-              .col-md-6
+              .col-md-7
                 .section__head
                   h2.section__title= free.title
                   p.section__text= free.text
@@ -366,4 +366,4 @@ html(lang="en")
                     - var height = '721'
                     - var sizes = '(max-width: 768px) 200vw, 50vw'
                     include includes/components/image.pug
-      include includes/footer.pug
+        include includes/footer.pug

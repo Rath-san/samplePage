@@ -81,8 +81,14 @@ lite-youtube {
 
 .section-- {
   &plugins {
+    .product-grid {
+      justify-content: center;
+    }
     padding-bottom: 0;
     .section {
+      &__head {
+        max-width: 40em;
+      }
       &__content {
         // display: flex;
         // margin-bottom: 3rem;
@@ -101,7 +107,13 @@ lite-youtube {
   &baubles {
   }
   &free {
-    padding-bottom: 0;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+
+    .section__head {
+      max-width: unset;
+    }
+
     .img-lazy {
       @include respond-below(md) {
         margin-bottom: 2rem;
@@ -118,6 +130,7 @@ lite-youtube {
     }
   }
   &packs {
+    padding-bottom: 0;
     .os-icon {
       &s {
         line-height: 0;
@@ -345,7 +358,8 @@ $arrow-radius: 0.2rem;
       grid-column: 1;
       width: 140vw;
       height: 140vw;
-      border-radius: 50%
+      border-radius: 50%;
+      will-change: transform;
   }
 
   .gradient-floating .blue {
@@ -376,7 +390,7 @@ $arrow-radius: 0.2rem;
 .packs {
   &__image {
     &__comp {
-      padding: 75%;
+      padding: 60%;
       display: flex;
       align-items: center;
       @include respond-below(md) {
@@ -386,22 +400,23 @@ $arrow-radius: 0.2rem;
         position: absolute;
         width: 150%;
         left: 10%;
-        top: 10%;
+        top: -10%;
         @include respond-below(md) {
           width: 100%;
         }
 
         $offset-base: 2%;
         &:nth-child(1) {
-          transform: translate($offset-base * 0, $offset-base * 0);
+          opacity: .65;
+          transform: translate($offset-base * 1, $offset-base * 2);
           box-shadow: 0 0 40px 20px rgba(0, 0, 0, .33);
         }
         &:nth-child(2) {
-          transform: translate($offset-base * 6, $offset-base * 4);
+          transform: translate($offset-base * 7, $offset-base * 8);
           box-shadow: 0 0 80px 40px rgba(0, 0, 0, .66);
         }
         &:nth-child(3) {
-          transform: translate($offset-base * 12, $offset-base * 8);
+          transform: translate($offset-base * 13, $offset-base * 14);
           box-shadow: 0 0 120px 60px rgba(0, 0, 0, .99);
         }
       }

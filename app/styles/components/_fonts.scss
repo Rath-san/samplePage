@@ -59,14 +59,14 @@ h4,
 h5,
 h6 {
   font-family: 'Proxima', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: $font-size-title;
   line-height: 1;
   margin-bottom: 0;
 }
 
 b {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 main {
@@ -92,7 +92,7 @@ main {
   
   &__head {
     margin-bottom: 2rem;
-    max-width: 30em;
+    max-width: 35em;
     margin: auto;
     @media screen and (max-width : 768px) {
       padding: 0 5%;
@@ -108,13 +108,15 @@ main {
   }
 
   &__title {
-    font-size: 1.75rem;
+    white-space: pre-line;
+    font-size: 2rem;
     padding: 0;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
     margin-bottom: 2rem;
     // font-family: 'Poppins';
     @media screen and (max-width: 1024px) {
+      white-space: normal;
       font-size: 32px;
       margin-bottom: 1rem;
     }
@@ -148,7 +150,7 @@ main {
     font-family: 'Proxima';
   }
   &__text {
-    font-size: .9rem;
+    font-size: $font-size-body;
     margin-bottom: 2.5rem;
     // font-weight: 400;
     // white-space: pre-line;

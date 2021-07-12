@@ -1,13 +1,13 @@
 .footer {
   // max-height: 100vh;
   position: relative;
-  padding: 10rem 0;
+  padding: 15rem 0;
   // overflow: hidden;
   // background: rgb(2,0,36);
   // padding-bottom: 0;
   // background: #000;
-  box-shadow: 0 0 160px 80px black;
-  @media screen and (max-width : 768px) {
+  // box-shadow: 0 0 160px 80px black;
+  @media screen and (max-width: 768px) {
     padding: 10rem 0;
   }
 
@@ -22,12 +22,15 @@
     &__text {
       margin-bottom: 1rem;
     }
+    &__head {
+      max-width: 36em;
+    }
   }
 
   &__title {
     // margin-bottom: 2rem;
   }
-  
+
   &__text {
     // max-width: 34em;
     // margin: 0 auto 5rem auto;
@@ -36,12 +39,18 @@
     // }
   }
 
+  $grad: linear-gradient(to top, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0));
+
   .image__background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    img {
+      mask-image: $grad;
+      -webkit-mask-image: $grad;
+    }
   }
 
   .img-lazy {

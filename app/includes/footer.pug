@@ -3,13 +3,24 @@
 - var footerIcons = footer.icons
 - var footerSubscribe = footer.subscribe
 
-section.footer.bg--dark
+//- svg(xmlns='http://www.w3.org/2000/svg' version='1.1' baseprofile='full')
+  mask#m1(maskunits='objectBoundingBox' maskcontentunits='objectBoundingBox')
+    lineargradient#g(gradientunits='objectBoundingBox' x1='0' y1='0' x2='0' y2='1')
+      stop(stop-color='white' offset='0')
+      stop(stop-color='white' stop-opacity='0' offset='1')
+
+    //- lineargradient#g(gradientunits='objectBoundingBox' x2='1')
+      stop(stop-color='white' offset='0')
+      stop(stop-color='white' stop-opacity='0' offset='1')
+    rect(x='0' y='0' width='1' height='1' fill='url(#g)')
+
+section.footer.text--light
   //- - var image = `/images/footer_3.jpg`
   //- - var alt = 'Woman in cinematic alley'
   //- - var width = '2560'
   //- - var height = '1150'
   //- include components/image-background.pug
-  .image__background
+  .image__background()
     //- img(src=`/images/footer.jpg`, alt="", srcset="")
     - var image = footerImage.src
     - var alt = footerImage.alt

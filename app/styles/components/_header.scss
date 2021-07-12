@@ -34,9 +34,11 @@
     justify-content: center;
     height: 90vh;
     max-height: 800px;
+    max-width: 30em;
+    margin: auto;
     @include respond-below(md) {
-      text-align: center;
-      align-items: center;
+      text-align: left;
+      align-items: flex-start;
     }
   }
 
