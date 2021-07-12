@@ -90,10 +90,6 @@ lite-youtube {
         max-width: 40em;
       }
       &__content {
-        // display: flex;
-        // margin-bottom: 3rem;
-        // flex-wrap: wrap;
-        // justify-content: center;
         .product-grid {
           justify-content: center;
         }
@@ -101,6 +97,12 @@ lite-youtube {
           flex: 0 0 33.333%;
           max-width: 33.333%;
         }
+      }
+    }
+    .product-grid .product-wrapper.custom-col {
+      @media screen and (min-width: 1600px) {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
       }
     }
   }
