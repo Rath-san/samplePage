@@ -92,7 +92,7 @@ html(lang="en")
               text: 'Beautiful Channel Openers for DVR'
             }
           ],
-          button: 'more →',
+          button: 'more',
         },
         baubles: {
           title: 'You gave us the challenge… \nSO WE DID IT!',
@@ -177,26 +177,26 @@ html(lang="en")
           },
           title: 'Now you can apply the very expertise that Hollywood studios use to your everyday editing',
           text: 'We are continually working on new products, so stay tuned for new ones.',
-          subscribe: 'Subscribe to our newsletter →',
+          subscribe: 'Subscribe to our newsletter',
           icons: [
             {
               name: 'facebook',
-              //- icon: '',
+              icon: '&#xf09a;',
               link: ''
             },
             {
               name: 'twitter',
-              //- icon: '',
+              icon: '&#xf099;',
               link: ''
             },
             {
               name: 'instagram',
-              //- icon: '',
+              icon: '&#xf16d;',
               link: ''
             },
             {
               name: 'youtube',
-              icon: 'youtube-play',
+              icon: '&#xf16a;',
               link: ''
             }
           ]
@@ -246,7 +246,7 @@ html(lang="en")
 
       - var slider = data.slider
 
-      section#carouselSection.bg--dark.text--light.slider.carousel.slide.carousel-fade(data-bs-ride="carousel" data-bs-interval="5000")
+      section#carouselSection.bg--dark.text--light.slider.carousel.slide.carousel-fade(data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false")
         .slider__bg
           .carousel-inner
             each image, index in slider.images
@@ -309,7 +309,7 @@ html(lang="en")
         section.section.section--packs
           .container
             .row.align-items-center
-              .col-6
+              .col-md-6
                 .section__head
                   .os-icons
                     - var icons = packs.icons
@@ -320,15 +320,13 @@ html(lang="en")
                       include includes/components/icon-windows.pug
                   h2.section__title= packs.title
                   p.section__text= packs.text
-              .col-6
+              .col-md-6
                 .packs__image__comp
                   each image, index in packsImages
                     - var image = image.src
                     - var alt = image.src
                     - var width = '1280'
                     - var height = '721'
-                    - var sizes = '(max-width: 100vw) 50vw'
+                    - var sizes = '(max-width: 768px) 200vw, 50vw'
                     include includes/components/image.pug
-
-
       include includes/footer.pug

@@ -33,6 +33,7 @@
     flex-direction: column;
     justify-content: center;
     height: 90vh;
+    max-height: 800px;
     @include respond-below(md) {
       text-align: center;
       align-items: center;

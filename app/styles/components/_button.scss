@@ -16,8 +16,20 @@
   &-more {
     color: #fff;
     background-color: #000;
+    position: relative;
+    &::after {
+      content: '→';
+      position: absolute;
+      right: 40px;
+      will-change: transform;
+      transform: translateX(0);
+      transition: transform .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
     &:hover {
       color: #fff;
+      &::after {
+        transform: translateX(10px);
+      }
     }
     &:focus {
       box-shadow: none;

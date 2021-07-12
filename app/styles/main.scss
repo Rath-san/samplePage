@@ -95,8 +95,17 @@ lite-youtube {
   &slider {
   }
   &free {
+    padding-bottom: 0;
+    .img-lazy {
+      @include respond-below(md) {
+        margin-bottom: 2rem;
+      }
+    }
     .placeholder {
       padding-bottom: 75% !important;
+      @include respond-between(sm, md) {
+        padding-bottom: calc(56.3281%) !important;
+      }
     }
     img {
       object-fit: cover;
@@ -353,22 +362,25 @@ $arrow-radius: 0.2rem;
   }
 }
 
-
-
-
 .packs {
   &__image {
     &__comp {
       padding: 75%;
       display: flex;
       align-items: center;
+      @include respond-below(md) {
+        padding: 50%;
+      }
       .img-lazy {
         position: absolute;
         width: 150%;
         left: 10%;
         top: 10%;
+        @include respond-below(md) {
+          width: 100%;
+        }
 
-        $offset-base: 1rem;
+        $offset-base: 2%;
         &:nth-child(1) {
           transform: translate($offset-base * 0, $offset-base * 0);
           box-shadow: 0 0 40px 20px rgba(0, 0, 0, .33);
