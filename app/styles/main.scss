@@ -85,14 +85,13 @@ lite-youtube {
     .section {
       &__content {
         display: flex;
-        flex-basis: 33.333%;
         margin-bottom: 3rem;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   }
   &baubles {
-  }
-  &slider {
   }
   &free {
     padding-bottom: 0;
@@ -161,10 +160,15 @@ lite-youtube {
   img {
     max-width: 100%;
   }
+
   &__wrapper {
-    width: 33.333%;
+    // width: 33.333%;
     padding: 1rem;
     text-decoration: none;
+    flex-basis: 33.333%;
+    @include respond-below(md) {
+      flex-basis: 50%;
+    }
     &:hover {
       text-decoration: none;
     }
@@ -302,8 +306,8 @@ $arrow-radius: 0.2rem;
   .gradient-floating .circle {
       grid-row: 1;
       grid-column: 1;
-      width: 200vw;
-      height: 200vw;
+      width: 100vw;
+      height: 100vw;
       border-radius: 50%
   }
 
@@ -332,18 +336,18 @@ $arrow-radius: 0.2rem;
   .gradient-floating .circle {
       grid-row: 1;
       grid-column: 1;
-      width: 90vw;
-      height: 90vw;
+      width: 140vw;
+      height: 140vw;
       border-radius: 50%
   }
 
   .gradient-floating .blue {
-      opacity: .3;
+      opacity: .15;
       background: radial-gradient(#3fd5ef, transparent 66%)
   }
 }
 
-@media all and (min-width: 1200px) and (min-width: 1200px) {
+@media all and (min-width: 1200px) {
   .gradient-floating .blue {
       animation:moveBlue 20s infinite
   }
@@ -351,7 +355,7 @@ $arrow-radius: 0.2rem;
 
 @media all and (min-width: 1200px) {
   .gradient-floating .red {
-      opacity:.3;
+      opacity: .15;
       background: radial-gradient(#f1565b, transparent 66%)
   }
 }

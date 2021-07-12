@@ -12,7 +12,16 @@
   }
 
   .btn {
-    padding-left: 0;
+    margin-bottom: 1rem;
+    @include respond-above(md) {
+      padding-left: 0;
+    }
+  }
+
+  .section {
+    &__text {
+      margin-bottom: 1rem;
+    }
   }
 
   &__title {
