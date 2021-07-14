@@ -3,10 +3,22 @@
   padding: 0;
   background: #000;
 
-  .section__title {
-    @include respond-below(xl) {
-      white-space: pre-line;
-      max-width: 500px;
+  .section {
+    &__title {
+      @include respond-below(xl) {
+        white-space: pre-line;
+        max-width: 500px;
+      }
+    }
+    &__text {
+      max-width: 560px;
+      &__sub {
+        max-width: 400px;
+        color: #9A9A9A;
+        padding-bottom: 2rem;
+        position: absolute;
+        bottom: 0;
+      }
     }
   }
 

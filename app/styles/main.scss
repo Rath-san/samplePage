@@ -36,6 +36,9 @@
 lite-youtube {
   max-width: unset;
 }
+.product-grid .product .caption-link {
+  font-weight: 400;
+}
 
 .lty-playbtn {
   &:focus {
@@ -81,6 +84,10 @@ lite-youtube {
 
 .section-- {
   &plugins {
+    .container {
+      max-width: 2030px;
+    }
+
     .product-grid {
       justify-content: center;
     }
@@ -438,32 +445,32 @@ $arrow-radius: 0.2rem;
       opacity: .35;
       @include respond-below(md) {
         opacity: 1;
-        z-index: 3;
+        // z-index: 3;
       }
       .img-lazy {
         transform: translate($offset-base * 1, $offset-base * 2);
         // box-shadow: 0 0 40px 20px rgba(0, 0, 0, .33);
         @include respond-below(md) {
-          transform: translate(0, $offset-base * 2);
+          transform: translate(0, $offset-base * 2) scale(.9);
         }
       }
     }
     &:nth-child(2) {
       @include respond-below(md) {
-        z-index: 2;
+        // z-index: 2;
       }
       .img-lazy {
         transform: translate($offset-base * 7, $offset-base * 8);
         box-shadow: 0 0 80px 40px rgba(0, 0, 0, .66);
         @include respond-below(md) {
-          transform: translate(0, $offset-base * 8);
+          transform: translate(0, $offset-base * 8) scale(.95);
         }
       }
     }
     &:nth-child(3) {
       @include respond-below(md) {
-        opacity: .35;
-        z-index: 1;
+        // opacity: .35;
+        // z-index: 1;
       }
       .img-lazy {
         transform: translate($offset-base * 13, $offset-base * 14);

@@ -24,6 +24,9 @@
       @include respond-below(sm) {
         padding-bottom: 350px;
       }
+      @media screen and (max-width: 400px) {
+        padding-bottom: 400px;
+      }
     }
   }
   &-indicators {
@@ -31,6 +34,16 @@
     position: unset;
     margin-left: calc((76px + 2.5rem) * -1);
     display: block;
+    // @media screen and (min-width: 460px) and (max-width: 530px) {
+    //   display: flex;
+    //   justify-content: space-between;
+    // }
+    @media screen and (max-width: 580px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
 
     @include respond-below(lg) {
       margin-left: 0;
@@ -42,6 +55,9 @@
       width: unset;
       height: unset;
       margin: 0 2.5rem 0 0;
+      // @media screen and (min-width: 460px) and (max-width: 530px) {
+      //   margin: 0 0 0 0;
+      // }
       position: relative;
       background-color: transparent;
       text-transform: uppercase;
@@ -73,6 +89,9 @@
   .section__head {
     margin: 0 auto 0 0;
     max-width: 100%;
+    @include respond-below(sm) {
+      margin-left: -5%;
+    }
   }
 
   &-item {

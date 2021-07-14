@@ -1,6 +1,9 @@
 .footer {
   position: relative;
   padding: 15rem 0;
+  @include respond-below(sm) {
+    padding: 10rem 0 15rem 0;
+  }
 
   .btn {
     margin-bottom: 1rem;
