@@ -49,36 +49,37 @@ html(lang="en")
           subtitle: 'This is subtitle'
         }
       }
-
+  - var dev = true
   body
+    include data.pug
     include includes/submenu.pug
     include includes/navbar.pug
     .top-bar
     main.mDonut
       include includes/header.pug
       a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
-      a.nav(name="trailer")
-      - var sectionClasses = 'trailer bg__light'
-      - var title = "WATCH TRAILER"
-      - var subtitle = 'See them at work!'
-      - var text = 'View the presets in action and watch them create a unique visual form of the ideas you want to realize.'
-      //- - var videoLink = "https://www.youtube.com/embed/pBP5UxWD2BA?rel=0"
-      - var videoLink = "pBP5UxWD2BA"
-      //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
-      - var videoTitle = placeholders.video.videoTitle
-      include includes/video.pug
+      //- a.nav(name="trailer")
+      //- - var sectionClasses = 'trailer bg__light'
+      //- - var title = "WATCH TRAILER"
+      //- - var subtitle = 'See them at work!'
+      //- - var text = 'View the presets in action and watch them create a unique visual form of the ideas you want to realize.'
+      //- //- - var videoLink = "https://www.youtube.com/embed/pBP5UxWD2BA?rel=0"
+      //- - var videoLink = "pBP5UxWD2BA"
+      //- //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
+      //- - var videoTitle = placeholders.video.videoTitle
+      //- include includes/video.pug
 
-      a.nav(name="tutorial")
-      //- - var background = '/images/tutorial_bg.jpg'
-      - var sectionClasses = 'tutorial bg__dark'
-      - var title = "WATCH TUTORIAL"
-      - var subtitle = 'Learn to maximize your effects!'
-      - var text = 'Get the know-how to make your work the most effective and master your campaigns!'
-      - var videoLink = "Q3U2_llmIIE"
-      //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
-      - var videoTitle = placeholders.video.videoTitle
-      include includes/video.pug
-      //- include includes/new-interface.pug
+      //- a.nav(name="tutorial")
+      //- //- - var background = '/images/tutorial_bg.jpg'
+      //- - var sectionClasses = 'tutorial bg__dark'
+      //- - var title = "WATCH TUTORIAL"
+      //- - var subtitle = 'Learn to maximize your effects!'
+      //- - var text = 'Get the know-how to make your work the most effective and master your campaigns!'
+      //- - var videoLink = "Q3U2_llmIIE"
+      //- //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
+      //- - var videoTitle = placeholders.video.videoTitle
+      //- include includes/video.pug
+      //- //- include includes/new-interface.pug
 
       -
         var images = [
@@ -104,145 +105,13 @@ html(lang="en")
       
       - var active = (index) => `${index === 0 && 'active' }`
 
-      section.showcase
-        div#carouselExamples(class=`case__item case__item--2 carousel slide carousel-fade`)
-          .case__item__bg
-            include includes/components/slider.pug
-          .case__item__body
-            .container
-              .row
-                -
-                  var sliderTitler = [
-                    'Different effect styles',
-                    'test test derest',
-                    'Different effect styles3'
-                  ]
-                .col-xs-12.col-md-6.order-xs-12.order-md-12
-                  .carousel__contents
-                    each sT, index in sliderTitler
-                      div(class=`carousel-title section__title ${active(index)}`)
-                        - if (index === 0)
-                          img.showcase__bg__deco(src='/images/donna.png', alt="", srcset="")
-                          .contents__wrapper
-                            include includes/svg/artist.pug
-                        - if (index === 1)
-                          .contents__wrapper.contents__wrapper--big
-                            include includes/svg/it.pug
-                        - if (index === 2)
-                          .contents__wrapper
-                            include includes/svg/forest_1.pug
-                .col-xs-12.col-md-6.order-xs-1.order-md-1
-                  .section__head
-                    h2.section__subtitle Illustrate diverse concepts & bring your ideas to life
-                    //- this will be changing
-                    .carousel-test.carousel__titles
-                      each sT, index in sliderTitler
-                        p(class=`carousel-title section__title ${active(index)}`)=sT
-                    p.section__text This collection of handy, pre-animated elements lets you build a whole layout to illustrate your videos and enrich your edits. Attract donators, supporters, and clients, and raise enough money to accomplish the goal.
+      - var slides = data.slides
+      section.slides
+        //- aditional interaction here
 
-      -
-        var miniImages = [
-          {
-            src: `/images/mini_slider_1.jpg`,
-            alt: ''
-          },
-          {
-            src: `/images/mini_slider_2.jpg`,
-            alt: ''
-          },
-          {
-            src: `/images/mini_slider_3.jpg`,
-            alt: ''
-          },
-          {
-            src: `/images/mini_slider_4.jpg`,
-            alt: ''
-          },
-          {
-            src: `/images/mini_slider_5.jpg`,
-            alt: ''
-          },
-          {
-            src: `/images/mini_slider_6.jpg`,
-            alt: ''
-          }
-        ]
-
-      section.showcase
-        div#carouselContinuous(class=`case__item case__item--2 carousel slide carousel-continuous`)
-          .carousel-inner
-            each img, index in miniImages
-              div(class=`carousel-item ${active(index)}`)
-                - var image = img.src
-                - var alt = 'People in white clothes with censored eyes, looking at their mobile devices'
-                - var imageWidth = '600'
-                - var imageHeight = '600'
-                - var placeholder = getParsedImage(image)
-                - var srcset = getParsedImage(image, 'srcSet')
-                img(
-                  alt=alt,
-                  height=height
-                  src=getParsedImage(image, 'src'),
-                  srcset=srcset,
-                  sizes=sizes || '(max-width: 1024px) 300vw, 100vw'
-                )
-                //- - var image = img.src
-                //- - var alt = img.alt
-                //- - var imageWidth = '600'
-                //- - var imageHeight = '600'
-                //- - var sizes = '33.333vw'
-                //- include includes/components/image.pug
-                //- img.d-block(src=img.src alt=img.alt)
-      -
-        var logos = [
-          {
-            src: `/images/logo_1.png`,
-            alt: ``
-          },
-          {
-            src: `/images/logo_2.png`,
-            alt: ``
-          },
-          {
-            src: `/images/logo_3.png`,
-            alt: ``
-          },
-          {
-            src: `/images/logo_4.png`,
-            alt: ``
-          }
-        ]
-      section.showcase.bg__dark.showcase--target
-        .case__item__bg
-          .image__comp
-            .img--main
-              //- img(src=`/images/campaign.jpg`, alt="", srcset="")
-              - var image = `/images/campaign.jpg`
-              - var alt = "Kids smiling, cheering and waving to camera"
-              - var imageWidth = '1800'
-              - var imageHeight = '1055'
-              - var sizes = '80vw'
-              include includes/components/image.pug
-            .image__comp__side.d-none.d-xl-block
-              .image__head
-                p Helpful companies
-              .image__body
-                each img, index in logos
-                  img(src=img.src, alt=img.alt, srcset="")
-              .image__footer
-                button.btn.btn-cta Become a patron
-        .case__item__body
-          .container
-            .row
-              .col-xs-6.col-md-12.order-md-12
-                .section__body
-                  .target
-                    img(src=`/images/campaign_donate.png`, alt="", srcset="")
-              div(class=`col-xs-6 col-md-12 order-md-1`)
-                .section__head
-                  h2.section__subtitle A complete visual toolbox
-                  p.section__title Establish a successful donation campaign
-                  p.section__text Whatever your goal is - introducing it in a visually appealing form will help you reach it and stay in the memory of more people. Make your cause more convincing and extend your fanbase!
+      - var promo = data.promo
+      section.promo
+        //- promo here
 
       //- include includes/split-image.pug
       include includes/presets.pug

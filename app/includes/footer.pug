@@ -1,47 +1,20 @@
--
-  var footerSliderItems = [
-    {
-      src: '/images/footer_1.jpg',
-      alt: 'test'
-    },
-    {
-      src: '/images/footer_2.jpg',
-      alt: 'test'
-    }
-  ]
+- var footer = data.footer
+- var footerBg = footer.image
 
 section.footer.bg--dark.text-center
-  //- - var image = `/images/footer_3.jpg`
-  //- - var alt = 'Woman in cinematic alley'
-  //- - var width = '2560'
-  //- - var height = '1150'
-  //- include components/image-background.pug
   .image__background
-    //- img(src=`/images/footer.jpg`, alt="", srcset="")
-    - var image = '/images/footer.jpg'
-    - var alt = 'Thee pictures with mDonate elements sprinkled over'
+    - var image = footerBg.src
+    - var alt = footerBg.alt
     - var imageWidth = '2560'
     - var imageHeight = '1150'
     - var sizes = '(max-width: 500px) 200vw'
     include components/image.pug
-  .footer__comp
-    include svg/footer_donate.pug
-    include svg/footer_donate_2.pug
   .container
     .row
       .col-12
         .footer__content.section__text__content
           .section__head
-            h2.footer__title.section__title Turn your ideas into reality!
-            p.footer__text.section__text Modern times give us many opportunities to carry out various projects and realize our dreams and ideas. The well-crafted design of mDonate gives your campaign a unique look and makes it stand out to help you get where you want to be and make a lasting impression on your patrons.
+            h2.footer__title.section__title= footer.title
+            p.footer__text.section__text= footer.text
         .button-buy
           | {% with discount_text="INTRO", version=2 %} {% include "product/buy_button.jinja2" %} {% endwith %}
-          //- .footer__buttons
-          //-   include components/buttons.pug
-        //- .footer__promo
-        //-   img(src="https://via.placeholder/1920x1080", alt="", srcset="")
-          - var image = `/images/footer_promo.jpg`
-          - var alt = 'MOTIONVFX shop interface'
-          - var imageWidth = '2560'
-          - var imageHeight = '1460'
-          include components/image.pug

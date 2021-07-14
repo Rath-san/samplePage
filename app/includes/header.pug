@@ -1,12 +1,16 @@
+//- - var header = data.header
+//- - var headerBg = header.images.bg
+//- - var headerLogo = header.images.logo
+
 section.header.text--light.text-center
   .header__bg(style="opacity:1")
     //- img(data-src=`/images/header.jpg`, alt="", srcset="")
-    - var image = `/images/header.jpg`
-    - var alt = 'Woman in cinematic alley'
-    - var width = '2560'
-    - var height = '1150'
-    - var sizes = '(max-width: 768px) 300vw'
-    include components/image-background.pug
+    //- - var image = headerBg.src
+    //- - var alt = headerBg.alt
+    //- - var width = '2560'
+    //- - var height = '1150'
+    //- - var sizes = '(max-width: 768px) 300vw'
+    //- include components/image-background.pug
     //- - var image = `/images/header_bg.jpg`
     //- - var alt = 'People in white clothes with censored eyes, looking at their mobile devices'
     //- - var imageWidth = '2005'
@@ -25,27 +29,21 @@ section.header.text--light.text-center
     .row
       .col-12
         .header__content.section__text__content
-          .header__logo
-            //- - var image = `/images/logos.png`
-            //- - var alt = 'mTransition Fade logo'
-            //- - var imageWidth = '1200'
-            //- - var imageHeight = '737'
-            //- - var placeholder = getParsedImage(image)
-            //- - var srcset = getParsedImage(image, 'srcSet')
-            //- img(
-            //-   style="opacity:0"
-            //-   alt=alt,
-            //-   height=height
-            //-   data-src=getParsedImage(image, 'src'),
-            //-   data-srcset=srcset,
-            //-   sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
-            //- )
-            //- img(data-src=placeholders.image.logo(), alt="", srcset="")
-            include components/logo.pug
-            p.header__subtitle(style="opacity:0")=`Donation and Fanbase-building Tools for Final Cut Pro`
-          //- .mocha-info(style="opacity:0;")
-            .mocha-info__content
-              | New Apple Silicon&hairsp;&ndash;&hairsp;ready version of
-              img(data-src='https://s3.motionvfx.com/mvfxpublic/products/templates/1338/media/mocha.png' width='152' height='210' alt='Mocha')
-
-        //- .header__promo.animated.animation--fade.animation--bottom
+          //- .header__logo
+            - var image = headerLogo.src
+            - var alt = headerLogo.alt
+            - var imageWidth = '1200'
+            - var imageHeight = '737'
+            - var placeholder = getParsedImage(image)
+            - var srcset = getParsedImage(image, 'srcSet')
+            img(
+              style="opacity:0"
+              alt=alt,
+              height=height
+              data-src=getParsedImage(image, 'src'),
+              data-srcset=srcset,
+              sizes=sizes || '(max-width: 1024px) 50vw, 100vw'
+            )
+            img(data-src=placeholders.image.logo(), alt="", srcset="")
+            img(data-src=placeholders.image.logo(), alt="", srcset="")
+            p.header__subtitle(style="opacity:0")= header.title
