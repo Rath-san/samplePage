@@ -27,7 +27,7 @@ html(lang="en")
 
     script(src='scripts/vendor/page/commons.js')
     script(src='scripts/vendor/page/core.js')
-    script(src='scripts/vendor/page/silicon_grid.js')
+    //- script(src='scripts/vendor/page/silicon_grid.js')
 
     - var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
 
@@ -69,7 +69,7 @@ html(lang="en")
             }
           },
           title: 'We’re now ready \nfor DaVinci Resolve 17.2.2!',
-          text: 'What if we showed you how to seamlessly combine the endless possibilities of MotionVFX’s templates with the industry’s one software tool for all things editing, including color correction, visual effects, motion graphics and audio post production?'
+          text: 'What if we showed you how to seamlessly combine the endless possibilities of MotionVFX’s products with the industry’s one software tool for all things editing, including color correction, visual effects, motion graphics and audio post production?'
         },
         plugins: {
           title: 'Creative tools to make your video \nlook professional',
@@ -101,15 +101,19 @@ html(lang="en")
           text: 'You asked, we delivered, and now it’s official! MotionVFX goes Da Vinci and the number of stunning presets for your edits is raising by the day.',
           baubles: [
             {
-              text: 'I’m using Final Cut Pro Love your plugins You should make them work in DaVinci Resolve also'
+              level: 2,
+              text: 'I’m using Final Cut Pro \nLove your plugins \nYou should make them work in DaVinci Resolve also'
             },
             {
+              level: 1,
               text: 'I would like MotionVFX plugins for DaVinci Resolve too!'
             },
             {
+              level: 2,
               text: 'Please tell me you’re going to start making plugins and templates for Resolve.'
             },
             {
+              level: 3,
               text: 'Can you guys also make DaVinci Resolve plugins?'
             },
           ]
@@ -119,7 +123,7 @@ html(lang="en")
             {
               label: 'mtuber 2',
               title: 'Captivate your viewers',
-              text: 'Our solutions work perfectly, empowering professionals and enthusiasts alike across the global community of video editors. And long story short, they’re the ultimate time-saving option.',
+              text: `Every influencer knows how important it is to keep your content beautiful and interesting. These diversified, pre-animated, and carefully selected tools give you a range of possibilities to boost your channel's visual side and push it in the right direction.`,
               alt: '',
               src: `${mediaRoot}/mTuber_slide-2.jpg`
             },
@@ -135,7 +139,7 @@ html(lang="en")
               title: 'Stunning nostalgic stylizations',
               text: 'Surprise your audience with sensational retro-inspired video effects and evoke memories and emotions. Stand out from the crowd with a unique sentimental touch in your works and make your viewers travel in time.',
               alt: '',
-              src: `${mediaRoot}/mTuber_slide-2.jpg`
+              src: `${mediaRoot}/m16mm_slide-3.jpg`
             },
           ],
           button: 'more'
@@ -147,7 +151,7 @@ html(lang="en")
               src: `${mediaRoot}/box_free.png`
             },
           ],
-          title: 'Have a taste of MotionVFX quality with this free pack for DaVinci Resolve!',
+          title: 'Have a taste of MotionVFX quality \nwith this free pack for DaVinci Resolve 17.2.2!',
           text: 'See how you can elevate your work with these diversified sample tools.',
           button: 'Get it free'
         },
@@ -178,28 +182,28 @@ html(lang="en")
             }
           },
           title: 'Now you can apply the very expertise that Hollywood studios use to your everyday editing',
-          text: 'We are continually working on new products, so stay tuned for new ones.',
+          text: 'We are continually working on new products, \nso stay tuned for new ones.',
           subscribe: 'Subscribe to our newsletter',
           icons: [
             {
               name: 'facebook',
               icon: '&#xf09a;',
-              link: ''
+              link: 'https://www.facebook.com/motionvfx'
             },
             {
               name: 'twitter',
               icon: '&#xf099;',
-              link: ''
+              link: 'https://twitter.com/motionVFX'
             },
             {
               name: 'instagram',
               icon: '&#xf16d;',
-              link: ''
+              link: 'https://www.instagram.com/motionvfx'
             },
             {
               name: 'youtube',
               icon: '&#xf16a;',
-              link: ''
+              link: 'https://www.youtube.com/motionVFXcom'
             }
           ]
         }
@@ -221,12 +225,10 @@ html(lang="en")
               .section__head.text-center
                 h2.section__title= plugins.title
                 p.section__text= plugins.subtitle
-              //- .section__content
               .product-list-wrapper
                 #productList.product-list
                   #productListContainer.container.site-content.container-lg
                     #productsContainer.row.product-grid
-                      //- | {% include &apos;product/product_grid.jinja2&apos; %}
                       each plugin, index in plugins.plugins
                         .col-12.col-sm-6.col-md-6.col-lg-4.col-xl-3.custom-col.product-wrapper
                           .product
@@ -243,28 +245,16 @@ html(lang="en")
                                 a.btn-buy.no-pointer-events.text-uppercase.cursor-pointer(data-add-to-cart='{ "productId": "3594", "productTitle": "mBackdrop" }')
                                   | Buy now $69
                                 a.mute-trigger.text-uppercase.cursor-pointer.d-none
-                                  //- img.mute-btn.d-none(src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/mute.svg')
-                                  //- img.unmute-btn(src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/unmute.svg')
                             .info-bar
                               .marks-container
                                 .mark-icon.silicon M1
                               .software-icon-container
                                 .placeholder.software-icon
-                                //- img.software-icon(src='./Apple Silicon-ready products - motionVFX - Original Home of Apple Motion Templates and Final Cut Pro X Plugins_files/fcp_color_icon.png' width='30' height='30')
                             .caption
                               a.title.caption-link(href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
                                 | mBackdrop
                               a.subtitle.caption-link(href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
                                 | Motion Design Backgrounds for&nbsp;Final&nbsp;Cut&nbsp;Pro
-
-                //- - for(let index = 0; index < plugins.plugins; index++)
-                //- each plugin, index in plugins.plugins
-                  a(href="http://", target="_blank", rel="noopener noreferrer").plugin__wrapper
-                    .plugin
-                      img(src=plugin.src, alt=plugin.alt)
-                      .plugin__body
-                        h3.plugin__title= plugin.title
-                        p.plugin__text= plugin.text
             .col-12.text-center
               a.btn.btn-more(href="http://", target="_blank", rel="noopener noreferrer")= plugins.button
       //- baubles
@@ -272,14 +262,14 @@ html(lang="en")
       section.section.section--baubles
         .container
           .row.align-items-center
-            .col-6
+            .col-lg-6
               .section__head
                 h2.section__title= baubles.title
                 p.section__text= baubles.text
-            .col-6
+            .col-lg-6
               .baubles
                 each bauble, index in baubles.baubles
-                  p.bauble(data-index=index, style=`--bauble-index: ${index}`)= bauble.text
+                  p.bauble(data-index=index, data-level=bauble.level style=`--bauble-index: ${index}`)= bauble.text
 
       - var slider = data.slider
 
@@ -346,7 +336,7 @@ html(lang="en")
         section.section.section--packs
           .container
             .row.align-items-center
-              .col-md-6
+              .col-lg-6
                 .section__head
                   .os-icons
                     - var icons = packs.icons
@@ -357,13 +347,14 @@ html(lang="en")
                       include includes/components/icon-windows.pug
                   h2.section__title= packs.title
                   p.section__text= packs.text
-              .col-md-6
+              .col-lg-6
                 .packs__image__comp
                   each image, index in packsImages
-                    - var image = image.src
-                    - var alt = image.src
-                    - var width = '1280'
-                    - var height = '721'
-                    - var sizes = '(max-width: 768px) 200vw, 50vw'
-                    include includes/components/image.pug
+                    .image__comp__wrapper(style=`--comp-index: ${index + 1}`)
+                      - var image = image.src
+                      - var alt = image.src
+                      - var width = '1280'
+                      - var height = '721'
+                      - var sizes = '(max-width: 768px) 200vw, 50vw'
+                      include includes/components/image.pug
         include includes/footer.pug

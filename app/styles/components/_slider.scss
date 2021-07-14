@@ -1,4 +1,10 @@
 .carousel {
+
+  .container {
+    @include respond-above(xl) {
+      max-width: 1800px;
+    }
+  }
   
   @include respond-below(lg) {
     padding-top: 0;
@@ -28,6 +34,7 @@
 
     @include respond-below(lg) {
       margin-left: 0;
+      margin-right: 0;
     }
 
     [data-bs-target] {
@@ -40,6 +47,7 @@
       text-transform: uppercase;
       font-size: 0.7rem;
       letter-spacing: 1px;
+      font-weight: 700;
       &::after {
         content: '';
         position: absolute;
@@ -64,6 +72,7 @@
 
   .section__head {
     margin: 0 auto 0 0;
+    max-width: 100%;
   }
 
   &-item {
@@ -74,7 +83,25 @@
       position: absolute;
       display: flex;
       flex-direction: column;
-      max-width: 28em;
+      max-width: 31em;
+
+      &:nth-child(1) {
+        .section__text {
+          // max-width: 27em;
+        }
+      }
+
+      &:nth-child(2) {
+        .section__text {
+          // max-width: 27em;
+        }
+      }
+
+      &:nth-child(3) {
+        .section__text {
+          // max-width: 30em;
+        }
+      }
 
       @include respond-below(lg) {
         // position: static;
@@ -134,9 +161,19 @@
     }
   }
   &__head {
+
   }
   &__content {
-    padding: 12%;
+    padding: 12% 0;
+    // margin-bottom: -50%;
+    @include respond-above(lg) {
+      transform: translate(5%, 15%);
+      padding: 12% 10%;
+    }
+    // @include respond-above(md) {
+    //   transform: translate(5%, 15%);
+    //   padding: 5% 0;
+    // }
     @include respond-below(lg) {
       padding: 5% 0;
     }

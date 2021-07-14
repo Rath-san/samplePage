@@ -3,6 +3,13 @@
   padding: 0;
   background: #000;
 
+  .section__title {
+    @include respond-below(xl) {
+      white-space: pre-line;
+      max-width: 500px;
+    }
+  }
+
   &.animated-in {
     .header {
       &__bg {
@@ -34,7 +41,7 @@
     justify-content: center;
     height: 90vh;
     max-height: 800px;
-    max-width: 30em;
+    max-width: 100%;
     margin: auto;
     @include respond-below(md) {
       text-align: left;

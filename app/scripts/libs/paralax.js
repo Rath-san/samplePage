@@ -1,3 +1,5 @@
+import { throttle } from '../utils/utils'
+
 export const paralax = ({
   selector,
   mouseContainer,
@@ -39,7 +41,7 @@ export const paralax = ({
 
     elementChildren.forEach((child) => {
       addClass(child)
-      const level = child.dataset.level
+      const level = child.dataset.level || 1
       child.style.transform = getDepth(level)
     })
   }
@@ -49,7 +51,7 @@ export const paralax = ({
   }
 
   // Add event listener
-  mouseContainer.addEventListener('mousemove', parallax)
+  mouseContainer.addEventListener('mousemove', throttle(parallax, 50))
   mouseContainer.addEventListener('mouseleave', () => {
     elementChildren.forEach((node) => {
       removeClass(node)
