@@ -50,6 +50,10 @@ lite-youtube {
   margin-top: 86px;
 }
 
+.text__link {
+  text-decoration: underline;
+}
+
 .gradient {
   position: relative;
   width: 100%;
@@ -85,7 +89,7 @@ lite-youtube {
 .section-- {
   &plugins {
     .container {
-      max-width: 2030px;
+      max-width: 1535px;
     }
 
     .product-grid {
@@ -120,8 +124,13 @@ lite-youtube {
     }
   }
   &baubles {
-    .section__title {
-      white-space: pre-line;
+    .section {
+      &__title {
+        white-space: pre-line;
+      }
+      &__text {
+        max-width: 32em;
+      }
     }
   }
   &free {

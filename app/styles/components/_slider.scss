@@ -131,6 +131,8 @@
         margin-left: auto;
         margin-right: 15%;
         pointer-events: none;
+        padding-right: 0;
+        min-width: unset;
         @include respond-below(lg) {
           padding-left: 0;
         }

@@ -85,6 +85,10 @@
     }
     &--transparent {
       background-color: transparent;
+      box-shadow: none;
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
 }

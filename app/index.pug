@@ -68,7 +68,7 @@ html(lang="en")
               src: `${mediaRoot}/top.jpg`
             }
           },
-          title: 'We’re now ready \nfor DaVinci Resolve 17.2.2!',
+          title: 'We’re now ready \nfor DaVinci Resolve!',
           text: 'What if we showed you how to seamlessly combine the endless possibilities of MotionVFX’s products with the industry’s one software tool for all things editing, including color correction, visual effects, motion graphics and audio post production?'
         },
         plugins: {
@@ -151,7 +151,7 @@ html(lang="en")
               src: `${mediaRoot}/box_free.png`
             },
           ],
-          title: 'Have a taste of MotionVFX quality \nwith this free pack for DaVinci Resolve 17.2.2!',
+          title: 'Have a taste of MotionVFX quality \nwith this free pack for DaVinci Resolve!',
           text: 'See how you can elevate your work with these diversified sample tools.',
           button: 'Get it free'
         },
@@ -256,6 +256,7 @@ html(lang="en")
                               a.subtitle.caption-link(href='https://www.motionvfx.com/store,mbackdrop,p3594.html')
                                 | Motion Design Backgrounds for&nbsp;Final&nbsp;Cut&nbsp;Pro
             .col-12.text-center
+              - var moreType = 'btn-more--transparent'
               a(href="/page/minstaller.html" class="btn btn-more--2") More
                 img(class="enjoy__more-arrow" src="/static/svg/arrow2-right.svg" alt="more")
       //- baubles
@@ -266,7 +267,9 @@ html(lang="en")
             .col-lg-6
               .section__head
                 h2.section__title= baubles.title
-                p.section__text= baubles.text
+                p.section__text
+                  | You asked, we delivered, and now it’s official. A range of MotionVFX solutions is now available for DaVinci Resolve, and the number of stunning presets for your beautiful postprod effects is raising by the day! Join us for 
+                  a.text__link(href="http://", target="_blank", rel="noopener noreferrer") details
             .col-lg-6
               .baubles
                 each bauble, index in baubles.baubles
@@ -307,7 +310,8 @@ html(lang="en")
                       div(class=`carousel-item__text ${index === 0 ? 'active': ''}` data-index=`${index}`)
                         h2.section__title(style=`--text-index: ${0}`)= image.title
                         p.section__text(style=`--text-index: ${1}`)= image.text
-                        a.btn.btn-more.btn-more--transparent(href="http://", target="_blank", rel="noopener noreferrer" style=`--text-index: ${2}` data-index=`${index}`)= plugins.button
+                        include includes/components/more.pug
+                        //- a.btn.btn-more.btn-more--transparent(href="http://", target="_blank", rel="noopener noreferrer" style=`--text-index: ${2}` data-index=`${index}`)= plugins.button
       .gradient__bg.text--light.bg--dark
         .background
           .gradient-floating

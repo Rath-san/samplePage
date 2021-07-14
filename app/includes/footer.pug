@@ -35,7 +35,10 @@ section.footer.text--light
           .section__head
             h2.footer__title.section__title= footer.title
             p.footer__text.section__text= footer.text
-            a.btn.btn-more.btn-more--transparent(href="http://", target="_blank", rel="noopener noreferrer")= footer.subscribe
+            - var moreText = footer.subscribe
+            - var moreType = 'btn-more--transparent'
+            //- a.btn.btn-more.btn-more--transparent(href="http://", target="_blank", rel="noopener noreferrer")= 
+            include components/more.pug
             ul.list-unstyled.list-inline.social__icons
               each icon, index in footerIcons
                 li.list-inline-item
