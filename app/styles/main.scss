@@ -60,6 +60,29 @@ $text-color: #fbfbfb;
   height: 100vh;
 }
 
+// sections
+
+section {
+  &.trailer,
+  &.tutorial {
+    .section__text {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 25em;
+    }
+  }
+
+  // &.trailer {
+  //   .section__text {
+
+  //   }
+  // }
+
+  // &.tutorial {
+
+  // }
+}
+
 .installation {
   padding-top: 8rem;
   padding-bottom: 8rem;

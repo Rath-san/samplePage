@@ -1,40 +1,3 @@
-// @font-face {
-//   font-family: Proxima;
-//   src: url('/static/fonts/proximanova-bold-webfont.woff2') format('woff2'),
-//     url('/static/fonts/proximanova-bold-webfont.woff') format('woff'),
-//     url('/static/fonts/proximanova-bold-webfont.ttf') format('truetype');
-//   font-weight: 700;
-//   font-style: normal;
-//   font-display: fallback;
-// }
-// @font-face {
-//   font-family: Proxima;
-//   src: url('/static/fonts/proximanova-light-webfont.woff2') format('woff2'),
-//     url('/static/fonts/proximanova-light-webfont.woff') format('woff'),
-//     url('/static/fonts/proximanova-light-webfont.ttf') format('truetype');
-//   font-weight: 300;
-//   font-style: normal;
-//   font-display: fallback;
-// }
-// @font-face {
-//   font-family: Proxima;
-//   src: url('/static/fonts/proximanova-regular-webfont.woff2') format('woff2'),
-//     url('/static/fonts/proximanova-regular-webfont.woff') format('woff'),
-//     url('/static/fonts/proximanova-regular-webfont.ttf') format('truetype');
-//   font-weight: 400;
-//   font-style: normal;
-//   font-display: fallback;
-// }
-// @font-face {
-//   font-family: Proxima;
-//   src: url('/static/fonts/proximanova-semibold-webfont.woff2') format('woff2'),
-//     url('/static/fonts/proximanova-semibold-webfont.woff') format('woff'),
-//     url('/static/fonts/proximanova-semibold-webfont.ttf') format('truetype');
-//   font-weight: 600;
-//   font-style: normal;
-//   font-display: fallback;
-// }
-
 $rem: 20px;
 
 $font-size-title: $rem * 2;
@@ -47,7 +10,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
   font-size: $font-size-title;
   line-height: 1;
@@ -60,7 +23,7 @@ b {
 
 main {
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: $font-size-body;
 }
 
@@ -89,43 +52,43 @@ main {
   }
 
   &__title {
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: 500;
     line-height: 1;
     margin-bottom: 2rem;
-    font-family: 'Poppins';
+    font-family: 'Barlow Condensed', sans-serif;
     @media screen and (max-width: 1024px) {
       font-size: 32px;
       margin-bottom: 1rem;
     }
 
-    br {
-      @media screen and (max-width: 1024px) {
-        display: none;
-      }
-    }
+    // br {
+    //   @media screen and (max-width: 1024px) {
+    //     display: none;
+    //   }
+    // }
 
-    .trailer & {
-      @media screen and (max-width : 768px) {
-        max-width: 10em;
-        margin: 0 auto 1rem auto;
-      }
-    }
+    // .trailer & {
+    //   @media screen and (max-width : 768px) {
+    //     max-width: 10em;
+    //     margin: 0 auto 1rem auto;
+    //   }
+    // }
   }
   &__subtitle {
-    font-size: .65rem;
+    font-size: .6rem;
     font-weight: 500;
     text-transform: uppercase;
     margin-bottom: .8rem;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
   }
   &__display {
     font-weight: 700;
     font-size: 4.5rem;
     margin-bottom: 1rem;
     line-height: 1;
-    color: $color-cta;
-    font-family: 'Poppins';
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
   }
   &__text {
     font-size: .9rem;
