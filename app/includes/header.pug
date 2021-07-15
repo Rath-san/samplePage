@@ -4,7 +4,7 @@
 - var headerDvr = header.images.dvr
 
 section.header.text--light.text-center
-  .header__bg(style="opacity:1")
+  .header__bg(style="opacity:0")
     - var image = headerBg.src
     - var alt = headerBg.alt
     - var imageWidth = '2560'
@@ -12,7 +12,7 @@ section.header.text--light.text-center
     - var placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs='
     //- getParsedImage(image)
     - var srcset = getParsedImage(image, 'srcSet')
-    - var sizes = '100vw'
+    - var sizes = '(max-width: 768px) 200vw, 100vw'
     include components/image.pug
     //- img(
     //-   alt=alt,
@@ -25,7 +25,7 @@ section.header.text--light.text-center
     .row
       .col-12
         .header__content.section__text__content
-          .header__logo(style=`--h-index: 0`)
+          .header__logo(style=`--h-index: 0; opacity: 0`)
             - var image = headerLogo.src
             - var alt = headerLogo.alt
             - var imageWidth = '1200'
@@ -40,8 +40,8 @@ section.header.text--light.text-center
               data-srcset=srcset,
               sizes='800px'
             )
-          p.header__subtitle(style="--h-index: 1")= header.title
-          .dvr(style=`--h-index: 2`)
+          p.header__subtitle(style="--h-index: 1; opacity: 0")= header.title
+          .dvr(style=`--h-index: 2; opacity: 0`)
             - var image = headerDvr.src
             - var alt = headerDvr.alt
             - var imageWidth = '64'
