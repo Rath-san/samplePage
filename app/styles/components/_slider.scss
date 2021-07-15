@@ -12,7 +12,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(-60%);
   }
 }
 
@@ -28,30 +28,52 @@
     width: 110%;
     margin-left: -5%;
     @include respond-below(md) {
-      width: 200%;
+      width: 340%;
       margin-left: 0;
+      animation: anim-e 25s ease-in-out infinite alternate forwards;
+      padding-top: 0;
+      padding-bottom: 5rem;
+      // margin-top: -50%;
+      // &:hover {
+        // animation-play-state: paused;
+      // }
     }
     .slide {
       padding: .5rem;
       &:nth-child(1) {
         width: 20%;
         margin-bottom: -20%;
+        @include respond-below(md) {
+          margin-bottom: 0%;
+        }
       }
       &:nth-child(2) {
         margin-top: -10%;
         width: 40%;
+        @include respond-below(md) {
+          width: 20%;
+        }
       }
       &:nth-child(3) {
         width: 38%;
+        @include respond-below(md) {
+          width: 20%;
+        }
 
       }
       &:nth-child(4) {
         width: 20%;
         margin-bottom: -25%;
+        @include respond-below(md) {
+          margin-bottom: 5%;
+        }
       }
       &:nth-child(5) {
         width: 20%;
         margin-bottom: -17%;
+        @include respond-below(md) {
+          margin-bottom: -5%;
+        }
       }
 
       $uni-size: 1.025;
