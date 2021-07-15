@@ -18,7 +18,7 @@ h6 {
 }
 
 b {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 main {
@@ -53,10 +53,12 @@ main {
 
   &__title {
     font-size: 2.3rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1;
     margin-bottom: 2rem;
+    letter-spacing: 1px;
     font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
     @media screen and (max-width: 1024px) {
       font-size: 32px;
       margin-bottom: 1rem;
@@ -77,16 +79,18 @@ main {
   }
   &__subtitle {
     font-size: .6rem;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
     margin-bottom: .8rem;
     font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
   }
   &__display {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 4.5rem;
     margin-bottom: 1rem;
     line-height: 1;
+    letter-spacing: 3px;
     color: #fff;
     font-family: 'Barlow Condensed', sans-serif;
   }

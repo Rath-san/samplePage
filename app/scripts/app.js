@@ -15,19 +15,30 @@ import 'intersection-observer'
 // } from './background-animation'
 // import { notificationsAnim } from './notifications'
 import './libs/lazy-images'
-// import { doOnVisible } from './libs/do-on-visible'
+import { doOnVisible } from './libs/do-on-visible'
 // import { animateOnScroll } from './animate-on-scroll'
 import './vendor/scroll_to_anchor'
 import './libs/prevs'
 import 'lite-youtube-embed'
 // import 'lite-youtube-embed/src/lite-yt-embed.css'
-// import './vendor/menu'
-// import Splitting from 'splitting'
-// import 'slick-carousel'
-// import $ from 'jquery'
+import './vendor/menu'
 window.$ = window.jQuery = $
 ;(() => {
   window.addEventListener('load', () => {
+    const sections = Array.from(document.querySelectorAll('section'))
+    sections.forEach((s) => {
+      s.dataset.visible = false
+    })
+
+    doOnVisible({
+      sectionSelector: sections,
+      cbIn: (target) => {
+        target.dataset.visible = true
+      },
+      cbOut: (target) => {
+        target.dataset.visible = false
+      }
+    })
 
     const headerComp = () => {
       const header = document.querySelector('.header')

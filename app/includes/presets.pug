@@ -1,16 +1,18 @@
 -
   var sections = [
-    { 'name':'Campaign_Element', 'label': 'Campaign', 'count': 20,},
-    { 'name':'Donation', 'label': 'Donation', 'count': 12,},
-    { 'name':'Infographic', 'label': 'Infographic', 'count': 7,},
-    { 'name':'List', 'label': 'List', 'count': 7,},
-    { 'name':'Typography', 'label': 'Typography', 'count': 14,}
+    { 'name':'Campaign_Element', 'label': 'Campaign', 'count': 10,},
+    { 'name':'Donation', 'label': 'Donation', 'count': 10,},
+    { 'name':'Infographic', 'label': 'Infographic', 'count': 10,},
+    { 'name':'List', 'label': 'List', 'count': 10,},
+    { 'name':'Typography', 'label': 'Typography', 'count': 10,}
   ]
 - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
 
 //- - var entriesLength = 
 - var notCollapsedItems = 4
 - var isEven = (data) => data % 2 == 0
+
+- var presets = data.presets
 
 section.presets.bg--dark.text-center
   //- .image__background__shadow
@@ -23,8 +25,10 @@ section.presets.bg--dark.text-center
     .row
       .col-12
         .section__head
-          p.section__display=totalIndex
-          h2.section__text=`Donation and fanbase-building tools`
+          .display__comp
+            img(src="/images/50.png", style=`opacity: 0;`)
+            p.section__display=totalIndex
+          h2.section__title= presets.title
           p.section__subtitle=`HOVER OR TAP TO VIEW ANIMATIONS`
         .section__body
           - var currentIndex = 1
