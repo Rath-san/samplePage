@@ -38,7 +38,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    z-index: 20;
+    z-index: 1;
     padding-top: 10%;
     padding-bottom: 0rem;
     margin-bottom: -1rem;
@@ -67,13 +67,13 @@
         margin-bottom: -17%;
       }
 
-      $uni-size: 1.2;
+      $uni-size: 1.025;
       will-change: transform;
-      transition: .25s ease-in-out;
+      transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1);
 
       img {
-        animation: slides-anim 3s ease-in-out infinite alternate forwards;
-        animation-delay: calc(100ms + (500ms * var(--slide-index)));
+        animation: slides-anim 5s ease-in-out infinite alternate forwards;
+        animation-delay: calc(250ms + (500ms * var(--slide-index)));
       }
 
       &:hover {
@@ -93,6 +93,6 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(40px);
+    transform: translateY(10px);
   }
 }
