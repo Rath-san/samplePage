@@ -58,6 +58,7 @@ html(lang="en")
     main.mTitleCinematic
       .bg--dark
         include includes/header.pug
+        .gradient
         a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
         a.nav(name="trailer")
         - var sectionClasses = 'trailer'
@@ -90,7 +91,13 @@ html(lang="en")
           //- aditional interaction here
           each img, index in slidesImages
             .slide
-              img(src=img.src, alt=img.alt, srcset="", style=`--slide-index: ${index}`)
+              - var image = img.src
+              - var alt = img.alt
+              - var imageWidth = '1600'
+              - var imageHeight = '2200'
+              - var sizes = '20vw'
+              include includes/components/image.pug
+              //- img(src=img.src, alt=img.alt, srcset="", style=`--slide-index: ${index}`)
           //- .slick-carousel
             each img, index in slidesImages
               //- .carousel-cell
@@ -124,7 +131,7 @@ html(lang="en")
                     - var sizes = '50vw'
                     include includes/components/image.pug
 
-        //- include includes/presets.pug
+      include includes/presets.pug
       a.nav(href="#" name='specs', rel="noopener noreferrer") 
       include includes/tech-spec.pug
       include includes/minstaller.pug

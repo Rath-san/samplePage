@@ -30,6 +30,13 @@ lite-youtube {
   max-width: unset;
 }
 
+.gradient {
+  background: linear-gradient(90deg,#3fd5ef,#fde92d,#f1565b,#3fd5ef);
+  position: relative;
+  width: 100%;
+  height: 8px;
+}
+
 .lty-playbtn {
   &:focus {
     outline: none;

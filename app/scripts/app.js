@@ -18,35 +18,16 @@ import './libs/lazy-images'
 // import { doOnVisible } from './libs/do-on-visible'
 // import { animateOnScroll } from './animate-on-scroll'
 import './vendor/scroll_to_anchor'
+import './libs/prevs'
 import 'lite-youtube-embed'
 // import 'lite-youtube-embed/src/lite-yt-embed.css'
 // import './vendor/menu'
 // import Splitting from 'splitting'
-import 'slick-carousel'
-import $ from 'jquery'
+// import 'slick-carousel'
+// import $ from 'jquery'
 window.$ = window.jQuery = $
-
 ;(() => {
   window.addEventListener('load', () => {
-    // carousel
-    // $('.slick-carousel').slick({
-    //   // setting-name: setting-value
-    //   infinite: false,
-    //   dots: false,
-    //   arrows: false,
-    //   // slidesToShow: 1,
-    //   // centerMode: true,
-    //   variableWidth: true
-    // })
-
-    // // collapsible btn
-    Array.from(document.querySelectorAll('.btn-collapse')).forEach((btn, i) => {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true'
-        btn.setAttribute('aria-expanded', !expanded)
-        $(btn.dataset.target).collapse('toggle')
-      })
-    })
 
     const headerComp = () => {
       const header = document.querySelector('.header')
@@ -54,6 +35,8 @@ window.$ = window.jQuery = $
       const headerVideos = Array.from(header.querySelectorAll('video'))
 
       const headerComponents = [...headerImages, ...headerVideos]
+
+      console.log(headerComponents)
 
       // console.log(headerC);
 

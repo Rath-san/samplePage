@@ -1,0 +1,43 @@
+section.prevs.center
+  | {% set productPageTemplateId = &apos;1164&apos; %} 
+  | {% set collapseAfter = 8 %}
+  | {% set namePrefix = &apos;&apos; %}
+  | {% set categories = [
+  | { &apos;key&apos;:&apos;subscribe&apos;, &apos;label&apos;: &apos;Subscribe&apos;, &apos;count&apos;: 10, &apos;rowClass&apos;: &apos;grid&apos;, &apos;large&apos;: [ 1, 6 ] },
+  | { &apos;key&apos;:&apos;socialmediaicon&apos;, &apos;label&apos;: &apos;Social Media&apos;, &apos;count&apos;: 5},
+  | { &apos;key&apos;:&apos;endingscenes&apos;, &apos;label&apos;: &apos;Ending Scenes&apos;, &apos;count&apos;: 10, &apos;rowClass&apos;: &apos;grid&apos;, &apos;large&apos;: [ 1, 6 ] },
+  | { &apos;key&apos;:&apos;title&apos;, &apos;label&apos;: &apos;Titles&apos;, &apos;count&apos;: 5 },
+  | { &apos;key&apos;:&apos;logoanimations&apos;, &apos;label&apos;: &apos;Logo Animations&apos;, &apos;count&apos;: 10, &apos;rowClass&apos;: &apos;grid&apos;, &apos;large&apos;: [ 1, 6 ] },
+  | { &apos;key&apos;:&apos;pointers&apos;, &apos;label&apos;: &apos;Pointers&apos;, &apos;count&apos;: 11, &apos;rowClass&apos;: &apos;grid&apos;, &apos;large&apos;: [ 1, 6, 11 ] },
+  | { &apos;key&apos;:&apos;icons&apos;, &apos;label&apos;: &apos;Icons&apos;, &apos;count&apos;: 5 },
+  | { &apos;key&apos;:&apos;background&apos;, &apos;label&apos;: &apos;Backgrounds&apos;, &apos;count&apos;: 5 },
+  | ]
+  | %}
+  #product-prev-grid.product-prev-grid.container
+    | {% for category in categories %}
+    | {% set key = category.key %}
+    | {% if categories|length &gt; 1 %}
+    h3 {{ category.label }}
+    | {% endif %}
+    .row.if.5.endif(class="{{ category.rowClass | default('') }} {% category.count == %}row-5{% %}")
+      | {% for i in range(category.count) %}
+      | {% set num = &apos;%02d&apos; % loop.index %}
+      | {% set filename = &apos;https://s3.motionvfx.com/mvfxpublic/products/templates/&apos; + productPageTemplateId + &apos;/media/&apos; + namePrefix + key + &apos;&apos; + num %}
+      .product-prev-col.col-6.col-lg-3.if.in.endif.if.collapseAfter.key.endif(class='{% loop.index category.large %}large{% %} {% loop.index > %}collapse prev-collapse-{{ }}{% %}' id='prev-collapse-{{ key }}-{{ loop.index }}')
+        .product-prev-cell(data-mp4-src='{{ filename }}.mp4')
+          img(src='{{ filename }}.jpg' alt='' width='400' height='225')
+          .loading-spinner
+      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{% endfor %}
+      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{% if category.count &gt; collapseAfter %}
+      .col-btn-collapse
+        button.btn-collapse(type='button' data-target='.prev-collapse-{{ key }}' aria-expanded='false' aria-controls='{% for j in range(collapseAfter, category.count) %} prev-collapse-{{ key }}-{{ j }} {% endfor %}')
+          span
+            span.label-collapsed Show more
+            span.label-expanded Collapse
+            |  ({{ category.count - collapseAfter }})
+          svg.btn-collapse-arrow(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 36.6 61.5' style='enable-background:new 0 0 36.6 61.5;' xml:space='preserve' height='20')
+            style(type='text/css').
+              .st0{fill:none;stroke:currentColor;stroke-width:8;stroke-miterlimit:10;}
+            polyline.st0(points='2.8,58.6 30.9,30.5 3.2,2.8 ')
+      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;{% endif %}
+    | &#x9;&#x9;&#x9;&#x9;&#x9;{% endfor %}
