@@ -22,8 +22,22 @@ import 'lite-youtube-embed'
 // import 'lite-youtube-embed/src/lite-yt-embed.css'
 // import './vendor/menu'
 // import Splitting from 'splitting'
+import 'slick-carousel'
+import $ from 'jquery'
+window.$ = window.jQuery = $
+
 ;(() => {
   window.addEventListener('load', () => {
+    // carousel
+    // $('.slick-carousel').slick({
+    //   // setting-name: setting-value
+    //   infinite: false,
+    //   dots: false,
+    //   arrows: false,
+    //   // slidesToShow: 1,
+    //   // centerMode: true,
+    //   variableWidth: true
+    // })
 
     // // collapsible btn
     Array.from(document.querySelectorAll('.btn-collapse')).forEach((btn, i) => {

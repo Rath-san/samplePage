@@ -56,69 +56,75 @@ html(lang="en")
     include includes/navbar.pug
     .top-bar
     main.mTitleCinematic
-      include includes/header.pug
-      a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
-      a.nav(name="trailer")
-      - var sectionClasses = 'trailer bg--dark'
-      - var title = "WATCH TRAILER"
-      - var subtitle = data.trailer.title
-      - var text = data.trailer.text
-      //- - var videoLink = "https://www.youtube.com/embed/pBP5UxWD2BA?rel=0"
-      - var videoLink = "tFkHpjGToCo"
-      //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
-      - var videoTitle = placeholders.video.videoTitle
-      include includes/video.pug
+      .bg--dark
+        include includes/header.pug
+        a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
+        a.nav(name="trailer")
+        - var sectionClasses = 'trailer'
+        - var title = "WATCH TRAILER"
+        - var subtitle = data.trailer.title
+        - var text = data.trailer.text
+        //- - var videoLink = "https://www.youtube.com/embed/pBP5UxWD2BA?rel=0"
+        - var videoLink = "tFkHpjGToCo"
+        //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
+        - var videoTitle = placeholders.video.videoTitle
+        include includes/video.pug
 
-      a.nav(name="tutorial")
-      //- - var background = '/images/tutorial_bg.jpg'
-      - var sectionClasses = 'tutorial bg--dark'
-      - var title = "WATCH TUTORIAL"
-      - var subtitle = data.tutorial.title
-      - var text = data.tutorial.text
-      - var videoLink = "tFkHpjGToCo"
-      //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
-      - var videoTitle = placeholders.video.videoTitle
-      include includes/video.pug
-      //- include includes/new-interface.pug
+        a.nav(name="tutorial")
+        //- - var background = '/images/tutorial_bg.jpg'
+        - var sectionClasses = 'tutorial'
+        - var title = "WATCH TUTORIAL"
+        - var subtitle = data.tutorial.title
+        - var text = data.tutorial.text
+        - var videoLink = "tFkHpjGToCo"
+        //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
+        - var videoTitle = placeholders.video.videoTitle
+        include includes/video.pug
+        //- include includes/new-interface.pug
 
-      - var active = (index) => `${index === 0 && 'active' }`
+        - var active = (index) => `${index === 0 && 'active' }`
 
-      - var slides = data.slides
-      section.slides.bg--dark
-        //- aditional interaction here
-
-      - var promo = data.promo
-      - var promoImage = promo.image
-      - var promoText = promo.textImage
-      section.promo--section.bg--dark
-        .promo__bg
-          - var image = promoImage.src
-          - var alt = promoImage.alt
-          - var imageWidth = '2560'
-          - var imageHeight = '1150'
-          - var sizes = '(max-width: 500px) 200vw'
-          include includes/components/image.pug
-        .promo__content
-          .container
-            .row
-              .col-12
-                .section__head
-                  .section__subtitle= promo.subtitle
-                  .section__title= promo.title
-                  .section__text.section__text--inset= promo.text
-                .section__content
-                  - var image = promoText.src
-                  - var alt = promoText.alt
-                  - var imageWidth = '1405'
-                  - var imageHeight = '688'
-                  - var sizes = '50vw'
-                  include includes/components/image.pug
+        - var slides = data.slides
+        - var slidesImages = slides.images
+        section.slides__section
+          //- aditional interaction here
+          each img, index in slidesImages
+            .slide
+              img(src=img.src, alt=img.alt, srcset="", style=`--slide-index: ${index}`)
+          //- .slick-carousel
+            each img, index in slidesImages
+              //- .carousel-cell
+              img(src=img.src, alt=img.alt, srcset="")
 
 
-        //- promo here
+        - var promo = data.promo
+        - var promoImage = promo.image
+        - var promoText = promo.textImage
+        section.promo--section
+          .promo__bg
+            - var image = promoImage.src
+            - var alt = promoImage.alt
+            - var imageWidth = '2560'
+            - var imageHeight = '1150'
+            - var sizes = '(max-width: 500px) 200vw'
+            include includes/components/image.pug
+          .promo__content
+            .container
+              .row
+                .col-12
+                  .section__head
+                    .section__subtitle= promo.subtitle
+                    .section__title= promo.title
+                    .section__text.section__text--inset= promo.text
+                  .section__content
+                    - var image = promoText.src
+                    - var alt = promoText.alt
+                    - var imageWidth = '1405'
+                    - var imageHeight = '688'
+                    - var sizes = '50vw'
+                    include includes/components/image.pug
 
-      //- include includes/split-image.pug
-      include includes/presets.pug
+        //- include includes/presets.pug
       a.nav(href="#" name='specs', rel="noopener noreferrer") 
       include includes/tech-spec.pug
       include includes/minstaller.pug

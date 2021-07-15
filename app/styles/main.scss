@@ -13,13 +13,15 @@
 @import './components/tech-spec';
 @import './components/minstaller';
 @import './components/scroll-to-btn';
-@import './components/splitting';
-@import './components/mocha-info';
+// @import './components/splitting';
+// @import './components/mocha-info';
 @import './layout/containers';
-@import './layout/interface';
-@import './layout/showcase';
+// @import './layout/interface';
+// @import './layout/showcase';
 @import './layout/presets';
-@import './layout/split-image';
+// @import './layout/split-image';
+
+@import '~slick-carousel/slick/slick.css';
 
 @import './components/slider';
 @import '~lite-youtube-embed/src/lite-yt-embed.css';
@@ -169,6 +171,12 @@ section {
         }
       }
     }
+  }
+}
+
+.slides {
+  &__section {
+
   }
 }
 
