@@ -88,7 +88,33 @@ html(lang="en")
         //- aditional interaction here
 
       - var promo = data.promo
-      section.promo.bg--dark
+      - var promoImage = promo.image
+      - var promoText = promo.textImage
+      section.promo--section.bg--dark
+        .promo__bg
+          - var image = promoImage.src
+          - var alt = promoImage.alt
+          - var imageWidth = '2560'
+          - var imageHeight = '1150'
+          - var sizes = '(max-width: 500px) 200vw'
+          include includes/components/image.pug
+        .promo__content
+          .container
+            .row
+              .col-12
+                .section__head
+                  .section__subtitle= promo.subtitle
+                  .section__title= promo.title
+                  .section__text.section__text--inset= promo.text
+                .section__content
+                  - var image = promoText.src
+                  - var alt = promoText.alt
+                  - var imageWidth = '1405'
+                  - var imageHeight = '688'
+                  - var sizes = '50vw'
+                  include includes/components/image.pug
+
+
         //- promo here
 
       //- include includes/split-image.pug
