@@ -427,6 +427,9 @@ $shadow-color: #000;
   &data {
     text-align: left;
     max-width: 50%;
+    @include respond-below(md) {
+      max-width: 100%;
+    }
   }
 }
 

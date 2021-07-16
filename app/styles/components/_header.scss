@@ -20,13 +20,17 @@
     height: 1440px;
     // max-height: calc(100vh - 37px - 4rem);
     max-height: 741px;
-    @media screen and (max-height: 450px) {
-      max-height: 100vh;
-    }
     @media screen and (max-width: 768px) {
-      max-height: 100vh;
+      // max-height: 100vh;
       padding: 0;
     }
+    @media screen and (max-width: 480px) {
+      height: 13 / 9 * 100vw;
+    }
+    // @media (max-width: 480px) {
+    //   height: 13 / 9 * 100vw;
+    // /* not 100vh to avoid content jump on scroll on mobile Chrome and Firefox */
+    // }
   }
 
   &__bg {
@@ -65,8 +69,8 @@
     // min-width: 70vw;
     @media screen and (max-width: 768px) {
       margin-top: 10rem;
-      margin-bottom: 2rem;
-      width: 200px;
+      margin-bottom: 0rem;
+      width: 300px;
     }
     // img {
     //   height: auto;
@@ -80,14 +84,23 @@
 
   .dvr {
     max-width: 64px;
+    @media screen and (max-width: 768px) {
+      max-width: 48px;
+
+      margin-bottom: 3rem;
+      img {
+        object-fit: contain;
+      }
+    }
   }
 
   &__subtitle {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     @media screen and (max-width: 768px) {
       max-width: 15em;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 2rem;
     }
   }
 }
