@@ -58,7 +58,6 @@ html(lang="en")
     main.mTitleCinematic
       .bg--dark
         include includes/header.pug
-        .gradient
         a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
         a.nav(name="trailer")
         - var sectionClasses = 'trailer'
@@ -90,7 +89,7 @@ html(lang="en")
         section.slides__section
           //- aditional interaction here
           each img, index in slidesImages
-            .slide
+            .slide(style=`--slide-index: ${index}`)
               - var image = img.src
               - var alt = img.alt
               - var imageWidth = '1600'
@@ -115,6 +114,13 @@ html(lang="en")
             - var imageHeight = '1150'
             - var sizes = '(max-width: 500px) 200vw'
             include includes/components/image.pug
+            .promo__bg__title
+              - var image = promoText.src
+              - var alt = promoText.alt
+              - var imageWidth = '1405'
+              - var imageHeight = '688'
+              - var sizes = '50vw'
+              include includes/components/image.pug
           .promo__content
             .container
               .row
@@ -124,12 +130,12 @@ html(lang="en")
                     .section__title= promo.title
                     .section__text.section__text--inset= promo.text
                   .section__content
-                    - var image = promoText.src
-                    - var alt = promoText.alt
-                    - var imageWidth = '1405'
-                    - var imageHeight = '688'
-                    - var sizes = '50vw'
-                    include includes/components/image.pug
+                    //- - var image = promoText.src
+                    //- - var alt = promoText.alt
+                    //- - var imageWidth = '1405'
+                    //- - var imageHeight = '688'
+                    //- - var sizes = '50vw'
+                    //- include includes/components/image.pug
 
       include includes/presets.pug
       a.nav(href="#" name='specs', rel="noopener noreferrer") 

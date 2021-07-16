@@ -31,10 +31,12 @@ lite-youtube {
 }
 
 .gradient {
-  background: linear-gradient(90deg,#3fd5ef,#fde92d,#f1565b,#3fd5ef);
-  position: relative;
+  background: #000;
+  background: linear-gradient(90deg, #3fd5ef, #fde92d, #f1565b, #3fd5ef);
+  position: absolute;
   width: 100%;
-  height: 8px;
+  height: 7px;
+  bottom: 0;
 }
 
 .lty-playbtn {
@@ -99,17 +101,20 @@ section {
 }
 
 .promo {
-
   &__bg {
     // margin-bottom: 5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     .img-lazy {
       max-height: 1150px;
+      width: 100%;
       @include respond-above(md) {
         min-height: 1000px;
       }
       @include respond-below(md) {
         // min-height: 500px !important;
-      // height: 1000px;
+        // height: 1000px;
       }
       .placeholder {
         padding-bottom: 50% !important;
@@ -119,6 +124,27 @@ section {
         object-position: center;
         @include respond-below(md) {
           object-position: 60% center;
+        }
+      }
+    }
+    &__title {
+      width: 50%;
+      position: absolute;
+      bottom: 6rem;
+      left: 2rem;
+      @include respond-below(md) {
+        top: 0;
+        margin-top: 20%;
+        bottom: unset;
+      }
+      .img-lazy {
+        max-height: unset !important;
+        min-height: unset !important;
+        max-width: 500px;
+        @include respond-below(lg) {
+          // bottom: -2rem;
+          // min-height: 500px !important;
+          // height: 1000px;
         }
       }
     }
@@ -146,6 +172,8 @@ section {
       &__head {
         // position: absolute;
         // top: 0;
+        // margin-bottom: 20rem;
+        margin-top: -20rem;
         padding: 2rem;
         margin-left: 0 !important;
         max-width: unset;
@@ -153,6 +181,10 @@ section {
         @include respond-below(xl) {
           padding-left: 5%;
           margin-bottom: 5rem;
+        }
+        @include respond-below(md) {
+          margin-top: 0;
+          margin-bottom: 0;
         }
       }
       &__subtitle {
@@ -164,6 +196,7 @@ section {
       }
       &__text {
         max-width: 30em;
+        margin-bottom: 0;
         &--inset {
           @include respond-below(md) {
             padding-left: 0 !important;
@@ -188,7 +221,6 @@ section {
 
 .slides {
   &__section {
-
   }
 }
 

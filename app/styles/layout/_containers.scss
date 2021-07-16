@@ -15,7 +15,7 @@ main {
 }
 
 section {
-  padding: 6.25rem 0;
+  padding: 5.25rem 0;
   @include respond-below(sm) {
     padding: 3.25rem 0
   }
