@@ -23,6 +23,10 @@
     display: none;
   }
 
+  @media screen and (min-height: 1020px) {
+    visibility: hidden;
+  }
+
   &:before {
     $width: 6px;
     content: '';
