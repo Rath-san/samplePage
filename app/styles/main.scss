@@ -104,10 +104,12 @@ section {
     // margin-bottom: 5rem;
     .img-lazy {
       max-height: 1150px;
-      min-height: 1000px;
+      @include respond-above(md) {
+        min-height: 1000px;
+      }
       @include respond-below(md) {
-        min-height: 500px !important;
-      height: 1000px;
+        // min-height: 500px !important;
+      // height: 1000px;
       }
       .placeholder {
         padding-bottom: 50% !important;
@@ -129,6 +131,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include respond-below(md) {
+      position: static;
+    }
   }
 
   &--section {
