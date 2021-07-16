@@ -7,11 +7,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 580px;
+  min-height: 680px;
   height: calc(100vh - 160px);
   max-height: 860px;
 
-  @media screen and (max-height: 680px) {
+  @media screen and (max-height: 770px) {
     height: 100vh;
     max-height: unset;
   }
