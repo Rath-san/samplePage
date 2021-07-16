@@ -137,6 +137,9 @@ section {
         margin-top: 20%;
         bottom: unset;
       }
+      @include respond-above(xl) {
+          left: unset;
+      }
       .img-lazy {
         max-height: unset !important;
         min-height: unset !important;
