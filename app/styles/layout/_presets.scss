@@ -1,7 +1,6 @@
 
 .presets {
   margin-top: -1px;
-  // padding: rem 0 3rem 0;
   .container {
     max-width: 1450px;
   }
@@ -37,25 +36,29 @@
   }
 
   .display__comp {
+    font-size: 6.4rem;
+    display: inline-flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
     .section__display {
       position: relative;
       z-index: 1;
       display: inline-block;
+      font-size: inherit;
       background-color: #000;
       // color: #000;
     }
     img {
-      max-width: 176px;
+      height: 1.1em;
       position: absolute;
-      top: -5px;
-      margin-left: -48px;
+      margin-right: .05em;
       opacity: 0;
       transform: scale(.9);
       will-change: opacity, transform;
       transition:
         opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1),
         transform 2s cubic-bezier(0.165, 0.84, 0.44, 1);
-      // left: -20px;
     }
   }
 }

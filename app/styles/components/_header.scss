@@ -19,7 +19,7 @@
     justify-content: center;
     height: 1440px;
     // max-height: calc(100vh - 37px - 4rem);
-    max-height: 800px;
+    max-height: 741px;
     @media screen and (max-height: 450px) {
       max-height: 100vh;
     }
@@ -59,19 +59,23 @@
   &__logo {
     width: 90%;
     margin-top: 10rem;
-    min-width: 70vw;
+    max-width: 750px;
+    // margin-bottom: 2rem;
+    height: 99px;
+    // min-width: 70vw;
     @media screen and (max-width: 768px) {
       margin-top: 10rem;
       margin-bottom: 2rem;
+      width: 200px;
     }
-    img {
-      height: auto;
-      max-width: 800px;
-      width: 100%;
-      // @media screen and (max-width: 768px) {
-      //   // width: 200px;
-      // }
-    }
+    // img {
+    //   height: auto;
+    //   max-width: 800px;
+    //   width: 100%;
+    //   // @media screen and (max-width: 768px) {
+    //   //   // width: 200px;
+    //   // }
+    // }
   }
 
   .dvr {
@@ -109,3 +113,37 @@ $animation-duration: 1s;
     transform: translateY(0px);
   }
 }
+
+
+// section.header {
+//   position: relative;
+//   z-index: 1;
+
+//   $min-height: 650px;
+//   $min-content-height: 160px; /* set to height of the portion of the first section within which content is comfortably visible */
+//   $scroll-prompt-height: 34px;
+//   $scroll-prompt-margin-mobile: 14px;
+//   $scroll-prompt-height-total: $scroll-prompt-height + 2 * $scroll-prompt-margin-mobile;
+
+//   min-height: $min-height; /* might adjust per plugin */
+//   max-height: 860px;
+//   height: calc(100vh - #{$min-content-height});
+//   @media (max-height: $min-height + $min-content-height) {
+//     height: calc(100vh - $scroll-prompt-height-total); /* accomodate scroll prompt */
+//     max-height: unset;
+//     .scroll-prompt {
+//       margin-top: $scroll-prompt-margin-mobile;
+//     }
+//   }
+//   @media (max-height: $min-height + $scroll-prompt-height-total) {
+//     height: 100vh;
+//     max-height: unset;
+//     .scroll-prompt {
+//       display: none;
+//     }
+//   }
+//   @media (max-width: 480px) {
+//     height: 13 / 9 * 100vw;
+//     /* not 100vh to avoid content jump on scroll on mobile Chrome and Firefox */
+//   }
+// } 

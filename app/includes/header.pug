@@ -12,7 +12,7 @@ section.header.text--light.text-center
     - var placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs='
     //- getParsedImage(image)
     - var srcset = getParsedImage(image, 'srcSet')
-    - var sizes = '(max-width: 768px) 200vw, 100vw'
+    - var sizes = '(max-width: 786px) 200vw, (max-width: 1200px) 150vw, 100vw'
     include components/image.pug
     //- img(
     //-   alt=alt,
@@ -26,20 +26,21 @@ section.header.text--light.text-center
       .col-12
         .header__content.section__text__content
           .header__logo(style=`--h-index: 0; opacity: 0`)
-            - var image = headerLogo.src
-            - var alt = headerLogo.alt
-            - var imageWidth = '1200'
-            - var imageHeight = '149'
-            //- - var placeholder = getParsedImage(image)
-            - var srcset = getParsedImage(image, 'srcSet')
-            img(
-              width=imageWidth
-              height=imageHeight
-              alt=alt,
-              data-src=getParsedImage(image, 'src'),
-              data-srcset=srcset,
-              sizes='800px'
-            )
+            //- - var image = headerLogo.src
+            //- - var alt = headerLogo.alt
+            //- - var imageWidth = '1200'
+            //- - var imageHeight = '149'
+            //- //- - var placeholder = getParsedImage(image)
+            //- - var srcset = getParsedImage(image, 'srcSet')
+            //- img(
+            //-   width=imageWidth
+            //-   height=imageHeight
+            //-   alt=alt,
+            //-   data-src=getParsedImage(image, 'src'),
+            //-   data-srcset=srcset,
+            //-   sizes='800px'
+            //- )
+            include components/logo.pug
           p.header__subtitle(style="--h-index: 1; opacity: 0")= header.title
           .dvr(style=`--h-index: 2; opacity: 0`)
             - var image = headerDvr.src
@@ -55,7 +56,7 @@ section.header.text--light.text-center
               alt=alt,
               data-src=getParsedImage(image, 'src'),
               data-srcset=srcset,
-              sizes='800px'
+              sizes=sizes
             )
           //- img.dvr(data-src=headerDvr.src, alt="", srcset="")
           //- img(data-src=placeholders.image.logo(), alt="", srcset="")
