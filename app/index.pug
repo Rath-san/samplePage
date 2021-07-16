@@ -89,12 +89,13 @@ html(lang="en")
         section.slides__section
           //- aditional interaction here
           each img, index in slidesImages
-            .slide(style=`--slide-index: ${index}`)
+            .slide
               - var image = img.src
               - var alt = img.alt
               - var imageWidth = '1600'
               - var imageHeight = '2200'
               - var sizes = '20vw'
+              - var styles = `--slide-index: ${index}`
               include includes/components/image.pug
               //- img(src=img.src, alt=img.alt, srcset="", style=`--slide-index: ${index}`)
           //- .slick-carousel
