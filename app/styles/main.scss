@@ -17,6 +17,10 @@
 @import './components/slider';
 @import './layout/showcase';
 
+.submenu-plugins {
+  z-index: 1000;
+}
+
 img {
   max-width: 100%;
 }
@@ -398,7 +402,7 @@ $shadow-color: #000;
 
   }
   &-preview {
-    background: url('/static/images/logo-white.png') no-repeat 50% #000 !important;
+    background: url('https://www.motionvfx.com/static/images/logo-white.png') no-repeat 50% #000 !important;
   }
 }
 

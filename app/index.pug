@@ -39,6 +39,8 @@ html(lang="en")
 
     - var getParsedImage = (name, type = "placeholder") => `\${require('${name}').${type}}`
 
+    - var require = require
+
   body
     include includes/submenu.pug
     include includes/navbar.pug
