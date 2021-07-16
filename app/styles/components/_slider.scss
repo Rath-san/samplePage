@@ -26,14 +26,12 @@
 
       &:nth-child(2n) {
         .img-lazy {
-          // border-radius: 50%;
           animation: slides-anim-rev 5s ease-in-out infinite alternate forwards;
         }
       }
 
       &:nth-child(2n - 1) {
         .img-lazy {
-          // border-radius: 50%;
           animation: slides-anim 5s ease-in-out infinite alternate forwards;
         }
       }
