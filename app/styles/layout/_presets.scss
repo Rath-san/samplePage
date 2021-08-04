@@ -1,9 +1,11 @@
 
 .presets {
+
   margin-top: -1px;
   .container {
     max-width: 1450px;
   }
+
   @media screen and (max-width: 768px) {
     // padding: 1rem 0 3rem 0;
   }
@@ -33,6 +35,10 @@
       // margin-bottom: 6rem;
       position: relative;
     }
+    &__body {
+      margin-left: -25%;
+      width: calc(100% + 50%);
+    }
   }
 
   .display__comp {
@@ -46,7 +52,7 @@
       z-index: 1;
       display: inline-block;
       font-size: inherit;
-      background-color: #000;
+      // background-color: #000;
       // color: #000;
     }
     img {

@@ -3,18 +3,16 @@
     { 'name':'Campaign_Element', 'label': 'Campaign', 'count': 10,},
     { 'name':'Donation', 'label': 'Donation', 'count': 10,},
     { 'name':'Infographic', 'label': 'Infographic', 'count': 10,},
-    { 'name':'List', 'label': 'List', 'count': 10,},
-    { 'name':'Typography', 'label': 'Typography', 'count': 10,}
   ]
-- var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
+//- - var totalIndex = sections.reduce((a, b) => a + b.count, 0 )
 
-//- - var entriesLength = 
-- var notCollapsedItems = 4
-- var isEven = (data) => data % 2 == 0
+//- - var entriesLength =
+//- - var notCollapsedItems = 4
+//- - var isEven = (data) => data % 2 == 0
 
 - var presets = data.presets
 
-section.presets.bg--dark.text-center
+section.prevs.bg--dark.text-center
   //- .image__background__shadow
   //- - var image = `/images/mHUD_gfx_prev.jpg`
   //- - var alt = 'Person clibing ladder overlayed with mHUD gui'
@@ -25,15 +23,19 @@ section.presets.bg--dark.text-center
     .row
       .col-12
         .section__head
-          .display__comp
-            img(src="/images/50.png", style=`opacity: 0;`)
-            p.section__display=totalIndex
+          p.section__display= presets.count
           h2.section__title= presets.title
-          p.section__subtitle=`HOVER OR TAP TO VIEW ANIMATIONS`
+          p.section__subtitle= presets.actionText
         .section__body
-          - var currentIndex = 1
-          - var sectionItems = 0
-          each section in sections
+          - for(var i = 1; i <= presets.count; i++)
+              .prev
+                img.prev__img(src=`https://s3.motionvfx.com/mvfxpublic/images/mlut/beforeafter/${i}.jpg`, alt="", srcset="" loading="lazy" width="265" height="150")
+                img.prev__img.prev__img--before(src=`https://s3.motionvfx.com/mvfxpublic/images/mlut/beforeafter/${i}_.jpg`, alt="", srcset="" loading="lazy" width="265" height="150")
+                h4.prev__title before grading
+              //- img(src=`https://s3.motionvfx.com/mvfxpublic/images/mlut/beforeafter/${i}_.jpg`, alt="", srcset="" loading="lazy")
+          //- - var currentIndex = 1
+          //- - var sectionItems = 0
+          //- each section in sections
             - var minColumns = 2
             - sectionItems = currentIndex + section.count - 1
             .videoList.center
@@ -47,7 +49,7 @@ section.presets.bg--dark.text-center
                         - var imageName = `/images/img/${num}`
                         - var videoName = `/images/video/${num}`
                         - var isEven = entriesLength % 2 == 0
-                      
+
                       - var localLoopIndex = 1
                       - for(var i = currentIndex; i <= sectionItems; i++)
                         - var baseUrl = '/images/presets'
@@ -56,7 +58,7 @@ section.presets.bg--dark.text-center
                         - var num = i.toString().length < 2 ? `0${i}` : i
                         - var imageName = `${baseUrl}/jpg/${section.name}_${num}`
                         - var videoName = `${baseUrl}/mp4/${section.name}_${num}`
-                        div(class=`col-6 col-lg-4 product ${localLoopIndex > notCollapsedItems ? `collapse prev-collapse-${section.label.toLowerCase()}` : ''}` id=`prev-collapse-${i}`)
+                        div(class=`col-6 col-md-4 col-lg-3 product ${localLoopIndex > notCollapsedItems ? `collapse prev-collapse-${section.label.toLowerCase()}` : ''}` id=`prev-collapse-${i}`)
                           - localLoopIndex++
                           a
                             .product-preview
@@ -88,13 +90,13 @@ section.presets.bg--dark.text-center
         .row
           .col-4
             p.section__text
-              b On-screen Controls 
+              b On-screen Controls
               | #{"\nAut the peset in place directly in the viewport"}
           .col-4
             p.section__text
-              b Colorization & Glow 
+              b Colorization & Glow
               | #{"\nFind the perfect look to match your elit"}
           .col-4
             p.section__text
-              b Adjustable Animation 
+              b Adjustable Animation
               | #{"\nTweak the movement to suit your nerds"}

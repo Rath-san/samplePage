@@ -3,13 +3,13 @@
 //-                     <div class="tcell tdata">
 //-   {% autoescape off %}
 //-  {{ product.productdetails.minimal_requirements.replace('FCP 10', 'FCP\xa010').replace('Motion 5', 'Motion\xa05').replace(', ', ',<br>') }}
-//-  {% endautoescape %}   
+//-  {% endautoescape %}
 //-                     </div>
 //-                     <div class="tcell tlabel">Includes</div>
 //-                     <div class="tcell tdata">51 presets</div>
 //-                     <div class="tcell tlabel">Size</div>
 //-                     <div class="tcell tdata">{{ "%.1f MB"|format(product.productdetails.source_size / 1000) }}</div>
-                    
+
 //-                     {% for kind in ['trailer', 'tutorial'] %}
 //-                         {% with musics=product.productdetails.music.select_related('music_portal').all().filter(used_in_trailer=kind=='trailer') %}
 //-                             {% if length(musics) %}
@@ -115,6 +115,6 @@ section.tech-spec
                           </div>
                         {% endif %}
                       {% endwith %}
-                    {% endfor %}}
+                    {% endfor %}
                   `
                 | !{c}

@@ -11,9 +11,12 @@ html(lang="en")
       | endtrans %}{% endif %}
     link(rel='shortcut icon' href='css/static/images/favicon.png' type='image/png')
     //- FONTS
+    //- <link rel="preconnect" href="https://fonts.googleapis.com">
+    //- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    //- <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     link(href='css/vendor/custom_pages_wrap.css' rel="stylesheet" type="text/css")
     link(href='css/vendor/bootstrap-4.1.3.min.css' rel="stylesheet" type="text/css")
@@ -54,92 +57,103 @@ html(lang="en")
     include data.pug
     include includes/submenu.pug
     include includes/navbar.pug
-    .top-bar
-    main.mTitleCinematic
+
+    main.mBlockbuster
       .bg--dark
         include includes/header.pug
         a(href="#" class="scroll-to-btn" onclick="scrollToAnchor('trailer');" tabindex="-1")
+        section.composing-app-logos.composing-app-logos--top.text-center
+          .container
+            .row
+              .col-12
+                h3.section__subtitle Works perfectly with any compositing app
+                include includes/components/logos.pug
+          img(src="", alt="", srcset="")
         a.nav(name="trailer")
         - var sectionClasses = 'trailer'
-        - var title = "WATCH TRAILER"
+        - var title = data.trailer.subtitle
         - var subtitle = data.trailer.title
         - var text = data.trailer.text
-        //- - var videoLink = "https://www.youtube.com/embed/pBP5UxWD2BA?rel=0"
-        - var videoLink = "tFkHpjGToCo"
-        //- - var videoPlaceholder = "https://i.vimeocdn.com/video/495154119?mw=1000&mh=562"
+        - var videoLink = "https://player.vimeo.com/video/112482855?title=0&byline=0&portrait=0"
+        //- - var videoLink = "tFkHpjGToCo"
+        - var videoPlaceholder = "https://i.vimeocdn.com/video/498040647?mw=2400&mh=1350"
         - var videoTitle = placeholders.video.videoTitle
         include includes/video.pug
 
         a.nav(name="tutorial")
         //- - var background = '/images/tutorial_bg.jpg'
         - var sectionClasses = 'tutorial'
-        - var title = "WATCH TUTORIAL"
+        - var title = data.tutorial.subtitle
         - var subtitle = data.tutorial.title
         - var text = data.tutorial.text
-        - var videoLink = "tFkHpjGToCo"
-        //- - var videoPlaceholder = "https://i.ytimg.com/vi/YxPrtn64rFQ/maxresdefault.jpg"
+        - var videoLink = "https://www.youtube.com/embed/9tF-MzNxz4c?rel=0"
+        - var videoPlaceholder = ""
         - var videoTitle = placeholders.video.videoTitle
         include includes/video.pug
-        //- include includes/new-interface.pug
 
-        - var active = (index) => `${index === 0 && 'active' }`
+      - var promo = data.promo
+      section.promo
+        - var image = `/images/section_4.jpg`
+        - var alt = ''
+        - var imageHeight = 1050
+        - var imageWidth = 2560
+        - var sizes = '(max-width: 1024px) 150vw, 100vw'
+        include includes/components/image-background.pug
+        .container
+          .row
+            .col-md-6.offset-md-6
+              .promo__content--0
+                h2.section__title= promo.contenta.title
+                p.section__text= promo.contenta.pa
+              .promo__content--1
+                h2.section__title= promo.contentb.title
+                p.section__text= promo.contentb.pa
 
-        - var slides = data.slides
-        - var slidesImages = slides.images
-        section.slides__section
-          //- aditional interaction here
-          each img, index in slidesImages
-            .slide
-              - var image = img.src
-              - var alt = img.alt
-              - var imageWidth = '1600'
-              - var imageHeight = '2200'
-              - var sizes = '20vw'
-              - var styles = `--slide-index: ${index}`
-              include includes/components/image.pug
-              //- img(src=img.src, alt=img.alt, srcset="", style=`--slide-index: ${index}`)
-          //- .slick-carousel
-            each img, index in slidesImages
-              //- .carousel-cell
-              img(src=img.src, alt=img.alt, srcset="")
-
-
-        - var promo = data.promo
-        - var promoImage = promo.image
-        - var promoText = promo.textImage
-        section.promo--section
-          .promo__bg
-            - var image = promoImage.src
-            - var alt = promoImage.alt
-            - var imageWidth = '2560'
-            - var imageHeight = '1150'
-            - var sizes = '(max-width: 500px) 200vw'
-            include includes/components/image.pug
-            .promo__bg__title
-              - var image = promoText.src
-              - var alt = promoText.alt
-              - var imageWidth = '1405'
-              - var imageHeight = '688'
-              - var sizes = '50vw'
-              include includes/components/image.pug
-          .promo__content
-            .container
-              .row
-                .col-12
-                  .section__head
-                    .section__subtitle= promo.subtitle
-                    .section__title= promo.title
-                    .section__text.section__text--inset= promo.text
-                  .section__content
-                    //- - var image = promoText.src
-                    //- - var alt = promoText.alt
-                    //- - var imageWidth = '1405'
-                    //- - var imageHeight = '688'
-                    //- - var sizes = '50vw'
-                    //- include includes/components/image.pug
+      - var slides = data.slides.images
+      section#carouselSection.bg--dark.text--light.slider.carousel.slide.carousel-fade(data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false")
+        .slider__bg
+          .carousel-inner
+            each image, index in slides
+              div(class=`carousel-item ${index === 0 ? 'active': ''}`)
+                - var image = image.src
+                - var alt = image.alt
+                - var width = '2560'
+                - var height = '1050'
+                - var sizes = '(max-width: 1024px) 150vw, 100vw'
+                include includes/components/image.pug
+        .slider__content
+          .container
+            .row
+              .col-lg-8.offset-md-2
+                .section__head
+                  .carousel-inner__text
+                    each image, index in slides
+                      div(class=`carousel-item__text ${index === 0 ? 'active': ''}` data-index=`${index}`)
+                        //- p.section__subtitle(style=`--text-index: ${0}`)= image.subtitle
+                        h2.section__title(style=`--text-index: ${0}`)= image.title
+                        p.section__text(style=`--text-index: ${1}`)= image.text
+        .carousel-indicators
+          each image, index in slides
+            - var cI = image.src.replace('.jpg', '_thumb.jpg')
+            div(
+              class=`${index === 0 ? 'active' : ''}`
+              type='button'
+              data-bs-target='#carouselSection'
+              data-bs-slide-to=index
+              aria-current=`${index === 0}`
+              aria-label=`Slide ${index + 1}`)
+              img.indicator__bg(src=cI, alt="", sizes="", srcset="")
+              .indicator__content
+                i.indicator__icon
+                  img.icon--white(src="/images/logo_slider_white.png", alt="", srcset="")
+                  img.icon--color(src="/images/logo_slider_color.png", alt="", srcset="")
+                h4=image.name
+                p.section__subtitle mlut Prev
 
       include includes/presets.pug
-      a.nav(href="#" name='specs', rel="noopener noreferrer") 
-      include includes/tech-spec.pug
-      include includes/minstaller.pug
+      .cs-ts-mi__background
+        include includes/compatible-software.pug
+        a.nav(href="#" name='specs', rel="noopener noreferrer")
+        include includes/tech-spec.pug
+        include includes/minstaller.pug
       include includes/footer.pug

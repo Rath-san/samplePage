@@ -1,28 +1,36 @@
 .logos {
-  background-color: #f9f9f9;
-  padding: 4rem 0;
+  padding: 3rem 0 4rem 0;
   @media screen and (max-width: 420px) {
     padding: 2rem 5%;
   }
-  &-images {
+  &__img {
     margin: 0 auto;
-  }
-
-  &-desktop {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    @media screen and (max-width: 768px) {
-      display: none;
+    max-width: 80%;
+    @include respond-below(lg) {
+      max-width: 30em;
     }
   }
 
-  &-mobile {
-    display: none;
-    @media screen and (max-width: 768px) {
-      display: block;
-    }
-  }
+  // &-desktop {
+  //   display: block;
+  //   margin: 0 auto;
+  //   text-align: center;
+  //   max-width: 65%;
+  //   @media screen and (max-width: 768px) {
+  //     display: none;
+  //   }
+
+  //   img {
+  //     width: 100%;
+  //   }
+  // }
+
+  // &-mobile {
+  //   display: none;
+  //   @media screen and (max-width: 768px) {
+  //     display: block;
+  //   }
+  // }
 
   h2 {
     text-align: center;
@@ -35,11 +43,6 @@
   }
 }
 
-.mLUT-insta-pack {
-  .logos {
-    padding-top: 6rem;
-    @media screen and (max-width: 768px) {
-      padding-top: 4rem;
-    }
-  }
+.composing-app-logos {
+  margin-top: calc((37px + (2 * 0.85rem) + 1px) * -1);
 }

@@ -11,20 +11,22 @@ h4,
 h5,
 h6 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: $font-size-title;
   line-height: 1;
   margin-bottom: 0;
+  // letter-spacing: 10px;
 }
 
 b {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 main {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: $font-size-body;
+  line-height: 1.8;
 }
 
 .section {
@@ -33,19 +35,17 @@ main {
     white-space: unset;
   }
 
-  
   &__head {
     margin-bottom: 2rem;
     max-width: 30em;
     margin: auto;
     @media screen and (max-width : 768px) {
-      padding: 0 9%;
+      padding: 0 4%;
     }
 
     .showcase &,
     .tech-spec & {
       @media screen and (max-width : 768px) {
-        // max-width: 7em;
         padding: 0;
       }
     }
@@ -53,41 +53,29 @@ main {
 
   &__title {
     font-size: 2.3rem;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1;
     margin-bottom: 2rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-family: 'Barlow Condensed', sans-serif;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     @media screen and (max-width: 1024px) {
       font-size: 32px;
       margin-bottom: 1rem;
     }
-
-    // br {
-    //   @media screen and (max-width: 1024px) {
-    //     display: none;
-    //   }
-    // }
-
-    // .trailer & {
-    //   @media screen and (max-width : 768px) {
-    //     max-width: 10em;
-    //     margin: 0 auto 1rem auto;
-    //   }
-    // }
   }
   &__subtitle {
-    font-size: .6rem;
-    font-weight: 400;
+    opacity: .5;
+    font-size: .75rem;
+    font-weight: 300;
     text-transform: uppercase;
     margin-bottom: .8rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     letter-spacing: 2px;
   }
   &__display {
-    font-weight: 400;
-    font-size: 4.5rem;
+    font-weight: 500;
+    font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 1;
     letter-spacing: 3px;
@@ -97,8 +85,7 @@ main {
   &__text {
     font-size: .9rem;
     margin-bottom: 2.5rem;
-    font-weight: 400;
-    // white-space: pre-line;
+    font-weight: 300;
     @media screen and (max-width: 1024px) {
       font-size: 18px;
     }
@@ -109,7 +96,6 @@ main {
       white-space: unset;
     }
     &__content {
-      // padding: 0 10%;
       position: relative;
       z-index: 0;
       @media screen and (max-width: 1440px) {

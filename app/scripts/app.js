@@ -20,11 +20,14 @@ import { doOnVisible } from './libs/do-on-visible'
 import './vendor/scroll_to_anchor'
 import './libs/prevs'
 import 'lite-youtube-embed'
+import { Carousel } from 'bootstrap'
 // import 'lite-youtube-embed/src/lite-yt-embed.css'
 import './vendor/menu'
 window.$ = window.jQuery = $
 ;(() => {
   window.addEventListener('load', () => {
+    document.body.classList.add('ready')
+
     const sections = Array.from(document.querySelectorAll('section'))
     sections.forEach((s) => {
       s.dataset.visible = false
@@ -39,6 +42,34 @@ window.$ = window.jQuery = $
         target.dataset.visible = false
       }
     })
+
+    const sliderRoot = document.querySelector('#carouselSection')
+    const sliderElements = Array.from(
+      document.querySelectorAll('.carousel-item__text')
+    )
+
+    sliderRoot.addEventListener('slide.bs.carousel', function (e) {
+      const from = e.from
+      const to = e.to
+
+      sliderElements[from].classList.remove('active')
+      sliderElements[to].classList.add('active')
+    })
+
+    // prevs
+    // const prev = document.querySelectorAll('.prev')
+
+    // prev.forEach(prev => {
+    //   prev.addEventListener('mouseenter', function () {
+    //     console.log(this)
+    //     const img = this.querySelector('img')
+    //     img.src = img.src.replace('.jpg', '_.jpg')
+    //   })
+    //   prev.addEventListener('mouseleave', function () {
+    //     const img = this.querySelector('img')
+    //     img.src = img.src.replace('_.jpg', '.jpg')
+    //   })
+    // })
 
     const headerComp = () => {
       const header = document.querySelector('.header')
@@ -84,6 +115,6 @@ window.$ = window.jQuery = $
       })
     }
 
-    headerComp()
+    // headerComp()
   })
 })()

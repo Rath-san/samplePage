@@ -1,3 +1,25 @@
+-
+  var compatibleSoftware = [
+    [
+      "Final Cut Pro X",
+      "mLUT plugin included",
+      "Apple Motion 5",
+      "mLUT plugin included",
+    ],
+    [
+      "Adobe Premiere CC",
+      "Adobe After Effects CC",
+      "Adobe Photoshop",
+      "NUKE",
+    ],
+    [
+      "AVID Media Composer",
+      "DaVinci Resolve",
+      "Fusion 7",
+      "...and many more.",
+    ]
+  ]
+
 section.compatible-software
   .container
     .row.text-center
@@ -5,35 +27,18 @@ section.compatible-software
     .row
       .col
         .compatible-software__lists
-          ul.compatible-software__list
-            li Final Cut Pro X
-            li
-              span mLUT plugin included
-            li Apple Motion 5
-            li
-              span mLUT plugin included
-
-          ul.compatible-software__list
-            li Adobe Premiere CC
-            li Adobe After Effects CC
-            li Adobe Photoshop
-            li NUKE
-
-          ul.compatible-software__list
-            li AVID Media Composer
-            li DaVinci Resolve
-            li Fusion 7
-            li
-              span ...and many more.
+          each list in compatibleSoftware
+            ul.compatible-software__list
+              each item in list
+                li= item
   .container
     .row
       .col
-        include logos-images.pug
+        .composing-app-logos.composing-app-logos--bottom
+          include components/logos.pug
+
   .container
     .row.text-center.small-info
-      | Compatible with LOG and Rec.709 - use mLUT Movie 2 Pack .CUBE files
-      | with your favorite video editing and compositing software in post
-      | production process or load them up directly into a device that
-      | supports them.
+      | Compatible with LOG and Rec.709 - use mLUT Movie 2 Pack .CUBE files with your favorite video editing and compositing software in post production process or load them up directly into a device that supports them.
     .row.justify-content-center
-      a.btn.button-download(href='https://s3.motionvfx.com/mvfxpublic/tutorials/blog/mlut/mLUT_Tutorial.pdf?2' target='_blank') DOWNLOAD MANUAL
+      a.btn.button-download(href='https://s3.motionvfx.com/mvfxpublic/tutorials/blog/mlut/mLUT_Tutorial.pdf' target='_blank') Download manual

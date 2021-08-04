@@ -12,8 +12,29 @@ section.header.text--light.text-center
     - var placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs='
     //- getParsedImage(image)
     - var srcset = getParsedImage(image, 'srcSet')
-    - var sizes = '(max-width: 786px) 200vw, (max-width: 1200px) 150vw, 100vw'
-    include components/image.pug
+    //- picture
+    //-   source(media="(min-width: )",
+    //-     srcset="",
+    //-     sizes=""
+    //-   )
+    //-   source(media="(min-width: )",
+    //-     srcset="",
+    //-     sizes=""
+    //-   )
+    //-   img(src="", alt="", srcset="")
+    //- include components/image.pug
+    - var srcset = getParsedImage(image, 'srcSet')
+    picture
+      source(
+        media="(max-width: 768px)",
+        srcset="/images/header-mobile.jpg 768w",
+      )
+      img(
+        alt=alt,
+        src=placeholder,
+        srcset=srcset,
+        sizes='(max-width: 1024px) 150vw, 100vw'
+      )
     //- img(
     //-   alt=alt,
     //-   height=height
@@ -25,7 +46,11 @@ section.header.text--light.text-center
     .row
       .col-12
         .header__content.section__text__content
-          .header__logo(style=`--h-index: 0; opacity: 0`)
+          .header__logo
+            .logo__icon.dvr(style=`--h-index: 1; opacity: 0;`)
+              img(src="/images/logo_icon.png", alt="", srcset="")
+              p.logo__text mlut
+            h1.header__title(style=`--h-index: 2; opacity: 0`) Blockbuster pack
             //- - var image = headerLogo.src
             //- - var alt = headerLogo.alt
             //- - var imageWidth = '1200'
@@ -40,9 +65,9 @@ section.header.text--light.text-center
             //-   data-srcset=srcset,
             //-   sizes='800px'
             //- )
-            include components/logo.pug
-          p.header__subtitle(style="--h-index: 1; opacity: 0")= header.title
-          .dvr(style=`--h-index: 2; opacity: 0`)
+            //- include components/logo.pug
+            p.header__subtitle(style="--h-index: 3; opacity: 0")= header.title
+          //- .dvr(style=`--h-index: 2; opacity: 0`)
             - var image = headerDvr.src
             - var alt = headerDvr.alt
             - var imageWidth = '64'

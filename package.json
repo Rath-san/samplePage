@@ -85,7 +85,8 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "bootstrap": "^4.6.0",
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.2",
     "flickity": "^2.2.2",
     "gsap": "^3.6.1",
     "intersection-observer": "^0.12.0",

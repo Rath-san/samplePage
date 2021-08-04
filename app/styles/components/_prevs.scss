@@ -1,236 +1,324 @@
 section.prevs {
+  padding-top: 15rem;
+  @include respond-below(xl) {
+    padding-top: 10rem;
+  }
+
+  @include respond-below(md) {
+    padding-top: 17rem;
+  }
+
   background: black;
   color: white;
+  background-image:
+    url('https://s3.motionvfx.com/mvfxpublic/products/templates/1352/media/prevs_bg_top.jpg');
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
   /* or this - collapse button uses currentColor */
   // color: black;
   // background: white;
+  // padding: 10rem;
+  .container {
+    max-width: 1700px;
+  }
+  .section {
+    &__display {
+      font-size: 7rem;
+    }
+    &__head {
+      margin-bottom: 5rem;
+    }
+    &__title {
+      margin-bottom: 4rem;
+      @include respond-below(xl) {
+        max-width: 10em;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    &__body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+.prev {
+  position: relative;
+  margin: .25rem;
+  @media screen and (max-width: 600px) {
+    flex-basis: calc(50% - .5rem);
+  }
+  &__img {
+    object-fit: cover;
+    &--before {
+      will-change: opacity;
+      transition: opacity .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+      left: 0;
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    font-size: 1rem;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    bottom: 1rem;
+    opacity: 0;
+    transform: translateY(50%);
+    // transform: scale(1.1);
+    will-change: opacity transform;
+    transition:
+      opacity .25s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-delay: .10s, .10s;
+  }
+  &:hover {
+    .prev {
+      &__img {
+        &--before {
+          opacity: 1;
+        }
+      }
+      &__title {
+        transform: translateY(0);
+        // transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
 }
 
 /* general styles - applicable to any plugin and layout */
 
-.product-prev-grid.container {
-  max-width: 1400px;
+// .product-prev-grid.container {
+//   max-width: 1400px;
 
-  &,
-  .product-prev-col {
-    padding: 5px;
-  }
+//   &,
+//   .product-prev-col {
+//     padding: 5px;
+//   }
 
-  h3 {
-    text-align: center;
-  }
-  .row {
-    justify-content: center;
-    margin-left: 0;
-    margin-right: 0;
-  }
+//   h3 {
+//     text-align: center;
+//   }
+//   .row {
+//     justify-content: center;
+//     margin-left: 0;
+//     margin-right: 0;
+//   }
 
-  .product-prev-cell {
-    position: relative;
-    display: grid;
+//   .product-prev-cell {
+//     position: relative;
+//     display: grid;
 
-    &::before {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 1px;
-      bottom: 1px;
-      left: 1px;
-      right: 1px;
-      background: url('https://www.motionvfx.com/static/images/logo-white.png')
-        no-repeat 50% #eaeaea;
-      background-position: center;
-    }
+//     &::before {
+//       content: '';
+//       position: absolute;
+//       display: block;
+//       top: 1px;
+//       bottom: 1px;
+//       left: 1px;
+//       right: 1px;
+//       background: url('https://www.motionvfx.com/static/images/logo-white.png')
+//         no-repeat 50% #eaeaea;
+//       background-position: center;
+//     }
 
-    img,
-    video {
-      grid-row: 1;
-      grid-column: 1;
-      width: 100%;
-    }
-    img {
-      height: auto;
-      position: relative;
-      z-index: 1;
-    }
-    video {
-      /* sometimes the uploaded video will be 1px or 2px shorter or taller than the image... fix that here */
-      height: 100%;
-    }
-  }
+//     img,
+//     video {
+//       grid-row: 1;
+//       grid-column: 1;
+//       width: 100%;
+//     }
+//     img {
+//       height: auto;
+//       position: relative;
+//       z-index: 1;
+//     }
+//     video {
+//       /* sometimes the uploaded video will be 1px or 2px shorter or taller than the image... fix that here */
+//       height: 100%;
+//     }
+//   }
 
-  .video-wrapper {
-    padding: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
+//   .video-wrapper {
+//     padding: inherit;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 2;
+//   }
 
-  .loading-spinner {
-    grid-row: 1;
-    grid-column: 1;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    position: relative;
-    opacity: 0;
-    z-index: 3;
+//   .loading-spinner {
+//     grid-row: 1;
+//     grid-column: 1;
+//     display: grid;
+//     align-items: center;
+//     justify-content: center;
+//     background-color: white;
+//     position: relative;
+//     opacity: 0;
+//     z-index: 3;
 
-    &::after,
-    &::before {
-      content: '';
-      display: block;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      background-color: #3a3a3a;
-      opacity: 0.6;
-      grid-row: 1;
-      grid-column: 1;
-      @keyframes sk-bounce-1 {
-        0%,
-        100% {
-          transform: scale(0);
-        }
-        50% {
-          transform: scale(1);
-        }
-      }
-    }
-    &.show {
-      opacity: 0.5;
-      &::after,
-      &::before {
-        animation: sk-bounce-1 2s infinite ease-in-out;
-      }
-    }
+//     &::after,
+//     &::before {
+//       content: '';
+//       display: block;
+//       height: 40px;
+//       width: 40px;
+//       border-radius: 50%;
+//       background-color: #3a3a3a;
+//       opacity: 0.6;
+//       grid-row: 1;
+//       grid-column: 1;
+//       @keyframes sk-bounce-1 {
+//         0%,
+//         100% {
+//           transform: scale(0);
+//         }
+//         50% {
+//           transform: scale(1);
+//         }
+//       }
+//     }
+//     &.show {
+//       opacity: 0.5;
+//       &::after,
+//       &::before {
+//         animation: sk-bounce-1 2s infinite ease-in-out;
+//       }
+//     }
 
-    &::after {
-      animation-delay: -1s;
-    }
-  }
+//     &::after {
+//       animation-delay: -1s;
+//     }
+//   }
 
-  .col-btn-collapse {
-    flex: 0 0 100%;
-    max-width: 100%;
-    @media (min-width: 992px) {
-      display: none;
-    }
-  }
-  .btn-collapse {
-    margin: 20px 0 30px;
-    width: 75%;
-    max-width: 300px;
-    min-width: 10rem;
-    padding: 0.7rem 1.6rem;
-    border: 1px solid currentColor;
-    border-radius: 2px;
-    background-color: transparent;
-    color: currentColor;
-    text-decoration: none;
-    font-family: Proxima;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    white-space: nowrap;
-    box-shadow: none;
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-    transition: all 0.5s ease;
+//   .col-btn-collapse {
+//     flex: 0 0 100%;
+//     max-width: 100%;
+//     @media (min-width: 992px) {
+//       display: none;
+//     }
+//   }
+//   .btn-collapse {
+//     margin: 20px 0 30px;
+//     width: 75%;
+//     max-width: 300px;
+//     min-width: 10rem;
+//     padding: 0.7rem 1.6rem;
+//     border: 1px solid currentColor;
+//     border-radius: 2px;
+//     background-color: transparent;
+//     color: currentColor;
+//     text-decoration: none;
+//     font-family: Proxima;
+//     font-size: 0.7rem;
+//     font-weight: 600;
+//     text-transform: uppercase;
+//     text-align: center;
+//     white-space: nowrap;
+//     box-shadow: none;
+//     display: inline-flex;
+//     align-items: center;
+//     position: relative;
+//     transition: all 0.5s ease;
 
-    &:focus {
-      outline: none;
-    }
+//     &:focus {
+//       outline: none;
+//     }
 
-    > span {
-      display: block;
-      flex: 1;
-      padding-left: 7px;
-    }
+//     > span {
+//       display: block;
+//       flex: 1;
+//       padding-left: 7px;
+//     }
 
-    .btn-collapse-arrow {
-      transition: transform 0.4s;
-      transform-origin: 45% 50%;
-    }
-    &[aria-expanded='false'] {
-      .btn-collapse-arrow {
-        transform: rotate(90deg);
-      }
-      .label-expanded {
-        display: none;
-      }
-    }
-    &[aria-expanded='true'] {
-      .btn-collapse-arrow {
-        transform: rotate(-90deg);
-      }
-      .label-collapsed {
-        display: none;
-      }
-    }
-  }
+//     .btn-collapse-arrow {
+//       transition: transform 0.4s;
+//       transform-origin: 45% 50%;
+//     }
+//     &[aria-expanded='false'] {
+//       .btn-collapse-arrow {
+//         transform: rotate(90deg);
+//       }
+//       .label-expanded {
+//         display: none;
+//       }
+//     }
+//     &[aria-expanded='true'] {
+//       .btn-collapse-arrow {
+//         transform: rotate(-90deg);
+//       }
+//       .label-collapsed {
+//         display: none;
+//       }
+//     }
+//   }
 
-  /* do not collapse on desktop */
-  @include mediaQueryMinWidth(lg) {
-    .collapse:not(.show) {
-      display: block;
-    }
-    .col-btn-collapse {
-      display: none;
-    }
-  }
-  // .collapsing:nth-child(n+14) {
-  //   transition: none; // optimize when there are off-screen items expanded that don't need to be animated
-  // }
-  .collapsing {
-    transition: none; // optimize all the way!
-  }
-}
+//   /* do not collapse on desktop */
+//   @include mediaQueryMinWidth(lg) {
+//     .collapse:not(.show) {
+//       display: block;
+//     }
+//     .col-btn-collapse {
+//       display: none;
+//     }
+//   }
+//   // .collapsing:nth-child(n+14) {
+//   //   transition: none; // optimize when there are off-screen items expanded that don't need to be animated
+//   // }
+//   .collapsing {
+//     transition: none; // optimize all the way!
+//   }
+// }
 
 /* optional styles - per plugin */
-.product-prev-grid.container {
-  .product-prev-cell {
-    border: 1px solid #333;
-  }
+// .product-prev-grid.container {
+//   .product-prev-cell {
+//     border: 1px solid #333;
+//   }
 
-  @media (min-width: 768px) {
-    &,
-    .product-prev-col {
-      padding: 10px;
-    }
-    .row.grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      .product-prev-col {
-        max-width: unset;
-        order: 1;
-        &:nth-child(n + 4) {
-          order: 3;
-        }
-        &:nth-child(6) {
-          order: 2;
-        }
-        &:nth-child(11) {
-          grid-column-start: 2;
-        }
-      }
-      .large {
-        grid-column-end: span 2;
-        grid-row-end: span 2;
-      }
-    }
-    .row-5 {
-      padding: 0 12.5%;
-      .product-prev-col {
-        flex: 0 0 33%;
-        max-width: 33%;
-      }
-    }
-  }
-}
+//   @media (min-width: 768px) {
+//     &,
+//     .product-prev-col {
+//       padding: 10px;
+//     }
+//     .row.grid {
+//       display: grid;
+//       grid-template-columns: repeat(4, 1fr);
+//       .product-prev-col {
+//         max-width: unset;
+//         order: 1;
+//         &:nth-child(n + 4) {
+//           order: 3;
+//         }
+//         &:nth-child(6) {
+//           order: 2;
+//         }
+//         &:nth-child(11) {
+//           grid-column-start: 2;
+//         }
+//       }
+//       .large {
+//         grid-column-end: span 2;
+//         grid-row-end: span 2;
+//       }
+//     }
+//     .row-5 {
+//       padding: 0 12.5%;
+//       .product-prev-col {
+//         flex: 0 0 33%;
+//         max-width: 33%;
+//       }
+//     }
+//   }
+// }
